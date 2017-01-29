@@ -13,7 +13,7 @@ function conect($host = "localhost:3306", $user = "root", $psw = "", $db = "dura
 }
 
 function desconectarBD($con){
-	mysql_close($con);
+	mysqli_close($con);
 }
 
 
@@ -56,12 +56,12 @@ function logout(){
 
 
 function InsertPersona($user,$pass,$email,$tipo){
-
+$con = conect();
     $sql="insert into PERSONA values('$user','$pass','$email','$tipo');";
 
 
-    if(mysql_query($sql)){
-        if(mysql_affected_rows() > 0){$msg = 3;}
+    if(mysqli_query($con,$sql)){
+        if(mysqli_affected_rows() > 0){$msg = 3;}
         else{$msg = 2;}
     }
     else{$msg = 2;}
@@ -72,9 +72,10 @@ function InsertPersona($user,$pass,$email,$tipo){
 
 //funcion para obtener los datos de una persona
 function get_persona(){
+$con = conect();
     $sql="SELECT U.Mat_Usuario, P.APaterno, P.AMaterno, P.Nombre FROM persona P JOIN Usuario U ON P.email = U.email;
 ";
-    $consulta=mysqli_query($sql);
+    $consulta=mysqli_query($con,$sql);
 
 	echo $sql;
 
@@ -91,13 +92,14 @@ function get_persona(){
 }
 
 function get_Personas(){
+	$con = conect();
     $sql="select U.Mat_Usuario, CONCAT(P.APaterno,' ',P.AMaterno,' ',P.Nombre) as NombreC FROM persona P JOIN Usuario U ON P.email = U.email WHERE TUser!='Administrador'";
     $i=0;
     $respuesta=array();
 
-    $consulta=mysql_query($sql);
+    $consulta=mysqli_query($con,$sql);
 
-    while($fila=mysql_fetch_array($consulta)){
+    while($fila=mysqli_fetch_array($consulta)){
 
 		$respuesta[$i]=array('id'=>$fila['Mat_Usuario'],'nombre' => $fila['NombreC']);
 		$i++;

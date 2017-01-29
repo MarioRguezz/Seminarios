@@ -85,8 +85,12 @@ if($tipoPer == "Alumno")
 <body>
 
 
-	<div class="container-fluid">
-
+	<div class="container-fluid   ">
+		<div class="form-horizontal ">
+			<div class="text-center">
+				<label class="control-label" id="VP"><h3 class="whiteClass2 top"><b>Vista previa</b></h3></label>
+			</div>
+		</div>
 		<div class="row affix-row col-sm-3 well" id="menu">
 			<div class="form-horizontal">
 				<div class="form-group-sm ">
@@ -94,14 +98,14 @@ if($tipoPer == "Alumno")
                 <form action="guardarExamen.php" method="post">
                 -->
                 	<input type="hidden" value="<?PHP echo htmlentities($IDTema); ?>" id="IDTema">
-					<button class="btn btn-warning btn-sm" id="guardar"><span class="glyphicon glyphicon-saved"></span> Guardar examen</button>
+					<button class="buttonTransparentBorder buttonAlta " id="guardar"><span class="glyphicon glyphicon-saved"></span> Guardar examen</button>
                  <!--
                 </form>
                 -->
 				</div>
 
 				<div class="form-group">
-					<label class="control-label">Pregunta:</label>
+					<label class="control-label whiteClassThin">Pregunta:</label>
 					<textarea class="form-control" name="nomPreg" id="pregunta" rows="3" style="resize:none;" required></textarea>
 
 				</div>
@@ -153,17 +157,12 @@ if($tipoPer == "Alumno")
 				<div id="opcion"></div>
 
 				<div class="form-group-sm ">
-					<button class="btn btn-success btn-sm" id="botonG"><span class=" glyphicon glyphicon-plus"></span>Agregar </button>
+					<button class="buttonTransparentBorder buttonMedium" id="botonG"><span class=" glyphicon glyphicon-plus"></span>Agregar </button>
 				</div>
 			</div>
 		</div>
 
-		<div class="affix-row  col-sm-8 col-sm-offset-1" id="2p">
-			<div class="form-horizontal ">
-				<div class="text-center">
-					<label class="control-label" id="VP"><h3><b>Vista previa</b></h3></label>
-				</div>
-			</div>
+		<div class="affix-row  col-sm-4 col-sm-offset-1" id="2p">
 
 			<div class="form-horizontal" id="exm"></div>
 

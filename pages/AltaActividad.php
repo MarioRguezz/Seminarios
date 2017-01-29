@@ -109,7 +109,7 @@ if($tipoPer == "Alumno")
     <select class="form-control" name="TAct" id="TAct">
         <option value="0">Seleccione una opción</option>
         <option value="Memorama">Memorama</option>
-        <option value="DAD">Cuestionario interactivo</option>
+        <!--<option value="DAD">Cuestionario interactivo</option>-->
         <option value="Rompecabezas">Rompecabezas</option>
     </select>
     </div>

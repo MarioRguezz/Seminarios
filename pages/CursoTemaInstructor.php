@@ -296,7 +296,7 @@ if($tipoPer == "Alumno")
 		{
 	?>
     <center>
-	<h3><b>No se ha registrado ningun tema para este curso</b></h3>
+	<h3 class="whiteClass2 top"><b>No se ha registrado ningun tema para este curso</b></h3>
 	</center>
     <?PHP
 		}
