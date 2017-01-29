@@ -1,4 +1,4 @@
-<?PHP 
+<?PHP
 include '../php/conexion.php';
 
 $accion = $_GET['accion'];
@@ -12,29 +12,29 @@ if(isset($_SESSION['tipoP']))
 }
 else
 {
-	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';   
-	echo "<script>location.href='login.php'</script>";	
+	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';
+	echo "<script>location.href='login.php'</script>";
 }
 
 if($TipoPer == "Alumno")
 {
 	logout();
-		echo '<script>alert("Acceso denegado... Sitio exclusivo de los administradores")</script> ';   
-		echo "<script>location.href='login.php'</script>";			
+		echo '<script>alert("Acceso denegado... Sitio exclusivo de los administradores")</script> ';
+		echo "<script>location.href='login.php'</script>";
 }
 
-	$conexia = conect();	
-	
+	$conexia = conect();
+
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email';";
-	$resultadoses = mysql_query($queryxe);		
-	$rowses = mysql_fetch_array($resultadoses);
-	
+	$resultadoses = mysqli_query($conexia,$queryxe);
+	$rowses = mysqli_fetch_array($resultadoses);
+
 	if($rowses['Status'] == "BAJA")
 	{
 		logout();
-		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';   
-		echo "<script>location.href='login.php'</script>";		
+		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';
+		echo "<script>location.href='login.php'</script>";
 	}
 
 ?>
@@ -50,7 +50,7 @@ if($TipoPer == "Alumno")
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Principal.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
-    
+
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/inicio.js"></script>
     <link rel="stylesheet" href="../css/login.css">
@@ -62,28 +62,32 @@ if($TipoPer == "Alumno")
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    
-    <script src="../js/spinner.js"></script>  
 
+    <script src="../js/spinner.js"></script>
 
+<style>
+html{
+	height: 100%;
+}
+</style>
     <title>Perfil</title>
 </head>
 
-<body>
+<body class="backgroundPrincipal">
 
-<!--	FIN	Menu en el Encabezado	
+<!--	FIN	Menu en el Encabezado
 
 <div class="Menu">
 	<div class="col-md-1" >
     	<h4>Menú</h4>
     </div>
-    
+
     <div class="col-md-2" >
     	<a class="btn btn-info" href="principal.php">Menú principal</a>
     </div>
     <div class="col-md-2 col-md-offset-7">
         <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
-    </div>	
+    </div>
 </div>
 
 <!--	FIN	Menu en el Encabezado	-->
@@ -98,87 +102,87 @@ if($_POST['tipoUs'] == 'Instructor')
     <div class="container form-group">
         <div class="row">
             <div class="form-group"></div>
-            <div class="btn-group col-xs-6 col-xs-offset-3" data-toggle="buttons">                
-                <label class="btn btn-warning rd col-xs-4" title="Datos generales del aspirante" data-toggle="tooltip" data-placement="bottom" title="boton 1" id="2">
+            <div class="btn-group col-xs-6 col-xs-offset-3" data-toggle="buttons">
+                <label class="btn btn-warning rd col-xs-4" title="Datos generales del aspirante" style="color:white !important; font-size:20px;   border: 1px solid #FFF;" data-toggle="tooltip" data-placement="bottom" title="boton 1" id="2">
                     <input type="radio">Información</label>
-                <label class="btn btn-info rd col-xs-4" title="Curriculum del aspirante" data-toggle="tooltip" data-placement="top" title="boton 2" id="3">
+                <label class="btn btn-info rd col-xs-4" title="Curriculum del aspirante" style="color:white !important; font-size:20px; border: 1px solid #FFF;" data-toggle="tooltip" data-placement="top" title="boton 2" id="3">
                     <input type="radio">Curriculum</label>
             </div>
         </div>
         <br>
         <br>
-        <br>    
+        <br>
 
         <div class="row" id="divpdf">
-            <div class="col-xs-12 well">
+            <div class=" back col-xs-12 well">
             <?PHP
-			
+
 			$query = "SELECT * FROM persona WHERE email = '$_POST[email]';";
-			$resultas = mysql_query($query);		
-			$row = mysql_fetch_array($resultas);			
-			?>                
-            
+			$resultas = mysqli_query($conexia,$query);
+			$row = mysqli_fetch_array($resultas);
+			?>
+
             <form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
-                <label for="nombre" class="control-label col-md-3">Nombre</label>
+                <label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre</label>
                     <div class="col-md-6">
-                    <input class="form-control" id="nombre" name="nombre" type="text" value=" <?PHP echo htmlentities($row['Nombre']." ".$row['APaterno']." ".$row['AMaterno']); ?>" readonly>
+                    <input class="form-control NoRadius" id="nombre" name="nombre" type="text" value=" <?PHP echo htmlentities($row['Nombre']." ".$row['APaterno']." ".$row['AMaterno']); ?>" readonly>
                     </div>
-                </div>                
-                
-                
+                </div>
+
+
                 <div class="form-group">
-                <label for="email" class="control-label col-md-3">Correo electronico</label>
+                <label for="email" class="control-label col-md-3 whiteClassThin">Correo electronico</label>
                     <div class="col-md-6">
-                    <input class="form-control" type="text" id="email" name="email" value="<?PHP echo htmlentities($row['email']); ?>" readonly>
+                    <input class="form-control NoRadius" type="text" id="email" name="email" value="<?PHP echo htmlentities($row['email']); ?>" readonly>
                     </div>
-                </div>                
-                
-                
+                </div>
+
+
                 <div class="form-group">
-                <label for="opcion" class="control-label col-md-3">Sexo</label>
+                <label for="opcion" class="control-label col-md-3 whiteClassThin">Sexo</label>
                     <div class="col-md-5">
-                    <input class="form-control" type="text" id="sex" name="sex" value="<?PHP echo htmlentities($row['Sexo']); ?>" readonly>
+                    <input class="form-control NoRadius" type="text" id="sex" name="sex" value="<?PHP echo htmlentities($row['Sexo']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                <label for="telofi" class="control-label col-md-3">Telefono de oficina</label>
+                <label for="telofi" class="control-label col-md-3 whiteClassThin">Telefono de oficina</label>
                     <div class="col-md-6">
-                    <input class="form-control" id="telofi" name="telofi" type="text" value="<?PHP echo htmlentities($row['TelOfi']); ?>" readonly>
+                    <input class="form-control NoRadius" id="telofi" name="telofi" type="text" value="<?PHP echo htmlentities($row['TelOfi']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                <label for="telcasa" class="control-label col-md-3">Telefono de casa</label>
+                <label for="telcasa" class="control-label col-md-3 whiteClassThin">Telefono de casa</label>
                     <div class="col-md-6">
-                    <input class="form-control" id="telcasa" name="telcasa" type="text" value="<?PHP echo htmlentities($row['TelCas']); ?>" readonly>
+                    <input class="form-control NoRadius" id="telcasa" name="telcasa" type="text" value="<?PHP echo htmlentities($row['TelCas']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                <label for="celular" class="control-label col-md-3">Telefono celular</label>
+                <label for="celular" class="control-label col-md-3 whiteClassThin">Telefono celular</label>
                     <div class="col-md-6">
-                    <input class="form-control" id="celular" name="celular" type="text" value="<?PHP echo htmlentities($row['Celular']); ?>" readonly>
+                    <input class="form-control NoRadius" id="celular" name="celular" type="text" value="<?PHP echo htmlentities($row['Celular']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                <label for="estado" class="control-label col-md-3">Estado</label>
+                <label for="estado" class="control-label col-md-3 whiteClassThin">Estado</label>
                     <div class="col-md-6">
-                    <input class="form-control" id="estado" name="estado" type="text" value="<?PHP echo htmlentities($row['Estado']); ?>" readonly>
+                    <input class="form-control NoRadius" id="estado" name="estado" type="text" value="<?PHP echo htmlentities($row['Estado']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                <label for="municipio" class="control-label col-md-3">Municipio</label>
+                <label for="municipio" class="control-label col-md-3 whiteClassThin">Municipio</label>
                     <div class="col-md-6">
-                    <input class="form-control" id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Municipio']); ?>" readonly>
+                    <input class="form-control NoRadius" id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Municipio']); ?>" readonly>
                     </div>
-                </div>      
+                </div>
 		</form>
-            
+
             </div>
         </div>
 
@@ -187,8 +191,8 @@ if($_POST['tipoUs'] == 'Instructor')
             	<div class="embed-responsive embed-responsive-16by9">
                 <?PHP
 				$querys = "SELECT curriculum FROM usuario WHERE email = '$_POST[email]';";
-				$resultado = mysql_query($querys);		
-				$fila = mysql_fetch_array($resultado);
+				$resultado = mysqli_query($conexia,$querys);
+				$fila = mysqli_fetch_array($resultado);
 				?>
                     <object data=" <?PHP echo htmlentities($fila['curriculum']); ?>" width="100%" height="100%" type="application/pdf">
                     </object>
@@ -208,17 +212,17 @@ if($_POST['tipoUs'] == 'Instructor')
 }
 else
 {
-			
-			$querys = "SELECT fotografia FROM alumno WHERE email = '$_POST[email]';";
-			$resultad = mysql_query($querys);		
-			$fila = mysql_fetch_array($resultad);			
-			
-			?>                
 
-<div class="container">           
+			$querys = "SELECT fotografia FROM alumno WHERE email = '$_POST[email]';";
+			$resultad = mysqli_query($conexia,$querys);
+			$fila = mysqli_fetch_array($resultad);
+
+			?>
+
+<div class="container">
             <form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
-				
-                 <div class="form-group">                
+
+                 <div class="form-group">
                     <div class="col-md-6">
 							<?PHP
 								if($fila['fotografia'] != "")
@@ -235,72 +239,72 @@ else
 								}
 							?>
                     </div>
-                </div> 
-                
+                </div>
+
                 <?PHP
 				$query = "SELECT * FROM persona WHERE email = '$_POST[email]';";
-				$resultas = mysql_query($query);		
-				$row = mysql_fetch_array($resultas);			
-				
-				?> 
-                
+				$resultas = mysqli_query($conexia,$query);
+				$row = mysqli_fetch_array($resultas);
+
+				?>
+
                 <div class="form-group">
                 <label for="nombre" class="control-label col-md-3">Nombre</label>
                     <div class="col-md-6">
                     <input class="form-control" id="nombre" name="nombre" type="text" value=" <?PHP echo htmlentities($row['Nombre']." ".$row['APaterno']." ".$row['AMaterno']); ?>" readonly>
                     </div>
-                </div>                
-                
-                
+                </div>
+
+
                 <div class="form-group">
                 <label for="email" class="control-label col-md-3">Correo electronico</label>
                     <div class="col-md-6">
                     <input class="form-control" type="text" id="email" name="email" value="<?PHP echo htmlentities($row['email']); ?>" readonly>
                     </div>
-                </div>                
-                
-                
+                </div>
+
+
                 <div class="form-group">
                 <label for="opcion" class="control-label col-md-3">Sexo</label>
                     <div class="col-md-5">
                     <input class="form-control" type="text" id="sex" name="sex" value="<?PHP echo htmlentities($row['Sexo']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                 <label for="telofi" class="control-label col-md-3">Telefono de oficina</label>
                     <div class="col-md-6">
                     <input class="form-control" id="telofi" name="telofi" type="text" value="<?PHP echo htmlentities($row['TelOfi']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                 <label for="telcasa" class="control-label col-md-3">Telefono de casa</label>
                     <div class="col-md-6">
                     <input class="form-control" id="telcasa" name="telcasa" type="text" value="<?PHP echo htmlentities($row['TelCas']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                 <label for="celular" class="control-label col-md-3">Telefono celular</label>
                     <div class="col-md-6">
                     <input class="form-control" id="celular" name="celular" type="text" value="<?PHP echo htmlentities($row['Celular']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                 <label for="estado" class="control-label col-md-3">Estado</label>
                     <div class="col-md-6">
                     <input class="form-control" id="estado" name="estado" type="text" value="<?PHP echo htmlentities($row['Estado']); ?>" readonly>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                 <label for="municipio" class="control-label col-md-3">Municipio</label>
                     <div class="col-md-6">
                     <input class="form-control" id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Municipio']); ?>" readonly>
                     </div>
-                </div>      
+                </div>
 		</form>
 </div>
 
@@ -312,11 +316,4 @@ else
 <br><br>
 
 </body>
-<footer>
-    	<div class="form-group">
-        	<div class="col-md-8">
-    			<h3>Seminario</h3>
-        	</div>
-        </div>
-</footer>
 </html>

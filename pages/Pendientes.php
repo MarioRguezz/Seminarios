@@ -68,10 +68,15 @@ if($TipoPer != "Administrador")
 
     <script src="../js/spinner.js"></script>
 
+<style>
+html{
+	height: 100%;
+}
+</style>
 
 </head>
 
-<body >
+<body class="backgroundPrincipal" >
 
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
@@ -175,8 +180,6 @@ if($accion == '4pr0v@r')
 	$row = mysqli_fetch_array($resultas);
 	$IDes = $row['Matricula'];
 	$IDes = $IDes + 1;
-
-
 	$consultados = "UPDATE persona set Status = 'ALTA' WHERE email = '$_POST[correo]';";
 	if(mysqli_query($conec,$consultados))
 	{		}
@@ -195,7 +198,7 @@ if($accion == '4pr0v@r')
 		$consultatres = "UPDATE usuario set Mat_Usuario = '$IDes' WHERE email = '$_POST[correo]';";
 	}
 
-	if(mysqli_query($consultatres,$conec))
+	if(mysqli_query($conec,$consultatres))
 	{
 			/*
 			echo '<script>alert("El usuario ha sido aprovado")</script> ';

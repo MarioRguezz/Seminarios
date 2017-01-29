@@ -209,6 +209,11 @@ border-radius: 0px;
 color:#FFF;
 text-decoration: none;
 }
+
+.WithTop:hover{
+	color:#FFF;
+	text-decoration: none;
+}
 .NormalSizeWord{
 font-size: 19px;
 }
