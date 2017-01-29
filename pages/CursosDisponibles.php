@@ -26,8 +26,8 @@ if($tipoPer != "Alumno")
 	
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
-	$resultadoses = mysql_query($queryxe);		
-	$rowses = mysql_fetch_array($resultadoses);
+	$resultadoses = mysqli_query($queryxe);		
+	$rowses = mysqli_fetch_array($resultadoses);
 	
 	if($rowses['Status'] == "BAJA")
 	{
@@ -43,12 +43,12 @@ $Matricula = 0;
 $conexia = conect();	
 
 	$queryze = "SELECT Mat_Alumno FROM alumno WHERE email = '$email';";
-	$resultas = mysql_query($queryze);		
-	$rows = mysql_fetch_array($resultas);			
+	$resultas = mysqli_query($queryze);		
+	$rows = mysqli_fetch_array($resultas);			
 	$Matricula = $rows['Mat_Alumno'];
 				
 			
-mysql_close($conexia);		
+mysqli_close($conexia);		
 
 ?>
 <!doctype html>
@@ -90,16 +90,15 @@ mysql_close($conexia);
 <!--	FIN	Menu en el Encabezado	-->
 
 <div class="Menu">
-	<div class="col-md-1" >
-    	<h4>Menú</h4>
+    <div class="col-md-1" >
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
     </div>
-    
     <div class="col-md-2" >
-    	<a class="btn btn-info" href="principal.php">Menú principal</a>
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
     </div>
     <div class="col-md-2 col-md-offset-7">
-        <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
-    </div>	
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
+    </div>
 </div>
 
 <!--	FIN	Menu en el Encabezado	-->
@@ -125,14 +124,14 @@ mysql_close($conexia);
 		$conex = conect();
 		$consulta = "SELECT * FROM curso C JOIN curso_informacion CI ON C.id_Curso = CI.ID_Curso JOIN curso_instructor CIN ON C.id_Curso = CIN.id_Curso "; 
 		
-		$res = mysql_query($consulta);
-		while($row = mysql_fetch_array($res))
+		$res = mysqli_query($consulta);
+		while($row = mysqli_fetch_array($res))
 		{
 			
 			$Total = 0;
 			$qwerty = "SELECT COUNT(*) as Total From curso_participante WHERE id_Curso = '$row[id_Curso]'";
-			$baia = mysql_query($qwerty);
-			$fila = mysql_fetch_array($baia);
+			$baia = mysqli_query($qwerty);
+			$fila = mysqli_fetch_array($baia);
 			$Total = $fila['Total'];
 						
 			
@@ -155,8 +154,8 @@ mysql_close($conexia);
         <?PHP
 			$querys = "SELECT P.APaterno, P.AMaterno, P.Nombre FROM Persona P JOIN usuario U ON P.email = U.email WHERE u.Mat_Usuario = '$row[Mat_Usuario]'";
 			$Nombre_Ins = "";
-			$resultado = mysql_query($querys);		
-			$rowses = mysql_fetch_array($resultado);			
+			$resultado = mysqli_query($querys);		
+			$rowses = mysqli_fetch_array($resultado);			
 			$Nombre_Ins = $rowses['APaterno']." ".$rowses['AMaterno']." ".$rowses['Nombre'];	
 		?>       
         <td><center> <?PHP echo htmlentities($Nombre_Ins); ?> </center></td>
@@ -206,8 +205,8 @@ mysql_close($conexia);
 			
 			
 			$qwertys = "SELECT * FROM curso_participante WHERE Mat_Alumno = '$_POST[Mat_Alumno]' AND id_Curso = '$_POST[IDCurso]';";
-			$resus = mysql_query($qwertys);		
-			$ahoc = mysql_fetch_array($resus);
+			$resus = mysqli_query($qwertys);		
+			$ahoc = mysqli_fetch_array($resus);
 			
 			if($ahoc != NULL)
 			{
@@ -227,7 +226,7 @@ mysql_close($conexia);
 			{	
 				$Query = "INSERT INTO curso_participante (id_curso, Mat_Alumno) VALUES ('$_POST[IDCurso]', '$_POST[Mat_Alumno]');";
 				
-				if(mysql_query($Query,$conec))
+				if(mysqli_query($Query,$conec))
 				{	
 					$accion="VACIO";
 					/*			

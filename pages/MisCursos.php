@@ -6,10 +6,7 @@ $accion = $_GET['accion'];
 $tipoPer = $_SESSION["tipoP"];
 $email = $_SESSION["email"];
 
-if(isset($_SESSION['tipoP']))
-{
-}
-else
+if(!isset($_SESSION['tipoP']))
 {
 	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';   
 	echo "<script>location.href='login.php'</script>";	
@@ -26,16 +23,15 @@ if($tipoPer != "Alumno")
 	
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
-	$resultadoses = mysql_query($queryxe);		
-	$rowses = mysql_fetch_array($resultadoses);
+	$resultadoses = mysqli_query($queryxe);		
+	$rowses = mysqli_fetch_array($resultadoses);
 	
 	if($rowses['Status'] == "BAJA")
 	{
 		logout();
 		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';   
 		echo "<script>location.href='login.php'</script>";		
-}
-
+    }
 
 
 
@@ -43,20 +39,20 @@ $Matricula = 0;
 $conexia = conect();	
 
 	$queryze = "SELECT Mat_Alumno FROM alumno WHERE email = '$email';";
-	$resultas = mysql_query($queryze);		
-	$row = mysql_fetch_array($resultas);			
+	$resultas = mysqli_query($queryze);		
+	$row = mysqli_fetch_array($resultas);			
 	$Matricula = $row['Mat_Alumno'];
 
 			
 			/*
 			$Total = 0;
 			$qwerty = "SELECT COUNT(*) as Total From curso_participante";
-			$baia = mysql_query($qwerty);
-			$fila = mysql_fetch_array($baia);
+			$baia = mysqli_query($qwerty);
+			$fila = mysqli_fetch_array($baia);
 			$Total = $fila['Total'];	
 			//*/
 			
-mysql_close($conexia);		
+mysqli_close($conexia);		
 
 ?>
 <!doctype html>
@@ -91,19 +87,18 @@ mysql_close($conexia);
 </head>
 
 <body>
-<!--	FIN	Menu en el Encabezado	-->
+<!--	INICIO Menu en el Encabezado	-->
 
 <div class="Menu">
-	<div class="col-md-1" >
-    	<h4>Menú</h4>
+    <div class="col-md-1" >
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
     </div>
-    
     <div class="col-md-2" >
-    	<a class="btn btn-info" href="principal.php">Menú principal</a>
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
     </div>
     <div class="col-md-2 col-md-offset-7">
-        <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
-    </div>	
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
+    </div>
 </div>
 
 <!--	FIN	Menu en el Encabezado	-->
@@ -127,21 +122,21 @@ mysql_close($conexia);
 		$conex = conect();
 		$consulta = "SELECT * FROM curso C JOIN curso_informacion CI ON C.id_Curso = CI.ID_Curso JOIN curso_participante CP ON C.id_Curso = CP.id_Curso JOIN curso_instructor CIN ON C.id_Curso = CIN.id_Curso WHERE CP.Mat_Alumno = '$Matricula';"; 
 		
-		$res = mysql_query($consulta);
-		while($row = mysql_fetch_array($res))
+		$res = mysqli_query($consulta);
+		while($row = mysqli_fetch_array($res))
 		{
 			
 			$queryta = "SELECT * FROM curso_tema CT JOIN curso C ON CT.id_curso = C.id_Curso WHERE C.id_Curso = '$row[id_Curso]';";
-			$resultasxax = mysql_query($queryta);	
-			$rowta = mysql_fetch_array($resultasxax);
+			$resultasxax = mysqli_query($queryta);	
+			$rowta = mysqli_fetch_array($resultasxax);
 			
 			$queryTotal = "SELECT * FROM curso_subtema CS JOIN curso_tema CT ON CS.id_Tema = CT.id_Tema WHERE CT.id_Curso = '$row[id_Curso]';";
-			$resultadoTotal = mysql_query($queryTotal);
-			$TotalSub = mysql_num_rows($resultadoTotal);
+			$resultadoTotal = mysqli_query($queryTotal);
+			$TotalSub = mysqli_num_rows($resultadoTotal);
 			          
 			$sqlx = "SELECT * FROM subtema_visto WHERE id_Curso = '$row[id_Curso]' AND Mat_Alumno = '$row[Mat_Alumno]' AND Visto != '0';";
-			$resulx = mysql_query($sqlx);
-			$TotalVisto = mysql_num_rows($resulx);
+			$resulx = mysqli_query($sqlx);
+			$TotalVisto = mysqli_num_rows($resulx);
 			
 			$Regla3 = ($TotalVisto * 100) / $TotalSub;
 			
@@ -174,14 +169,14 @@ mysql_close($conexia);
 		
 			$Total = 0;
 			$qwerty = "SELECT COUNT(*) as Total From curso_participante WHERE id_Curso = '$row[id_Curso]';";
-			$baia = mysql_query($qwerty);
-			$fila = mysql_fetch_array($baia);
+			$baia = mysqli_query($qwerty);
+			$fila = mysqli_fetch_array($baia);
 			$Total = $fila['Total'];
 		
 			$querys = "SELECT P.APaterno, P.AMaterno, P.Nombre FROM Persona P JOIN usuario U ON P.email = U.email WHERE u.Mat_Usuario = '$row[Mat_Usuario]'";
 			$Nombre_Ins = "";
-			$resultado = mysql_query($querys);		
-			$rowses = mysql_fetch_array($resultado);			
+			$resultado = mysqli_query($querys);		
+			$rowses = mysqli_fetch_array($resultado);			
 			$Nombre_Ins = $rowses['APaterno']." ".$rowses['AMaterno']." ".$rowses['Nombre'];	
 		?>       
         <td><center> <?PHP echo htmlentities($Nombre_Ins); ?> </center></td>
