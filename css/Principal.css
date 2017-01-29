@@ -56,6 +56,16 @@ body.backgroundPrincipal
     -o-background-size: cover;
     background-size: cover;
 }
+/*
+body.backgroundPrincipal2 {
+    background:url(../img/backgrounds/FONDO2.png)no-repeat center center fixed;
+		background-size: 100% 100% !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
+
 
 footer
 {
