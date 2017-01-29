@@ -109,9 +109,14 @@ $res= get_Personas();
             ];
 </script>
 
+<style>
+html {
+    height: 100%;
+}
+</style>
 </head>
 
-<body>
+<body class="backgroundPrincipal" >
 
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
@@ -151,11 +156,11 @@ $res= get_Personas();
                 <div class="col-xs-3">
                     <div class="input-group number-spinner">
                         <span class="input-group-btn data-dwn">
-					<button type="button" class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+					<button type="button" class="btn btn-default NoRadius " data-dir="dwn"><span class="">-</span></button>
                         </span>
-                        <input id="Cupo" name="Cupo" type="text" class="form-control text-center" value="30" min="1">
+                        <input id="Cupo" name="Cupo" type="text" class="form-control NoRadius text-center" value="30" min="1">
                         <span class="input-group-btn data-up">
-					<button type="button" class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+					<button type="button" class="btn btn-default NoRadius" data-dir="up"><span class="">+</span></button>
                         </span>
                     </div>
                 </div>
@@ -287,9 +292,8 @@ if($accion == 'Nu3v@')
 
 		?>
 
-<br><br><br><br>
-<br><br>
-
+		<br><br><br><br>
+		<br><br>
 </body>
 
 </html>
