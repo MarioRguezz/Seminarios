@@ -79,16 +79,20 @@ if($tipoPer == "Alumno")
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-
+		<style>
+		html {
+		    height: 100%;
+		}
+		</style>
 </head>
 
-<body>
+<body class="backgroundPrincipal">
 
 
 	<div class="container-fluid   ">
 		<div class="form-horizontal ">
 			<div class="text-center">
-				<label class="control-label" id="VP"><h3 class="whiteClass2 top"><b>Vista previa</b></h3></label>
+				<label class="control-label" id="VP"><h3 class="whiteClass2 top">VISTA PREVIA</h3></label>
 			</div>
 		</div>
 		<div class="row affix-row col-sm-3 well" id="menu">

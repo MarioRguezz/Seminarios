@@ -159,6 +159,7 @@ input[type="file"] {
 }
 
 
+
 .marginlefttitle{
 	margin-left: 60px;
 }
@@ -208,6 +209,21 @@ border-radius: 0px;
 .buttonLogin:hover{
 color:#FFF;
 text-decoration: none;
+}
+
+.WithTop:hover{
+	color:#FFF;
+	text-decoration: none;
+}
+
+.WithTop:active{
+	color:#FFF;
+	text-decoration: none;
+}
+
+.WithTop:visited {
+	color:#FFF;
+	text-decoration: none;
 }
 .NormalSizeWord{
 font-size: 19px;

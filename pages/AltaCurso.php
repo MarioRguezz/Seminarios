@@ -138,7 +138,7 @@ html {
 <div class="container"> <!-- Div principal -->
 
 <center>
-<h1 class="whiteClass2 top"><b> Alta de cursos </b></h1>
+<h1 class="whiteClass2 top">ALTA DE CURSOS</h1>
 </center>
 <br><br>
 
@@ -183,7 +183,7 @@ html {
 
 <div class="form-group">
 	<div class="col-md-2 col-md-offset-2">
-		<button class="buttonTransparentBorder buttonAlta" id="btn-registro" type="submit">Crear curso &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
+		<button class="buttonTransparentBorder buttonAlta" id="btn-registro" type="submit">Crear curso </button>
         <!-- <input type="submit" class="btn btn-primary" value="Guardar registro"> -->
     </div>
 </div>

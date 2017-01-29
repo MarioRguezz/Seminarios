@@ -46,6 +46,11 @@ if(isset($_SESSION['tipoP'])){
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
+    <style>
+    html{
+    	height: 100%;
+    }
+    </style>
 
 </head>
 

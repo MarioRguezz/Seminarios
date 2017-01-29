@@ -71,7 +71,11 @@ if($tipoPer == "Alumno")
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
-
+<style>
+html{
+	height:100%;
+}
+	</style>
 
 </head>
 
@@ -97,7 +101,7 @@ if($tipoPer == "Alumno")
 <div class="container"> <!-- Div principal -->
 
 <center>
-<h1 class="whiteClass2 top"><b> Confirma Actividad </b></h1>
+<h1 class="whiteClass2 top">CONFIRMA ACTIVIDAD</h1>
 </center>
 <br><br>
 

@@ -33,6 +33,11 @@ $accion = $_GET['accion'];
     </script>
 
     <script src="../js/personaJS.js"></script>
+    <style>
+    html{
+    	height: 100%;
+    }
+    </style>
 
 </head>
 

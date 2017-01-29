@@ -88,6 +88,11 @@ if($tipoPer == "Alumno")
             ];
 </script>
 
+<style>
+html{
+	height: 100%;
+}
+</style>
 </head>
 
 <body class="backgroundPrincipal">
@@ -118,7 +123,7 @@ if($tipoPer == "Alumno")
 <div class="container"> <!-- Div principal -->
 
 <center>
-<h1 class="whiteClass2 top"><b> Alta de subtema </b></h1>
+<h1 class="whiteClass2 top">ALTA DE SUBTEMA</h1>
 </center>
 <br><br>
 
