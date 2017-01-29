@@ -124,13 +124,13 @@ mysqli_close($conexia);
 		$conex = conect();
 		$consulta = "SELECT * FROM curso C JOIN curso_informacion CI ON C.id_Curso = CI.ID_Curso JOIN curso_instructor CIN ON C.id_Curso = CIN.id_Curso "; 
 		
-		$res = mysqli_query($consulta);
+		$res = mysqli_query($conex, $consulta);
 		while($row = mysqli_fetch_array($res))
 		{
 			
 			$Total = 0;
 			$qwerty = "SELECT COUNT(*) as Total From curso_participante WHERE id_Curso = '$row[id_Curso]'";
-			$baia = mysqli_query($qwerty);
+			$baia = mysqli_query($conex, $qwerty);
 			$fila = mysqli_fetch_array($baia);
 			$Total = $fila['Total'];
 						
@@ -154,7 +154,7 @@ mysqli_close($conexia);
         <?PHP
 			$querys = "SELECT P.APaterno, P.AMaterno, P.Nombre FROM Persona P JOIN usuario U ON P.email = U.email WHERE u.Mat_Usuario = '$row[Mat_Usuario]'";
 			$Nombre_Ins = "";
-			$resultado = mysqli_query($querys);		
+			$resultado = mysqli_query($conex, $querys);
 			$rowses = mysqli_fetch_array($resultado);			
 			$Nombre_Ins = $rowses['APaterno']." ".$rowses['AMaterno']." ".$rowses['Nombre'];	
 		?>       
@@ -205,7 +205,7 @@ mysqli_close($conexia);
 			
 			
 			$qwertys = "SELECT * FROM curso_participante WHERE Mat_Alumno = '$_POST[Mat_Alumno]' AND id_Curso = '$_POST[IDCurso]';";
-			$resus = mysqli_query($qwertys);		
+			$resus = mysqli_query($conec, $qwertys);
 			$ahoc = mysqli_fetch_array($resus);
 			
 			if($ahoc != NULL)
@@ -226,7 +226,7 @@ mysqli_close($conexia);
 			{	
 				$Query = "INSERT INTO curso_participante (id_curso, Mat_Alumno) VALUES ('$_POST[IDCurso]', '$_POST[Mat_Alumno]');";
 				
-				if(mysqli_query($Query,$conec))
+				if(mysqli_query($conec,$Query))
 				{	
 					$accion="VACIO";
 					/*			

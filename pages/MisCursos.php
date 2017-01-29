@@ -122,20 +122,20 @@ mysqli_close($conexia);
 		$conex = conect();
 		$consulta = "SELECT * FROM curso C JOIN curso_informacion CI ON C.id_Curso = CI.ID_Curso JOIN curso_participante CP ON C.id_Curso = CP.id_Curso JOIN curso_instructor CIN ON C.id_Curso = CIN.id_Curso WHERE CP.Mat_Alumno = '$Matricula';"; 
 		
-		$res = mysqli_query($consulta);
+		$res = mysqli_query($conex, $consulta);
 		while($row = mysqli_fetch_array($res))
 		{
 			
 			$queryta = "SELECT * FROM curso_tema CT JOIN curso C ON CT.id_curso = C.id_Curso WHERE C.id_Curso = '$row[id_Curso]';";
-			$resultasxax = mysqli_query($queryta);	
+			$resultasxax = mysqli_query($conex, $queryta);
 			$rowta = mysqli_fetch_array($resultasxax);
 			
 			$queryTotal = "SELECT * FROM curso_subtema CS JOIN curso_tema CT ON CS.id_Tema = CT.id_Tema WHERE CT.id_Curso = '$row[id_Curso]';";
-			$resultadoTotal = mysqli_query($queryTotal);
+			$resultadoTotal = mysqli_query($conex, $queryTotal);
 			$TotalSub = mysqli_num_rows($resultadoTotal);
 			          
 			$sqlx = "SELECT * FROM subtema_visto WHERE id_Curso = '$row[id_Curso]' AND Mat_Alumno = '$row[Mat_Alumno]' AND Visto != '0';";
-			$resulx = mysqli_query($sqlx);
+			$resulx = mysqli_query($conex, $sqlx);
 			$TotalVisto = mysqli_num_rows($resulx);
 			
 			$Regla3 = ($TotalVisto * 100) / $TotalSub;
@@ -169,13 +169,13 @@ mysqli_close($conexia);
 		
 			$Total = 0;
 			$qwerty = "SELECT COUNT(*) as Total From curso_participante WHERE id_Curso = '$row[id_Curso]';";
-			$baia = mysqli_query($qwerty);
+			$baia = mysqli_query($conex, $qwerty);
 			$fila = mysqli_fetch_array($baia);
 			$Total = $fila['Total'];
 		
 			$querys = "SELECT P.APaterno, P.AMaterno, P.Nombre FROM Persona P JOIN usuario U ON P.email = U.email WHERE u.Mat_Usuario = '$row[Mat_Usuario]'";
 			$Nombre_Ins = "";
-			$resultado = mysqli_query($querys);		
+			$resultado = mysqli_query($conex, $querys);
 			$rowses = mysqli_fetch_array($resultado);			
 			$Nombre_Ins = $rowses['APaterno']." ".$rowses['AMaterno']." ".$rowses['Nombre'];	
 		?>       

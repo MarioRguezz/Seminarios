@@ -10,7 +10,6 @@ $Imagen = $_POST['Imagen'];
 
 $tipoPer = $_SESSION["tipoP"];
 $email = $_SESSION["email"];
-
 if(isset($_SESSION['tipoP']))
 {
 }
@@ -31,9 +30,9 @@ if($tipoPer != "Alumno")
 	
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
-	$resultadoses = mysql_query($queryxe);		
-	$rowses = mysql_fetch_array($resultadoses);
-	
+
+	$resultadoses = mysqli_query($conexia, $queryxe);
+	$rowses = mysqli_fetch_array($resultadoses);
 	if($rowses['Status'] == "BAJA")
 	{
 		logout();

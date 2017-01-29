@@ -111,7 +111,6 @@
 }
 .contenedor
 {
-	background:rgba(0,51,102,1);
 	/*background:url(../img/blue.jpg);*/
 	width:100%;
 	height:844px;
@@ -147,13 +146,12 @@
 
 body
 {
-	background-image:url(../img/backgroundTest.jpg);
+    background-image:url(../img/backgrounds/FONDO3.png);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-
 footer
 {
 	background-color: rgba(0,102,102,0.80);

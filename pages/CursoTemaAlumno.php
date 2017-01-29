@@ -26,8 +26,8 @@ if($tipoPer != "Alumno")
 	
 
 	$queryxe = "SELECT * FROM persona P JOIN Alumno A ON P.email = A.email  WHERE P.email = '$email' ;";
-	$resultadoses = mysql_query($queryxe);		
-	$rowses = mysql_fetch_array($resultadoses);
+	$resultadoses = mysqli_query($conexia, $queryxe);
+	$rowses = mysqli_fetch_array($resultadoses);
 	
 	if($rowses['Status'] == "BAJA")
 	{
@@ -39,20 +39,20 @@ if($tipoPer != "Alumno")
 	$IDCurso = $_POST['IDCurso'];
 
 	$qwerty = "SELECT * FROM curso_tema CT JOIN curso C ON CT.id_curso = C.id_Curso WHERE C.id_Curso = '$IDCurso';";
-	$resultas = mysql_query($qwerty);	
-	$NumRow = mysql_num_rows($resultas);	
-	$row = mysql_fetch_array($resultas);
+	$resultas = mysqli_query($conexia, $qwerty);
+	$NumRow = mysqli_num_rows($resultas);	
+	$row = mysqli_fetch_array($resultas);
 	
 	$query = "SELECT * FROM curso_subtema CS JOIN curso_tema CT ON CS.id_Tema = CT.id_Tema WHERE CT.id_Curso = '$IDCurso';";
-	$resultado = mysql_query($query);
-	$TotalSub = mysql_num_rows($resultado);
+	$resultado = mysqli_query($conexia, $query);
+	$TotalSub = mysqli_num_rows($resultado);
 	
 	
 	$bandera = 0;
 	$Orden = 0;
 	$Padawan = "SELECT MAX(Orden) as Orden FROM subtema_visto WHERE id_Curso = '$IDCurso'";
-	$ObiWan = mysql_query($Padawan);
-	$Tmp = mysql_fetch_array($ObiWan);
+	$ObiWan = mysqli_query($conexia, $Padawan);
+	$Tmp = mysqli_fetch_array($ObiWan);
 	$Orden = $Tmp['Orden'];
 	if($Orden == NULL)
 	{
@@ -86,31 +86,29 @@ if($tipoPer != "Alumno")
 
 <body>
 
-<!--	FIN	Menu en el Encabezado	-->
+
+<!--	INICIO Menu en el Encabezado	-->
 
 <div class="Menu">
-	<div class="col-md-1" >
-    	<h4>Menú</h4>
+    <div class="col-md-1" >
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
     </div>
-    
     <div class="col-md-2" >
-    	<a class="btn btn-info" href="principal.php">Menú principal</a>
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
     </div>
-    
-    <div class="col-md-2" >
-    	<a class="btn btn-warning" href="MisCursos.php"><span class="glyphicon glyphicon-circle-arrow-left"> Mis Cursos</span></a>
+    <div class="col-md-2 col-md-offset-3">
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="MisCursos.php.php">Mis cursos</a>
     </div>
-    
-    <div class="col-md-5" >
-    	<h3><b>Curso <?PHP echo htmlentities($row['nombre']); ?></b></h3>
+    <div class="col-md-2">
+        <a class="SubtitlewhiteClass NoShadow WithTop" >Curso <?PHP echo htmlentities($row['nombre']); ?></a>
     </div>
-    
-    <div class="col-md-1">
-        <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
-    </div>	
+    <div class="col-md-2">
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
+    </div>
 </div>
 
 <!--	FIN	Menu en el Encabezado	-->
+
 <br>
 
 <div class="contenedor">
@@ -138,27 +136,27 @@ if($accion == 'C0R50')
 	
 
 	$queryze = "SELECT * FROM material_video WHERE id_Subtema = '$IDSubtema';";
-	$resultas = mysql_query($queryze);		
-	$NumVid = mysql_num_rows($resultas);
-	$rowVid = mysql_fetch_array($resultas);	
+	$resultas = mysqli_query( $conexia, $queryze);
+	$NumVid = mysqli_num_rows($resultas);
+	$rowVid = mysqli_fetch_array($resultas);	
 	/*
 	print_r($rowVid);
 	print_r("<br>");
 	//*/
 	
 	$queryze1 = "SELECT * FROM material_doc WHERE id_Subtema = '$IDSubtema';";
-	$resultas1 = mysql_query($queryze1);	
-	$NumDoc = mysql_num_rows($resultas1);	
-	$rowDoc = mysql_fetch_array($resultas1);
+	$resultas1 = mysqli_query($conexia, $queryze1);
+	$NumDoc = mysqli_num_rows($resultas1);	
+	$rowDoc = mysqli_fetch_array($resultas1);
 	/*
 	print_r($rowDoc);
 	print_r("<br>");
 	//*/
 	
 	$queryze2 = "SELECT * FROM material_audio WHERE id_Subtema = '$IDSubtema';";
-	$resultas2 = mysql_query($queryze2);
-	$NumAud = mysql_num_rows($resultas2);		
-	$rowAud = mysql_fetch_array($resultas2);	
+	$resultas2 = mysqli_query($conexia, $queryze2);
+	$NumAud = mysqli_num_rows($resultas2);		
+	$rowAud = mysqli_fetch_array($resultas2);	
 	//print_r($rowAud)
 
 /* *****
@@ -166,18 +164,18 @@ if($accion == 'C0R50')
 	***** */
 	
 $sqlsesx = "SELECT Visto FROM subtema_visto WHERE Mat_Alumno = '$MatAlu' AND id_Subtema = '$IDSubtema' AND id_Curso = '$IDCurso';";
-$resultadosesx = mysql_query($sqlsesx);		
-$rowsesx = mysql_fetch_array($resultadosesx);
+$resultadosesx = mysqli_query($conexia, $sqlsesx);
+$rowsesx = mysqli_fetch_array($resultadosesx);
 //print_r($sqlsesx);
 		
 if($rowsesx['Visto'] == ""){
 	
 	$consultaxex = "INSERT INTO subtema_visto (id_Curso, id_Tema,id_Subtema, Mat_Alumno, Visto, Orden) Values('$IDCurso', '$Tema','$IDSubtema', '$MatAlu', '1', '$Orden');";
-	if(mysql_query($consultaxex, $conexia))
+	if(mysqli_query($conexia, $consultaxex))
 	{	}
 	else
 	{
-		echo mysql_error()."<br>";
+		echo mysqli_error()."<br>";
 	}
 //*
 }
@@ -187,11 +185,11 @@ else
 	{
 		$consultaxex = "UPDATE subtema_visto SET Visto = '1' WHERE Mat_Alumno = '$MatAlu' AND id_Subtema = '$IDSubtema' AND id_Curso = '$IDCurso';";
 	}
-	if(mysql_query($consultaxex, $conexia))
+	if(mysqli_query($conexia, $consultaxex))
 	{	}
 	else
 	{
-		//echo "ERROR en la consulta UPDATE subtema_Visto   ".mysql_error()."<br>";
+		//echo "ERROR en la consulta UPDATE subtema_Visto   ".mysqli_error()."<br>";
 	}
 }
 	
@@ -200,8 +198,8 @@ else
 	***** */
 	
 	$sqlx = "SELECT * FROM subtema_visto WHERE id_Curso = '$IDCurso' AND Mat_Alumno = '$MatAlu' AND Visto != '0';";
-	$resulx = mysql_query($sqlx);
-	$TotalVisto = mysql_num_rows($resulx);
+	$resulx = mysqli_query($conexia, $sqlx);
+	$TotalVisto = mysqli_num_rows($resulx);
 			
 	$Regla3 = ($TotalVisto * 100) / $TotalSub;
 			
@@ -226,8 +224,8 @@ else
 		$Ultvisto = 0;
 		
 		//print_r("El queryze es: ".$queryze."<br>");
-		$resx = mysql_query($qwerty);
-		while($filases = mysql_fetch_array($resx))
+		$resx = mysqli_query($conexia, $qwerty);
+		while($filases = mysqli_fetch_array($resx))
 		{			
 	?>
     	
@@ -240,15 +238,15 @@ else
 		
 		//print_r("La consulta es: ".$consulta."<br>");
 		
-		$res = mysql_query($consulta);
-		while($fila = mysql_fetch_array($res))
+		$res = mysqli_query($conexia, $consulta);
+		while($fila = mysqli_fetch_array($res))
 		{
 			//print_r("El valor de la bandera es: ".$bandera."<br>");
 			
 			$sqlxox = "SELECT * FROM subtema_visto WHERE Mat_Alumno = '$rowses[Mat_Alumno]' AND id_Subtema = '$fila[id_Subtema]' AND id_Curso = '$IDCurso';";
 			//print_r($sqlxox."<br>");
-			$resultadoxox = mysql_query($sqlxox);		
-			$rowseso = mysql_fetch_array($resultadoxox);
+			$resultadoxox = mysqli_query($conexia, $sqlxox);
+			$rowseso = mysqli_fetch_array($resultadoxox);
 			
 			//print_r("Valor de Orden de rowseso: ".$rowseso['Orden']."<br>");
 			
@@ -270,16 +268,16 @@ else
 			}
 			
 			$consPDF = "SELECT ubica FROM material_doc WHERE id_Subtema = '$fila[id_Subtema]';";
-			$resPDF = mysql_query($consPDF);
-			$rowPDF = mysql_fetch_array($resPDF);
+			$resPDF = mysqli_query($conexia, $consPDF);
+			$rowPDF = mysqli_fetch_array($resPDF);
 			
 			$consVid = "SELECT ubica FROM material_video WHERE id_Subtema = '$fila[id_Subtema]';";
-			$resVid = mysql_query($consVid);
-			$rowVid = mysql_fetch_array($resVid);
+			$resVid = mysqli_query($conexia, $consVid);
+			$rowVid = mysqli_fetch_array($resVid);
 			
 			$consAud = "SELECT ubica FROM material_audio WHERE id_Subtema = '$fila[id_Subtema]';";
-			$resAud = mysql_query($consAud);
-			$rowAud = mysql_fetch_array($resAud);
+			$resAud = mysqli_query($conexia, $consAud);
+			$rowAud = mysqli_fetch_array($resAud);
 		?>
         
         <li> <a href='#'>
@@ -356,18 +354,18 @@ else
     <li> <a href='#'>
     <?PHP
             $sqlx = "SELECT Status FROM habilita_exam WHERE IDTema = '$filases[id_Tema]' AND Mat_Alu = '$rowses[Mat_Alumno]';";
-			$resuxo = mysql_query($sqlx);
-			$rowy = mysql_fetch_array($resuxo);
+			$resuxo = mysqli_query($conexia, $sqlx);
+			$rowy = mysqli_fetch_array($resuxo);
 			
 			
 			$sql1 = "SELECT * FROM curso_subtema WHERE id_Tema = '$filases[id_Tema]'";			
-			$resux = mysql_query($sql1);
-			$TotalTemas = mysql_num_rows($resux);
+			$resux = mysqli_query($conexia, $sql1);
+			$TotalTemas = mysqli_num_rows($resux);
 					
 			
 			$sql2 = "SELECT * FROM subtema_visto WHERE id_Tema = '$filases[id_Tema]'";
-			$resux2 = mysql_query($sql2);
-			$TotalVisto = mysql_num_rows($resux2);
+			$resux2 = mysqli_query($conexia, $sql2);
+			$TotalVisto = mysqli_num_rows($resux2);
 			
 			if($rowy['Status'] == "")
 			{
@@ -406,8 +404,8 @@ else
     <?PHP
             $sqlas = "SELECT * FROM tema_actividad WHERE id_Tema = '$filases[id_Tema]';";
 			//print_r($sqlas);
-			$resuxas = mysql_query($sqlas);	
-			$rowyas = mysql_fetch_array($resuxas);
+			$resuxas = mysqli_query($conexia, $sqlas);
+			$rowyas = mysqli_fetch_array($resuxas);
 			if($rowyas['ubica'] == "")
 			{
 	?>
@@ -524,7 +522,7 @@ else
 						if($NumDoc > 1)
 						{	
 						$queryx = "SELECT * FROM material_doc WHERE id_Subtema = '$IDSubtema';";
-						$resultax = mysql_query($queryx);				
+						$resultax = mysqli_query($conexia, $queryx);
 					?>
                     	<div class="row bg-info">
                         	<div class="col-md-3 col-xs-12">
@@ -534,7 +532,7 @@ else
                                     <br>
                             	                            
 									<?PHP
-                                        while($rowD = mysql_fetch_array($resultax))
+                                        while($rowD = mysqli_fetch_array($resultax))
                                         {
                                             $ubica = $rowD['ubica'];
                                             $NombreDoc = substr($rowD['ubica'], 11, strlen($ubica));
@@ -603,7 +601,7 @@ else
 						if($NumVid > 1)
 						{	
 						$queryx1 = "SELECT * FROM material_video WHERE id_Subtema = '$IDSubtema';";
-						$resultax1 = mysql_query($queryx1);				
+						$resultax1 = mysqli_query($conexia, $queryx1);
 						
 						
 					?>
@@ -615,7 +613,7 @@ else
                                     <br>
                             	                            
 									<?PHP
-                                        while($rowV = mysql_fetch_array($resultax1))
+                                        while($rowV = mysqli_fetch_array($resultax1))
                                         {
                                             $ubica1 = $rowV['ubica'];
                                             $NombreVid = substr($rowV['ubica'], 13, strlen($ubica1));
@@ -685,7 +683,7 @@ else
 						if($NumAud > 1)
 						{	
 						$queryx2 = "SELECT * FROM material_audio WHERE id_Subtema = '$IDSubtema';";
-						$resultax2 = mysql_query($queryx2);				
+						$resultax2 = mysqli_query($conexia, $queryx2);
 					?>
                     	<div class="row bg-info">
                         	<div class="col-md-3 col-xs-12">
@@ -695,7 +693,7 @@ else
                                     <br>
                             	                            
 									<?PHP
-                                        while($rowA = mysql_fetch_array($resultax2))
+                                        while($rowA = mysqli_fetch_array($resultax2))
                                         {
                                             $ubica2 = $rowA['ubica'];
                                             $NombreAud = substr($rowA['ubica'], 13, strlen($ubica2));
@@ -785,8 +783,8 @@ else
 	{
 		$Ultvisto = 0;
 		
-		$resx = mysql_query($qwerty);
-		while($filases = mysql_fetch_array($resx))
+		$resx = mysqli_query($conexia, $qwerty);
+		while($filases = mysqli_fetch_array($resx))
 		{
 					
 	?>
@@ -798,15 +796,15 @@ else
 		$consulta = "Select * FROM curso_subtema where id_Tema = '$filases[id_Tema]';"; 		
 		
 		
-		$res = mysql_query($consulta);
-		while($fila = mysql_fetch_array($res))
+		$res = mysqli_query($conexia, $consulta);
+		while($fila = mysqli_fetch_array($res))
 		{
 			//print_r("El valor de la bandera es: ".$bandera."<br>");
 			
 			$sqlxox = "SELECT * FROM subtema_visto WHERE Mat_Alumno = '$rowses[Mat_Alumno]' AND id_Subtema = '$fila[id_Subtema]' AND id_Curso = '$IDCurso';";
 			//print_r($sqlxox."<br>");
-			$resultadoxox = mysql_query($sqlxox);		
-			$rowseso = mysql_fetch_array($resultadoxox);
+			$resultadoxox = mysqli_query($conexia, $sqlxox);
+			$rowseso = mysqli_fetch_array($resultadoxox);
 			
 			//print_r("Valor de Orden de rowseso: ".$rowseso['Orden']."<br>");
 			
@@ -828,16 +826,16 @@ else
 			}
 			
 			$consPDF = "SELECT ubica FROM material_doc WHERE id_Subtema = '$fila[id_Subtema]';";
-			$resPDF = mysql_query($consPDF);
-			$rowPDF = mysql_fetch_array($resPDF);
+			$resPDF = mysqli_query($conexia, $consPDF);
+			$rowPDF = mysqli_fetch_array($resPDF);
 			
 			$consVid = "SELECT ubica FROM material_video WHERE id_Subtema = '$fila[id_Subtema]';";
-			$resVid = mysql_query($consVid);
-			$rowVid = mysql_fetch_array($resVid);
+			$resVid = mysqli_query($conexia, $consVid);
+			$rowVid = mysqli_fetch_array($resVid);
 			
 			$consAud = "SELECT ubica FROM material_audio WHERE id_Subtema = '$fila[id_Subtema]';";
-			$resAud = mysql_query($consAud);
-			$rowAud = mysql_fetch_array($resAud);
+			$resAud = mysqli_query($conexia, $consAud);
+			$rowAud = mysqli_fetch_array($resAud);
 		?>
         
         <li> <a href='#'>
@@ -914,18 +912,18 @@ else
     <li> <a href='#'>
     <?PHP
             $sqlx = "SELECT Status FROM habilita_exam WHERE IDTema = '$filases[id_Tema]' AND Mat_Alu = '$rowses[Mat_Alumno]';";
-			$resuxo = mysql_query($sqlx);
-			$rowy = mysql_fetch_array($resuxo);
+			$resuxo = mysqli_query($conexia, $sqlx);
+			$rowy = mysqli_fetch_array($resuxo);
 			
 			
 			$sql1 = "SELECT * FROM curso_subtema WHERE id_Tema = '$filases[id_Tema]'";			
-			$resux = mysql_query($sql1);
-			$TotalTemas = mysql_num_rows($resux);
+			$resux = mysqli_query($conexia, $sql1);
+			$TotalTemas = mysqli_num_rows($resux);
 					
 			
 			$sql2 = "SELECT * FROM subtema_visto WHERE id_Tema  = '$filases[id_Tema]'";
-			$resux2 = mysql_query($sql2);
-			$TotalVisto = mysql_num_rows($resux2);
+			$resux2 = mysqli_query($conexia, $sql2);
+			$TotalVisto = mysqli_num_rows($resux2);
 			
 			//print_r("TotalTemas: ".$TotalTemas."<br>TotalVisto: ".$TotalVisto);
 			
@@ -966,8 +964,8 @@ else
     <?PHP
             $sqlas = "SELECT * FROM tema_actividad WHERE id_Tema = '$filases[id_Tema]';";
 			//print_r($sqlas);
-			$resuxas = mysql_query($sqlas);	
-			$rowyas = mysql_fetch_array($resuxas);
+			$resuxas = mysqli_query($conexia, $sqlas);
+			$rowyas = mysqli_fetch_array($resuxas);
 			$opciones = substr($rowyas['id_Actividad'],0, 3);	
 	
 			if($rowyas['ubica'] == "")
@@ -1047,8 +1045,9 @@ else
 
 <center>
 
-<img src="../img/default.png"/>
-	
+<img src="../img/Icons/Png/PrincipalAdmin-04.png"/><br>
+    <h3 style="color:white">Seleccione un subtema del panel izquierdo</h3>
+
 </center>
 
 </div>
