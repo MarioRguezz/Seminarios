@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.contenedor
+{
+	background-color:rgba(0,51,102,1);
+	/*background:url(../img/blue.jpg);*/
+}
+
+body
+{
+	/*
+	background-image:url(../img/blue.jpg);
+	background-repeat:no-repeat;
+	*/
+	background-color:rgba(0,51,102,1);
+}
+

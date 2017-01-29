@@ -1,0 +1,271 @@
+@charset "utf-8";
+
+.contenedor
+{
+	background-color:rgba(255,255,255,0.95);
+	background:url(../img/blue.jpg);
+}
+
+.contenedor2
+{
+	background-color: rgba(255,255,255,0.95);
+	padding-top: 3%;
+	padding-right: 3%;
+	padding-bottom: 3%;
+	padding-left: 3%;
+	margin-top: 5%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+	margin-left: 5%;
+	border-radius: 20px;
+}
+
+.horizontal
+{
+	/*background-color:rgba(255,255,255,0.50);*/
+	border-radius: 20px;
+	margin-bottom: 7%;
+}
+
+body
+{
+	background-image:url(../img/backgrounds/FONDO2invertido.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body.backgroundLogin
+{
+	background-image:url(../img/backgrounds/FONDO.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+body.backgroundPrincipal
+{
+	background-image:url(../img/backgrounds/FONDO2.png);
+	background-size: 100% 100% !important;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+footer
+{
+	background-color: rgba(0,102,102,0.80);
+	color: #FFFFFF;
+	padding-top: 1%;
+	padding-right: 1%;
+	padding-bottom: 1%;
+	padding-left: 1%;
+	border-radius: 20px;
+	bottom:0;
+	position:fixed;
+	width:100%;
+}
+
+.Menu
+{
+	background-color: rgba(239,239,239,0.4);
+	width: 100%;
+	height: 10%;
+	top: 0;
+	position:absolute;
+	color: rgba(0,0,113,1);
+	padding: 1%;
+	font-weight: bold;
+	font-size: large;
+	text-shadow: 1px 0px #000000;
+}
+
+
+/*
+Nueva parte
+ */
+
+.cssTitleRegistro{
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.whiteClass{
+	color: white;
+	font-size: 18px;
+}
+
+.whiteClassThin{
+		font-weight: 300;
+		color: white;
+		font-size: 18px;
+}
+
+.whiteClass2{
+	color: white;
+	font-size: 40px;
+}
+
+.whiteClass3{
+	color: white;
+	font-size: 50px;
+}
+
+.thinWord{
+	font-weight: 200;
+}
+
+.SubtitlewhiteClass{
+	color: white;
+	font-size: 30px;
+	font-weight: 300;
+}
+
+.NoShadow{
+	text-shadow: 0px 0px #FFF;
+}
+
+.SubtitleMainwhiteClass{
+	color: white;
+	font-size: 35px;
+	font-weight: 300;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+
+.marginlefttitle{
+	margin-left: 60px;
+}
+
+.NoRadius{
+	border:solid 0px #ccc;
+	border-radius: 0px;
+	height: 50px;
+	font-size: 18px;
+}
+
+.weightAddCurso{
+	width: 100%;
+}
+.buttonLogin{
+background: transparent;
+color: white;
+font-weight: bold;
+font-size: 25px;
+height: 60px;
+width: 370px;
+border:solid 3px #FFF;
+border-radius: 0px;
+}
+
+.buttonAlta{
+	background: transparent;
+	color: white;
+	font-weight: 200;
+	font-size: 25px;
+	height: 60px;
+	width: 280px;
+	border:solid 3px #FFF;
+	border-radius: 0px;
+}
+
+.buttonMedium{
+	background: transparent;
+	color: white;
+	font-weight: 200;
+	font-size: 25px;
+	height: 60px;
+	width: 200px;
+	border:solid 3px #FFF;
+	border-radius: 0px;
+}
+.buttonLogin:hover{
+color:#FFF;
+text-decoration: none;
+}
+.NormalSizeWord{
+font-size: 19px;
+}
+.alignCenter{
+	text-align: center;
+}
+.contenedorMain{
+	padding-top: 12%;
+	padding-right: 3%;
+	padding-bottom: 3%;
+	padding-left: 3%;
+	margin-top: 5%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+	margin-left: 5%;
+	border-radius: 20px;
+}
+
+.WithTop{
+	position: relative;
+	top: 30px;
+}
+
+.WithTop:hover{
+color:#FFF;
+text-decoration: none;
+}
+
+.top{
+	padding-top: 5%;
+	margin-top: 5%;
+}
+
+.top2{
+	padding-top: 8%;
+	margin-top: 8%;
+}
+
+.tablaDesign{
+		 border: none !important;
+}
+
+th, td {
+    padding: 15px;
+		color: white;
+		font-size: 25px;
+		font-weight: 200;
+}
+
+.cells{
+	padding: 15px;
+	color: white;
+	font-size: 25px;
+	font-weight: 200;
+}
+
+.buttonTransparent{
+	background: transparent;
+	border:none;
+	height: 50px;
+}
+
+.buttonTransparentBorder{
+	background: transparent;
+	height: 50px;
+}
+
+.back{
+	background: transparent;
+}
