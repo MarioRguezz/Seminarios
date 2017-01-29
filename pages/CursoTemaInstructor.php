@@ -110,7 +110,7 @@ if($tipoPer == "Alumno")
 
 <!--	FIN	Menu en el Encabezado	-->
 	<div class="alignCenter">
-<h1 class="whiteClass2 top"><b>Administrador de curso <?PHP echo htmlentities($row['nombre']); ?></b></h1>
+<h1 class="whiteClass2 top">ADMINISTRADOR DE CURSO <?PHP echo htmlentities($row['nombre']); ?></h1>
 </div>
 <br><br>
 

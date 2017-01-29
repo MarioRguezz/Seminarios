@@ -118,7 +118,7 @@ if($band == 2)
 ?>
 
 <center>
-<h1 class="whiteClass2"><b>OPCIONES PARA EL ALUMNO</b></h1>
+<h1 class="whiteClass2">OPCIONES PARA EL ALUMNO</h1>
 </center>
 
 <br><br>
@@ -164,7 +164,7 @@ if($band == 1)
 ?>
 
 <center>
-<h1 class="whiteClass2"><b>OPCIONES PARA EL INSTRUCTOR</b></h1>
+<h1 class="whiteClass2">OPCIONES PARA EL INSTRUCTOR</h1>
 </center>
 
 <br><br>
@@ -211,7 +211,7 @@ if($band == 3)
 ?>
 
 <center>
-<h1 class="whiteClass2"><b>OPCIONES PARA EL ADMINISTRADOR</b></h1>
+<h1 class="whiteClass2">OPCIONES PARA EL ADMINISTRADOR</h1>
 </center>
 
 <br><br>

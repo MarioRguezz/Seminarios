@@ -215,6 +215,16 @@ text-decoration: none;
 	color:#FFF;
 	text-decoration: none;
 }
+
+.WithTop:active{
+	color:#FFF;
+	text-decoration: none;
+}
+
+.WithTop:visited {
+	color:#FFF;
+	text-decoration: none;
+}
 .NormalSizeWord{
 font-size: 19px;
 }

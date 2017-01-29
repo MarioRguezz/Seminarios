@@ -94,7 +94,7 @@ if($tipoPer == "Alumno")
 <div class="container"> <!-- Div principal -->
 
 <center>
-<h1 class="whiteClass2 top2"><b> Confirma subtema </b></h1>
+<h1 class="whiteClass2 top2">CONFIRMAR SUBTEMA</h1>
 </center>
 <br><br>
 

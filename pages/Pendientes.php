@@ -94,19 +94,19 @@ html{
 <!--	FIN	Menu en el Encabezado	-->
 
 <center>
-<h1 class="whiteClass2 top"><b>Solicitudes pendientes</b></h1>
+<h1 class="whiteClass2 top">SOLICITUDES PENDIENTES</h1>
 </center>
 
 <br><br>
 <div class="container">
 	<table style="width:100%" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
     <tr class="danger">
-    	<th><center>Nombre</center></th>
-        <th><center>Estado</center></th>
-        <th><center>Municipio</center></th>
-        <th><center>Tipo de usuario</center></th>
-        <th><center>Información</center></th>
-        <th><center>¿Aprobar solicitud?</center></th>
+    	<th><b><center>Nombre</center></b></b></th>
+        <th><b><center>Estado</center></b></th>
+        <th><b><center>Municipio</center></b></th>
+        <th><b><center>Tipo de usuario</center></b></th>
+        <th><b><center>Información</center></b></th>
+        <th><b><center>¿Aprobar solicitud?</center></b></th>
         <!-- <th><center></center></th> -->
     </tr>
 
@@ -145,7 +145,7 @@ html{
         <form action="Pendientes.php?accion=4pr0v@r" class="form-horizontal" method="post" enctype="multipart/form-data">
         <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="correo">
         <input type="hidden" value="<?PHP echo htmlentities($row['TUser']); ?>" name="tuser">
-        <td><center> <button class="buttonTransparentBorder buttonAlta" id="btn-autoriza" type="submit">Aprobar &nbsp; <span class="glyphicon glyphicon-ok"></span></button> </center></td>
+        <td><center> <button class="buttonTransparent buttonAlta" id="btn-autoriza" type="submit">Sí</button> </center></td>
         </form>
         <!-- <td><center> Aquí el check box </center></td> -->
     </tr>
