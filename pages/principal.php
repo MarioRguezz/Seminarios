@@ -82,6 +82,11 @@ if($TipoPer == "Administrador")
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
+	<style>
+		 html{
+			 height: 100%;
+		 }
+	</style>
 </head>
 
 <body class="backgroundPrincipal">

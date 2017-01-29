@@ -79,11 +79,15 @@ mysqli_close($conexia);
     </script>
 
     <script src="../js/spinner.js"></script>
-
+ <style>
+	  html{
+	  	height: 100%;
+	  }
+ </style>
 
 </head>
 
-<body>
+<body class="backgroundPrincipal" >
 
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
