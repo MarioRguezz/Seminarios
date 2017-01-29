@@ -106,7 +106,7 @@ mysqli_close($conexia);
 
 
 <center>
-<h1 class="whiteClass2 top"><b>Administrar mis cursos</b></h1>
+<h1 class="whiteClass2 top">ADMINISTRAR MIS CURSOS</h1>
 </center>
 
 <br><br>

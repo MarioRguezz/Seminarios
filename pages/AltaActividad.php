@@ -47,7 +47,7 @@ if($tipoPer == "Alumno")
 <html>
 <head>
 <meta charset="utf-8">
-<title>Alta deactividad</title>
+<title>Alta de actividad</title>
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/AltaActividad.js"></script>
@@ -65,9 +65,14 @@ if($tipoPer == "Alumno")
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
+	<style>
+	html{
+		height:100%;
+	}
+		</style>
 </head>
 
-<body>
+<body class="backgroundPrincipal">
 
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
@@ -96,7 +101,7 @@ if($tipoPer == "Alumno")
 <div class="container"> <!-- Div principal -->
 
 <center>
-<h1 class="whiteClass2 top2"><b> Alta de actividad </b></h1>
+<h1 class="whiteClass2 top2">ALTA DE ACTIVIDAD</h1>
 </center>
 <br><br>
 
