@@ -98,7 +98,7 @@ mysqli_close($conexia);
     	<a class="btn btn-info" href="principal.php">Menú principal</a>
     </div>
     <div class="col-md-2 col-md-offset-7">
-        <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
+        <a class="btn btni-danger" href="Cerrar.php">Cerrar sesión</a>
     </div>
 </div>
 

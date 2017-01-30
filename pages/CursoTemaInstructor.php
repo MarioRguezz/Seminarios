@@ -138,7 +138,7 @@ if($tipoPer == "Alumno")
 		{
 	?>
 <div class="container">
-	<table style="width:100%" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
+	<table style="width:100%;" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
     <tr class="">
     	<th>Tema</th>
         <th><center><?PHP echo htmlentities($filases['Nombre']); ?> </center></th>
@@ -351,7 +351,7 @@ if($accion == 'Nu3v@')
 					echo '<script>alert("hubo un error intente de nuevo más tarde")</script> ';
 					$accion="VACIO";
 					echo "<script>location.href='CursoTemaInstructor.php'</script>";
-					echo mysql_error();
+					echo mysqli_error();
 				*/
 				echo '<script>
 

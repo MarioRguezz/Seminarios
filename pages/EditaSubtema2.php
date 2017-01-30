@@ -85,23 +85,28 @@ if($tipoPer == "Alumno")
             ];
 </script>
 
+
+<style>
+html{
+	height: 100%;
+}
+</style>
 </head>
 
-<body>
+<body class="backgroundPrincipal">
 
 <!--	FIN	Menu en el Encabezado	-->
 
 <div class="Menu">
 	<div class="col-md-1" >
-    	<h4>Menú</h4>
-    </div>
-
-    <div class="col-md-2" >
-    	<a class="btn btn-info" href="principal.php">Menú principal</a>
-    </div>
-    <div class="col-md-2 col-md-offset-7">
-        <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
-    </div>
+		<a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
+	</div>
+	<div class="col-md-2" >
+		<a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
+	</div>
+	<div class="col-md-2 col-md-offset-7">
+			<a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
+	</div>
 </div>
 
 <!--	FIN	Menu en el Encabezado	-->
@@ -109,7 +114,7 @@ if($tipoPer == "Alumno")
 <div class="container"> <!-- Div principal -->
 
 <center>
-<h1><b> Edición de subtema </b></h1>
+<h1 class="whiteClass2 top">EDICIÓN DE SUBTEMA</h1>
 </center>
 <br><br>
 
@@ -122,7 +127,7 @@ if($tipoPer == "Alumno")
 <form action="#">
 
 <div class="form-group bg-info">
-	<label for="opcion1" class="control-label col-md-3">Tipo de archivo a subir</label>
+	<label for="opcion1" class="control-label col-md-3 whiteClassThin">Tipo de archivo a subir</label>
     <div class="col-md-3">
     <select class="form-control" name="TMat" id="TMat">
         <option value="0">Seleccione una opción</option>

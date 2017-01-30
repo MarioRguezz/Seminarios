@@ -171,7 +171,7 @@ mysqli_close($conexia);
 		if($Total>0)
 		{
 		?>
-        <td><center> <button class="btn btn-info" id="btn-Ir" type="submit">Consultar &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
+        <td><center> <button class="buttonTransparentBorder buttonAlta" id="btn-Ir" type="submit">Consultar &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
         <?PHP
 		}
 		else

@@ -15,19 +15,19 @@ if(isset($_SESSION['tipoP']))
 }
 else
 {
-	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';   
-	echo "<script>location.href='login.php'</script>";	
+	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';
+	echo "<script>location.href='login.php'</script>";
 }
 
 if($tipoPer != "Alumno")
 {
 	logout();
-		echo '<script>alert("Acceso denegado... Sitio exclusivo para Alumnos")</script> ';   
-		echo "<script>location.href='login.php'</script>";			
+		echo '<script>alert("Acceso denegado... Sitio exclusivo para Alumnos")</script> ';
+		echo "<script>location.href='login.php'</script>";
 }
 
-	$conexia = conect();	
-	
+	$conexia = conect();
+
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
 
@@ -36,8 +36,8 @@ if($tipoPer != "Alumno")
 	if($rowses['Status'] == "BAJA")
 	{
 		logout();
-		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';   
-		echo "<script>location.href='login.php'</script>";		
+		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';
+		echo "<script>location.href='login.php'</script>";
 	}
 
 ?>
@@ -50,13 +50,13 @@ if($tipoPer != "Alumno")
 <script src="../js/jquery.min.js"></script>
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <script src="../js/bootstrap/js/bootstrap.min.js"></script>    
+    <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/Actividad.css">
-    
-    
+
+
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-	
+  <link rel="stylesheet" type="text/css" href="../css/Principal.css" />
     <link rel="stylesheet" type="text/css" href="../css/jqpuzzle.css" />
         <script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
         <script type="text/javascript" src="../js/jquery.jqpuzzle.js"></script>
@@ -77,12 +77,12 @@ if($tipoPer != "Alumno")
             var settings = {
                 shuffle: true,
                 control: {
-                    shufflePieces: true, // display 'Shuffle' button [true|false] 
-                    confirmShuffle: false, // ask before shuffling [true|false] 
-                    toggleOriginal: true, // display 'Original' button [true|false] 
-                    toggleNumbers: true, // display 'Numbers' button [true|false] 
-                    counter: true, // display moves counter [true|false] 
-                    timer: true, // display timer (seconds) [true|false] 
+                    shufflePieces: true, // display 'Shuffle' button [true|false]
+                    confirmShuffle: false, // ask before shuffling [true|false]
+                    toggleOriginal: true, // display 'Original' button [true|false]
+                    toggleNumbers: true, // display 'Numbers' button [true|false]
+                    counter: true, // display moves counter [true|false]
+                    timer: true, // display timer (seconds) [true|false]
                     pauseTimer: false
                 }
             };
@@ -101,10 +101,14 @@ if($tipoPer != "Alumno")
             });
         </script>
 
+				<style>
+				html {
+				    height: 100%;
+				}
+				</style>
+				</head>
 
-</head>
-
-<body>
+				<body class="backgroundPrincipal" >
 
 <!--	FIN	Menu en el Encabezado
 
@@ -112,13 +116,13 @@ if($tipoPer != "Alumno")
 	<div class="col-md-1" >
     	<h4>Menú</h4>
     </div>
-    
+
     <div class="col-md-2" >
     	<a class="btn btn-info" href="principal.php">Menú principal</a>
     </div>
     <div class="col-md-2 col-md-offset-7">
-        <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
-    </div>	
+        <a class="btn btni-danger" href="Cerrar.php">Cerrar sesión</a>
+    </div>
 </div>
 
 <!--	FIN	Menu en el Encabezado	-->
@@ -137,14 +141,4 @@ if($tipoPer != "Alumno")
 
 
 </body>
-
-
-<div class="footer">
-    	<div class="form-group">
-        	<div class="col-md-8">
-    			<h3>Seminario</h3>
-        	</div>
-        </div>
-</div>
-
 </html>

@@ -111,8 +111,8 @@ function get_Personas(){
 function UserExiste($user){
 $sql="select user from PERSONA where user='$user'";
 
-if(mysql_query($sql)){
-        if(mysql_affected_rows() > 0){$msg = 1;}
+if(mysqli_query($sql)){
+        if(mysqli_affected_rows() > 0){$msg = 1;}
         else{$msg = 2;}
     }
     else{$msg = 2;}

@@ -82,10 +82,14 @@ mysqli_close($conexia);
 
     <script src="../js/spinner.js"></script>
 
+		<style>
+		html{
+			height:100%;
+		}
+			</style>
+	</head>
 
-</head>
-
-<body>
+	<body class="backgroundPrincipal">
 
 <!--	FIN	Menu en el Encabezado	-->
 
@@ -105,12 +109,12 @@ mysqli_close($conexia);
 
 
 <center>
-<h1><b>Mis Cursos</b></h1>
+<h1 class="whiteClass2 top">MIS CURSOS</h1>
 </center>
 
 <br><br>
 <div class="container">
-	<table class="table table-bordered table-hover table-responsive">
+		<table style="width:100%" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
     <tr class="danger">
     	<th><center>Nombre del curso</center></th>
         <th><center>Instructor</center></th>
@@ -170,7 +174,7 @@ mysqli_close($conexia);
         <form action="CursosDisponibles.php?accion=nu3v0" class="form-horizontal" method="post" enctype="multipart/form-data">
         <input type="hidden" value="<?PHP echo htmlentities($row['id_Curso']); ?>" name="IDCurso">
         <input type="hidden" value="<?PHP echo htmlentities($Matricula); ?>" name="Mat_Alumno">
-        <td><center> <button class="btn btn-success" id="btn-Ir" type="submit" title="Clic aquí para inscribirte">Inscripción &nbsp; <span class="glyphicon glyphicon-copy"></span></button> </center></td>
+        <td><center> <button class="buttonTransparentBorder buttonAlta" id="btn-Ir" type="submit" title="Clic aquí para inscribirte">Inscripción &nbsp; <span class="glyphicon glyphicon-copy"></span></button> </center></td>
 
         </form>
         <?PHP

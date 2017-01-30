@@ -53,6 +53,8 @@ if($tipoPer != "Alumno")
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../css/Principal.css">
     <link rel="stylesheet" href="../css/Actividad.css">
 
     <!--
@@ -70,11 +72,16 @@ if($tipoPer != "Alumno")
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
+</script>
 
-
+<style>
+html{
+	height: 100%;
+}
+</style>
 </head>
 
-<body>
+<body class="backgroundPrincipal">
 
 <!--	FIN	Menu en el Encabezado
 
@@ -87,7 +94,7 @@ if($tipoPer != "Alumno")
     	<a class="btn btn-info" href="principal.php">Menú principal</a>
     </div>
     <div class="col-md-2 col-md-offset-7">
-        <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
+        <a class="" href="Cerrar.php">Cerrar sesión</a>
     </div>
 </div>
 
@@ -96,7 +103,7 @@ if($tipoPer != "Alumno")
 <div class="container"> <!-- Div principal -->
 
 <center>
-<h1><b> Actividad </b></h1>
+<h1 class="whiteClass2 top">ACTIVIDAD</h1>
 </center>
 <br><br>
 

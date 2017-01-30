@@ -19,9 +19,9 @@ else
 	$conexia = conect();
 	$queryxe = "SELECT * FROM persona WHERE email = '$email';";
 	$resultadoses = mysqli_query($conexia,$queryxe);
-//	$resultadoses = mysql_query($queryxe);
+//	$resultadoses = mysqli_query($queryxe);
 	$rowses = mysqli_fetch_array($resultadoses);
-//	$rowses = mysql_fetch_array($resultadoses);
+//	$rowses = mysqli_fetch_array($resultadoses);
 	if($rowses['Status'] == "BAJA")
 	{
 		logout();
