@@ -95,13 +95,13 @@ if($tipoPer == "Alumno")
 				<label class="control-label" id="VP"><h3 class="whiteClass2 top">VISTA PREVIA</h3></label>
 			</div>
 		</div>
-		<div class="row affix-row col-sm-3 well" id="menu">
+		<div class="row affix-row col-sm-3 well back" id="menu">
 			<div class="form-horizontal">
 				<div class="form-group-sm ">
                 <!--
                 <form action="guardarExamen.php" method="post">
                 -->
-                	<input type="hidden" value="<?PHP echo htmlentities($IDTema); ?>" id="IDTema">
+                	<input type="hidden" value="<?PHP echo htmlentities($IDTema); ?>" id="IDTema,
 					<button class="buttonTransparentBorder buttonAlta " id="guardar"><span class="glyphicon glyphicon-saved"></span> Guardar examen</button>
                  <!--
                 </form>
@@ -147,7 +147,7 @@ if($tipoPer == "Alumno")
 
 				<div class="form-group" id="NopC">
 					<div class="col-sm-11">
-						<label class="control-label"> Número de opciones: </label>
+						<label class="control-label whiteClassThin"> Número de opciones: </label>
 					</div>
 					<div class="col-sm-7">
 						<input type="number" name="nuopC" id="nuopC" min="2" max="10" value="4" class="form-control">
