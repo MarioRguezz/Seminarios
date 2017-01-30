@@ -101,7 +101,7 @@ if($tipoPer == "Alumno")
                 <!--
                 <form action="guardarExamen.php" method="post">
                 -->
-                	<input type="hidden" value="<?PHP echo htmlentities($IDTema); ?>" id="IDTema">
+                	<input type="hidden" value="<?PHP echo htmlentities($IDTema); ?>" id="IDTema,
 					<button class="buttonTransparentBorder buttonAlta " id="guardar"><span class="glyphicon glyphicon-saved"></span> Guardar examen</button>
                  <!--
                 </form>
