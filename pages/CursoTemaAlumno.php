@@ -353,6 +353,7 @@ else
     
     <li> <a href='#'>
     <?PHP
+    echo "$rowses[MatAlumno]";
             $sqlx = "SELECT Status FROM habilita_exam WHERE IDTema = '$filases[id_Tema]' AND Mat_Alu = '$rowses[Mat_Alumno]';";
 			$resuxo = mysqli_query($conexia, $sqlx);
 			$rowy = mysqli_fetch_array($resuxo);
@@ -1066,12 +1067,5 @@ else
 <br><br>
 
 
-<footer>
-    	<div class="form-group">
-        	<div class="col-md-8">
-    			<h3>Seminario</h3>
-        	</div>
-        </div>
-</footer>
 
 </html>
