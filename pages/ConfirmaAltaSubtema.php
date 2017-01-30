@@ -173,7 +173,7 @@ if($accion == 'Nu3v@')
 					{				}
 					else
 					{
-						echo "hubo un error al subir el archivo de audiointente de nuevo".mysql_error();
+						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 					}
 				}
 
@@ -198,7 +198,7 @@ if($accion == 'Nu3v@')
 					{				}
 					else
 					{
-						echo "hubo un error al subir el archivo de audiointente de nuevo".mysql_error();
+						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 					}
 				}
 
@@ -223,7 +223,7 @@ if($accion == 'Nu3v@')
 					{				}
 					else
 					{
-						echo "hubo un error al subir el archivo de audiointente de nuevo".mysql_error();
+						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 					}
 				}
 			}
@@ -249,7 +249,7 @@ if($accion == 'Nu3v@')
 				}
 				else
 				{
-					print_r(mysql_error());
+					print_r(mysqli_error());
 					echo '<script>alert("hubo un error intente de nuevo más tarde")</script> ';
 					$accion="VACIO";
 					echo "<script>location.href='MisCursosInstructor.php'</script>";

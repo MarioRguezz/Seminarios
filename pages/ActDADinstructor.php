@@ -1,16 +1,16 @@
-<?PHP 
+<?PHP
 //conexion
 
 include '../php/conexion.php';
 
 $conexion = conect();
 
-$id=$_SESSION['ActDAD']; 
+$id=$_SESSION['ActDAD'];
 $accion = $_GET['accion'];
 
 $sql="SELECT * FROM tema_actividad WHERE id_Actividad = '$id'";
-$resultado = mysql_query($sql);		
-$row = mysql_fetch_array($resultado);
+$resultado = mysqli_query($conexion,$sql);
+$row = mysqli_fetch_array($resultado);
 
 ?>
 <!doctype html>
@@ -24,10 +24,10 @@ $row = mysql_fetch_array($resultado);
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Principal.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
-    
+
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/login.css">    
-    
+    <link rel="stylesheet" href="../css/login.css">
+
 <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
@@ -59,7 +59,7 @@ echo $row['ubica'];
 <?PHP
 
 if($accion == 'nu3v0')
-{	 
+{
 	 $conta = 1;
 	 $band = 1;
 	 $banderas = 0;
@@ -72,43 +72,43 @@ if($accion == 'nu3v0')
 		 else
 		 {
 			$Resp = strtoupper($_POST[$conta]);
-			 
+
 			$query = "INSERT INTO respuestas_dad (id_Actividad, preg, respuesta) VALUES ('$id', '$conta', '$Resp');";
 			print_r($query);
 			$conta ++;
-			if(mysql_query($query,$conexion))
+			if(mysqli_query($conexion,$query))
 			{
 				$banderas = 1;
 			}
 			else
 			{
-				echo mysql_error()."<br>";
+				echo mysqli_error()."<br>";
 				$banderas = 0;
 			}
 		 }
 	 }
-	 
+
 	 if($banderas == 1)
 	 {
-			 echo '<script> 
-			 swal({   
-						title: "Las respuestas se han guardado",   
-						text: "de clic en el boton para continuar",  
-						type: "success",   
-						showCancelButton: false,   
-						confirmButtonColor: "#00FF00",   
-						confirmButtonText: "Continuar",   
-						cancelButtonText: "No, cancel plx!",   
-						closeOnConfirm: false,   
-						closeOnCancel: false }, 
-														
-						function(isConfirm){   
-						if (isConfirm) 
+			 echo '<script>
+			 swal({
+						title: "Las respuestas se han guardado",
+						text: "de clic en el boton para continuar",
+						type: "success",
+						showCancelButton: false,
+						confirmButtonColor: "#00FF00",
+						confirmButtonText: "Continuar",
+						cancelButtonText: "No, cancel plx!",
+						closeOnConfirm: false,
+						closeOnCancel: false },
+
+						function(isConfirm){
+						if (isConfirm)
 						{
-							location.href="MisCursosInstructor.php"	     
-						} 
+							location.href="MisCursosInstructor.php"
+						}
 					});
-			 
+
 			  </script>';
 	 }
 }

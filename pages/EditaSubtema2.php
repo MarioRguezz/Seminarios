@@ -15,29 +15,29 @@ if(isset($_SESSION['tipoP']))
 }
 else
 {
-	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';   
-	echo "<script>location.href='login.php'</script>";	
+	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';
+	echo "<script>location.href='login.php'</script>";
 }
 
 if($tipoPer == "Alumno")
 {
 	logout();
-		echo '<script>alert("Acceso denegado... Sitio exclusivo para Instructores y administradores")</script> ';   
-		echo "<script>location.href='login.php'</script>";			
+		echo '<script>alert("Acceso denegado... Sitio exclusivo para Instructores y administradores")</script> ';
+		echo "<script>location.href='login.php'</script>";
 }
 
-	$conexia = conect();	
-	
+	$conexia = conect();
+
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
-	$resultadoses = mysql_query($queryxe);		
-	$rowses = mysql_fetch_array($resultadoses);
-	
+	$resultadoses = mysqli_query($conexia,$queryxe);
+	$rowses = mysqli_fetch_array($resultadoses);
+
 	if($rowses['Status'] == "BAJA")
 	{
 		logout();
-		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';   
-		echo "<script>location.href='login.php'</script>";		
+		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';
+		echo "<script>location.href='login.php'</script>";
 	}
 
 ?>
@@ -54,7 +54,7 @@ if($tipoPer == "Alumno")
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Principal.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
-    
+
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/inicio.js"></script>
     <link rel="stylesheet" href="../css/login.css">
@@ -66,24 +66,24 @@ if($tipoPer == "Alumno")
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    
+
     <script src="../js/spinner.js"></script>
-    
+
     <script src="../js/autcomp.js"></script>
-    
+
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
 <script>
-		var data = [            
-    <?php 
+		var data = [
+    <?php
         for($i=0;$i<count($res);$i++){//25
     echo '{ value: "'.$res[$i]['nombre'].'", label: "'.$res[$i]['id'].'"},';}
             //echo '{ value: "nombre'.$i.'", label: "000'.$i.'"},';}
             ?>
-            
+
             ];
-</script> 
+</script>
 
 </head>
 
@@ -95,13 +95,13 @@ if($tipoPer == "Alumno")
 	<div class="col-md-1" >
     	<h4>Menú</h4>
     </div>
-    
+
     <div class="col-md-2" >
     	<a class="btn btn-info" href="principal.php">Menú principal</a>
     </div>
     <div class="col-md-2 col-md-offset-7">
         <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
-    </div>	
+    </div>
 </div>
 
 <!--	FIN	Menu en el Encabezado	-->
@@ -115,12 +115,12 @@ if($tipoPer == "Alumno")
 
 <?PHP
 	$query = "SELECT * FROM curso_subtema where id_Subtema = '$IDSubtema'";
-	$resultas = mysql_query($query);
-	$row = mysql_fetch_array($resultas);	
+	$resultas = mysqli_query($conexia,$query);
+	$row = mysqli_fetch_array($resultas);
 ?>
 
 <form action="#">
-                
+
 <div class="form-group bg-info">
 	<label for="opcion1" class="control-label col-md-3">Tipo de archivo a subir</label>
     <div class="col-md-3">
@@ -148,7 +148,7 @@ if($tipoPer == "Alumno")
     <input class="form-control" id="nombre" name="Nombre" type="text" placeholder="Nombre del subtema" value="<?PHP echo htmlentities($row['Nombre']); ?>" required>
     </div>
 </div>
- 
+
  <div class="form-group">
 <label for="nombre" class="control-label col-md-3">Descripción*</label>
     <div class="col-md-8">
@@ -177,13 +177,13 @@ if($tipoPer == "Alumno")
 	<div class="col-md-2 col-md-offset-2">
     	<input type="hidden" value="<?PHP echo htmlentities($IDSubtema); ?>" name="IDSubtema">
         <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
-		
+
         <!--
-        <button class="btn btn-success" id="btn-registro" type="submit">Crear subtema &nbsp; <span class="glyphicon glyphicon-ok"></span></button> 
+        <button class="btn btn-success" id="btn-registro" type="submit">Crear subtema &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
         -->
-        
+
         <input type="submit" class="btn btn-success col-md-offset-7" value="Editar subtema">
-        
+
     </div>
 </div>
 </form> <!--Fin del form PDF-->
@@ -199,7 +199,7 @@ if($tipoPer == "Alumno")
     <input class="form-control" id="nombre" name="Nombre2" type="text" placeholder="Nombre del subtema" value="<?PHP echo htmlentities($row['Nombre']); ?>" required>
     </div>
 </div>
- 
+
  <div class="form-group">
 <label for="nombre" class="control-label col-md-3">Descripción*</label>
     <div class="col-md-8">
@@ -228,13 +228,13 @@ if($tipoPer == "Alumno")
 	<div class="col-md-2 col-md-offset-2">
     	<input type="hidden" value="<?PHP echo htmlentities($IDSubtema); ?>" name="IDSubtema2">
         <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso2">
-		
+
         <!--
-        <button class="btn btn-success" id="btn-registro" type="submit">Crear subtema &nbsp; <span class="glyphicon glyphicon-ok"></span></button> 
+        <button class="btn btn-success" id="btn-registro" type="submit">Crear subtema &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
         -->
-        
+
         <input type="submit" class="btn btn-success col-md-offset-7" value="Editar subtema">
-        
+
     </div>
 </div>
 </form> <!--Fin del form Video-->
@@ -251,7 +251,7 @@ if($tipoPer == "Alumno")
     <input class="form-control" id="nombre" name="Nombre3" type="text" placeholder="Nombre del subtema" value="<?PHP echo htmlentities($row['Nombre']); ?>" required>
     </div>
 </div>
- 
+
  <div class="form-group">
 <label for="nombre" class="control-label col-md-3">Descripción*</label>
     <div class="col-md-8">
@@ -270,8 +270,8 @@ if($tipoPer == "Alumno")
 
 <div class="form-group" id="Audio">
 <label for="Audio" class="control-label col-md-3">Adjunte Audio no mayor a 50 Mb</label>
-	<input type="file" name="Audio" class="btn btn-primary"> 
-</div> 
+	<input type="file" name="Audio" class="btn btn-primary">
+</div>
 
 
 <br><br>
@@ -280,19 +280,19 @@ if($tipoPer == "Alumno")
 	<div class="col-md-2 col-md-offset-2">
     	<input type="hidden" value="<?PHP echo htmlentities($IDSubtema); ?>" name="IDSubtema3">
         <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso3">
-		
+
         <!--
-        <button class="btn btn-success" id="btn-registro" type="submit">Crear subtema &nbsp; <span class="glyphicon glyphicon-ok"></span></button> 
+        <button class="btn btn-success" id="btn-registro" type="submit">Crear subtema &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
         -->
-        
+
         <input type="submit" class="btn btn-success col-md-offset-7" value="Editar subtema">
-        
+
     </div>
 </div>
 </form> <!--Fin del form Audio-->
 </div> <!--Fin del div Audio-->
-   
-    
+
+
 </div> <!-- Fin del div principal Alta curso-->
 
 
@@ -300,14 +300,5 @@ if($tipoPer == "Alumno")
 <br><br>
 
 </body>
-
-
-<footer>
-    	<div class="form-group">
-        	<div class="col-md-8">
-    			<h3>Seminario</h3>
-        	</div>
-        </div>
-</footer>
 
 </html>

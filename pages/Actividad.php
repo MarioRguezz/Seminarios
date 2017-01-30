@@ -17,29 +17,29 @@ if(isset($_SESSION['tipoP']))
 }
 else
 {
-	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';   
-	echo "<script>location.href='login.php'</script>";	
+	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';
+	echo "<script>location.href='login.php'</script>";
 }
 
 if($tipoPer != "Alumno")
 {
 	logout();
-		echo '<script>alert("Acceso denegado... Sitio exclusivo para Alumnos")</script> ';   
-		echo "<script>location.href='login.php'</script>";			
+		echo '<script>alert("Acceso denegado... Sitio exclusivo para Alumnos")</script> ';
+		echo "<script>location.href='login.php'</script>";
 }
 
-	$conexia = conect();	
-	
+	$conexia = conect();
+
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
-	$resultadoses = mysql_query($queryxe);		
-	$rowses = mysql_fetch_array($resultadoses);
-	
+	$resultadoses = mysqli_query($conexia,$queryxe);
+	$rowses = mysqli_fetch_array($resultadoses);
+
 	if($rowses['Status'] == "BAJA")
 	{
 		logout();
-		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';   
-		echo "<script>location.href='login.php'</script>";		
+		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';
+		echo "<script>location.href='login.php'</script>";
 	}
 
 ?>
@@ -52,21 +52,21 @@ if($tipoPer != "Alumno")
 <script src="../js/jquery.min.js"></script>
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <script src="../js/bootstrap/js/bootstrap.min.js"></script>    
+    <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/Actividad.css">
-    
+
     <!--
-    <link rel="stylesheet" href="../css/demo.css">	
+    <link rel="stylesheet" href="../css/demo.css">
     <link rel="stylesheet" href="../css/jquery.dad.css">
     <link rel="stylesheet" href="../css/EstiloT0305.css" type="text/css" media="screen" />
-    
+
     <script src="../js/jquery.dad.js"></script>
     -->
-                                                                
+
     <!--<script language="JavaScript" src="jquery.js"></script>-->
-    <script language="JavaScript" src="../js/TemaActividad.js"></script>    
-    
-    
+    <script language="JavaScript" src="../js/TemaActividad.js"></script>
+
+
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
@@ -82,13 +82,13 @@ if($tipoPer != "Alumno")
 	<div class="col-md-1" >
     	<h4>Menú</h4>
     </div>
-    
+
     <div class="col-md-2" >
     	<a class="btn btn-info" href="principal.php">Menú principal</a>
     </div>
     <div class="col-md-2 col-md-offset-7">
         <a class="btn btn-danger" href="Cerrar.php">Cerrar sesión</a>
-    </div>	
+    </div>
 </div>
 
 <!--	FIN	Menu en el Encabezado	-->
@@ -101,12 +101,13 @@ if($tipoPer != "Alumno")
 <br><br>
 
 <?PHP
+$conexia = conect();
 	$sql = "SELECT * FROM tema_actividad WHERE id_Tema = '$IDTema';";
-	$resul = mysql_query($sql);	
-	$rowsesx = mysql_fetch_array($resul);
-	
+	$resul = mysqli_query($conexia,$sql);
+	$rowsesx = mysqli_fetch_array($resul);
+
 	$opciones = substr($rowsesx['id_Actividad'],0, 3);
-	
+
 	if($opciones == "ACT")
 	{
 ?>
@@ -126,11 +127,11 @@ if($tipoPer != "Alumno")
             <div id="imagenes">
             <?PHP
 				$sql1 = "SELECT * FROM tema_actividad WHERE id_Tema = '$IDTema';";
-				$resulta = mysql_query($sql1);
-				$NumRow = mysql_num_rows($resulta);
-				$TotalIMG = $NumRow * 2;				
+				$resulta = mysqli_query($conexia,$sql1);
+				$NumRow = mysqli_num_rows($resulta);
+				$TotalIMG = $NumRow * 2;
 				$conta = 1;
-				while($row = mysql_fetch_array($resulta))	
+				while($row = mysqli_fetch_array($resulta))
 				{
 					$Imagen[$conta] = $row['ubica'];
 					//print_r($Imagen[$conta]."<br>");
@@ -139,9 +140,9 @@ if($tipoPer != "Alumno")
 				$conta = 1;
 				//print_r("El total de imagenes es: ".$TotalIMG."<br>");
 				//print_r("El total filas es: ".$NumRow."<br>");
-				
+
 				for($x = 1; $x <= $TotalIMG; $x++)
-				{					
+				{
 					if($conta > $NumRow)
 					{
 						//print_r("Entré en esta pendejada <br>");
@@ -150,7 +151,7 @@ if($tipoPer != "Alumno")
 					}
 					//print_r($x);
 					//print_r($Imagen[$conta]."<br>");
-			?>                        	
+			?>
                 <div id="img<?PHP echo htmlentities($x); ?>"><img src="<?PHP echo htmlentities($Imagen[$conta]); ?>" alt = "Memorama" width="120" height="85" /></div>
             <?PHP
 				$conta++;
@@ -163,8 +164,8 @@ if($tipoPer != "Alumno")
 
 	<?PHP
 	}//Fin de la actividad Memorama
-	else if($opciones == "DAD")	
-	{		
+	else if($opciones == "DAD")
+	{
 		echo $rowsesx['ubica'];
 	} //Fin de la actividad DAD
 	else
@@ -178,7 +179,7 @@ if($tipoPer != "Alumno")
     <?PHP
 	}//Fin del if de la ultima actividad
 	?>
-    
+
 </div> <!-- Fin del div principal-->
 
 
@@ -189,13 +190,5 @@ if($tipoPer != "Alumno")
 
 </body>
 
-
-<div class="footer">
-    	<div class="form-group">
-        	<div class="col-md-8">
-    			<h3>Seminario</h3>
-        	</div>
-        </div>
-</div>
 
 </html>

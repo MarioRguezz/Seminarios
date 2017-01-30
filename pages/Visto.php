@@ -9,22 +9,22 @@ $Curso = $_POST['Curso'];
 $conex = conect();
 
 $sql = "SELECT Visto FROM subtema_visto WHERE Mat_Alumno = '$Alumno' AND id_Subtema = '$Tema' AND id_Curso = '$Curso';";
-$resultadoses = mysql_query($sql);		
-$rowses = mysql_fetch_array($resultadoses);
+$resultadoses = mysqli_query($conex,$sql);
+$rowses = mysqli_fetch_array($resultadoses);
 
 
 if($rowses['Visto'] == ""){
-	
+
 	$consulta = "INSERT INTO subtema_visto (id_Curso, id_Subtema, Mat_Alumno, Visto) Values('$Curso','$Tema', '$Alumno', '1');";
-	if(mysql_query($consulta, $conex))
+	if(mysqli_query($conex,$consulta))
 	{	}
 	else
 	{
-		echo mysql_error()."<br>";
+		echo mysqli_error()."<br>";
 	}
 //*
 }
-else 
+else
 {
 	if ($rowses['Visto'] == "0")
 	{
@@ -36,11 +36,11 @@ else
 		$consulta = "UPDATE subtema_visto SET Visto = '0' WHERE Mat_Alumno = '$Alumno' AND id_Subtema = '$Tema';";
 	}
 	//*/
-	if(mysql_query($consulta, $conex))
+	if(mysqli_query($conex,$consulta))
 	{	}
 	else
 	{
-		echo mysql_error()."<br>";
+		echo mysqli_error()."<br>";
 	}
 }
 //*/

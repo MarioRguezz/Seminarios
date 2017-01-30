@@ -1,11 +1,11 @@
-<?PHP 
+<?PHP
 //conexion
 
 include '../php/conexion.php';
 
 $conexion = conect();
 
-$id=$_POST['IDTema']; 
+$id=$_POST['IDTema'];
 $IDCurso = $_POST['IDCurso'];
 
 $Mat_Alu = $_POST['Mat_Alumno'];
@@ -13,8 +13,8 @@ $Mat_Alu = $_POST['Mat_Alumno'];
 $accion = $_GET['accion'];
 
 $sql="SELECT * FROM examen WHERE id_Tema = '$id'";
-$resultado = mysql_query($sql);		
-$row = mysql_fetch_array($resultado);
+$resultado = mysqli_query($conexion,$sql);
+$row = mysqli_fetch_array($resultado);
 
 ?>
 <!doctype html>
@@ -28,7 +28,7 @@ $row = mysql_fetch_array($resultado);
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Principal.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
-    
+
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/login.css">
 
@@ -38,10 +38,10 @@ $row = mysql_fetch_array($resultado);
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    
+
     <script src="../js/spinner.js"></script>
-    
-    
+
+
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 

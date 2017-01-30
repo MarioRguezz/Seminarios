@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Principal.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
-    
+
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/login.css">
 
@@ -19,17 +19,17 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    
+
     <script src="../js/spinner.js"></script>
-    
-    
+
+
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
 </head>
 
 <body>
-<?PHP 
+<?PHP
 //conexion
 
 include '../php/conexion.php';
@@ -38,7 +38,7 @@ $conexion = conect();
 
 $id=$_POST['idCurso'];
 $html=$_POST['examen'];
-$fecha = date("Y-m-d"); 
+$fecha = date("Y-m-d");
 
 $IDExamen = substr($id,0, 2).'ex'.rand(1000, 9999);
 //echo  json_encode($sql);
@@ -46,10 +46,10 @@ $IDExamen = substr($id,0, 2).'ex'.rand(1000, 9999);
 $sql="INSERT INTO examen (ID_Examen, id_Tema, htmlExa, fecha) VALUES('$IDExamen', '$id', '$html', '$fecha');";
 print_r($sql);
 
-if(mysql_query($sql1,$conexion))
-				{					
-			?>		
-					<div class="alert alert-success" align="center">                    	
+if(mysqli_query($conexion,$sql1))
+				{
+			?>
+					<div class="alert alert-success" align="center">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <label class="btn-large ">El examen ha sido creado clic en el botón para continuar</label>
                     </div>
@@ -64,13 +64,13 @@ if(mysql_query($sql1,$conexion))
 				else
 				{
 					/*
-					echo '<script>alert("hubo un error intente de nuevo más tarde")</script> '; 
-					$accion="VACIO";   
-					echo "<script languaje='javascript' type='text/javascript'>window.close();</script>";		
-					*/					
+					echo '<script>alert("hubo un error intente de nuevo más tarde")</script> ';
+					$accion="VACIO";
+					echo "<script languaje='javascript' type='text/javascript'>window.close();</script>";
+					*/
 				}
-						
-			mysql_close($conec);
+
+			mysqli_close($conec);
 
 ?>
 </body>

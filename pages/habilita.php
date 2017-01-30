@@ -8,22 +8,22 @@ $Tema = $_POST['Tema'];
 $conex = conect();
 
 $sql = "SELECT Status FROM habilita_exam WHERE Mat_Alu = '$Alumno' AND IDTema = '$Tema';";
-$resultadoses = mysql_query($sql);		
-$rowses = mysql_fetch_array($resultadoses);
+$resultadoses = mysqli_query($conex,$sql);
+$rowses = mysqli_fetch_array($resultadoses);
 
 
 if($rowses['Status'] == ""){
-	
+
 	$consulta = "INSERT INTO habilita_exam (IDTema, Mat_Alu, Status) Values('$Tema', '$Alumno', 'ACTIVO');";
-	if(mysql_query($consulta, $conex))
+	if(mysqli_query( $conex,$consulta))
 	{	}
 	else
 	{
-		echo mysql_error()."<br>";
+		echo mysqli_error()."<br>";
 	}
 //*
 }
-else 
+else
 {
 	if ($rowses['Status'] == "INACTIVO")
 	{
@@ -33,11 +33,11 @@ else
 	{
 		$consulta = "UPDATE habilita_exam SET Status = 'INACTIVO' WHERE Mat_Alu = '$Alumno';";
 	}
-	if(mysql_query($consulta, $conex))
+	if(mysqli_query($conex,$consulta))
 	{	}
 	else
 	{
-		echo mysql_error()."<br>";
+		echo mysqli_error()."<br>";
 	}
 }
 //*/

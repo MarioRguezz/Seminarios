@@ -274,7 +274,7 @@ if($accion == 'Nu3v@')
 					{				}
 					else
 					{
-						echo "hubo un error al subir el archivo de audiointente de nuevo".mysql_error();
+						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 					}
 				}
 
@@ -299,7 +299,7 @@ if($accion == 'Nu3v@')
 					{				}
 					else
 					{
-						echo "hubo un error al subir el archivo de audiointente de nuevo".mysql_error();
+						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 					}
 				}
 
@@ -324,7 +324,7 @@ if($accion == 'Nu3v@')
 					{				}
 					else
 					{
-						echo "hubo un error al subir el archivo de audiointente de nuevo".mysql_error();
+						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 					}
 				}
 			}

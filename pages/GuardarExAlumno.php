@@ -17,7 +17,7 @@ $Mat_Alumno = $_POST['Mat_Alu'];
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Principal.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
-    
+
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/login.css">
 
@@ -27,10 +27,10 @@ $Mat_Alumno = $_POST['Mat_Alu'];
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    
+
     <script src="../js/spinner.js"></script>
-    
-    
+
+
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
@@ -45,23 +45,23 @@ $Mat_Alumno = $_POST['Mat_Alu'];
  $conta = 1;
 	 $band = 1;
 	 $banderas = 0;
-	 
-	 
-	 $fecha = date("Y-m-d"); 
-	 
+
+
+	 $fecha = date("Y-m-d");
+
 	 $conexion = conect();
-	 
+
 	 //*
-	 
+
 	  $sql1 = "UPDATE habilita_exam SET Status = 'INACTIVO' WHERE IDTema = '$IDTema' AND Mat_Alu = '$Mat_Alumno';";
-	  if(mysql_query($sql1, $conexion))
+	  if(mysqli_query($conexion,$sql1))
 	  {		  }
 	  else
 	  {
 		  echo 'ERROR AL Actualizar habilita_exam'.'<br>';
-		  echo mysql_error().'<br>';
+		  echo mysqli_error().'<br>';
 	  }
-	 
+
 	 while($band == 1)
 	 {
 		 if(empty($_POST[$conta]))
@@ -71,52 +71,52 @@ $Mat_Alumno = $_POST['Mat_Alu'];
 		 else
 		 {
 			 $Resp = strtoupper($_POST[$conta]);
-			 
+
 			$query = "INSERT INTO respuestas_alumno (ID_Examen, Mat_Alumno, Preg, respuesta) VALUES ('$id', '$Mat_Alumno', '$conta', '$Resp');";
 			$conta ++;
-			if(mysql_query($query,$conexion))
+			if(mysqli_query($conexion,$query))
 			{
 				$banderas = 1;
 			}
 			else
 			{
 				echo 'ERROR AL INSERTAR respuestas_alumno'.'<br>';
-				echo mysql_error()."<br>";
+				echo mysqli_error()."<br>";
 				$banderas = 0;
 			}
 		 }
 	 }
 	 //*/
-	 
+
 	 $x = 0;
 	 $queryAlu = "SELECT respuesta FROM respuestas_alumno WHERE Mat_Alumno = '$Mat_Alumno' AND ID_Examen = '$id';";
-	 $resultAlu = mysql_query($queryAlu);		 
-	 while($rowAlu = mysql_fetch_array($resultAlu))
+	 $resultAlu = mysqli_query($conexion,$queryAlu);
+	 while($rowAlu = mysqli_fetch_array($resultAlu))
 	 {
 		 $RAlumno[$x] = $rowAlu['respuesta'];
 		 $x++;
 	 }
-	 
-	 
+
+
 	 $y = 0;
 	 $queryIns = "SELECT respuesta FROM respuestas_instructor WHERE ID_Examen = '$id';";
-	 $resultIns = mysql_query($queryIns);		 
-	 while($rowIns = mysql_fetch_array($resultIns))
+	 $resultIns = mysqli_query($conexion,$queryIns);
+	 while($rowIns = mysqli_fetch_array($resultIns))
 	 {
 		 $RInstructor[$y] = $rowIns['respuesta'];
 		 $y++;
-	 }	 
-	 
+	 }
+
 	 $queryConta = "SELECT * FROM respuestas_instructor WHERE ID_Examen = '$id';";
-	 $resultConta = mysql_query($queryConta);		 
-	 //$rowConta = mysql_fetch_array($resultConta);
-	 $Total = mysql_num_rows($resultConta);
+	 $resultConta = mysqli_query($conexion,$queryConta);
+	 //$rowConta = mysqli_fetch_array($resultConta);
+	 $Total = mysqli_num_rows($resultConta);
 	 //print_r("El Total es <br>");
 	 //print_r($Total);
-	 
+
 	 //*
 	 $aciertos = 0;
-	 
+
 	 for($j = 0; $j < $y; $j++)
 	 {
 		 if($RInstructor[$j] == $RAlumno[$j])
@@ -124,15 +124,15 @@ $Mat_Alumno = $_POST['Mat_Alu'];
 			 $aciertos++;
 		 }
 	 }
-	 
+
 	 $califica = (10 * $aciertos) / $Total;
 	 $calificacion = round($califica, 1, PHP_ROUND_HALF_UP);
-	 
+
 	 $sql2 = "INSERT INTO examen_alumno (ID_Examen, Mat_Alumno, id_Tema, Calificacion, Fecha) VALUES ('$id', '$Mat_Alumno','$IDTema', '$calificacion', '$fecha');";
-	 
-	 
-	 
-	 if(mysql_query($sql2,$conexion))
+
+
+
+	 if(mysqli_query($conexion,$sql2))
 	 {
 		 	$banderas = 1;
 	 }
@@ -140,15 +140,15 @@ $Mat_Alumno = $_POST['Mat_Alu'];
 	 {
 		 $banderas = 0;
 		 echo 'ERROR AL INSERTAR examen_alumno'.'<br>';
-		 echo mysql_error().'<br>';
+		 echo mysqli_error().'<br>';
 	 }
-	 
+
 	 if($banderas == 1)
 	 {
 	?>
-    	    <div class="alert alert-success" align="center">                    	
+    	    <div class="alert alert-success" align="center">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <label class="btn-large ">Su examen se ha sido calificado con éxito clic en el botón para continuar</label>                     
+                        <label class="btn-large ">Su examen se ha sido calificado con éxito clic en el botón para continuar</label>
                     </div>
                     <br><br>
                     <center>
@@ -164,11 +164,11 @@ $Mat_Alumno = $_POST['Mat_Alu'];
 	 else
 	 {
 	?>
-    
+
     <?PHP
-		 
+
 	 }
-	 
+
 	 //*/
 
 ?>

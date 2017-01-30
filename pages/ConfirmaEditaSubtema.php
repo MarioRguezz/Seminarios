@@ -30,8 +30,8 @@ if($tipoPer == "Alumno")
 
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
-	$resultadoses = mysql_query($queryxe);
-	$rowses = mysql_fetch_array($resultadoses);
+	$resultadoses = mysqli_query($conexia,$queryxe);
+	$rowses = mysqli_fetch_array($resultadoses);
 
 	if($rowses['Status'] == "BAJA")
 	{
@@ -150,17 +150,17 @@ if($accion == 'PDF')
 
 				$consulta = "INSERT INTO material_doc (id_Subtema, ubica) VALUES ('$clave', '$destino');";
 
-				if(mysql_query($consulta, $conec))
+				if(mysqli_query($conec,$consulta))
 				{				}
 				else
 				{
-					echo "hubo un error al subir el archivo de audiointente de nuevo".mysql_error();
+					echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 				}
 			}
 
 			$cons = "UPDATE curso_subtema SET Nombre = '$_POST[Nombre]', Descrip = '$_POST[Descripcion]' WHERE id_Subtema = '$clave';";
 
-			if(mysql_query($cons,$conec))
+			if(mysqli_query($conec,$cons))
 				{
 			?>
 					<div class="alert alert-success" align="center">
@@ -182,7 +182,7 @@ if($accion == 'PDF')
 					echo "<script>location.href='MisCursosInstructor.php'</script>";
 				}
 
-			mysql_close($conec);
+			mysqli_close($conec);
 }
 
 
@@ -231,17 +231,17 @@ if($accion == 'Video')
 			$consulta = "INSERT INTO material_video (id_Subtema, ubica) VALUES ('$clave2', '$destino');";
 
 
-			if(mysql_query($consulta, $conec))
+			if(mysqli_query($conec,$consulta))
 			{				}
 			else
 			{
-				echo "hubo un error al subir el archivo de audiointente de nuevo".mysql_error();
+				echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 			}
 		}
 
 		$cons = "UPDATE curso_subtema SET Nombre = '$_POST[Nombre2]', Descrip = '$_POST[Descripcion2]' WHERE id_Subtema = '$clave2';";
 
-			if(mysql_query($cons,$conec))
+			if(mysqli_query($conec,$cons))
 				{
 			?>
 					<div class="alert alert-success" align="center">
@@ -263,7 +263,7 @@ if($accion == 'Video')
 					echo "<script>location.href='MisCursosInstructor.php'</script>";
 				}
 
-			mysql_close($conec);
+			mysqli_close($conec);
 		//*/
 
 }
@@ -297,16 +297,16 @@ if($accion == 'Audio')
 
 		$consulta = "INSERT INTO material_audio (id_Subtema, ubica) VALUES ('$clave3', '$destino');";
 
-		if(mysql_query($consulta, $conec))
+		if(mysqli_query( $conec,$consulta))
 		{				}
 		else
 		{
-			echo "hubo un error al subir el archivo de audiointente de nuevo".mysql_error();
+			echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 		}
 	}
 	$cons = "UPDATE curso_subtema SET Nombre = '$_POST[Nombre3]', Descrip = '$_POST[Descripcion3]' WHERE id_Subtema = '$clave3';";
 
-			if(mysql_query($cons,$conec))
+			if(mysqli_query($conec,$cons))
 				{
 				?>
 					<div class="alert alert-success" align="center">
@@ -328,7 +328,7 @@ if($accion == 'Audio')
 					echo "<script>location.href='MisCursosInstructor.php'</script>";
 				}
 
-			mysql_close($conec);
+			mysqli_close($conec);
 }
 			//*/
 		?>
@@ -337,13 +337,5 @@ if($accion == 'Audio')
 
 </body>
 
-
-<footer>
-    	<div class="form-group">
-        	<div class="col-md-8">
-    			<h3>Seminario</h3>
-        	</div>
-        </div>
-</footer>
 
 </html>

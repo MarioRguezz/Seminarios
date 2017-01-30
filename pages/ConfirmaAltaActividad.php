@@ -187,7 +187,7 @@ if($accion == 'Nu3v@')
 						}
 						else
 						{
-							echo "hubo un error al subir el archivo de imagen intente de nuevo".mysql_error();
+							echo "hubo un error al subir el archivo de imagen intente de nuevo".mysqli_error();
 							$bandera = 0;
 						}
                     }
@@ -380,7 +380,7 @@ else
 						}
 						else
 						{
-							echo "hubo un error al subir el archivo de imagen intente de nuevo".mysql_error();
+							echo "hubo un error al subir el archivo de imagen intente de nuevo".mysqli_error();
 							$bandera = 0;
 						}
                     }
