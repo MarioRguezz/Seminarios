@@ -82,9 +82,7 @@ if($tipoPer == "Alumno")
 
     <script src="../js/spinner.js"></script>
 <style>
-html{
-	height: 100%;
-}
+
 </style>
 </head>
 
