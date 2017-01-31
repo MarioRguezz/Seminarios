@@ -80,7 +80,11 @@ if($tipoPer != "Alumno")
    <script src="../js/script.js"></script>
 
     <!--<script src="../js/Visto.js"></script> -->
-
+<style>
+html{
+	height: 100%;
+}
+</style>
 
 </head>
 
@@ -111,7 +115,7 @@ if($tipoPer != "Alumno")
 
 <br>
 
-<div class="contenedor">
+<div class="contenedor top">
 
 <?PHP
 if($accion == 'C0R50')
@@ -423,7 +427,7 @@ else
 		?>
         	<form action="Actividad.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
             	<input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
-                <center><button class="btn-info" type="submit" title="Actividad de este tema">Actividad &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
+                <center><button class="buttonTransparentBorder buttonMedium" type="submit" title="Actividad de este tema">Actividad &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
             </form>
         <?PHP
 			}
@@ -985,7 +989,7 @@ else
 		?>
         	<form action="Actividad.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
             	<input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
-                <center><button class="btn-info" type="submit" title="Actividad de este tema">Actividad &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
+                <center><button class="buttonTransparentBorder buttonMedium" type="submit" title="Actividad de este tema">Actividad &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
             </form>
 
         <?PHP
@@ -995,7 +999,7 @@ else
 		?>
         	<form action="DAD.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
             	<input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
-                <center><button class="btn-info" type="submit" title="Actividad de este tema">Actividad &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
+                <center><button class="buttonTransparentBorder buttonMedium" type="submit" title="Actividad de este tema">Actividad &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
             </form>
         <?PHP
 			}
@@ -1006,7 +1010,7 @@ else
         	<form action="Puzzle.php" class="form-horizontal" method="post" target="_blank">
             	<input type="hidden" value="<?PHP echo htmlentities($Imagen); ?>" name="Imagen">
             	<input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
-                <center><button class="btn-info" type="submit" title="Actividad de este tema">Actividad &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
+                <center><button class="buttonTransparentBorder buttonMedium" type="submit" title="Actividad de este tema">Actividad &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
             </form>
         <?PHP
 			}
@@ -1042,7 +1046,7 @@ else
 
 </div> <!-- Fin del class Vertical -->
 
-<div class="contenido col-md-9">
+<div class="contenido col-md-9  top">
 
 <center>
 

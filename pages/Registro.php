@@ -58,42 +58,42 @@ $accion = $_GET['accion'];
 <div class="form-group">
 <label for="nombre" class="control-label col-md-3 whiteClass">Nombre</label>
     <div class="col-md-6">
-    <input class="form-control" id="nombre" name="nombre" type="text" placeholder="" required>
+    <input class="form-control NoRadius" id="nombre" name="nombre" type="text" placeholder="" required>
     </div>
 </div>
 
 <div class="form-group">
 <label for="apaterno" class="control-label col-md-3 whiteClass">Apellido Paterno</label>
     <div class="col-md-6">
-    <input class="form-control" id="apaterno"  name="apaterno" type="text" placeholder="" required>
+    <input class="form-control NoRadius" id="apaterno"  name="apaterno" type="text" placeholder="" required>
     </div>
 </div>
 
 <div class="form-group">
 <label for="amaterno" class="control-label col-md-3 whiteClass">Apellido Materno</label>
     <div class="col-md-6">
-    <input class="form-control" id="amaterno" name="amaterno" type="text" placeholder="" required>
+    <input class="form-control NoRadius" id="amaterno" name="amaterno" type="text" placeholder="" required>
     </div>
 </div>
 
 <div class="form-group">
 <label for="email" class="control-label col-md-3 whiteClass">Email</label>
     <div class="col-md-6">
-    <input class="form-control" id="email" name="email" type="email" placeholder="" required>
+    <input class="form-control NoRadius" id="email" name="email" type="email" placeholder="" required>
     </div>
 </div>
 
 <div class="form-group">
 <label for="password" class="control-label col-md-3 whiteClass">Contraseña</label>
     <div class="col-md-6">
-    <input class="form-control" id="password" name="password" type="password" placeholder="" required>
+    <input class="form-control NoRadius" id="password" name="password" type="password" placeholder="" required>
     </div>
 </div>
 
 <div class="form-group">
 <label for="opcion" class="control-label col-md-3 whiteClass">Sexo</label>
     <div class="col-md-6">
-    <select class="form-control" name="sexo" id="sexo">
+    <select class="form-control NoRadius" name="sexo" id="sexo">
         <option value="Masculino">Masculino</option>
         <option value="Femenino">Femenino</option>
     </select>
@@ -103,42 +103,42 @@ $accion = $_GET['accion'];
 <div class="form-group">
 <label for="telofi" class="control-label col-md-3 whiteClass">Telefono de oficina</label>
     <div class="col-md-6">
-    <input class="form-control" id="telofi" name="telofi" type="text" placeholder="">
+    <input class="form-control NoRadius"  maxlength="15" id="telofi" name="telofi" type="text" placeholder="">
     </div>
 </div>
 
 <div class="form-group">
 <label for="telcasa" class="control-label col-md-3 whiteClass">Telefono de casa</label>
     <div class="col-md-6">
-    <input class="form-control" id="telcasa" name="telcasa" type="text" placeholder="">
+    <input class="form-control NoRadius" maxlength="15" id="telcasa" name="telcasa" type="text" placeholder="">
     </div>
 </div>
 
 <div class="form-group">
 <label for="celular" class="control-label col-md-3 whiteClass">Telefono celular</label>
     <div class="col-md-6">
-    <input class="form-control" id="celular" name="celular" type="text" placeholder="">
+    <input class="form-control NoRadius" maxlength="20" id="celular" name="celular" type="text" placeholder="">
     </div>
 </div>
 
 <div class="form-group">
 <label for="estado" class="control-label col-md-3 whiteClass">Estado</label>
     <div class="col-md-6">
-    <input class="form-control" id="estado" name="estado" type="text" placeholder="">
+    <input class="form-control NoRadius" id="estado" name="estado" type="text" placeholder="">
     </div>
 </div>
 
 <div class="form-group">
 <label for="municipio" class="control-label col-md-3 whiteClass">Municipio</label>
     <div class="col-md-6">
-    <input class="form-control" id="municipio" name="municipio" type="text" placeholder="">
+    <input class="form-control NoRadius" id="municipio" name="municipio" type="text" placeholder="">
     </div>
 </div>
 
 <div class="form-group">
 	<label for="opcion1" class="control-label col-md-3 whiteClass">Tipo de usuario</label>
     <div class="col-md-6">
-    <select class="form-control" name="Tuser" id="Tuser">
+    <select class="form-control NoRadius" name="Tuser" id="Tuser">
         <option value="0">Seleccione una opcion</option>
         <option value="Alumno">Alumno</option>
         <option value="Instructor">Instructor</option>

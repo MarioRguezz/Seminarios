@@ -81,8 +81,11 @@ if($tipoPer == "Alumno")
     </script>
 
     <script src="../js/spinner.js"></script>
-
-
+<style>
+html{
+	height: 100%;
+}
+</style>
 </head>
 
 <body class="backgroundPrincipal">
@@ -337,7 +340,7 @@ if($accion == 'Nu3v@')
                     <div class="form-group">
                     <form action="CursoTemaInstructor.php" method="post">
                     	<input type="hidden" value="<?PHP echo htmlentities($IdeCurso); ?>" name="IDCurso">
-                        <button type="submit" class="btn btn-success" title="Clic aquí para actualizar datos"> Actualizar lista &nbsp; <span class="glyphicon glyphicon-log-in"></span></button>
+                        <button type="submit" class="buttonTransparentBorder buttonAlta" title="Clic aquí para actualizar datos"> Actualizar lista &nbsp; <span class="glyphicon glyphicon-log-in"></span></button>
                     </form>
                     </div>
                     </center>

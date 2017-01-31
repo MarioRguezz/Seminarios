@@ -111,7 +111,7 @@ if($tipoPer == "Alumno")
 <div class="form-group">
 	<label for="opcion1" class="control-label col-md-3 whiteClassThin">Actividad a crear</label>
     <div class="col-md-3">
-    <select class="form-control" name="TAct" id="TAct">
+    <select class="form-control NoRadius" name="TAct" id="TAct">
         <option value="0">Seleccione una opción</option>
         <option value="Memorama">Memorama</option>
         <!--<option value="DAD">Cuestionario interactivo</option>-->

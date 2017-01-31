@@ -258,3 +258,14 @@ body.backgroundPrincipal
 	height: 50px;
 	font-size: 18px;
 }
+
+.buttonMedium{
+	background: transparent;
+	color: white;
+	font-weight: 200;
+	font-size: 25px;
+	height: 60px;
+	width: 200px;
+	border:solid 3px #FFF;
+	border-radius: 0px;
+}

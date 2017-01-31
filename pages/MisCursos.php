@@ -23,7 +23,7 @@ if($tipoPer != "Alumno")
 
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
-	$resultadoses = mysqli_query($queryxe);
+	$resultadoses = mysqli_query($conexia,$queryxe);
 	$rowses = mysqli_fetch_array($resultadoses);
 
 	if($rowses['Status'] == "BAJA")
@@ -39,7 +39,7 @@ $Matricula = 0;
 $conexia = conect();
 
 	$queryze = "SELECT Mat_Alumno FROM alumno WHERE email = '$email';";
-	$resultas = mysqli_query($queryze);
+	$resultas = mysqli_query($conexia,$queryze);
 	$row = mysqli_fetch_array($resultas);
 	$Matricula = $row['Mat_Alumno'];
 

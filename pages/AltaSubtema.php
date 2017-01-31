@@ -132,21 +132,21 @@ html{
 <div class="form-group">
 <label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre del Subtema</label>
     <div class="col-md-6">
-    <input class="form-control" id="nombre" name="Nombre" type="text" placeholder="Nombre del subtema" required>
+    <input class="form-control NoRadius" id="nombre" name="Nombre" type="text" placeholder="" required>
     </div>
 </div>
 
  <div class="form-group">
 <label for="nombre" class="control-label col-md-3 whiteClassThin">Descripción</label>
     <div class="col-md-6">
-    <textarea class="form-control" maxlength="200" rows="5" id="Descrip" name="Descripcion" placeholder="Introduzca una breve descripción del subtema" required></textarea>
+    <textarea class="form-control NoRadius" maxlength="200" rows="5" id="Descrip" name="Descripcion" placeholder="" required></textarea>
     </div>
 </div>
 
 <div class="form-group">
 	<label for="opcion1" class="control-label col-md-3 whiteClassThin">Tipo de archivo a subir</label>
     <div class="col-md-6">
-    <select class="form-control" name="TMat" id="TMat">
+    <select class="form-control NoRadius" name="TMat" id="TMat">
         <option value="0">Seleccione una opción</option>
         <option value="PDF">PDF</option>
         <option value="Video">Video</option>
@@ -159,7 +159,7 @@ html{
 <div class="form-group" id="nombreArchivo">
 <label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre corto para el archivo</label>
     <div class="col-md-6">
-    <input class="form-control" id="nombreArchivo" name="nombreArchivo" type="text" placeholder="Sin espacios, no mayor a 15 caracteres" maxlength="15" required>
+    <input class="form-control NoRadius" id="nombreArchivo" name="nombreArchivo" type="text" placeholder="Sin espacios, no mayor a 15 caracteres" maxlength="15" required>
 </div>
 <br><br><br>
 

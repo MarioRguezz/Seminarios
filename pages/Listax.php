@@ -159,7 +159,7 @@ mysqli_close($conexia);
         <td><center> <?PHP echo htmlentities($row['email']); ?> </center></td>
         <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
         <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="email">
-        <td><center> <button type="submit" class="btn btn-info"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
+        <td><center> <button type="submit" class="buttonTransparentBorder buttonAlta"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
         </form>
 
     </tr>
