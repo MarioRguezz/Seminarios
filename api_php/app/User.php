@@ -35,9 +35,4 @@ class User extends Authenticatable
             'Celular','Sexo','Status','Institucion'];
 
 
-            public function persona(){
-                return $this->belongsTo("App\Persona")->select(array(
-                    'IdPersona','Nombre', 'email'
-                ));
-            }
 }

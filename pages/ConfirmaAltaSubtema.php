@@ -180,7 +180,15 @@ if($accion == 'Nu3v@')
 			}
 			else if($_REQUEST['TMat'] == "Video")
 			{
-				$extension = substr($_FILES["Video"]["type"], (strlen($_FILES["Video"]["type"])-3), strlen($_FILES["Video"]["type"]));
+				$ruta = $_POST['videoUrl'];
+				$consulta = "INSERT INTO material_video (id_Subtema, ubica) VALUES ('$clave', '$ruta');";
+
+								if(mysqli_query($conec,$consulta))
+								{}
+								else{
+									echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
+									}
+			/*	$extension = substr($_FILES["Video"]["type"], (strlen($_FILES["Video"]["type"])-3), strlen($_FILES["Video"]["type"]));
 				$NuevoNombre = 	$_POST['nombreArchivo'].".".$extension;
 				$archivo = $NuevoNombre;
 				$carpeta = "../Mat_Video/";
@@ -201,7 +209,7 @@ if($accion == 'Nu3v@')
 						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 					}
 				}
-
+*/
 			}
 			else if($_REQUEST['TMat'] == "Audio")
 			{

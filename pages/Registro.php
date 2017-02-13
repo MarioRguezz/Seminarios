@@ -1,6 +1,5 @@
 <?PHP
 include '../php/conexion.php';
-
 $accion = $_GET['accion'];
 ?>
 <!doctype html>
@@ -14,13 +13,18 @@ $accion = $_GET['accion'];
 
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/inicio.js"></script>
     <link rel="stylesheet" href="../css/login.css">
     <script src="../js/efectos.js"></script>
+
+
+
+
+
 
     <script src="../dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../dist/sweetalert.css">
@@ -33,11 +37,6 @@ $accion = $_GET['accion'];
     </script>
 
     <script src="../js/personaJS.js"></script>
-    <style>
-    html{
-    	height: 100%;
-    }
-    </style>
 
 </head>
 
@@ -51,7 +50,7 @@ $accion = $_GET['accion'];
 
 <!-- <div class="col-xs-6"> -->
 
-<div class="container"> <!-- Div principal -->
+<div class="container "> <!-- Div principal -->
 
 <form action="Registro.php?accion=Nu3v@" class="form-horizontal" method="post" enctype="multipart/form-data">
 
@@ -100,24 +99,25 @@ $accion = $_GET['accion'];
     </div>
 </div>
 
+
 <div class="form-group">
 <label for="telofi" class="control-label col-md-3 whiteClass">Telefono de oficina</label>
     <div class="col-md-6">
-    <input class="form-control NoRadius"  maxlength="15" id="telofi" name="telofi" type="text" placeholder="">
+    <input class="form-control NoRadius"  maxlength="15" id="telofi" name="telofi" type="tel" pattern="^\d{7,}$" placeholder="">
     </div>
 </div>
 
 <div class="form-group">
 <label for="telcasa" class="control-label col-md-3 whiteClass">Telefono de casa</label>
     <div class="col-md-6">
-    <input class="form-control NoRadius" maxlength="15" id="telcasa" name="telcasa" type="text" placeholder="">
+    <input class="form-control NoRadius" maxlength="15" id="telcasa" name="telcasa" type="tel" pattern="^\d{7,}$"  placeholder="">
     </div>
 </div>
 
 <div class="form-group">
 <label for="celular" class="control-label col-md-3 whiteClass">Telefono celular</label>
     <div class="col-md-6">
-    <input class="form-control NoRadius" maxlength="20" id="celular" name="celular" type="text" placeholder="">
+    <input class="form-control NoRadius" maxlength="20" id="celular" name="celular" type="tel" pattern="^\d{7,}$"  placeholder="">
     </div>
 </div>
 
@@ -190,13 +190,42 @@ $accion = $_GET['accion'];
 
 if($accion == 'Nu3v@')
 		{
+
+      /*  $extension = substr($_FILES["PDF"]["type"], (strlen($_FILES["PDF"]["type"])-3), strlen($_FILES["PDF"]["type"]));
+        $NuevoNombre = 	$_POST['email'].".".$extension;
+        $archivo = $NuevoNombre;
+        $carpeta = "../Mat_Doc/";
+
+
+        if($archivo != "")
+        {
+          opendir($carpeta);
+          $destino = $carpeta.$archivo;
+          copy($_FILES['PDF']['tmp_name'],$destino);
+
+          $consulta = "INSERT INTO material_doc (id_Subtema, ubica) VALUES ('$clave', '$destino');";
+
+          if(mysqli_query($conec,$consulta))
+          {				}
+          else
+          {
+            echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
+          }
+        }
+      */
             $conec = conect();
 			$archivo = "";
 			$destino = "";
 
 			if($_REQUEST['Tuser'] == 'Instructor')
 			{
-				$archivo = $_FILES["Archivo"]["name"];
+
+        $extension = substr($_FILES["Archivo"]["type"], (strlen($_FILES["Archivo"]["type"])-3), strlen($_FILES["Archivo"]["type"]));
+        $NuevoNombre = 	$_POST['email'].".".$extension;
+        $archivo = $NuevoNombre;
+
+
+			//	$archivo = $_FILES["Archivo"]["name"];
 				$carpeta = "../CV/";
 
 				if($archivo != "")
@@ -209,8 +238,13 @@ if($accion == 'Nu3v@')
 			}
 			else
 			{
-
-				$archivo = $_FILES["Archivo1"]["name"];
+        $extension = substr($_FILES["Archivo1"]["type"], (strlen($_FILES["Archivo1"]["type"])-3), strlen($_FILES["Archivo1"]["type"]));
+        if($extension == "peg"){
+          $extension = "jpeg";
+        }
+        $NuevoNombre = 	$_POST['email'].".".$extension;
+        $archivo = $NuevoNombre;
+			//	$archivo = $_FILES["Archivo1"]["name"];
 				$carpeta = "../img/Profile/";
 
 				if($archivo != "")
@@ -242,6 +276,7 @@ if($accion == 'Nu3v@')
 				$sql = "INSERT INTO persona (APaterno, AMaterno, Nombre, email, password, TUser, Estado, Municipio, TelOfi, TelCas,Celular, Sexo) VALUES ('$_POST[apaterno]', '$_POST[amaterno]', '$_POST[nombre]', '$_POST[email]', '$_POST[password]', '$_REQUEST[Tuser]', '$_POST[estado]', '$_POST[municipio]', '$_POST[telofi]', '$_POST[telcasa]', '$_POST[celular]', '$_REQUEST[sexo]');";
               //  echo $Consulta ."<br>";
               //  echo $sql;
+              //
 				if(mysqli_query($conec,$sql))
 				{
 					echo '<script>
@@ -257,12 +292,7 @@ if($accion == 'Nu3v@')
 					closeOnConfirm: false,
 					closeOnCancel: false },
 
-					function(isConfirm){
-					if (isConfirm)
-					{
-						location.href="login.php"
-					}
-					});
+
 
 					</script>';
 
@@ -288,12 +318,6 @@ if($accion == 'Nu3v@')
 					closeOnConfirm: false,
 					closeOnCancel: false },
 
-					function(isConfirm){
-					if (isConfirm)
-					{
-						location.href="Registro.php"
-					}
-					});
 
 					</script>';
 
@@ -304,10 +328,6 @@ if($accion == 'Nu3v@')
 		}
 
 		?>
-
-<br><br><br><br>
-<br><br>
-
 </body>
 
 

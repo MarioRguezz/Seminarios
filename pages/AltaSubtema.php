@@ -52,7 +52,7 @@ if($tipoPer == "Alumno")
 <script src="../js/AltaSubtema.js"></script>
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
@@ -156,14 +156,12 @@ html{
 </div>
 
 
-<div class="form-group" id="nombreArchivo">
-<label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre corto para el archivo</label>
+<div class="form-group" id="nombreArchivo1">
+<!--<label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre corto para el archivo</label>
     <div class="col-md-6">
     <input class="form-control NoRadius" id="nombreArchivo" name="nombreArchivo" type="text" placeholder="Sin espacios, no mayor a 15 caracteres" maxlength="15" required>
-</div>
-<br><br><br>
-
-
+	</div>-->
+<div class="nothing form-group"> </div>
 <div class="form-group" id="PDF">
 <label for="PDF" class="control-label col-md-3 whiteClassThin">Adjunte Archivo en PDF no mayor a 15 Mb</label>
 <label for="pdffile" class="custom-file-upload whiteClassThin"> Archivo PDF</label>
@@ -171,9 +169,13 @@ html{
 </div>
 
 <div class="form-group" id="Video">
-<label for="foto" class="control-label col-md-3 whiteClassThin">Adjunte Video no mayor a 100 Mb</label>
-<label for="videofile" class="custom-file-upload whiteClassThin"> Video</label>
-	<input type="file" name="Video"  id="videofile" class="btn btn-danger">
+	<label for="nombre" class="control-label col-md-3 whiteClassThin">Adjunte la URL de su video</label>
+	  <div class="col-md-6">
+	<input class="form-control NoRadius" id="videoUrl" name="videoUrl" type="url" placeholder="" required>
+</div>
+<!--<label for="foto" class="control-label col-md-3 whiteClassThin">Adjunte Video no mayor a 100 Mb</label>-->
+<!--<label for="videofile" class="custom-file-upload whiteClassThin"> Video</label> -->
+	<!--<input type="file" name="Video"  id="videofile" class="btn btn-danger">-->
 </div>
 
 <div class="form-group" id="Audio">
@@ -281,7 +283,15 @@ if($accion == 'Nu3v@')
 			}
 			else if($_REQUEST['TMat'] == "Video")
 			{
-				$extension = substr($_FILES["Video"]["type"], (strlen($_FILES["Video"]["type"])-3), strlen($_FILES["Video"]["type"]));
+				$ruta = $_POST['videoUrl'];
+				$consulta = "INSERT INTO material_video (id_Subtema, ubica) VALUES ('$clave', '$ruta');";
+
+				if(mysqli_query($conec,$consulta))
+				{}
+				else{
+					echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
+					}
+				/*$extension = substr($_FILES["Video"]["type"], (strlen($_FILES["Video"]["type"])-3), strlen($_FILES["Video"]["type"]));
 				$NuevoNombre = 	$_POST['nombreArchivo'].".".$extension;
 				$archivo = $NuevoNombre;
 				$carpeta = "../Mat_Video/";
@@ -291,7 +301,6 @@ if($accion == 'Nu3v@')
 					opendir($carpeta);
 					$destino = $carpeta.$archivo;
 					copy($_FILES['Video']['tmp_name'],$destino);
-
 					$consulta = "INSERT INTO material_video (id_Subtema, ubica) VALUES ('$clave', '$destino');";
 
 
@@ -302,7 +311,7 @@ if($accion == 'Nu3v@')
 						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 					}
 				}
-
+*/
 			}
 			else if($_REQUEST['TMat'] == "Audio")
 			{

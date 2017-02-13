@@ -29,7 +29,7 @@ if(isset($_SESSION['tipoP'])){
 
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../dist/sweetalert.min.js"></script>
@@ -46,24 +46,17 @@ if(isset($_SESSION['tipoP'])){
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    <style>
-    html{
-    	height: 100%;
-    }
-    </style>
 
 </head>
 
 <body class="backgroundLogin">
 
     <div class="col-xs-10 col-xs-offset-2">
-  <img src="../img/Icons/logo.png" width="350px" height="250px" />
+  <img src="../img/Icons/logo.png" width="300px" height="200px" />
     <br>
     <h1 class="whiteClass2 marginlefttitle">  SEMINARIO</h1>
     <h3 class="SubtitlewhiteClass">Bienvenido, ingrese usuario </h3>
     <h3 class="SubtitlewhiteClass">y password para entrar</h3>
-
-    <br><br>
 
                  <!--Login-->
                                 <form id="login-form" action="#" method="post" class="" role="form" style="display:inline-block; width:350px;">

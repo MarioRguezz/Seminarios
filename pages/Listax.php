@@ -66,7 +66,7 @@ mysqli_close($conexia);
 
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
@@ -98,16 +98,13 @@ mysqli_close($conexia);
 	<body class="backgroundPrincipal">
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
-	<div class="col-md-1" >
-		<a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
-	</div>
 	<div class="col-md-2" >
 		<a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
 	</div>
 	<div class="col-md-2" >
 	<a class="SubtitlewhiteClass NoShadow WithTop" href="MisCursosInstructor.php">Mis Cursos</a>
 	</div>
-	<div class="col-md-2 col-md-offset-5">
+	<div class="col-md-2 col-md-offset-6">
 			<a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
 	</div>
 </div>
@@ -118,13 +115,12 @@ mysqli_close($conexia);
 <h1 class="whiteClass2 top">LISTA DE ALUMNOS INSCRITOS AL CURSO</h1>
 </center>
 
-<br><br>
 
 <!--
-
+<div class = container>
 -->
 
-<div class="container">
+<div class="littlemargin">
 	<table style="width:100%;" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
     <tr class="danger">
     	<th><center>Nombre</center></th>

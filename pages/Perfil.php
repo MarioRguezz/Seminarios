@@ -48,7 +48,7 @@ if($TipoPer == "Alumno")
 
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
@@ -65,11 +65,6 @@ if($TipoPer == "Alumno")
 
     <script src="../js/spinner.js"></script>
 
-<style>
-html{
-	height: 100%;
-}
-</style>
     <title>Perfil</title>
 </head>
 
@@ -91,6 +86,9 @@ html{
 </div>
 
 <!--	FIN	Menu en el Encabezado	-->
+<center>
+<h1 class="whiteClass2">PERFIL DE USUARIO</h1>
+</center>
 
 <?PHP
 
@@ -102,10 +100,10 @@ if($_POST['tipoUs'] == 'Instructor')
     <div class="container form-group">
         <div class="row">
             <div class="form-group"></div>
-            <div class="btn-group col-xs-6 col-xs-offset-3" data-toggle="buttons">
-                <label class="btn btn-warning rd col-xs-4" title="Datos generales del aspirante" style="color:white !important; font-size:20px;   border: 1px solid #FFF;" data-toggle="tooltip" data-placement="bottom" title="boton 1" id="2">
+            <div class="btn-group col-xs-offset-3 col-xs-9" data-toggle="buttons">
+                <label class="btn hovercolorone rd col-xs-4" title="Datos generales del aspirante" style="color:white !important; font-size:20px;   border: 1px solid #FFF;" data-toggle="tooltip" data-placement="bottom" title="boton 1" id="2">
                     <input type="radio">Información</label>
-                <label class="btn btn-info rd col-xs-4" title="Curriculum del aspirante" style="color:white !important; font-size:20px; border: 1px solid #FFF;" data-toggle="tooltip" data-placement="top" title="boton 2" id="3">
+                <label class="btn hovercolortwo rd col-xs-4" title="Curriculum del aspirante" style="color:white !important; font-size:20px; border: 1px solid #FFF;" data-toggle="tooltip" data-placement="top" title="boton 2" id="3">
                     <input type="radio">Curriculum</label>
             </div>
         </div>
@@ -221,19 +219,19 @@ else
             <form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
 
                  <div class="form-group">
-                    <div class="col-md-6">
+                    <div class="col-md-offset-1 col-md-11 littlemargin">
 							<?PHP
 								if($fila['fotografia'] != "")
 								{
 
 							?>
-                           	<img src=" <?PHP echo htmlentities($fila['fotografia']); ?>" width="200" height="200"  alt="Perfil"/>
+                           	<img src=" <?PHP echo htmlentities($fila['fotografia']); ?>" width="200" height="200"   alt="Perfil"/>
 <?PHP
 								}
 								else
 								{
 							?>
-                            <img src="../img/iconos/profile.png" width="200" height="200"  alt="Perfil"/>
+                          <center>  <img src="../img/iconos/profile.png" width="200" height="200"  alt="Perfil"/> </center>
                             <?PHP
 								}
 							?>
@@ -247,7 +245,7 @@ else
 
 				?>
 
-                <div class="form-group">
+                <div class="form-group" >
                 <label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre</label>
                     <div class="col-md-6">
                     <input class="form-control NoRadius" id="nombre" name="nombre" type="text" value=" <?PHP echo htmlentities($row['Nombre']." ".$row['APaterno']." ".$row['AMaterno']); ?>" readonly>

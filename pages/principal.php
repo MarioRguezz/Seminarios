@@ -60,7 +60,7 @@ if($TipoPer == "Administrador")
 <script src="../js/passwordval.js"></script>
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
@@ -95,13 +95,10 @@ if($TipoPer == "Administrador")
 
 
 <div class="Menu">
-		<div class="col-md-1" >
-			<a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
-		</div>
-    <div class="col-md-3" >
+    <div class="col-md-4" >
     	<a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
     </div>
-    <div class="col-md-2 col-md-offset-6">
+    <div class="col-md-offset-6 col-md-2 ">
         <a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
     </div>
 </div>
@@ -170,20 +167,18 @@ if($band == 1)
 <br><br>
 
 <center>
-<table width="80%">
+<table width="100%">
 <tr>
-    <td width="40%">
+    <td width="50%">
     <center><h3 class="SubtitleMainwhiteClass">Consulta y edita tus cursos</h3></center>
     </td>
-    <td width="40%">
+    <td width="50%">
     <center><h3 class="SubtitleMainwhiteClass">Alta de curso</h3></center>
     </td>
 </tr>
 
 
 <tr>
-	<td>&nbsp;</td>
-    <td>&nbsp;</td>
 </tr>
 
 <tr>
@@ -214,19 +209,18 @@ if($band == 3)
 <h1 class="whiteClass2">OPCIONES PARA EL ADMINISTRADOR</h1>
 </center>
 
-<br><br>
 
 <center>
-<table width="80%">
+<table  class="littlemargin" width="100%">
 <tr>
-    <td width="20%">
+  <!--  <td width="20%">
     <center><h3 class="SubtitleMainwhiteClass">Consulta y edita tus cursos</h3></center>
-    </td>
-    <td width="20%">
+	</td>-->
+  <!--  <td width="20%">
     <center><h3 class="SubtitleMainwhiteClass">Alta de curso</h3></center>
-    </td>
-    <td width="20%">
-    <center><h3 class="SubtitleMainwhiteClass">Aprobar solicitud</h3></center>
+	</td>-->
+    <td width="100%">
+    <center><h3 class="SubtitleMainwhiteClass">Aprobar solicitudes</h3></center>
     </td>
 </tr>
 
@@ -237,19 +231,19 @@ if($band == 3)
 </tr>
 
 <tr>
-    <td width="20%">
+  <!--  <td width="20%">
     <center>
     <a href="CursoTemaInstructor.php" target="_self"> <img src="../img/Icons/Png/PrincipalAdmin-02.png" width="180" height="180"   alt="Consulta de curso"/></a>
     </center>
-    </td>
+	</td>-->
 
-    <td width="20%">
+  <!--  <td width="20%">
     <center>
     <a href="AltaCurso.php" target="_self"> <img src="../img/Icons/Png/PrincipalAdmin-03.png" width="180" height="180"  alt="Dar de alta un curso"/></a>
     </center>
-    </td>
+	</td>-->
 
-    <td width="20%">
+    <td width="100%">
     <center>
     <a href="Pendientes.php" target="_self"> <img src="../img/Icons/Png/PrincipalAdmin-04.png" width="180" height="180"  alt="Aprobar solicitud"/></a>
     </center>

@@ -73,7 +73,7 @@ $res= get_Personas();
 <script src="../js/passwordval.js"></script>
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
@@ -108,25 +108,16 @@ $res= get_Personas();
 
             ];
 </script>
-
-<style>
-html {
-    height: 100%;
-}
-</style>
 </head>
 
 <body class="backgroundPrincipal" >
 
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
-	<div class="col-md-1" >
-		<a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
-	</div>
-	<div class="col-md-2" >
+	<div class="col-md-4" >
 		<a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
 	</div>
-	<div class="col-md-2 col-md-offset-7">
+	<div class="col-md-2 col-md-offset-6">
 			<a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
 	</div>
 </div>
@@ -140,8 +131,6 @@ html {
 <center>
 <h1 class="whiteClass2 top">ALTA DE CURSOS</h1>
 </center>
-<br><br>
-
 <form action="AltaCurso.php?accion=Nu3v@" class="form-horizontal" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
@@ -166,12 +155,12 @@ html {
                 </div>
  </div>
 
- <div class="form-group">
+ <!--<div class="form-group">
  	<label class="control-label col-md-3 whiteClassThin">Su ID como instructor del curso</label>
     <div class="col-md-3">
     	<input class="form-control NoRadius" id="autocomplete" name="IDinstructor" type="text" placeholder="" required value="<?PHP echo htmlentities($Matricula); ?>" readonly>
     </div>
- </div>
+ </div> -->
 
 
  <div class="form-group">

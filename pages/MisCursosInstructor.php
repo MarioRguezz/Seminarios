@@ -63,7 +63,7 @@ mysqli_close($conexia);
 
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
@@ -79,11 +79,6 @@ mysqli_close($conexia);
     </script>
 
     <script src="../js/spinner.js"></script>
- <style>
-	  html{
-	  	height: 100%;
-	  }
- </style>
 
 </head>
 
@@ -91,13 +86,10 @@ mysqli_close($conexia);
 
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
-	<div class="col-md-1" >
-		<a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
-	</div>
-	<div class="col-md-2" >
+	<div class="col-md-4" >
 		<a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
 	</div>
-	<div class="col-md-2 col-md-offset-7">
+	<div class="col-md-2 col-md-offset-6">
 			<a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
 	</div>
 </div>
@@ -107,9 +99,7 @@ mysqli_close($conexia);
 
 <center>
 <h1 class="whiteClass2 top">ADMINISTRAR MIS CURSOS</h1>
-</center>
-
-<br><br>
+</center> 
 
 <div class="form-group">
 	<div class="col-md-3 col-md-offset-9">

@@ -62,7 +62,7 @@ if($tipoPer == "Alumno")
 
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
@@ -129,7 +129,6 @@ if($tipoPer == "Alumno")
     </form>
 </div>
 
-<br><br><br><br>
 
 	<?PHP
 	if($NumRow > 0)
@@ -138,7 +137,7 @@ if($tipoPer == "Alumno")
 		while($filases = mysqli_fetch_array($resx))
 		{
 	?>
-<div class="container">
+<div class="container littlemargin">
 	<table style="width:100%;" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
     <tr class="">
     	<th>Tema</th>

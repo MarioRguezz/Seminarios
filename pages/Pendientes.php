@@ -48,7 +48,7 @@ if($TipoPer != "Administrador")
 
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+    <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
@@ -68,25 +68,16 @@ if($TipoPer != "Administrador")
 
     <script src="../js/spinner.js"></script>
 
-<style>
-html{
-	height: 100%;
-}
-</style>
-
 </head>
 
 <body class="backgroundPrincipal" >
 
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
-	<div class="col-md-1" >
-		<a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
-	</div>
-	<div class="col-md-2" >
+	<div class="col-md-4" >
 		<a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
 	</div>
-	<div class="col-md-2 col-md-offset-7">
+	<div class="col-md-offset-6 col-md-2 ">
 			<a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
 	</div>
 </div>
@@ -97,11 +88,11 @@ html{
 <h1 class="whiteClass2 top">SOLICITUDES PENDIENTES</h1>
 </center>
 
-<br><br>
-<div class="container">
-	<table style="width:100%" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
+<!--<div class="container">-->
+<div class="">
+	<table style="width:100%" cellspacing="0" cellpadding="0" class="littlemargin table-responsive tablaDesign">
     <tr class="danger">
-    	<th><b><center>Nombre</center></b></b></th>
+    	<th><b><center>Nombre</center></b></th>
         <th><b><center>Estado</center></b></th>
         <th><b><center>Municipio</center></b></th>
         <th><b><center>Tipo de usuario</center></b></th>
@@ -182,7 +173,8 @@ if($accion == '4pr0v@r')
 	$IDes = $IDes + 1;
 	$consultados = "UPDATE persona set Status = 'ALTA' WHERE email = '$_POST[correo]';";
 	if(mysqli_query($conec,$consultados))
-	{		}
+	{
+		}
 	else
 	{
 		echo "hubo un error al ejecuta query curso_instructor intente de nuevo".mysqli_error();
