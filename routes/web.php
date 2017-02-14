@@ -27,4 +27,8 @@ Route::group(['prefix'=>'usuario'], function(){
     Route::post('create', "UserApiController@create");
     Route::post('by_phone', "UserApiController@getUserByPhone");
     Route::get('search', 'UserApiController@search');
+    Route::get('registro', 'UserController@registroView');
+    Route::post('registro', 'UserController@registrar');
 });
+
+

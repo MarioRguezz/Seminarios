@@ -2,8 +2,428 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="774c3b1b-f9fe-4e15-ab83-8107820fc163" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/usuario/registrar.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/Curriculum vitae Alejandro Barroso.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/IMG_3864.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/Murillo 1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/O ISIC-2010-224 Lenguajes Automatas I.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/cvsamples.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/flujobyod.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/hola@hotmail.com.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/p@hotmail.com.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/titulo.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CV/vvv.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Doc/JJJJ.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Doc/Modelo innovaci.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Doc/TransformaciÃ³n.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Doc/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Doc/muestra.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Doc/nombreee.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Doc/primerospasos.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Doc/pruebas.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Video/AESAE.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mat_Video/QWEQEQWE.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Scripts/MenuHorizontalAnimado.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Scripts/jquery-1.4.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Scripts/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Styles/MenuHorizontalAnimado.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Styles/Principal.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Styles/fonts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/.env.example" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/.gitattributes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Console/Kernel.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Exceptions/Handler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Controllers/Auth/ForgotPasswordController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Controllers/Auth/LoginController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Controllers/Auth/RegisterController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Controllers/Auth/ResetPasswordController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Controllers/Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Controllers/UserApiController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Kernel.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Middleware/EncryptCookies.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Middleware/RedirectIfAuthenticated.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Middleware/TrimStrings.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Http/Middleware/VerifyCsrfToken.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Persona.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Providers/AppServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Providers/AuthServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Providers/BroadcastServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Providers/EventServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/Providers/RouteServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/app/User.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/artisan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/bootstrap/app.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/bootstrap/autoload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/bootstrap/cache/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/composer.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/composer.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/app.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/auth.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/broadcasting.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/database.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/filesystems.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/mail.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/queue.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/services.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/session.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/config/view.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/database/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/database/factories/ModelFactory.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/database/seeds/DatabaseSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/phpunit.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/public/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/public/css/app.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/public/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/public/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/public/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/public/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/public/web.config" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/assets/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/assets/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/assets/js/components/Example.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/assets/sass/_variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/assets/sass/app.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/lang/en/auth.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/lang/en/pagination.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/lang/en/passwords.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/lang/en/validation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/resources/views/welcome.blade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/routes/api.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/routes/channels.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/routes/console.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/routes/web.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/server.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/storage/app/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/storage/app/public/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/storage/framework/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/storage/framework/cache/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/storage/framework/sessions/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/storage/framework/views/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/storage/logs/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/tests/CreatesApplication.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/tests/Feature/ExampleTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/tests/TestCase.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/tests/Unit/ExampleTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api_php/webpack.mix.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/Actividad.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/EstiloT0305.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/Main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/Principal.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/Principal2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/Tema.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/demo.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/general.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jqpuzzle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jquery.dad.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jquery.tzCheckbox.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/radio.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/radiocss.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/styles.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sweetalert-dev.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sweetalert.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sweetalert.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/FAQ.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/changelog.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/acceptpagebreak.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/addfont.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/addlink.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/addpage.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/aliasnbpages.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/cell.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/close.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/error.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/footer.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/fpdf.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/getstringwidth.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/getx.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/gety.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/header.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/image.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/line.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/link.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/ln.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/multicell.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/output.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/pageno.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/rect.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setauthor.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setautopagebreak.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setcompression.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setcreator.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setdisplaymode.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setdrawcolor.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setfillcolor.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setfont.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setfontsize.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setkeywords.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setleftmargin.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setlinewidth.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setlink.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setmargins.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setrightmargin.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setsubject.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/settextcolor.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/settitle.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/settopmargin.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setx.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/setxy.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/sety.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/text.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/doc/write.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/courier.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/courierb.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/courierbi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/courieri.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/helvetica.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/helveticab.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/helveticabi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/helveticai.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/symbol.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/times.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/timesb.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/timesbi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/timesi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/font/zapfdingbats.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/fpdf.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/fpdf.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/install.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/license.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/cp1250.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/cp1251.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/cp1252.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/cp1253.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/cp1254.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/cp1255.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/cp1257.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/cp1258.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/cp874.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/iso-8859-1.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/iso-8859-11.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/iso-8859-15.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/iso-8859-16.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/iso-8859-2.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/iso-8859-4.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/iso-8859-5.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/iso-8859-7.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/iso-8859-9.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/koi8-r.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/koi8-u.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/makefont.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/makefont/ttfparser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/20k_c1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/20k_c2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/calligra.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/calligra.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/calligra.z" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/makefont.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/paises.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto1.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto2.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto3.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto4.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto4.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto5.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto5.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto6.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto6.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto7.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fpdf/tutorial/tuto7.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Azul.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Constancias/Constancia.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/PrincipalAdmin-02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/PrincipalAdmin-03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/PrincipalAdmin-04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/PrincipalAlumno-01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/PrincipalAlumno-02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/agregaractividad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/agregarexamen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/agregarsubtema.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/agregartema.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/comenzar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/crearcurso.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/editar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/iconyes.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/ir al curso.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/pencil.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/Png/registro.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/altacurso.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/aprobarsolicitud.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/consultadecursos.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/consultayeditatuscursos.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/cursosdisponibles.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Icons/seleccionesubtema.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Letras.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTHo5184/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTHo5184/imagen2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTHo5184/imagen3.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTHo5184/imagen4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTIn1277/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTIn1277/imagen2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTIn1277/imagen3.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTIn1277/imagen4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTIn1277/imagen5.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTPr1689/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTPr1689/imagen2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTPr1689/imagen3.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTPr1689/imagen4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTPr1689/imagen5.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/ACTPr1689/imagen6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMNO1052/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMPa5183/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMPr9674/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMin8661/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMni1084/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMni1753/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte1160/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte3232/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte3929/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte5476/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte6500/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte6849/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte8154/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte8551/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte9236/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Memorama/MEMte9694/imagen1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/20140523_225218.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/DSCN2676b.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/FONDO2Size.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/IMG_3864.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/Image1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/Valientes_perfil.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/easier.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/logo-ITL.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/mamama@hotmail.com.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/moisis@hotmail.com.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/moisis@hotmail.com.peg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/Profile/papa@hotmail.com.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/background.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/backgroundTest.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/backgroundTest2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/backgrounds/FONDO.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/backgrounds/FONDO2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/backgrounds/FONDO2Size.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/backgrounds/FONDO2invertido.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/backgrounds/FONDO3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/backgrounds/FONDOSize.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/backgrounds/FONDOinvertido.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/default.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/default.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/Agregar_User.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/Inscribir.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/Nuevo_curso.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/consulta.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/folder-158005_640.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/folder-158010_640.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/folder-158012_640.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/info.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/iconos/profile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/ASubtema.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/Actividad.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/AltaActividad.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/AltaSubtema.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/CB.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/Tema.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/TemaActividad.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/Visto.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/autcomp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/css/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/fonts/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/js/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap/js/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/efectos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/inicio.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-1.7.2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.dad.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.jqpuzzle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.min-1.5.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.tzCheckbox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.tzCheckboxTema.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/passwordval.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/personaJS.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/pregunta.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/pregunta2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/spinner.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ActDADinstructor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Actividad.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/AltaActividad.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/AltaCurso.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/AltaSubtema.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Cerrar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ConfirmaAltaActividad.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ConfirmaAltaSubtema.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ConfirmaEditaSubtema.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Constancias.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/CursoTemaAlumno.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/CursoTemaInstructor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/CursosDisponibles.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/DAD.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Default.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/EditaSubtema.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/EditaSubtema2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ExamenAlumno.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ExamenInstructor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/GuardarExAlumno.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Lista.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ListaExamen.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Listax.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/MisCursos.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/MisCursosInstructor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Pendientes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Perfil.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Puzzle.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Registro.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Tema.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/Visto.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/examen.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/guardarActividad.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/guardarExamen.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/guardarExamen2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/habilita.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/principal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/_notes/dwsync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/conexion.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/php/userexiste.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Seminarios.iml" afterPath="$PROJECT_DIR$/.idea/Seminarios.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/CursoTemaAlumno.php" afterPath="$PROJECT_DIR$/pages/CursoTemaAlumno.php" />
     </list>
     <ignored path="Seminarios.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,191 +443,113 @@
     <favorites_list name="Seminarios" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="CursoTemaAlumno.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/CursoTemaAlumno.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="conexion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/php/conexion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="940" column="36" selection-start-line="940" selection-start-column="30" selection-end-line="940" selection-end-column="36" />
+            <state relative-caret-position="300">
+              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
               <folding>
-                <element signature="e#8633#8639#0#HTML" expanded="true" />
-                <element signature="e#9681#9687#0#HTML" expanded="true" />
-                <element signature="e#10767#10773#0#HTML" expanded="true" />
-                <element signature="e#11212#11218#0#HTML" expanded="true" />
-                <element signature="e#12764#12770#0#HTML" expanded="true" />
-                <element signature="e#13317#13323#0#HTML" expanded="true" />
-                <element signature="e#14642#14648#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#29944#29950#0#HTML" expanded="true" />
-                <element signature="e#30992#30998#0#HTML" expanded="true" />
-                <element signature="e#32078#32084#0#HTML" expanded="true" />
-                <element signature="e#32523#32529#0#HTML" expanded="true" />
-                <element signature="e#34121#34127#0#HTML" expanded="true" />
-                <element signature="e#34674#34680#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#center#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1485742738543" expanded="true" signature="529:613" ph="SELECT * FRO... persona" />
-                <marker date="1485742738543" expanded="true" signature="1006:1104" ph="SELECT * FRO... curso_tema" />
-                <marker date="1485742738543" expanded="true" signature="1246:1353" ph="SELECT * FRO... curso_subtema" />
-                <marker date="1485742738543" expanded="true" signature="1490:1563" ph="SELECT MAX(O... subtema_visto" />
-                <marker date="1485742738543" expanded="true" signature="3623:3683" ph="SELECT * FRO... material_video" />
-                <marker date="1485742738543" expanded="true" signature="3880:3938" ph="SELECT * FRO... material_doc" />
-                <marker date="1485742738543" expanded="true" signature="4138:4198" ph="SELECT * FRO... material_audio" />
-                <marker date="1485742738543" expanded="true" signature="4411:4527" ph="SELECT Visto... subtema_visto" />
-                <marker date="1485742738543" expanded="true" signature="4701:4850" ph="INSERT INTO subtema_visto... " />
-                <marker date="1485742738543" expanded="true" signature="5009:5130" ph="UPDATE subte... " />
-                <marker date="1485742738543" expanded="true" signature="5331:5430" ph="SELECT * FRO... subtema_visto" />
-                <marker date="1485742738543" expanded="true" signature="6100:6163" ph="Select * FRO... curso_subtema" />
-                <marker date="1485742738543" expanded="true" signature="6395:6526" ph="SELECT * FRO... subtema_visto" />
-                <marker date="1485742738543" expanded="true" signature="7092:7161" ph="SELECT ubica... material_doc" />
-                <marker date="1485742738543" expanded="true" signature="7273:7344" ph="SELECT ubica... material_video" />
-                <marker date="1485742738543" expanded="true" signature="7456:7527" ph="SELECT ubica... material_audio" />
-                <marker date="1485742738543" expanded="true" signature="11486:11589" ph="SELECT Statu... habilita_exam" />
-                <marker date="1485742738543" expanded="true" signature="11697:11760" ph="SELECT * FRO... curso_subtema" />
-                <marker date="1485742738543" expanded="true" signature="11873:11936" ph="SELECT * FRO... subtema_visto" />
-                <marker date="1485742738543" expanded="true" signature="13563:13627" ph="SELECT * FRO... tema_actividad" />
-                <marker date="1485742738543" expanded="true" signature="17383:17441" ph="SELECT * FRO... material_doc" />
-                <marker date="1485742738543" expanded="true" signature="20567:20627" ph="SELECT * FRO... material_video" />
-                <marker date="1485742738543" expanded="true" signature="23795:23855" ph="SELECT * FRO... material_audio" />
-                <marker date="1485742738543" expanded="true" signature="27461:27524" ph="Select * FRO... curso_subtema" />
-                <marker date="1485742738543" expanded="true" signature="27706:27837" ph="SELECT * FRO... subtema_visto" />
-                <marker date="1485742738543" expanded="true" signature="28403:28472" ph="SELECT ubica... material_doc" />
-                <marker date="1485742738543" expanded="true" signature="28584:28655" ph="SELECT ubica... material_video" />
-                <marker date="1485742738543" expanded="true" signature="28767:28838" ph="SELECT ubica... material_audio" />
-                <marker date="1485742738543" expanded="true" signature="32766:32869" ph="SELECT Statu... habilita_exam" />
-                <marker date="1485742738543" expanded="true" signature="32977:33040" ph="SELECT * FRO... curso_subtema" />
-                <marker date="1485742738543" expanded="true" signature="33153:33217" ph="SELECT * FRO... subtema_visto" />
-                <marker date="1485742738543" expanded="true" signature="34928:34992" ph="SELECT * FRO... tema_actividad" />
+                <marker date="1487042388520" expanded="true" signature="443:490" ph="select * fro... persona" />
+                <marker date="1487042388520" expanded="true" signature="1092:1152" ph="insert into PERSONA... " />
+                <marker date="1487042388520" expanded="true" signature="1412:1517" ph="SELECT U.Mat... persona" />
+                <marker date="1487042388520" expanded="true" signature="1898:2057" ph="select U.Mat... persona" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MisCursos.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/MisCursos.php">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-271">
-              <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
+            <state relative-caret-position="495">
+              <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
               <folding>
-                <marker date="1485742602811" expanded="true" signature="521:565" ph="SELECT * FRO... persona" />
-                <marker date="1485742602811" expanded="true" signature="965:1017" ph="SELECT Mat_A... alumno" />
-                <marker date="1485742602811" expanded="true" signature="3117:3337" ph="SELECT * FRO... curso" />
-                <marker date="1485742602811" expanded="true" signature="3451:3555" ph="SELECT * FRO... curso_tema" />
-                <marker date="1485742602811" expanded="true" signature="3677:3790" ph="SELECT * FRO... curso_subtema" />
-                <marker date="1485742602811" expanded="true" signature="3925:4039" ph="SELECT * FRO... subtema_visto" />
-                <marker date="1485742602811" expanded="true" signature="4605:4687" ph="SELECT COUNT... curso_participante" />
-                <marker date="1485742602811" expanded="true" signature="4816:4948" ph="SELECT P.APa... Persona" />
+                <marker date="1487043637156" expanded="true" signature="1963:2038" ph="INSERT INTO usuario... " />
+                <marker date="1487043637156" expanded="true" signature="2100:2174" ph="INSERT INTO alumno... " />
+                <marker date="1487043637156" expanded="true" signature="2451:2809" ph="INSERT INTO persona... " />
+                <marker date="1487043637156" expanded="true" signature="2956:3350" ph="..." />
+                <marker date="1487043637156" expanded="true" signature="2969:3332" ph="{&quot;title&quot;: &quot;Su solicitud ha sido enviada, por favor espere respuesta del administrador&quot;...}" />
+                <marker date="1487043637156" expanded="true" signature="3629:3980" ph="..." />
+                <marker date="1487043637156" expanded="true" signature="3642:3963" ph="{&quot;title&quot;: &quot;Hubo un error, intentelo más tarde&quot;...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Visto.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/Visto.php">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/pages/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="194">
+              <caret line="134" column="88" selection-start-line="134" selection-start-column="88" selection-end-line="134" selection-end-column="88" />
               <folding>
-                <marker date="1485740319511" expanded="true" signature="143:252" ph="SELECT Visto... subtema_visto" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tema.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/Tema.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1487042051080" expanded="true" signature="2724:3296" ph="..." />
+                <marker date="1487042051080" expanded="true" signature="2745:3118" ph="{&quot;title&quot;: &quot;¡Bienvenido!&quot;...}" />
+                <marker date="1487042051080" expanded="true" signature="3153:3271" ph="{...}" />
+                <marker date="1487042051080" expanded="true" signature="3196:3256" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Registro.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/Registro.php">
+        <entry file="file://$PROJECT_DIR$/public/pages/Registro.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="2291">
+              <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="215" selection-end-column="10" />
               <folding>
-                <marker date="1485727434741" expanded="true" signature="6366:6441" ph="INSERT INTO usuario... " />
-                <marker date="1485727434741" expanded="true" signature="6480:6554" ph="INSERT INTO alumno... " />
-                <marker date="1485727434741" expanded="true" signature="6816:7174" ph="INSERT INTO persona... " />
-                <marker date="1485727434741" expanded="true" signature="7307:7801" ph="..." />
-                <marker date="1485727434741" expanded="true" signature="7320:7683" ph="{&quot;title&quot;: &quot;Su solicitud ha sido enviada, por favor espere respuesta del administrador&quot;...}" />
-                <marker date="1485727434741" expanded="true" signature="7710:7784" ph="{...}" />
-                <marker date="1485727434741" expanded="true" signature="7737:7777" ph="{...}" />
-                <marker date="1485727434741" expanded="true" signature="8026:8481" ph="..." />
-                <marker date="1485727434741" expanded="true" signature="8039:8360" ph="{&quot;title&quot;: &quot;Hubo un error, intentelo más tarde&quot;...}" />
-                <marker date="1485727434741" expanded="true" signature="8387:8464" ph="{...}" />
-                <marker date="1485727434741" expanded="true" signature="8414:8457" ph="{...}" />
+                <element signature="e#5533#5539#0#HTML" expanded="true" />
+                <element signature="e#5818#6535#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAD.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/DAD.php">
+      <file leaf-file-name="registrar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/usuario/registrar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1030">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1485717444813" expanded="true" signature="581:625" ph="SELECT * FRO... persona" />
-                <marker date="1485717444813" expanded="true" signature="976:1030" ph="SELECT * FRO... tema_actividad" />
-                <marker date="1485717444813" expanded="true" signature="1119:1192" ph="SELECT * FRO... respuestas_dad" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Puzzle.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/Puzzle.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1476">
-              <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-              <folding>
-                <marker date="1485726652373" expanded="true" signature="608:652" ph="SELECT * FRO... persona" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lista.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/Lista.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1575">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1485717444813" expanded="true" signature="583:627" ph="SELECT * FRO... persona" />
-                <marker date="1485717444813" expanded="true" signature="1063:1111" ph="SELECT COUNT... curso_participante" />
-                <marker date="1485717444813" expanded="true" signature="2939:3127" ph="SELECT P.APa... alumno" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Principal2.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/Principal2.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
+            <state relative-caret-position="285">
+              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Principal.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/Principal.css">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="30" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="36" selection-end-column="1" />
+            <state relative-caret-position="315">
+              <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserApiController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserApiController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-274">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Persona.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Persona.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -229,6 +571,12 @@
         <option value="$PROJECT_DIR$/pages/Tema.php" />
         <option value="$PROJECT_DIR$/pages/MisCursos.php" />
         <option value="$PROJECT_DIR$/pages/CursoTemaAlumno.php" />
+        <option value="$PROJECT_DIR$/public/php/conexion.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/public/pages/Registro.php" />
+        <option value="$PROJECT_DIR$/resources/views/usuario/registrar.blade.php" />
+        <option value="$PROJECT_DIR$/public/pages/login.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
       </list>
     </option>
   </component>
@@ -240,9 +588,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1368" />
-    <option name="height" value="744" />
+    <option name="width" value="1366" />
+    <option name="height" value="743" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -269,8 +616,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -299,6 +644,92 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="usuario" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="php" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -313,12 +744,54 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Seminarios" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,6 +819,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -380,31 +859,32 @@
       <option name="presentableId" value="Default" />
       <updated>1485717720328</updated>
       <workItem from="1485717722206" duration="11780000" />
+      <workItem from="1487042360820" duration="1274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11780000" />
+    <option name="totallyTimeSpent" value="13054000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="744" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="743" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25340393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32761312" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -425,232 +905,110 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/php/conexion.php">
+    <entry file="file://$PROJECT_DIR$/php/conexion.php" />
+    <entry file="file://$PROJECT_DIR$/pages/CursosDisponibles.php" />
+    <entry file="file://$PROJECT_DIR$/pages/MisCursosInstructor.php" />
+    <entry file="file://$PROJECT_DIR$/pages/ConfirmaAltaActividad.php" />
+    <entry file="file://$PROJECT_DIR$/css/Principal.css" />
+    <entry file="file://$PROJECT_DIR$/img/backgrounds/FONDO3.png" />
+    <entry file="file://$PROJECT_DIR$/css/Principal2.css" />
+    <entry file="file://$PROJECT_DIR$/pages/Visto.php" />
+    <entry file="file://$PROJECT_DIR$/pages/Registro.php" />
+    <entry file="file://$PROJECT_DIR$/pages/DAD.php" />
+    <entry file="file://$PROJECT_DIR$/pages/Puzzle.php" />
+    <entry file="file://$PROJECT_DIR$/pages/Lista.php" />
+    <entry file="file://$PROJECT_DIR$/pages/Tema.php" />
+    <entry file="file://$PROJECT_DIR$/pages/MisCursos.php" />
+    <entry file="file://$PROJECT_DIR$/pages/CursoTemaAlumno.php" />
+    <entry file="file://$PROJECT_DIR$/app/Persona.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1485720101185" expanded="true" signature="443:490" ph="select * fro... persona" />
-            <marker date="1485720101185" expanded="true" signature="1092:1152" ph="insert into PERSONA... " />
-            <marker date="1485720101185" expanded="true" signature="1412:1517" ph="SELECT U.Mat... persona" />
-            <marker date="1485720101185" expanded="true" signature="1898:2057" ph="select U.Mat... persona" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/CursosDisponibles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-97">
-          <caret line="228" column="39" selection-start-line="228" selection-start-column="39" selection-end-line="228" selection-end-column="39" />
-          <folding>
-            <marker date="1485721645841" expanded="true" signature="529:573" ph="SELECT * FRO... persona" />
-            <marker date="1485721645841" expanded="true" signature="970:1022" ph="SELECT Mat_A... alumno" />
-            <marker date="1485721645841" expanded="true" signature="3104:3234" ph="SELECT * FRO... curso" />
-            <marker date="1485721645841" expanded="true" signature="3362:3444" ph="SELECT COUNT... curso_participante" />
-            <marker date="1485721645841" expanded="true" signature="3839:3971" ph="SELECT P.APa... Persona" />
-            <marker date="1485721645841" expanded="true" signature="5754:5859" ph="SELECT * FRO... curso_participante" />
-            <marker date="1485721645841" expanded="true" signature="6335:6437" ph="INSERT INTO curso_participante... " />
-            <marker date="1485721645841" expanded="true" signature="6721:7231" ph="..." />
-            <marker date="1485721645841" expanded="true" signature="6748:7063" ph="{&quot;title&quot;: &quot;AVISO&quot;...}" />
-            <marker date="1485721645841" expanded="true" signature="7104:7201" ph="{...}" />
-            <marker date="1485721645841" expanded="true" signature="7135:7193" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/MisCursosInstructor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <marker date="1485727434741" expanded="true" signature="541:585" ph="SELECT * FRO... persona" />
-            <marker date="1485727434741" expanded="true" signature="1006:1060" ph="SELECT Mat_U... usuario" />
-            <marker date="1485727434741" expanded="true" signature="3572:3739" ph="SELECT * FRO... curso" />
-            <marker date="1485727434741" expanded="true" signature="4010:4092" ph="SELECT COUNT... curso_participante" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ConfirmaAltaActividad.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="914">
-          <caret line="198" column="17" selection-start-line="198" selection-start-column="17" selection-end-line="198" selection-end-column="17" />
-          <folding>
-            <marker date="1485740319511" expanded="true" signature="601:645" ph="SELECT * FRO... persona" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/Principal.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="30" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="36" selection-end-column="1" />
+        <state relative-caret-position="330">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/backgrounds/FONDO3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/Principal2.css">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
+        <state relative-caret-position="-274">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Visto.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="315">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/usuario/registrar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/Registro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2291">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="215" selection-end-column="10" />
           <folding>
-            <marker date="1485740319511" expanded="true" signature="143:252" ph="SELECT Visto... subtema_visto" />
+            <element signature="e#5533#5539#0#HTML" expanded="true" />
+            <element signature="e#5818#6535#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Registro.php">
+    <entry file="file://$PROJECT_DIR$/public/php/conexion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
           <folding>
-            <marker date="1485727434741" expanded="true" signature="6366:6441" ph="INSERT INTO usuario... " />
-            <marker date="1485727434741" expanded="true" signature="6480:6554" ph="INSERT INTO alumno... " />
-            <marker date="1485727434741" expanded="true" signature="6816:7174" ph="INSERT INTO persona... " />
-            <marker date="1485727434741" expanded="true" signature="7307:7801" ph="..." />
-            <marker date="1485727434741" expanded="true" signature="7320:7683" ph="{&quot;title&quot;: &quot;Su solicitud ha sido enviada, por favor espere respuesta del administrador&quot;...}" />
-            <marker date="1485727434741" expanded="true" signature="7710:7784" ph="{...}" />
-            <marker date="1485727434741" expanded="true" signature="7737:7777" ph="{...}" />
-            <marker date="1485727434741" expanded="true" signature="8026:8481" ph="..." />
-            <marker date="1485727434741" expanded="true" signature="8039:8360" ph="{&quot;title&quot;: &quot;Hubo un error, intentelo más tarde&quot;...}" />
-            <marker date="1485727434741" expanded="true" signature="8387:8464" ph="{...}" />
-            <marker date="1485727434741" expanded="true" signature="8414:8457" ph="{...}" />
+            <marker date="1487042388520" expanded="true" signature="443:490" ph="select * fro... persona" />
+            <marker date="1487042388520" expanded="true" signature="1092:1152" ph="insert into PERSONA... " />
+            <marker date="1487042388520" expanded="true" signature="1412:1517" ph="SELECT U.Mat... persona" />
+            <marker date="1487042388520" expanded="true" signature="1898:2057" ph="select U.Mat... persona" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/DAD.php">
+    <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1030">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="495">
+          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="134" column="88" selection-start-line="134" selection-start-column="88" selection-end-line="134" selection-end-column="88" />
           <folding>
-            <marker date="1485717444813" expanded="true" signature="581:625" ph="SELECT * FRO... persona" />
-            <marker date="1485717444813" expanded="true" signature="976:1030" ph="SELECT * FRO... tema_actividad" />
-            <marker date="1485717444813" expanded="true" signature="1119:1192" ph="SELECT * FRO... respuestas_dad" />
+            <marker date="1487042051080" expanded="true" signature="2724:3296" ph="..." />
+            <marker date="1487042051080" expanded="true" signature="2745:3118" ph="{&quot;title&quot;: &quot;¡Bienvenido!&quot;...}" />
+            <marker date="1487042051080" expanded="true" signature="3153:3271" ph="{...}" />
+            <marker date="1487042051080" expanded="true" signature="3196:3256" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Puzzle.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1476">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+        <state relative-caret-position="60">
+          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
           <folding>
-            <marker date="1485726652373" expanded="true" signature="608:652" ph="SELECT * FRO... persona" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Lista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1575">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1485717444813" expanded="true" signature="583:627" ph="SELECT * FRO... persona" />
-            <marker date="1485717444813" expanded="true" signature="1063:1111" ph="SELECT COUNT... curso_participante" />
-            <marker date="1485717444813" expanded="true" signature="2939:3127" ph="SELECT P.APa... alumno" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Tema.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/MisCursos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-271">
-          <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
-          <folding>
-            <marker date="1485742602811" expanded="true" signature="521:565" ph="SELECT * FRO... persona" />
-            <marker date="1485742602811" expanded="true" signature="965:1017" ph="SELECT Mat_A... alumno" />
-            <marker date="1485742602811" expanded="true" signature="3117:3337" ph="SELECT * FRO... curso" />
-            <marker date="1485742602811" expanded="true" signature="3451:3555" ph="SELECT * FRO... curso_tema" />
-            <marker date="1485742602811" expanded="true" signature="3677:3790" ph="SELECT * FRO... curso_subtema" />
-            <marker date="1485742602811" expanded="true" signature="3925:4039" ph="SELECT * FRO... subtema_visto" />
-            <marker date="1485742602811" expanded="true" signature="4605:4687" ph="SELECT COUNT... curso_participante" />
-            <marker date="1485742602811" expanded="true" signature="4816:4948" ph="SELECT P.APa... Persona" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/CursoTemaAlumno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="940" column="36" selection-start-line="940" selection-start-column="30" selection-end-line="940" selection-end-column="36" />
-          <folding>
-            <element signature="e#8633#8639#0#HTML" expanded="true" />
-            <element signature="e#9681#9687#0#HTML" expanded="true" />
-            <element signature="e#10767#10773#0#HTML" expanded="true" />
-            <element signature="e#11212#11218#0#HTML" expanded="true" />
-            <element signature="e#12764#12770#0#HTML" expanded="true" />
-            <element signature="e#13317#13323#0#HTML" expanded="true" />
-            <element signature="e#14642#14648#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#29944#29950#0#HTML" expanded="true" />
-            <element signature="e#30992#30998#0#HTML" expanded="true" />
-            <element signature="e#32078#32084#0#HTML" expanded="true" />
-            <element signature="e#32523#32529#0#HTML" expanded="true" />
-            <element signature="e#34121#34127#0#HTML" expanded="true" />
-            <element signature="e#34674#34680#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#center#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1485742738543" expanded="true" signature="529:613" ph="SELECT * FRO... persona" />
-            <marker date="1485742738543" expanded="true" signature="1006:1104" ph="SELECT * FRO... curso_tema" />
-            <marker date="1485742738543" expanded="true" signature="1246:1353" ph="SELECT * FRO... curso_subtema" />
-            <marker date="1485742738543" expanded="true" signature="1490:1563" ph="SELECT MAX(O... subtema_visto" />
-            <marker date="1485742738543" expanded="true" signature="3623:3683" ph="SELECT * FRO... material_video" />
-            <marker date="1485742738543" expanded="true" signature="3880:3938" ph="SELECT * FRO... material_doc" />
-            <marker date="1485742738543" expanded="true" signature="4138:4198" ph="SELECT * FRO... material_audio" />
-            <marker date="1485742738543" expanded="true" signature="4411:4527" ph="SELECT Visto... subtema_visto" />
-            <marker date="1485742738543" expanded="true" signature="4701:4850" ph="INSERT INTO subtema_visto... " />
-            <marker date="1485742738543" expanded="true" signature="5009:5130" ph="UPDATE subte... " />
-            <marker date="1485742738543" expanded="true" signature="5331:5430" ph="SELECT * FRO... subtema_visto" />
-            <marker date="1485742738543" expanded="true" signature="6100:6163" ph="Select * FRO... curso_subtema" />
-            <marker date="1485742738543" expanded="true" signature="6395:6526" ph="SELECT * FRO... subtema_visto" />
-            <marker date="1485742738543" expanded="true" signature="7092:7161" ph="SELECT ubica... material_doc" />
-            <marker date="1485742738543" expanded="true" signature="7273:7344" ph="SELECT ubica... material_video" />
-            <marker date="1485742738543" expanded="true" signature="7456:7527" ph="SELECT ubica... material_audio" />
-            <marker date="1485742738543" expanded="true" signature="11486:11589" ph="SELECT Statu... habilita_exam" />
-            <marker date="1485742738543" expanded="true" signature="11697:11760" ph="SELECT * FRO... curso_subtema" />
-            <marker date="1485742738543" expanded="true" signature="11873:11936" ph="SELECT * FRO... subtema_visto" />
-            <marker date="1485742738543" expanded="true" signature="13563:13627" ph="SELECT * FRO... tema_actividad" />
-            <marker date="1485742738543" expanded="true" signature="17383:17441" ph="SELECT * FRO... material_doc" />
-            <marker date="1485742738543" expanded="true" signature="20567:20627" ph="SELECT * FRO... material_video" />
-            <marker date="1485742738543" expanded="true" signature="23795:23855" ph="SELECT * FRO... material_audio" />
-            <marker date="1485742738543" expanded="true" signature="27461:27524" ph="Select * FRO... curso_subtema" />
-            <marker date="1485742738543" expanded="true" signature="27706:27837" ph="SELECT * FRO... subtema_visto" />
-            <marker date="1485742738543" expanded="true" signature="28403:28472" ph="SELECT ubica... material_doc" />
-            <marker date="1485742738543" expanded="true" signature="28584:28655" ph="SELECT ubica... material_video" />
-            <marker date="1485742738543" expanded="true" signature="28767:28838" ph="SELECT ubica... material_audio" />
-            <marker date="1485742738543" expanded="true" signature="32766:32869" ph="SELECT Statu... habilita_exam" />
-            <marker date="1485742738543" expanded="true" signature="32977:33040" ph="SELECT * FRO... curso_subtema" />
-            <marker date="1485742738543" expanded="true" signature="33153:33217" ph="SELECT * FRO... subtema_visto" />
-            <marker date="1485742738543" expanded="true" signature="34928:34992" ph="SELECT * FRO... tema_actividad" />
+            <marker date="1487043637156" expanded="true" signature="1963:2038" ph="INSERT INTO usuario... " />
+            <marker date="1487043637156" expanded="true" signature="2100:2174" ph="INSERT INTO alumno... " />
+            <marker date="1487043637156" expanded="true" signature="2451:2809" ph="INSERT INTO persona... " />
+            <marker date="1487043637156" expanded="true" signature="2956:3350" ph="..." />
+            <marker date="1487043637156" expanded="true" signature="2969:3332" ph="{&quot;title&quot;: &quot;Su solicitud ha sido enviada, por favor espere respuesta del administrador&quot;...}" />
+            <marker date="1487043637156" expanded="true" signature="3629:3980" ph="..." />
+            <marker date="1487043637156" expanded="true" signature="3642:3963" ph="{&quot;title&quot;: &quot;Hubo un error, intentelo más tarde&quot;...}" />
           </folding>
         </state>
       </provider>
