@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -83,6 +84,7 @@ class UserController extends Controller
         {
             //	echo "hubo un error al enviar el mensaje intente de nuevo".mysqli_error();
         }
+
 
         $sql = "INSERT INTO persona (APaterno, AMaterno, Nombre, email, password, TUser, Estado, Municipio, TelOfi, TelCas,Celular, Sexo) VALUES ('$_POST[apaterno]', '$_POST[amaterno]', '$_POST[nombre]', '$_POST[email]', '$_POST[password]', '$_REQUEST[Tuser]', '$_POST[estado]', '$_POST[municipio]', '$_POST[telofi]', '$_POST[telcasa]', '$_POST[celular]', '$_REQUEST[sexo]');";
         //  echo $Consulta ."<br>";
