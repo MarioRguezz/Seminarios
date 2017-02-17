@@ -3,7 +3,7 @@ error_reporting(0);
 
 session_start();
 
-function conect($host = "localhost:3306", $user = "root", $psw = "1234", $db = "durango"){
+function conect($host = "192.168.15.22:3306", $user = "seminarios", $psw = "123asdZXC", $db = "durango"){
 
 	$con = mysqli_connect($host,$user,$psw, $db) or die ("PELAS");
 
