@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Support\Facades\Auth;
+
+Route::get('/', 'UserController@index');
+Route::post('/login', 'UserController@login');
+Route::get('/testuser','UserController@checkuser');
+
 
 
 
