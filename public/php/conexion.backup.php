@@ -5,7 +5,7 @@ session_start();
 
 function conect($host = "localhost:3306", $user = "user", $psw = "password", $db = "database"){
 
-	$con = mysqli_connect($host,$user,$psw, $db) or die ("PELAS");
+	$con = mysqli_connect($host,$user,$psw, $db) or die ("Error en conexión MySQL");
 
 	if (!$con){
 	}

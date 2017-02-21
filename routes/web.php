@@ -13,7 +13,7 @@
 
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', 'UserController@index');
+Route::get('/', 'UserController@index')->name('login');
 Route::get('/login.php', 'UserController@index');
 Route::get('/pages/Registro.php', 'UserController@registroView');
 Route::get('/pages/principal.php', 'UserController@index');
