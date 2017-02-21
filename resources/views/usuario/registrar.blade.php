@@ -6,26 +6,26 @@
     <meta charset="utf-8">
     <title>Registro</title>
 
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/passwordval.js"></script>
+    <script src="{{url('/js/jquery.min.js')}}"></script>
+    <script src="{{url('/js/passwordval.js')}}"></script>
 
 
-    <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Main.css">
-    <link href="../css/radiocss.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url('/js/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url('/css/Main.css')}}">
+    <link href="{{url('/css/radiocss.css" rel="stylesheet')}}" />
 
-    <script src="../js/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../js/inicio.js"></script>
-    <link rel="stylesheet" href="../css/login.css">
-    <script src="../js/efectos.js"></script>
-
-
-
+    <script src="{{url('/js/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('/js/inicio.js')}}"></script>
+    <link rel="stylesheet" href="{{url('/css/login.css')}}">
+    <script src="{{url('/js/efectos.js')}}"></script>
 
 
 
-    <script src="../dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../dist/sweetalert.css">
+
+
+
+    <script src="{{url('/dist/sweetalert.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{url('/dist/sweetalert.css')}}">
 
     <script>
         $(document).ready(function () {
@@ -34,7 +34,7 @@
         });
     </script>
 
-    <script src="../js/personaJS.js"></script>
+    <script src="{{url('/js/personaJS.js')}}"></script>
 
 </head>
 
@@ -50,7 +50,17 @@
 
 <div class="container "> <!-- Div principal -->
 
-    <form action="registro" class="form-horizontal" method="post" enctype="multipart/form-data">
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form action="{{url('/usuario/registro')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
 
         <div class="form-group">
             <label for="nombre" class="control-label col-md-3 whiteClass">Nombre</label>

@@ -45,6 +45,22 @@ class UserController extends Controller
      */
     public function registrar(Request $request){
 
+        /**
+         * Validaciones realizadas al inicio para saber qué campos son obligatorios.
+         */
+        $this->validate($request, [
+            'apaterno' => 'required',
+            'nombre' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+            'Tuser' => 'required',
+
+        ]);
+
+        /**
+         * Código de PHP puro
+         * TODO: Se puede mejorar en una nueva versión utilizando Laravel.
+         */
         include 'php/conexion.php';
         $conec = conect();
         $archivo = "";
@@ -105,8 +121,10 @@ class UserController extends Controller
         {
             //	echo "hubo un error al enviar el mensaje intente de nuevo".mysqli_error();
         }
+        mysqli_close($conec);
+        //Fin de código puro PHP, consideración para mejorar
 
-
+        //Inserción en base de datos para realizar el registro del usuario.
         User::create(array(
            'APaterno' => $_POST['apaterno'],
            'AMaterno' => $_POST['amaterno'],
@@ -124,12 +142,6 @@ class UserController extends Controller
 
 
 
-        //  echo $Consulta ."<br>";
-        //  echo $sql;
-        //
-
-
-        mysqli_close($conec);
         //*/
 
     }

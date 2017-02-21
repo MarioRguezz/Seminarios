@@ -112,7 +112,7 @@
 <div class="form-group">
     <div class="col-md-5 col-md-offset-2">
         <h4 class="whiteClass thinWord NormalSizeWord"> ¿No estas registrado? Clic aqui para registrarse.</h4> <br>
-        <a class="form-control buttonLogin alignCenter" href="Registro.php">REGISTRO</a>
+        <a class="form-control buttonLogin alignCenter" href="{{url('/usuario/registro')}}">REGISTRO</a>
     </div>
 </div>
 
