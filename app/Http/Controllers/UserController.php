@@ -114,6 +114,7 @@ class UserController extends Controller
         mysqli_close($conec);
         //Fin de código puro PHP, consideración para mejorar
 
+
         //Inserción en base de datos para realizar el registro del usuario.
         User::create(array(
            'APaterno' => $_POST['apaterno'],

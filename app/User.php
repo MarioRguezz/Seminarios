@@ -30,7 +30,7 @@ class User extends Authenticatable
 
 
         protected $table = 'durango.persona';
-        protected  $primaryKey = "idPersona";
+        protected  $primaryKey = "IdPersona";
 
         protected $hidden = [
             'password',

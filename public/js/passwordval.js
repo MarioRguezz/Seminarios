@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     $('.errorI').hide();
@@ -24,18 +25,19 @@ $(document).ready(function () {
         }
     });
 
-    $('#usernameR').focusout(function () {
-        var us = $('#usernameR').val();
-
+    $('#email').focusout(function () {
+        var us = $('#email').val();
         $.ajax({
-            url: 'php/userexiste.php',
+            url: '../php/userexiste.php',
             type: "post",
             dataType: 'json',
             data: {
-                user: us
+                email: us
             }
         }).done(function (respuesta) {
+          console.log(respuesta);
             if (respuesta == 1) {
+              console.log("existe");
                 $('#ErrorUser').show();
                 $('#nU').addClass("has-error has-feedback");
                 $('.errorU').show();
@@ -54,7 +56,7 @@ $(document).ready(function () {
 
     $("#register-form").submit(function () {
         if($('#passwordR2').val!="" && $('#passwordR').val!="" && $('#usernameR').val()!="" && $('#emailR').val()!="" && $('#tipo').val()!="" && !Error){
-            return true;            
+            return true;
         }
         return false;
     });
