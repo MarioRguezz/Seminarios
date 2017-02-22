@@ -23,19 +23,38 @@ class UserController extends Controller
     public function index(Request $request){
         $user = Auth::user();
         if(isset($user)){
-            return "Logueado";
+            $band = 0;
+            if($user->Status == "BAJA"){
+                return view('login', array('res' => 0));
+            }
+            if($user->TUser == "Instructor")
+            {
+                $band = 1;
+            }
+
+            if($user->TUser == "Alumno")
+            {
+                $band = 2;
+            }
+
+            if($user->TUser == "Administrador")
+            {
+                $band = 3;
+            }
+            return view('principal', ['band' => $band]);
+        }else {
+            return view('login', array('res' => 0));
         }
-        return view('login', array('res'=>2));
     }
 
 
     public function login(Request $request){
-
+        session_start();
         if (Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
             // Authentication passed...
-
-            return "WOWO";
-           // return redirect()->intended('dashboard');
+            $_SESSION["tipoP"] = $request->input('user');
+            $_SESSION["email"] = $request->input('pass');
+           return Auth::user();
         }
 
     }
@@ -136,7 +155,7 @@ class UserController extends Controller
     }
 
     public function checkuser(){
-            dd(Auth::user());
+           return Auth::user();
     }
 
     public function registroView(Request $request){

@@ -30,7 +30,7 @@ class User extends Authenticatable
 
 
         protected $table = 'durango.persona';
-        protected  $primaryKey = "idPersona";
+        protected  $primaryKey = "IdPersona";
 
         protected $hidden = [
             'password',
@@ -46,6 +46,14 @@ class User extends Authenticatable
 
         public function setPasswordAttribute($value) {
             $this->attributes['password'] = bcrypt($value);
+        }
+
+        public function save(array $options = array())
+        {
+            if(empty($this->api_token)) {
+                $this->api_token = str_random(60);
+            }
+            return parent::save($options);
         }
 
 }

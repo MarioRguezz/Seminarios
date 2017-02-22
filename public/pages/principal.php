@@ -8,14 +8,6 @@ $TipoPer = $_SESSION["tipoP"];
 $email = $_SESSION["email"];
 
 
-if(isset($_SESSION['tipoP']))
-{
-}
-else
-{
-	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';
-	echo "<script>location.href='login.php'</script>";
-}
 	$conexia = conect();
 	$queryxe = "SELECT * FROM persona WHERE email = '$email';";
 	$resultadoses = mysqli_query($conexia,$queryxe);
