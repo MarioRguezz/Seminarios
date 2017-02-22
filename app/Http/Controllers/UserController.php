@@ -52,9 +52,12 @@ class UserController extends Controller
         session_start();
         if (Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
             // Authentication passed...
+ 
             $_SESSION["tipoP"] = $request->input('user');
             $_SESSION["email"] = $request->input('pass');
-           return Auth::user();
+           
+
+            return redirect("/");
         }
 
     }
@@ -64,6 +67,22 @@ class UserController extends Controller
      */
     public function registrar(Request $request){
 
+        /**
+         * Validaciones realizadas al inicio para saber qué campos son obligatorios.
+         */
+        $this->validate($request, [
+            'apaterno' => 'required',
+            'nombre' => 'required',
+            'email' => 'required|email|unique:persona',
+            'password' => 'required',
+            'Tuser' => 'required',
+
+        ]);
+
+        /**
+         * Código de PHP puro
+         * TODO: Se puede mejorar en una nueva versión utilizando Laravel.
+         */
         include 'php/conexion.php';
         $conec = conect();
         $archivo = "";
@@ -72,48 +91,38 @@ class UserController extends Controller
         if($request->input('Tuser') == 'Instructor')
         {
 
-            $extension = substr($_FILES["Archivo"]["type"], (strlen($_FILES["Archivo"]["type"])-3), strlen($_FILES["Archivo"]["type"]));
-            $NuevoNombre = 	$request->input('email').".".$extension;
-            $archivo = $NuevoNombre;
+            if ($request->hasFile('Archivo')) {
+                if($request->file('Archivo')->isValid()){
+                    $extension = $request->file('Archivo')->getClientOriginalExtension();
+                    $path = "CV/";
+                    $filename= uniqid("usuario_") . "." . $extension;
+                    $request->file('Archivo1')->move($path ,  $filename);
 
-
-            //	$archivo = $_FILES["Archivo"]["name"];
-            $carpeta = "../CV/";
-
-            if($archivo != "")
-            {
-                opendir($carpeta);
-                $destino = $carpeta.$archivo;
-                copy($_FILES['Archivo']['tmp_name'],$destino);
+                }
             }
+
 
         }
         else
         {
-            $extension = substr($_FILES["Archivo1"]["type"], (strlen($_FILES["Archivo1"]["type"])-3), strlen($_FILES["Archivo1"]["type"]));
-            if($extension == "peg"){
-                $extension = "jpeg";
-            }
-            $NuevoNombre = 	$_POST['email'].".".$extension;
-            $archivo = $NuevoNombre;
-            //	$archivo = $_FILES["Archivo1"]["name"];
-            $carpeta = "../img/Profile/";
+            if ($request->hasFile('Archivo1')) {
+                if($request->file('Archivo1')->isValid()){
+                    $extension = $request->file('Archivo1')->getClientOriginalExtension();
+                    $path = "img/Profile/";
+                    $filename= uniqid("usuario_") . "." . $extension;
+                    $request->file('Archivo1')->move($path ,  $filename);
 
-            if($archivo != "")
-            {
-                opendir($carpeta);
-                $destino = $carpeta.$archivo;
-                copy($_FILES['Archivo1']['tmp_name'],$destino);
+                }
             }
         }
         if($_REQUEST['Tuser'] == 'Instructor')
         {
             //echo "entro a instruc";
-            $Consulta = "INSERT INTO usuario (email,curriculum) VALUES ('$_POST[email]', '$destino');";
+            $Consulta = "INSERT INTO usuario (email,curriculum) VALUES ('$_POST[email]', '".url($path.$filename)."');";
         }
         else
         {
-            $Consulta = "INSERT INTO alumno (email,fotografia) VALUES ('$_POST[email]', '$destino');";
+            $Consulta = "INSERT INTO alumno (email,fotografia) VALUES ('$_POST[email]', '".url($path.$filename)."');";
         }
         //  echo $Consulta;
         if(mysqli_query($conec,$Consulta))
@@ -124,9 +133,11 @@ class UserController extends Controller
         {
             //	echo "hubo un error al enviar el mensaje intente de nuevo".mysqli_error();
         }
+        mysqli_close($conec);
+        //Fin de código puro PHP, consideración para mejorar
 
 
-
+        //Inserción en base de datos para realizar el registro del usuario.
         User::create(array(
            'APaterno' => $_POST['apaterno'],
            'AMaterno' => $_POST['amaterno'],
@@ -142,14 +153,8 @@ class UserController extends Controller
            'Sexo' => $_POST['sexo']
         ));
 
+        return redirect('/');
 
-
-        //  echo $Consulta ."<br>";
-        //  echo $sql;
-        //
-
-
-        mysqli_close($conec);
         //*/
 
     }
