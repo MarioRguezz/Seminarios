@@ -48,4 +48,12 @@ class User extends Authenticatable
             $this->attributes['password'] = bcrypt($value);
         }
 
+        public function save(array $options = array())
+        {
+            if(empty($this->api_token)) {
+                $this->api_token = str_random(60);
+            }
+            return parent::save($options);
+        }
+
 }

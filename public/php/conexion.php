@@ -5,7 +5,7 @@ session_start();
 
 function conect($host = "189.211.207.173:3306", $user = "seminarios", $psw = "123asdZXC", $db = "durango"){
 
-	$con = mysqli_connect($host,$user,$psw, $db) or die ("Error en conexión MySQL");
+	$con = mysqli_connect($host,$user,$psw, $db) or die ("Error de la conexión MySQL");
 
 	if (!$con){
 	}
