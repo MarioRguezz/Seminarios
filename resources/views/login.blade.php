@@ -7,7 +7,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/passwordval.js"></script>
 
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/Main.css">
     <link href="css/radiocss.css" rel="stylesheet" />
@@ -32,42 +32,33 @@
 <body class="backgroundLogin">
 
 <div class="col-xs-10 col-xs-offset-2">
-    <img src="img/Icons/logo.png" width="300px" height="200px" />
-    <br>
-    <h1 class="whiteClass2 marginlefttitle">  SEMINARIO</h1>
-    <h3 class="SubtitlewhiteClass">Bienvenido, ingrese usuario </h3>
-    <h3 class="SubtitlewhiteClass">y password para entrar</h3>
+    <div class="row">
+     <img src="img/Icons/logo.png" width="200px" height="125px" />
+    </div>
+    <div class="row">
+        <h1 class="whiteClass2 col-xs-12 col-md-4">SEMINARIO</h1><br>
+    </div>
+    <div class="row">
+        <h3 class="SubtitlewhiteClass col-xs-12 col-md-5">Bienvenido, ingrese usuario y password para entrar</h3>
+    </div>
+    <div class="row">
+        <!--Login-->
+        <form id="login-form" action="{{url('/login')}}" method="post" class="col-xs-12 col-md-4 " role="form">
+            <div class="form-group">
 
-    <!--Login-->
-    <form id="login-form" action="{{url('/login')}}" method="post" class="" role="form" style="display:inline-block; width:350px;">
-        <div class="form-group">
-            <?PHP
-            if($res==0)
-            {
-            ?>
+                @if($res==0)
+                    <div class="alert alert-danger" align="center">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <label class="btn-large ">Usuario o constraseña incorrectos</label>
+                    </div>
+                @endif
 
-            <div class="alert alert-danger" align="center">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <label class="btn-large ">Usuario o constraseña incorrectos</label>
-            </div>
+                <?PHP
+                if($res==1)
+                {
 
-            <?PHP
-            }
-            ?>
-
-            <?PHP
-            if($res==1)
-            {
-                /*
-                echo '<script>alert("Bienvenido")</script> ';
-
-                echo '<script>sweetAlert("Bienvenido", "success");</script> ';
-
-                echo "<script>location.href='principal.php'</script>";
-                */
-
-                $accion="VACIO";
-                echo '<script>
+                    $accion="VACIO";
+                    echo '<script>
 
 													swal({
 													title: "¡Bienvenido!",
@@ -90,31 +81,35 @@
 													</script>';
 
 
-            }
-            ?>
-            <input type="text" name="user" id="username" tabindex="1" class="form-control NoRadius" placeholder="Nombre de usuario" value="" required>
-        </div>
-        <div class="form-group">
-            <input type="password" name="pass" id="password" tabindex="2" class="form-control NoRadius " placeholder="Password" required>
-        </div>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-xs-6 col-xs-offset-0">
-                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control buttonLogin" value="COMENZAR">
+                }
+                ?>
+                <input type="text" name="user" id="username" tabindex="1" class="form-control NoRadius" placeholder="Nombre de usuario" value="" required>
+            </div>
+            <div class="form-group ">
+                <input type="password" name="pass" id="password" tabindex="2" class="form-control NoRadius " placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control buttonLogin" value="COMENZAR">
+                    </div>
                 </div>
             </div>
+        </form>
+    </div>
+    <div class="row">
+        <h4 class="whiteClass thinWord NormalSizeWord col-xs-12 col-md-4"> ¿No estas registrado? Clic aqui para registrarse.</h4> <br>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+        <a class="form-control buttonLogin alignCenter col-md-4" href="{{url('/usuario/registro')}}">REGISTRO</a>
         </div>
-    </form>
+    </div>
 </div>
 
 <br><br><br>
 
-<div class="form-group">
-    <div class="col-md-5 col-md-offset-2">
-        <h4 class="whiteClass thinWord NormalSizeWord"> ¿No estas registrado? Clic aqui para registrarse.</h4> <br>
-        <a class="form-control buttonLogin alignCenter" href="{{url('/usuario/registro')}}">REGISTRO</a>
-    </div>
-</div>
 
 </body>
 </html>

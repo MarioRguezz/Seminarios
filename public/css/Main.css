@@ -85,9 +85,8 @@ body{
 body.backgroundLogin
 {
 	background-image:url(../img/backgrounds/FONDO.png);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -183,7 +182,6 @@ color: white;
 font-weight: bold;
 font-size: 25px;
 height: 60px;
-width: 370px;
 border:solid 3px #FFF;
 border-radius: 0px;
 }
