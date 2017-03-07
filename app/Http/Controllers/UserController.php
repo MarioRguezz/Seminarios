@@ -59,10 +59,10 @@ class UserController extends Controller
      */
     public function login(Request $request){
         session_start();
-        if ($user = Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
+        if (Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
             // Authentication passed...
- 
-            $_SESSION["tipoP"] = $request->input('user');
+            $user = Auth::user();
+            $_SESSION["tipoP"] = $user->TUser;
             $_SESSION["email"] = $request->input('pass');
 
             return redirect("/");
@@ -180,29 +180,17 @@ class UserController extends Controller
            return Auth::user();
     }
 
-    
+
     public function verificarCorreo(Request $request)
     {
-        include 'php/conexion.php';
-        $con = conect();
+
         //$user= $_POST['email'];
-        $user =   $request->input('email');
-        //  echo json_encode(UserExiste($user));
-        $sql="select user from PERSONA where email='$user'";
-
-        if(mysqli_query($con,$sql)){
-            if(mysqli_affected_rows() > 0){
-                $msg = 1;
-            }
-            else{
-                $msg = 2;
-            }
+        $email =   $request->input('email');
+        $user = User::where('email', $email)->first();
+        if(isset($user)){
+            return 1;
         }
-        else{
-            $msg= 2;
-        }
-
-        echo $msg;
+        return 2;
     }
 
     /**

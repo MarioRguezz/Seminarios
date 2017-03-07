@@ -70,7 +70,7 @@ if($rowses['Status'] == "BAJA")
 
 <div class="Menu">
     <div class="col-md-4" >
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal {{$band}}</a>
     </div>
     <div class="col-md-offset-6 col-md-2 ">
         <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
@@ -82,11 +82,7 @@ if($rowses['Status'] == "BAJA")
 <!--<div class="contenedor2"> -->
 <div class="contenedorMain">
 
-    <?PHP
-
-    if($band == 2)
-    {
-    ?>
+    @if($band == 2)
 
     <center>
         <h1 class="whiteClass2">OPCIONES PARA EL ALUMNO</h1>
@@ -114,25 +110,21 @@ if($rowses['Status'] == "BAJA")
             <tr>
                 <td width="40%">
                     <center>
-                        <a href="MisCursos.php" target="_self"> <img src="../img/Icons/Png/PrincipalAlumno-01.png" width="180" height="180"  alt="Consulta de curso"/></a>
+                        <a href="{{url('/pages/MisCursos.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-01.png')}}" width="180" height="180"  alt="Consulta de curso"/></a>
                     </center>
                 </td>
 
                 <td width="40%">
                     <center>
-                        <a href="CursosDisponibles.php" target="_self"> <img src="../img/Icons/Png/PrincipalAlumno-02.png" width="180" height="180"  alt="Inscribir en un curso"/></a>
+                        <a href="{{url('/pages/CursosDisponibles.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Inscribir en un curso"/></a>
                     </center>
                 </td>
             </tr>
         </table>
     </center>
 
-    <?PHP
-    }
-
-    if($band == 1)
-    {
-    ?>
+    @endif
+    @if($band == 1)
 
     <center>
         <h1 class="whiteClass2">OPCIONES PARA EL INSTRUCTOR</h1>
@@ -159,25 +151,22 @@ if($rowses['Status'] == "BAJA")
 
                 <td width="40%">
                     <center>
-                        <a href="MisCursosInstructor.php" target="_self"> <img src="../img/Icons/Png/PrincipalAdmin-02.png" width="180" height="180" alt="Consulta de curso"/></a>
+                        <a href="{{url('/pages/MisCursosInstructor.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180" alt="Consulta de curso"/></a>
                     </center>
                 </td>
 
                 <td width="40%">
                     <center>
-                        <a href="AltaCurso.php" target="_self"> <img src="../img/Icons/Png/PrincipalAdmin-03.png" width="180" height="180"  alt="Dar de alta un curso"/></a>
+                        <a href="{{url('/pages/AltaCurso.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-03.png')}}" width="180" height="180"  alt="Dar de alta un curso"/></a>
                     </center>
                 </td>
             </tr>
         </table>
     </center>
 
-    <?PHP
-    }
+    @endif
 
-    if($band == 3)
-    {
-    ?>
+    @if($band == 3)
 
     <center>
         <h1 class="whiteClass2">OPCIONES PARA EL ADMINISTRADOR</h1>
@@ -219,16 +208,14 @@ if($rowses['Status'] == "BAJA")
 
                 <td width="100%">
                     <center>
-                        <a href="Pendientes.php" target="_self"> <img src="../img/Icons/Png/PrincipalAdmin-04.png" width="180" height="180"  alt="Aprobar solicitud"/></a>
+                        <a href="{{url('/pages/Pendientes.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Aprobar solicitud"/></a>
                     </center>
                 </td>
             </tr>
         </table>
     </center>
 
-    <?PHP
-    }
-    ?>
+    @endif
 
 </div> <!-- Fin del div principal -->
 
