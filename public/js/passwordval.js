@@ -27,8 +27,10 @@ $(document).ready(function () {
 
     $('#email').focusout(function () {
         var us = $('#email').val();
+        console.log("dasdasd");
         $.ajax({
-            url: '../php/userexiste.php',
+           // url: '../php/userexiste.php',
+            url: '../verificarCorreo',
             type: "post",
             dataType: 'json',
             data: {
@@ -44,6 +46,7 @@ $(document).ready(function () {
                 Error=true;
 
             } else {
+                alert("madre dio mio");
                 $('#ErrorUser').hide();
                 $('#nU').removeClass("has-error has-feedback");
                 $('.errorU').hide();

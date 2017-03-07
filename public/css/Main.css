@@ -91,6 +91,15 @@ body.backgroundLogin
 }
 
 
+body.registro
+{
+	background-image:url(../img/backgrounds/FONDOinvertido.png);
+	background-attachment:fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
 body.backgroundPrincipal
 {
   background-image:url('../img/backgrounds/FONDO2Size.png');

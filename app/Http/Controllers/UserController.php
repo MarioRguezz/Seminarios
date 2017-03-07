@@ -20,6 +20,9 @@ class UserController extends Controller
     }
 
 
+
+
+
     public function index(Request $request){
         $user = Auth::user();
         if(isset($user)){
@@ -87,7 +90,6 @@ class UserController extends Controller
         $conec = conect();
         $archivo = "";
         $destino = "";
-
         if($request->input('Tuser') == 'Instructor')
         {
 
@@ -163,7 +165,34 @@ class UserController extends Controller
            return Auth::user();
     }
 
+
+    public function verificarCorreo(Request $request)
+    {
+        include 'php/conexion.php';
+        $con = conect();
+        //$user= $_POST['email'];
+        $user =   $request->input('email');
+        //  echo json_encode(UserExiste($user));
+        $sql="select user from PERSONA where email='$user'";
+
+        if(mysqli_query($con,$sql)){
+            if(mysqli_affected_rows() > 0){
+                $msg = 1;
+            }
+            else{
+                $msg = 2;
+            }
+        }
+        else{
+            $msg= 2;
+        }
+
+        echo $msg;
+    }
+
     public function registroView(Request $request){
         return view('usuario.registrar');
     }
+
+
 }

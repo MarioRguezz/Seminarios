@@ -19,6 +19,7 @@ Route::get('/pages/Registro.php', 'UserController@registroView');
 Route::get('/pages/principal.php', 'UserController@index');
 Route::post('/login', 'UserController@login');
 Route::get('/testuser','UserController@checkuser');
+Route::post('/verificarCorreo','UserController@verificarCorreo');
 
 
 

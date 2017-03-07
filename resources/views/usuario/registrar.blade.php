@@ -22,8 +22,6 @@
 
 
 
-
-
     <script src="{{url('/dist/sweetalert.min.js')}}"></script>
     <link rel="stylesheet" type="text/css" href="{{url('/dist/sweetalert.css')}}">
 
@@ -38,7 +36,7 @@
 
 </head>
 
-<body>
+<body class="registro">
 
 <center>
     <h3 class="cssTitleRegistro">REGISTRO PARA NUEVOS USUARIOS</h3>
