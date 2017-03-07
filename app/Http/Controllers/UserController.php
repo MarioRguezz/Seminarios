@@ -28,6 +28,7 @@ class UserController extends Controller
         if(isset($user)){
             $band = 0;
             if($user->Status == "BAJA"){
+                $this->logout();
                 return view('login', array('res' => 1));
             }
             if($user->TUser == "Instructor")
@@ -60,10 +61,9 @@ class UserController extends Controller
         session_start();
         if (Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
             // Authentication passed...
- 
-            $_SESSION["tipoP"] = $request->input('user');
+            $user = Auth::user();
+            $_SESSION["tipoP"] = $user->TUser;
             $_SESSION["email"] = $request->input('pass');
-           
 
             return redirect("/");
         }
@@ -181,28 +181,14 @@ class UserController extends Controller
     }
 
 
-    public function verificarCorreo(Request $request)
-    {
-        include 'php/conexion.php';
-        $con = conect();
+    public function verificarCorreo(Request $request){
         //$user= $_POST['email'];
-        $user =   $request->input('email');
-        //  echo json_encode(UserExiste($user));
-        $sql="select APaterno from persona where email='$user'";
-
-        if(mysqli_query($con,$sql)){
-            if(mysqli_affected_rows() > 0){
-                $msg = 1;
-            }
-            else{
-                $msg = 3;
-            }
+        $email =   $request->input('email');
+        $user = User::where('email', $email)->first();
+        if(isset($user)){
+            return 1;
         }
-        else{
-            $msg= "$user";
-        }
-
-        echo $msg;
+        return 2;
     }
 
 
@@ -220,7 +206,7 @@ class UserController extends Controller
      * Función para cerrar la sesión de un usuario.
      * @param Request $request
      */
-    public function logout(Request $request){
+    public function logout(){
         $user = Auth::user();
         session_start();
         unset($_SESSION['tipoP']);

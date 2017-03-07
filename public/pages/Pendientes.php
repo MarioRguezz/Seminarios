@@ -11,14 +11,14 @@ if(isset($_SESSION['tipoP']))
 }
 else
 {
-	echo '<script>alert("Acceso denegado... Por favor inica sesión")</script> ';
+	echo "<script>alert('Acceso denegado... Por favor inica sesión')</script> ";
 	echo "<script>location.href='login.php'</script>";
 }
 
 if($TipoPer != "Administrador")
 {
 	logout();
-		echo '<script>alert("Acceso denegado... Sitio exclusivo de los administradores")</script> ';
+		echo "<script>alert('Acceso denegado...   $TipoPer Sitio exclusivo de los administradores')</script> ";
 		echo "<script>location.href='login.php'</script>";
 }
 
