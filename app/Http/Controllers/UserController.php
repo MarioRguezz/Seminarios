@@ -180,7 +180,7 @@ class UserController extends Controller
            return Auth::user();
     }
 
-    
+
     public function verificarCorreo(Request $request)
     {
         include 'php/conexion.php';
@@ -188,22 +188,23 @@ class UserController extends Controller
         //$user= $_POST['email'];
         $user =   $request->input('email');
         //  echo json_encode(UserExiste($user));
-        $sql="select user from PERSONA where email='$user'";
+        $sql="select APaterno from persona where email='$user'";
 
         if(mysqli_query($con,$sql)){
             if(mysqli_affected_rows() > 0){
                 $msg = 1;
             }
             else{
-                $msg = 2;
+                $msg = 3;
             }
         }
         else{
-            $msg= 2;
+            $msg= "$user";
         }
 
         echo $msg;
     }
+
 
     /**
      * Retorno de la vista de registro.
