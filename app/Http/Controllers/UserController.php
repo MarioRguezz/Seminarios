@@ -28,6 +28,7 @@ class UserController extends Controller
         if(isset($user)){
             $band = 0;
             if($user->Status == "BAJA"){
+                $this->logout();
                 return view('login', array('res' => 1));
             }
             if($user->TUser == "Instructor")
@@ -58,12 +59,11 @@ class UserController extends Controller
      */
     public function login(Request $request){
         session_start();
-        if (Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
+        if ($user = Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
             // Authentication passed...
  
             $_SESSION["tipoP"] = $request->input('user');
             $_SESSION["email"] = $request->input('pass');
-           
 
             return redirect("/");
         }
@@ -219,7 +219,7 @@ class UserController extends Controller
      * Función para cerrar la sesión de un usuario.
      * @param Request $request
      */
-    public function logout(Request $request){
+    public function logout(){
         $user = Auth::user();
         session_start();
         unset($_SESSION['tipoP']);
