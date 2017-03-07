@@ -64,7 +64,7 @@ if($rowses['Status'] == "BAJA")
 </head>
 
 <body class="backgroundPrincipal">
-
+<input type="hidden" id="_url" value="{{url('/')}}">
 <!--	FIN	Menu en el Encabezado	-->
 
 
@@ -73,7 +73,7 @@ if($rowses['Status'] == "BAJA")
         <a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
     </div>
     <div class="col-md-offset-6 col-md-2 ">
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
     </div>
 </div>
 

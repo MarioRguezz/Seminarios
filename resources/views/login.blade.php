@@ -53,36 +53,14 @@
                     </div>
                 @endif
 
-                <?PHP
-                if($res==1)
-                {
-
-                    $accion="VACIO";
-                    echo '<script>
-
-													swal({
-													title: "¡Bienvenido!",
-													text: "de clic en el boton para continuar",
-													type: "success",
-													showCancelButton: false,
-													confirmButtonColor: "#00E02D",
-													confirmButtonText: "Continuar",
-													cancelButtonText: "No, cancel plx!",
-													closeOnConfirm: false,
-													closeOnCancel: false },
-
-													function(isConfirm){
-													if (isConfirm)
-													{
-														location.href="principal.php"
-													}
-													});
-
-													</script>';
+                @if($res==1)
+                    <div class="alert alert-danger" align="center">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <label class="btn-large ">El usuario no ha sido dado de alta por el administrador.</label>
+                    </div>
+                @endif
 
 
-                }
-                ?>
                 <input type="text" name="user" id="username" tabindex="1" class="form-control NoRadius" placeholder="Nombre de usuario" value="" required>
             </div>
             <div class="form-group ">

@@ -28,7 +28,7 @@ class UserController extends Controller
         if(isset($user)){
             $band = 0;
             if($user->Status == "BAJA"){
-                return view('login', array('res' => 0));
+                return view('login', array('res' => 1));
             }
             if($user->TUser == "Instructor")
             {
@@ -46,11 +46,16 @@ class UserController extends Controller
             }
             return view('principal', ['band' => $band]);
         }else {
-            return view('login', array('res' => 0));
+            return view('login', array('res' => 2));
         }
     }
 
 
+    /**
+     * Controlador para logueo de usuarios.
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function login(Request $request){
         session_start();
         if (Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
@@ -62,11 +67,17 @@ class UserController extends Controller
 
             return redirect("/");
         }
+        else{
+            //El 0 indica que se imprime el mensaje de Usuario y/o contraseña incorrecto.
+            return view('login', array('res' => 0));
+        }
 
     }
 
     /**
-     * Función para registrar un nuevo usuario
+     * Método para registrar un nuevo usuario.
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function registrar(Request $request){
 
@@ -161,11 +172,15 @@ class UserController extends Controller
 
     }
 
+    /**
+     * Función de prueba.
+     * @return \Illuminate\Contracts\Auth\Authenticatable|null
+     */
     public function checkuser(){
            return Auth::user();
     }
 
-
+    
     public function verificarCorreo(Request $request)
     {
         include 'php/conexion.php';
@@ -190,9 +205,31 @@ class UserController extends Controller
         echo $msg;
     }
 
+    /**
+     * Retorno de la vista de registro.
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function registroView(Request $request){
         return view('usuario.registrar');
     }
 
 
+    /**
+     * Función para cerrar la sesión de un usuario.
+     * @param Request $request
+     */
+    public function logout(Request $request){
+        $user = Auth::user();
+        session_start();
+        unset($_SESSION['tipoP']);
+        unset($_SESSION['email']);
+        unset($_SESSION["IDExam"]);
+        session_destroy();
+
+        Auth::logout();
+
+        return redirect('/');
+
+    }
 }
