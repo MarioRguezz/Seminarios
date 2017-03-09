@@ -13,6 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
+
+/**
+ * prefijo: usuario
+ * referencia: UserApiController
+ * Funciones de API para el usuario. Inicio de sesión, etc.
+ */
+Route::group(['prefix'=>'usuarios'], function(){
+    Route::post('login', "UserApiController@login");
+});
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+

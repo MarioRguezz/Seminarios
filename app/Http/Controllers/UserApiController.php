@@ -22,37 +22,24 @@ class UserApiController extends Controller
    * @param  Request $request [JSON con email y password]
    * @return [User]           [Devuelve el usuario logueado]
    */
-  /*public function authenticate(Request $request){
+  public function login(Request $request){
     $email = $request->input('email');
     $password = $request->input('password');
-    $errors = ["bad.login"];
+
+    $response = [];
     if (Auth::once(['email' => $email, 'password' => $password ])) {
-      return Auth::user();
+        $response['data'] = Auth::user();
+        $response['status'] = 200;
+        $response['success'] = true;
+    }else{
+        $response['errors'][] = "Las credenciales del usuario no son válidas";
+        $response['status'] = 500;
+        $response['success'] = false;
     }
 
-    return response()->json([
-      "success"=>"false",
-      "error" => $errors
-    ]);
-  }*/
-
-/*  public function authenticate(Request $request){
-    $email = $request->input('email');
-    $password = $request->input('password');
-    $errors = ["bad.login"];
-    if($UserExist =User::where('email', '=', $email)->first()){
-      if($UserExist->password == $password){
-        return $UserExist;
-      }
+    return response()->json(
+        $response
+    );
   }
-    return response()->json([
-      "success"=>"false",
-      "error" => $errors
-    ]);
-  }*/
 
-  public function authenticate(Request $request){
-      $UserExist =User::where('email', '=', 'ponlecoco@hotmail.com')->first();
-          echo $UserExist;
-    }
 }
