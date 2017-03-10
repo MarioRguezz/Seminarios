@@ -94,11 +94,8 @@ html{
 <!--	INICIO Menu en el Encabezado	-->
 
 <div class="Menu">
-    <div class="col-md-1" >
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
-    </div>
-    <div class="col-md-2" >
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
+    <div class="col-md-3" >
+        <a class="SubtitlewhiteClass NoShadow WithTop"href="../">Menú principal</a>
     </div>
     <div class="col-md-2 col-md-offset-3">
         <a class="SubtitlewhiteClass NoShadow WithTop" href="MisCursos.php">Mis cursos</a>
@@ -107,7 +104,7 @@ html{
         <a class="SubtitlewhiteClass NoShadow WithTop" >Curso <?PHP echo htmlentities($row['nombre']); ?></a>
     </div>
     <div class="col-md-2">
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="../logout">Cerrar sesión</a>
     </div>
 </div>
 

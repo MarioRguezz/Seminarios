@@ -90,12 +90,8 @@ if($tipoPer == "Alumno")
 <!--	FIN	Menu en el Encabezado	-->
 
 <div class="Menu">
-	<div class="col-md-1" >
-		<a class="SubtitlewhiteClass NoShadow WithTop" href="#">Menú</a>
-	</div>
-
     <div class="col-md-2" >
-    	<a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
+    	<a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
     </div>
 
     <div class="col-md-2" >
@@ -104,8 +100,8 @@ if($tipoPer == "Alumno")
    	<a class="SubtitlewhiteClass NoShadow WithTop" href="MisCursosInstructor.php">Mis Cursos</a>
     </div>
 
-    <div class="col-md-2 col-md-offset-5">
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
+    <div class="col-md-2 col-md-offset-6">
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="../logout">Cerrar sesión</a>
     </div>
 </div>
 

@@ -40,17 +40,23 @@ $(document).ready(function () {
           console.log(respuesta);
             if (respuesta == 1) {
               console.log("existe");
-                $('#ErrorUser').show();
+               /* $('#ErrorUser').show();
                 $('#nU').addClass("has-error has-feedback");
-                $('.errorU').show();
-                Error=true;
+                $('.errorU').show();*/
+                $('#email').css("background-color","red");
+                $('#email').css("color","white");
+                swal("Oops...", "Este correo ya ha sido registrado", "error");
+                btn-registro
+                $("#btn-registro" ).prop( "disabled", true);
 
             } else {
-                alert("madre dio mio");
+                /*
                 $('#ErrorUser').hide();
                 $('#nU').removeClass("has-error has-feedback");
-                $('.errorU').hide();
-                Error=false;
+                $('.errorU').hide();*/
+                $('#email').css("background-color","");
+                $('#email').css("color","");
+                $("#btn-registro" ).prop( "disabled", false);
             }
         });
 

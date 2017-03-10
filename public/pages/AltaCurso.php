@@ -115,10 +115,10 @@ $res= get_Personas();
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
 	<div class="col-md-4" >
-		<a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
+		<a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
 	</div>
 	<div class="col-md-2 col-md-offset-6">
-			<a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
+			<a class="SubtitlewhiteClass NoShadow WithTop" href="../logout">Cerrar sesión</a>
 	</div>
 </div>
 
@@ -147,7 +147,7 @@ $res= get_Personas();
                         <span class="input-group-btn data-dwn">
 					<button type="button" class="btn btn-default NoRadius " data-dir="dwn"><span class="">-</span></button>
                         </span>
-                        <input id="Cupo" name="Cupo" type="text" class="form-control NoRadius text-center" value="30" min="1">
+                        <input id="Cupo" name="Cupo" type="number" class="form-control NoRadius text-center" value="30" min="1">
                         <span class="input-group-btn data-up">
 					<button type="button" class="btn btn-default NoRadius" data-dir="up"><span class="">+</span></button>
                         </span>

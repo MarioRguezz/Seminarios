@@ -109,7 +109,7 @@ class UserController extends Controller
                     $extension = $request->file('Archivo')->getClientOriginalExtension();
                     $path = "CV/";
                     $filename= uniqid("usuario_") . "." . $extension;
-                    $request->file('Archivo1')->move($path ,  $filename);
+                    $request->file('Archivo')->move($path ,  $filename);
 
                 }
             }
@@ -131,6 +131,7 @@ class UserController extends Controller
         if($_REQUEST['Tuser'] == 'Instructor')
         {
             //echo "entro a instruc";
+
             $Consulta = "INSERT INTO usuario (email,curriculum) VALUES ('$_POST[email]', '".url($path.$filename)."');";
         }
         else

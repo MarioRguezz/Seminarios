@@ -87,10 +87,10 @@ mysqli_close($conexia);
 <!--	FIN	Menu en el Encabezado	-->
 <div class="Menu">
 	<div class="col-md-4" >
-		<a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal</a>
+		<a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
 	</div>
 	<div class="col-md-2 col-md-offset-6">
-			<a class="SubtitlewhiteClass NoShadow WithTop" href="Cerrar.php">Cerrar sesión</a>
+			<a class="SubtitlewhiteClass NoShadow WithTop" href="../logout">Cerrar sesión</a>
 	</div>
 </div>
 

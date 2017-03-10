@@ -41,7 +41,6 @@ if($rowses['Status'] == "BAJA")
     <script src="js/inicio.js"></script>
     <link rel="stylesheet" href="css/login.css">
     <script src="js/efectos.js"></script>
-
     <script>
         $(document).ready(function () {
             $('[data-toggle="popover"]').popover();
@@ -70,7 +69,7 @@ if($rowses['Status'] == "BAJA")
 
 <div class="Menu">
     <div class="col-md-4" >
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="principal.php">Menú principal {{$band}}</a>
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="">Menú principal</a>
     </div>
     <div class="col-md-offset-6 col-md-2 ">
         <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>

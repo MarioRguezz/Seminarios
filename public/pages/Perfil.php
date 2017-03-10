@@ -44,7 +44,7 @@ if($TipoPer == "Alumno")
 <meta charset="utf-8">
 
  <script src="../js/jquery.min.js"></script>
-<script src="../js/passwordval.js"></script>
+<!--<script src="../js/passwordval.js"></script>-->
 
 
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
@@ -140,7 +140,7 @@ if($_POST['tipoUs'] == 'Instructor')
 
                 <div class="form-group">
                 <label for="opcion" class="control-label col-md-3 whiteClassThin">Sexo</label>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                     <input class="form-control NoRadius" type="text" id="sex" name="sex" value="<?PHP echo htmlentities($row['Sexo']); ?>" readonly>
                     </div>
                 </div>
@@ -192,6 +192,7 @@ if($_POST['tipoUs'] == 'Instructor')
 				$resultado = mysqli_query($conexia,$querys);
 				$fila = mysqli_fetch_array($resultado);
 				?>
+
                     <object data=" <?PHP echo htmlentities($fila['curriculum']); ?>" width="100%" height="100%" type="application/pdf">
                     </object>
                 </div>
@@ -299,7 +300,7 @@ else
                 <div class="form-group">
                 <label for="municipio" class="control-label col-md-3 whiteClassThin">Municipio</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadius" id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Municipio']); ?>" readonly>
+                    <input class="form-control NoRadius" id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Celular']); ?>" readonly>
                     </div>
                 </div>
 		</form>
