@@ -1,8 +1,27 @@
 $(document).ready(function () {
+	var pdftpl = `<label for="PDF" class="control-label col-md-3 whiteClassThin">Adjunte Archivo en PDF no mayor a 15 Mb</label>
+<label for="pdffile" class="custom-file-upload whiteClassThin"> Archivo PDF</label>
+	<input type="file" name="PDF" id="pdffile" class="btn btn-warning">`;
 
-    $('#PDF').hide();
-    $('#Video').hide();
-    $('#Audio').hide();
+    var videotpl = `<label for="nombre" class="control-label col-md-3 whiteClassThin">Adjunte la URL de su video</label>
+	<div class="col-md-6">
+	<input class="form-control NoRadius" id="videoUrl" name="videoUrl" type="url" placeholder="" required>
+	</div>`;
+
+    var audiotpl = `<label for="Audio" class="control-label col-md-3 whiteClassThin">Adjunte Audio no mayor a 20 Mb</label>
+<label for="listenfile" class="custom-file-upload whiteClassThin"> Audio</label>
+	<input type="file" name="Audio" id="listenfile" class="btn btn-primary">`;
+
+   /* var tpl = `<div class="divNombre"><label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre corto para el archivo</label>
+          <div class="col-md-6">
+          <input class="form-control NoRadius" id="nombreArchivo"
+          name="nombreArchivo" type="text" placeholder="Sin espacios, no mayor a 15 caracteres" maxlength="15"  required>
+          </div>`;*/
+
+
+   // $('#PDF').hide();
+   // $('#Video').hide();
+   // $('#Audio').hide();
 	$('#nombreArchivo').hide();
 
     $('#TMat').change(function () {
@@ -10,46 +29,37 @@ $(document).ready(function () {
         if ($('#TMat').val() == 'PDF')
 		{
 			$('#nombreArchivo1').show(1000);
-      $('.divNombre').remove();
-      var tpl = `<div class="divNombre"><label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre corto para el archivo</label>
-          <div class="col-md-6">
-          <input class="form-control NoRadius" id="nombreArchivo"
-          name="nombreArchivo" type="text" placeholder="Sin espacios, no mayor a 15 caracteres" maxlength="15" required>
-          </div>`;
-      $('.nothing').prepend(tpl);
-      $('#PDF').show(1000);
-			$('#Video').hide();
-			$('#Audio').hide();
+			$('.divNombre').remove();
+      		//$('.nothing').prepend(tpl);
+      		$('#PDF').append(pdftpl);
+			$('#Video').remove();
+			$('#Audio').remove();
         }
 		else if ($('#TMat').val() == 'Video')
 		{
-	 	$('#nombreArchivo1').show(1000);
-      $('.divNombre').remove();
-			$('#PDF').hide();
-			$('#Video').show(1000);
-			$('#Audio').hide();
+	 		$('#nombreArchivo1').show(1000);
+			$('.divNombre').remove();
+			$('#PDF').remove();
+			//$('#Video').show(1000);
+            $('#Video').append(videotpl);
+			$('#Audio').remove();
 
 		}
 		else if ($('#TMat').val() == 'Audio')
 		{
 			$('#nombreArchivo1').show(1000);
-      $('.divNombre').remove();
-      var tpl = `<div class="divNombre"><label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre corto para el archivo</label>
-          <div class="col-md-6">
-          <input class="form-control NoRadius" id="nombreArchivo"
-          name="nombreArchivo" type="text" placeholder="Sin espacios, no mayor a 15 caracteres" maxlength="15" required>
-          </div></div>`;
-      $('.nothing').prepend(tpl);
-			$('#PDF').hide();
-			$('#Video').hide();
-			$('#Audio').show(1000);
+			$('.divNombre').remove();
+      		//$('.nothing').prepend(tpl);
+			$('#PDF').remove();
+			$('#Video').remove();
+			$('#Audio').append(audiotpl);
 		}
 		else
 		{
 			$('#nombreArchivo1').hide(1000);
-			$('#PDF').hide(1000);
-			$('#Video').hide(1000);
-			$('#Audio').hide(1000);
+			$('#PDF').remove();
+			$('#Video').remove();
+			$('#Audio').remove();
 		}
     });
 

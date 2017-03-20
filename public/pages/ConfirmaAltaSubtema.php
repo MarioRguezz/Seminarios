@@ -9,7 +9,7 @@ $IDCurso = $_POST['IDCurso'];
 
 $tipoPer = $_SESSION["tipoP"];
 $email = $_SESSION["email"];
-print_r($IDCurso."<br>");
+//print_r($IDCurso."<br>");
 
 if(isset($_SESSION['tipoP']))
 {
@@ -56,6 +56,12 @@ if($tipoPer == "Alumno")
 <!doctype html>
 <html>
 <head>
+
+    <style>
+        html{
+            height: 100%;
+        }
+    </style>
 <meta charset="utf-8">
 <title>Confirma subtema</title>
 
@@ -153,7 +159,10 @@ if($accion == 'Nu3v@')
 			if($_REQUEST['TMat'] == "PDF")
 			{
 				$extension = substr($_FILES["PDF"]["type"], (strlen($_FILES["PDF"]["type"])-3), strlen($_FILES["PDF"]["type"]));
-				$NuevoNombre = 	$_POST['nombreArchivo'].".".$extension;
+				//$NuevoNombre = 	$_POST['nombreArchivo'].".".$extension;
+                $NuevoNombre =   uniqid('pdf_',true).".".$extension;
+
+
 				$archivo = $NuevoNombre;
 				$carpeta = "../Mat_Doc/";
 
@@ -185,33 +194,12 @@ if($accion == 'Nu3v@')
 								else{
 									echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
 									}
-			/*	$extension = substr($_FILES["Video"]["type"], (strlen($_FILES["Video"]["type"])-3), strlen($_FILES["Video"]["type"]));
-				$NuevoNombre = 	$_POST['nombreArchivo'].".".$extension;
-				$archivo = $NuevoNombre;
-				$carpeta = "../Mat_Video/";
-
-				if($archivo != "")
-				{
-					opendir($carpeta);
-					$destino = $carpeta.$archivo;
-					copy($_FILES['Video']['tmp_name'],$destino);
-
-					$consulta = "INSERT INTO material_video (id_Subtema, ubica) VALUES ('$clave', '$destino');";
-
-
-					if(mysqli_query($conec,$consulta))
-					{				}
-					else
-					{
-						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
-					}
-				}
-*/
 			}
 			else if($_REQUEST['TMat'] == "Audio")
 			{
 				$extension = substr($_FILES["Audio"]["type"], (strlen($_FILES["Audio"]["type"])-3), strlen($_FILES["Audio"]["type"]));
-				$NuevoNombre = 	$_POST['nombreArchivo'].".".$extension;
+				//$NuevoNombre = 	$_POST['nombreArchivo'].".".$extension;
+                $NuevoNombre =   uniqid('audio_',true).".".$extension;
 				$archivo = $NuevoNombre;
 				$carpeta = "../Mat_Audio/";
 
@@ -221,7 +209,6 @@ if($accion == 'Nu3v@')
 					opendir($carpeta);
 					$destino = $carpeta.$archivo;
 					copy($_FILES['Audio']['tmp_name'],$destino);
-
 					$consulta = "INSERT INTO material_audio (id_Subtema, ubica) VALUES ('$clave', '$destino');";
 
 					if(mysqli_query($conec,$consulta))
@@ -235,8 +222,8 @@ if($accion == 'Nu3v@')
 
 
 
-			$cons = "INSERT INTO curso_subtema (id_tema, id_subtema, Nombre, Descrip) VALUES ('$_POST[IDTema]', '$clave', '$_POST[Nombre]', '$_POST[Descripcion]');";
-
+			//$cons = "INSERT INTO curso_subtema (id_tema, id_subtema, Nombre, Descrip) VALUES ('$_POST[IDTema]', '$clave', '$_POST[Nombre]', '$_POST[Descripcion]');";
+            $cons = "INSERT INTO curso_subtema (id_curso,id_tema, id_subtema, Nombre, Descrip,Orden) VALUES ('$IDCurso','$_POST[IDTema]', '$clave', '$_POST[Nombre]', '$_POST[Descripcion]', '$siguiente');";
 			if(mysqli_query($conec, $cons))
 				{
 			?>
@@ -257,7 +244,7 @@ if($accion == 'Nu3v@')
 					print_r(mysqli_error());
 					echo '<script>alert("hubo un error intente de nuevo más tarde")</script> ';
 					$accion="VACIO";
-					echo "<script>location.href='MisCursosInstructor.php'</script>";
+					//echo "<script>location.href='MisCursosInstructor.php'</script>";
 				}
 
 			mysqli_close($conec);

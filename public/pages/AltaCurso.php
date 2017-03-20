@@ -161,7 +161,7 @@ $res= get_Personas();
     	<input class="form-control NoRadius" id="autocomplete" name="IDinstructor" type="text" placeholder="" required value="<?PHP echo htmlentities($Matricula); ?>" readonly>
     </div>
  </div> -->
-
+    <input type="hidden" class="form-control NoRadius" id="autocomplete" name="IDinstructor" type="text" placeholder="" required value="<?PHP echo htmlentities($Matricula); ?>" readonly>
 
  <div class="form-group">
 <label for="nombre" class="control-label col-md-3 whiteClassThin">Descripción</label>
@@ -191,6 +191,9 @@ if($accion == 'Nu3v@')
 
 
 			$conec = conect();
+
+			var_dump($IDCurso);
+			var_dump($_POST[IDinstructor]);
 
 			$Consulta = "INSERT INTO curso_instructor (id_Curso, Mat_Usuario) VALUES ($IDCurso, '$_POST[IDinstructor]');";
 

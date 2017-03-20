@@ -110,7 +110,8 @@ mysqli_close($conexia);
 </center>
 
 <br><br>
-<div class="container">
+<!--<div class="container">-->
+    <div class="">
 		<table style="width:100%" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
     <tr class="danger">
     	<th><center>Nombre del curso</center></th>

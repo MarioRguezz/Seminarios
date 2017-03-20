@@ -131,7 +131,7 @@ mysqli_close($conexia);
 	<?PHP
 		$color = 0;
 		$conex = conect();
-		$consulta = "SELECT P.APaterno, P.AMaterno, P.Nombre, P.email FROM alumno A JOIN curso_participante CP ON A.Mat_Alumno = CP.Mat_Alumno JOIN Persona P ON A.email = P.email WHERE CP.id_Curso = '$IDCurso'";
+		$consulta = "SELECT P.APaterno, P.AMaterno, P.Nombre, P.email FROM alumno A JOIN curso_participante CP ON A.Mat_Alumno = CP.Mat_Alumno JOIN persona P ON A.email = P.email WHERE CP.id_Curso = '$IDCurso'";
 
 		$res = mysqli_query($conex,$consulta);
 		while($row = mysqli_fetch_array($res))

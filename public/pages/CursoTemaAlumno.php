@@ -25,7 +25,7 @@ if($tipoPer != "Alumno")
 	$conexia = conect();
 
 
-	$queryxe = "SELECT * FROM persona P JOIN Alumno A ON P.email = A.email  WHERE P.email = '$email' ;";
+	$queryxe = "SELECT * FROM persona P JOIN alumno A ON P.email = A.email  WHERE P.email = '$email' ;";
 	$resultadoses = mysqli_query($conexia, $queryxe);
 	$rowses = mysqli_fetch_array($resultadoses);
 
@@ -74,7 +74,10 @@ if($tipoPer != "Alumno")
     <link rel="stylesheet" href="../css/Principal2.css">
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
-
+   <script src="../js/mediaelement-and-player.min.js"></script>
+    <link href="../css/mediaelementplayer.css" rel="stylesheet">
+   <!-- <script src="https://cdn.jsdelivr.net/mediaelement/latest/mediaelement-and-player.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/mediaelement/latest/mediaelementplayer.css" rel="stylesheet">-->
 
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
    <script src="../js/script.js"></script>
@@ -111,8 +114,62 @@ html{
 <!--	FIN	Menu en el Encabezado	-->
 
 <br>
+<div style="margin-top: 5%"class="progress">
+    <?PHP
 
-<div class="contenedor top">
+    $sqlx = "SELECT * FROM subtema_visto WHERE id_Curso = '$IDCurso' AND Mat_Alumno = '$MatAlu' AND Visto != '0';";
+    $resulx = mysqli_query($conexia, $sqlx);
+    $TotalVisto = mysqli_num_rows($resulx);
+
+    $Regla3 = ($TotalVisto * 100) / $TotalSub;
+
+    if($Regla3 < 100)
+    {
+        $Progreso = round($Regla3, 0, PHP_ROUND_HALF_UP);
+    }
+    else
+    {
+        $Progreso = $Regla3;
+    }
+    if($Progreso <= 20)
+    {
+        ?>
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
+            <?PHP echo htmlentities($Progreso); ?>%
+        </div>
+        <?PHP
+    }
+    else if($Progreso <= 50)
+    {
+        ?>
+        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
+            <?PHP echo htmlentities($Progreso); ?>%
+        </div>
+        <?PHP
+    }
+    else if($Progreso <= 70)
+    {
+        ?>
+
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
+            <?PHP echo htmlentities($Progreso); ?>%
+        </div>
+
+        <?PHP
+    }
+    else
+    {
+        ?>
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
+            <?PHP echo htmlentities($Progreso); ?>%
+        </div>
+        <?PHP
+    }
+    ?>
+
+</div>
+
+<div class="contenedor ">
 
 <?PHP
 if($accion == 'C0R50')
@@ -135,7 +192,6 @@ if($accion == 'C0R50')
 	$Aud = $_POST['Aud'];
 
 
-
 	$queryze = "SELECT * FROM material_video WHERE id_Subtema = '$IDSubtema';";
 	$resultas = mysqli_query( $conexia, $queryze);
 	$NumVid = mysqli_num_rows($resultas);
@@ -153,7 +209,6 @@ if($accion == 'C0R50')
 	print_r($rowDoc);
 	print_r("<br>");
 	//*/
-
 	$queryze2 = "SELECT * FROM material_audio WHERE id_Subtema = '$IDSubtema';";
 	$resultas2 = mysqli_query($conexia, $queryze2);
 	$NumAud = mysqli_num_rows($resultas2);
@@ -236,7 +291,6 @@ else
 		$color = 0;
 		$conex = conect();
 		$consulta = "Select * FROM curso_subtema where id_Tema = '$filases[id_Tema]';";
-
 		//print_r("La consulta es: ".$consulta."<br>");
 
 		$res = mysqli_query($conexia, $consulta);
@@ -244,10 +298,13 @@ else
 		{
 			//print_r("El valor de la bandera es: ".$bandera."<br>");
 
+
 			$sqlxox = "SELECT * FROM subtema_visto WHERE Mat_Alumno = '$rowses[Mat_Alumno]' AND id_Subtema = '$fila[id_Subtema]' AND id_Curso = '$IDCurso';";
 			//print_r($sqlxox."<br>");
 			$resultadoxox = mysqli_query($conexia, $sqlxox);
 			$rowseso = mysqli_fetch_array($resultadoxox);
+
+
 
 			//print_r("Valor de Orden de rowseso: ".$rowseso['Orden']."<br>");
 
@@ -279,15 +336,15 @@ else
 			$consAud = "SELECT ubica FROM material_audio WHERE id_Subtema = '$fila[id_Subtema]';";
 			$resAud = mysqli_query($conexia, $consAud);
 			$rowAud = mysqli_fetch_array($resAud);
+
+
 		?>
 
         <li> <a href='#'>
 
         <?PHP
-
 		if($bandera == 1)
 		{
-
 			if($rowPDF['ubica'] != "")
 			{
 	?>
@@ -321,11 +378,17 @@ else
 			}
 			else if($rowAud['ubica'] != "")
 			{
+                $audioConsulta= "SELECT * FROM material_audio WHERE id_Subtema = '$IDSubtema';";
+                $audioSeleccionado = mysqli_query($conexia, $audioConsulta);
+                $necesarioAudio = mysqli_fetch_array($audioSeleccionado);
+                $audio = $necesarioAudio['ubica'];
+
 			?>
 
             <form action="CursoTemaAlumno.php?accion=C0R50" class="form-horizontal" method="post" enctype="multipart/form-data">
         	<input type="hidden" value="<?PHP echo htmlentities($fila['id_Subtema']); ?>" name="IDSubtema" id="IDSubtema">
             <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="Tema" id="Tema">
+                <!--Extra--><input type="hidden" value="<?PHP echo htmlentities($rowAud['ubica']); ?>" name="dato" id="dato">
        		<input type="hidden" value="<?PHP echo htmlentities($rowses['Mat_Alumno']); ?>" name="MatAlu" id="MatAlu">
             <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso" id="IDCurso">
             <input type="hidden" value="AUDIO" name="TipoArchivo">
@@ -466,49 +529,6 @@ else
     -->
 
     <div class="Contenido container col-md-8 col-md-offset-1">
-    <br>
-
-    <div class="progress">
-               	<?PHP
-				if($Progreso <= 20)
-				{
-				?>
-                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
-                    <?PHP echo htmlentities($Progreso); ?>%
-                  </div>
-                 <?PHP
-				}
-				else if($Progreso <= 50)
-				{
-				 ?>
-                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
-                    <?PHP echo htmlentities($Progreso); ?>%
-                  </div>
-                 <?PHP
-				}
-				else if($Progreso <= 70)
-				{
-				 ?>
-
-                 <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
-                    <?PHP echo htmlentities($Progreso); ?>%
-                  </div>
-
-                <?PHP
-				}
-				else
-				{
-				 ?>
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
-                    <?PHP echo htmlentities($Progreso); ?>%
-                 </div>
-                <?PHP
-				}
-				 ?>
-
-               </div>
-
-
 			<br>
 
 			<?PHP
@@ -653,7 +673,10 @@ else
 					?>
 
 					<div clas="embed-responsive embed-responsive-16by9">
-						<center><video src="<?PHP echo htmlentities($rowVid['ubica']); ?>" controls height="500"></video></center>
+						<center>
+                            <iframe class="mejs__player" width="640" height="360" src="<?PHP echo htmlentities($rowVid['ubica']); ?>" frameborder="0" allowfullscreen></iframe>
+
+                        </center>
 					</div>
 
 					<?PHP
@@ -680,7 +703,8 @@ else
 				<div class="col-xs-6 col-xs-offset-3 well">
 
 					<?PHP
-					if($rowAud['ubica'] != "")
+					//if($rowAud['ubica'] != "")
+                    if($_POST[IDSubtema] != "")
 					{
 						if($NumAud > 1)
 						{
@@ -693,7 +717,6 @@ else
                                     <br>
                                     <center><h4><b>Seleccione uno de los podcast disponibles</b></h4></center>
                                     <br>
-
 									<?PHP
                                         while($rowA = mysqli_fetch_array($resultax2))
                                         {
@@ -702,18 +725,21 @@ else
                                     ?>
                                     	<form action="#" method="post">
                                             <input type="hidden" value="<?PHP echo htmlentities($IDSubtema); ?>" name="IDSubtema">
-                                            <input type="hidden" value="<?PHP echo htmlentities($ubica2); ?>" name="Aud">
+
                                             <input type="submit" class="btn btn-info boton" value="<?PHP echo htmlentities($NombreAud); ?>" id="10">
                                         </form>
+
                                         <br>
 
                                     <?PHP
                                         }
                                     ?>
 
-                            </div> <!-- Fin del div class del menu botones -->
+                           </div>
+                    <!-- Fin del div class del menu botones -->
 
                    			<div class="col-md-9 col-xs-12">
+
 
                             	<?PHP
 									if($Aud == "")
@@ -722,7 +748,7 @@ else
 									}
 								?>
                                 <center>
-							<h4>Potcast de este subtema</h4>
+							<h4>Podcast de este subtema</h4>
 							<br><br><br>
 							<audio controls>
 								<source src="<?PHP echo htmlentities($Aud); ?>" type="audio/mp3" /> Tu navegador no es compatible
@@ -739,11 +765,13 @@ else
 					?>
 
 					<center>
-							<h4>Potcast de este subtema</h4>
+							<h4>Podcast de este subtema</h4>
 							<br><br><br>
+
 							<audio controls>
-								<source src="<?PHP echo htmlentities($rowAud['ubica']); ?>" type="audio/mp3" /> Tu navegador no es compatible
-							</audio>
+								<!--<source src="<?PHP echo htmlentities($rowAud['ubica']); ?>" type="audio/mp3" /> Tu navegador no es compatible -->
+                                <source src="<?PHP echo $audio; ?>" type="audio/mp3" />
+                            </audio>
 						</center>
 
 					<?PHP
@@ -838,10 +866,10 @@ else
 			$consAud = "SELECT ubica FROM material_audio WHERE id_Subtema = '$fila[id_Subtema]';";
 			$resAud = mysqli_query($conexia, $consAud);
 			$rowAud = mysqli_fetch_array($resAud);
+
 		?>
 
         <li> <a href='#'>
-
         <?PHP
 
 		if($bandera == 1)

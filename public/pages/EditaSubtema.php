@@ -88,6 +88,12 @@ if($tipoPer == "Alumno")
             ];
 </script>
 
+    <style>
+        html{
+            height: 100%;
+        }
+    </style>
+
 </head>
 
 <body class="backgroundPrincipal">

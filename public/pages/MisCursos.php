@@ -37,7 +37,6 @@ if($tipoPer != "Alumno")
 
 $Matricula = 0;
 $conexia = conect();
-
 	$queryze = "SELECT Mat_Alumno FROM alumno WHERE email = '$email';";
 	$resultas = mysqli_query($conexia,$queryze);
 	$row = mysqli_fetch_array($resultas);
@@ -134,7 +133,6 @@ mysqli_close($conexia);
 			$queryTotal = "SELECT * FROM curso_subtema CS JOIN curso_tema CT ON CS.id_Tema = CT.id_Tema WHERE CT.id_Curso = '$row[id_Curso]';";
 			$resultadoTotal = mysqli_query($conex, $queryTotal);
 			$TotalSub = mysqli_num_rows($resultadoTotal);
-
 			$sqlx = "SELECT * FROM subtema_visto WHERE id_Curso = '$row[id_Curso]' AND Mat_Alumno = '$row[Mat_Alumno]' AND Visto != '0';";
 			$resulx = mysqli_query($conex, $sqlx);
 			$TotalVisto = mysqli_num_rows($resulx);
@@ -173,8 +171,7 @@ mysqli_close($conexia);
 			$baia = mysqli_query($conex, $qwerty);
 			$fila = mysqli_fetch_array($baia);
 			$Total = $fila['Total'];
-
-			$querys = "SELECT P.APaterno, P.AMaterno, P.Nombre FROM Persona P JOIN usuario U ON P.email = U.email WHERE u.Mat_Usuario = '$row[Mat_Usuario]'";
+			$querys = "SELECT P.APaterno, P.AMaterno, P.Nombre FROM persona P JOIN usuario U ON P.email = U.email WHERE U.Mat_Usuario = '$row[Mat_Usuario]'";
 			$Nombre_Ins = "";
 			$resultado = mysqli_query($conex, $querys);
 			$rowses = mysqli_fetch_array($resultado);

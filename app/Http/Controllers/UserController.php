@@ -63,7 +63,7 @@ class UserController extends Controller
             // Authentication passed...
             $user = Auth::user();
             $_SESSION["tipoP"] = $user->TUser;
-            $_SESSION["email"] = $request->input('pass');
+            $_SESSION["email"] = $request->input('user');
 
             return redirect("/");
         }
