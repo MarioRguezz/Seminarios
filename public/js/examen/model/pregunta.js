@@ -14,7 +14,7 @@ class Pregunta{
     }
 
     template() {
-        var p = pregunta,
+        var p = this,
             contenedor = $("<div/>"),
             titulo = $(`<input type='text' placeholder='Nueva pregunta'>`),
             select = $("<select/>"),

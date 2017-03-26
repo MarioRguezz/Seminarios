@@ -1,6 +1,6 @@
 class Examen {
     constructor(idTema) {
         this.preguntas = [];
-        this.idTema = id
+        this.idTema = idTema;
     }
 }
