@@ -21,6 +21,7 @@ class Pregunta{
             option1 = $("<option value='1'>Pregunta abierta</option>"),
             option2 = $("<option value='2'>Opción múltiple</option>"),
             option3 = $("<option value='3'>Relacionar columnas</option>"),
+            remove = $("<button>&times;</button>"),
             qArea = $("<div/>"),
             textarea = $("<input type='text' placeholder='Introduzca la respuesta correcta'>"),
             choice1 = $("<input type='radio' value='1'> Opcion 1"),
@@ -42,6 +43,7 @@ class Pregunta{
 
         contenedor.append(titulo)
             .append(select)
+            .append(remove)
             .append(qArea);
 
 
