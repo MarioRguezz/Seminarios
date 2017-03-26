@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/Principal.css">
 
     <script src="../js/efectos.js"></script>
+    <script src="../js/examen/pregunta.js"></script>
 
     <script src="../dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../dist/sweetalert.css">
@@ -41,13 +42,16 @@
         </div>
         <div class=" col-md-12 well back" id="menu">
                     <div class="row">
-                              <div class="col-md-7   col-md-offset-5 ">
+                              <div  id="tituloNohay" class="col-md-7 col-md-offset-5 ">
                                 <label class="tituloExtra">Aún no ha registrado ningún examen</label>
-                                  <button></button>
+                                  <button class="btn btn-primary" id="nuevoExamen">Agregar nuevo formulario</button>
                             </div>
                     </div>
-                <div>
+                <div class="hidden">
                     <label class="whiteClass2">Formulario</label>
+                    <div>
+                        <button id="nuevaPregunta"></button>
+                    </div>
                     <div id="contenedorPreguntas">
 
                     </div>
