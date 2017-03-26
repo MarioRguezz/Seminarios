@@ -6,14 +6,14 @@ class Pregunta{
         this.select = null;
         this.respuestas = [];
     }
-    getJSON = function(){
+    getJSON() {
         var clon = JSON.parse(JSON.stringify(this));
         delete clon.idExamen,
             clon.tipo;
         return JSON.stringify(clon);
     }
 
-    template = function(){
+    template() {
         var p = pregunta,
             contenedor = $("<div/>"),
             titulo = $(`<input type='text' placeholder='Nueva pregunta'>`),
@@ -48,6 +48,7 @@ class Pregunta{
 
         select.change(() => {
             qArea.empty();
+            this.tipo = select.val();
             switch(select.val()){
                 case 1:
                     qArea.append(textarea);
@@ -66,7 +67,7 @@ class Pregunta{
 
     }
 
-    guid = function () {
+    guid () {
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
                 .toString(16)
