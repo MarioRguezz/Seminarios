@@ -116,6 +116,11 @@ html{
 <br>
 <div style="margin-top: 5%"class="progress">
     <?PHP
+    /* carga el valor de matricula */
+    $queryze = "SELECT Mat_Alumno FROM alumno WHERE email = '$email';";
+    $resultas = mysqli_query($conexia,$queryze);
+    $row = mysqli_fetch_array($resultas);
+    $MatAlu = $row['Mat_Alumno'];
 
     $sqlx = "SELECT * FROM subtema_visto WHERE id_Curso = '$IDCurso' AND Mat_Alumno = '$MatAlu' AND Visto != '0';";
     $resulx = mysqli_query($conexia, $sqlx);
@@ -362,7 +367,13 @@ else
 			}
 			else if($rowVid['ubica'] != "")
 			{
-			?>
+
+                $videoSelect = "SELECT ubica FROM material_video WHERE id_Subtema = '$IDSubtema';";
+                $respuestVideo = mysqli_query($conexia, $videoSelect);
+                $videoArra = mysqli_fetch_array($respuestVideo);
+                $video = $videoArra['ubica'];
+
+                ?>
             <form action="CursoTemaAlumno.php?accion=C0R50" class="form-horizontal" method="post" enctype="multipart/form-data">
         	<input type="hidden" value="<?PHP echo htmlentities($fila['id_Subtema']); ?>" name="IDSubtema" id="IDSubtema">
             <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="Tema" id="Tema">
@@ -618,7 +629,8 @@ else
 			<div class="row" id="Video">
 
             	<?PHP
-					if($rowVid['ubica'] != "")
+
+					if($video != "")
 					{
 						if($NumVid > 1)
 						{
@@ -674,7 +686,9 @@ else
 
 					<div clas="embed-responsive embed-responsive-16by9">
 						<center>
-                            <iframe class="mejs__player" width="640" height="360" src="<?PHP echo htmlentities($rowVid['ubica']); ?>" frameborder="0" allowfullscreen></iframe>
+                           <!-- <iframe class="mejs__player" width="640" height="360" src="<?PHP echo htmlentities($rowVid['ubica']); ?>" frameborder="0" allowfullscreen></iframe>-->
+                            <iframe class="mejs__player" width="640" height="360" src="<?PHP echo $video; ?>" frameborder="0" allowfullscreen></iframe>
+
 
                         </center>
 					</div>

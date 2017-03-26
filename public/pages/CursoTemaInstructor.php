@@ -186,10 +186,11 @@ if($tipoPer == "Alumno")
 			if($rowy['htmlExa'] == "")
 			{
 			?>
-                <form action="examen.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+               <!-- <form action="examen.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">-->
+                <form action="../examen/creacion" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                   <!--  <center><button class="btn-primary" type="submit">Agregar examen &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>-->
-									<th>	<center><button  class="buttonTransparent" type="submit" ><img height="50" src="../img/Icons/Png/agregarexamen.png"> </button></center>  </th>
+                    <th>	<center><button  class="buttonTransparent" type="submit" ><img height="50" src="../img/Icons/Png/agregarexamen.png"> </button></center>  </th>
                 </form>
         	<?PHP
 			}

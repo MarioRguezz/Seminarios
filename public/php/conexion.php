@@ -3,7 +3,9 @@ error_reporting(0);
 
 session_start();
 
-function conect($host = "189.211.207.173:3306", $user = "seminarios", $psw = "123asdZXC", $db = "durango"){
+function  conect($host = "189.211.207.173:3306", $user = "seminarios", $psw = "123asdZXC", $db = "durango"){
+//conect($host = "localhost:3306", $user = "seminario", $psw = "seminario12345", $db = "durango"){
+//189.211.207.17
 
 	$con = mysqli_connect($host,$user,$psw, $db) or die ("Error de la conexión MySQL");
     mysqli_set_charset($con,'utf8');

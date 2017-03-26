@@ -41,3 +41,17 @@ Route::group(['prefix'=>'usuario'], function(){
 });
 
 
+
+
+
+
+/**
+ * prefijo: examen
+ * referencia: ExamenController
+ * Funciones de examen para su creación.
+ */
+
+Route::group(['prefix'=>'examen'], function(){
+    Route::post('creacion', "ExamenController@index");
+});
+
