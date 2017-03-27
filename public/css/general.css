@@ -87,3 +87,9 @@
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
 }
+
+.contenedorpregunta{
+    border-bottom: white solid 1px;
+    padding:20px;
+    padding-bottom:40px;
+}

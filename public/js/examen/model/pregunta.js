@@ -5,6 +5,7 @@ class Pregunta{
         this.guid = this.guid(),
         this.select = null;
         this.qArea = null;
+        this.contenedor = null;
         this.respuestas = [];
     }
     getJSON() {
@@ -17,7 +18,7 @@ class Pregunta{
 
     template() {
         var p = this,
-            contenedor = $("<div class='box' />"),
+            contenedor = $("<div class='box contenedorpregunta col-md-10 col-md-offset-1' />"),
             titulo = $(`<input type='text' class='tituloPregunta space leftPosition' placeholder='Nueva pregunta'>`),
             subContenedor  = $("<div class='select space leftPosition'/>"),
             select = $("<select />"),
@@ -36,7 +37,7 @@ class Pregunta{
             item2 = $("<div> Item 2 </div>"),
             casilla1 = $("<div>Casilla 1</div>");
 
-        contenedor.css('width', '100%');
+        contenedor.attr('id', p.guid);
         subContenedor.append(select);
         select.append(option1)
             .append(option2)
@@ -53,6 +54,8 @@ class Pregunta{
 
         p.qArea = qArea;
         p.select = select;
+        p.contenedor = contenedor;
+        qArea.append(textarea);
 
 
         select.change(() => {
@@ -72,6 +75,12 @@ class Pregunta{
                     qArea.append(divRight);
                     break;
             }
+        });
+
+        remove.click(() => {
+            var p = this;
+            console.log(p.guid)
+            examen.eliminar(p.guid);
         });
         return contenedor;
 
