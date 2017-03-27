@@ -16,11 +16,29 @@ class Item {
         item.input = input;
         item.remove = remove;
 
-        input.change(() => {
-            item.nombre = input.val();
-        });
+
 
         contenedor.append(remove).append(input);
         return contenedor;
+    }
+
+    asignarEventos(p) {
+        var itemX = this;
+        itemX.remove.click(function() {
+            p.items.forEach((item, index) => {
+                console.log(itemX.guid == item.guid);
+                if(itemX.guid == item.guid){
+                    console.log(index);
+                    console.log(p.items.splice(index, 1));
+                    return;
+                }
+            })
+            $("#"+itemX.guid).remove();
+            p.actualizarRespuestaCasillas();
+        });
+
+        itemX.input.change(() => {
+            itemX.nombre = input.val();
+        });
     }
 }

@@ -100,6 +100,13 @@ class Pregunta{
                         item2 = new Item("Item2"),
                         casilla1 = new Casilla("Casilla1");
 
+                    p.respuestas = [
+                        {
+                            casilla: casilla1.guid,
+                            item: item1.guid
+                        }
+                    ]
+
                     p.items.push(item1);
                     p.items.push(item2);
                     p.casillas.push(casilla1);
@@ -111,16 +118,9 @@ class Pregunta{
                     divLeft.append(item1.template()).append(item2.template()).append(btnLeft);
                     divRight.append(casilla1.template()).append(btnRight);
 
-                    item1.remove.click(function() {
-                        var itemX = this;
-                        p.items.forEach((item, index) => {
-                            if(itemX.guid == item.guid){
-                                p.items.slice(index, 1);
-                                return;
-                            }
-                        })
-                        $("#"+itemX.guid).remove();
-                    })
+                    item1.asignarEventos(p);
+                    item2.asignarEventos(p);
+                    casilla1.asignarEventos(p);
 
                     qArea.append(divLeft);
                     qArea.append(divRight);
@@ -158,16 +158,33 @@ class Pregunta{
             var nItem = new Item("Nuevo Item");
             p.items.push(nItem);
             p.btnLeft.before(nItem.template());
+            nItem.asignarEventos(p);
+            p.actualizarRespuestaCasillas();
         });
 
         p.btnRight.click(() => {
             var nCasilla = new Casilla("Nueva casilla");
             p.casillas.push(nCasilla);
             p.btnRight.before(nCasilla.template());
+            nCasilla.asignarEventos(p);
+            p.actualizarRespuestaCasillas();
         });
     }
 
 
+    actualizarRespuestaCasillas() {
+        var p = this;
+        p.respuestas = [];
+        p.casillas.forEach((casilla,index)=> {
+            if(p.items[index]){
+                p.respuestas.push({casilla: casilla.guid, item: p.items[index].guid});
+            }
+            else {
+                p.respuestas.push({casilla: casilla.guid, item: null});
+            }
+
+        });
+    }
 
     /**
      * Método para limpiar acentos y mayúsculas en la respuesta principal.
