@@ -47,7 +47,7 @@
                     <div class="col-md-7 col-md-offset-5">
                     <label class="whiteClass2">Formulario</label>
                     </div>
-                    <div>
+                    <div class="box">
                         <button id="nuevaPregunta" class="btn btn-primary">Nueva Pregunta</button>
                     </div>
                     <div id="contenedorPreguntas">

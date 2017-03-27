@@ -17,13 +17,15 @@ class Pregunta{
 
     template() {
         var p = this,
-            contenedor = $("<div/>"),
-            titulo = $(`<input type='text' placeholder='Nueva pregunta'>`),
-            select = $("<select/>"),
+            contenedor = $("<div class='box' />"),
+            titulo = $(`<input type='text' class='tituloPregunta space leftPosition' placeholder='Nueva pregunta'>`),
+            subContenedor  = $("<div class='select space leftPosition'/>"),
+            select = $("<select />"),
             option1 = $("<option value='1'>Pregunta abierta</option>"),
             option2 = $("<option value='2'>Opción múltiple</option>"),
             option3 = $("<option value='3'>Relacionar columnas</option>"),
-            remove = $("<button>&times;</button>"),
+            remove = $("<button class='btn btn-danger rightPosition'>&times;</button>"),
+            Area = $("<div class='clear'/>"),
             qArea = $("<div/>"),
             textarea = $("<input type='text' placeholder='Introduzca la respuesta correcta'>"),
             choice1 = $("<input type='radio' value='1'> Opcion 1"),
@@ -35,7 +37,7 @@ class Pregunta{
             casilla1 = $("<div>Casilla 1</div>");
 
         contenedor.css('width', '100%');
-
+        subContenedor.append(select);
         select.append(option1)
             .append(option2)
             .append(option3);
@@ -44,13 +46,33 @@ class Pregunta{
         divRight.append(casilla1);
 
         contenedor.append(titulo)
-            .append(select)
+            .append(subContenedor)
             .append(remove)
-            .append(qArea);
+            .append(Area)
+            .append(qArea)
 
         p.qArea = qArea;
         p.select = select;
 
+
+        select.change(() => {
+            console.log( select.val());
+            qArea.empty();
+            this.tipo = select.val();
+            switch(select.val()){
+                case "1":
+                    qArea.append(textarea);
+                    break;
+                case "2":
+                    qArea.append(choice1);
+                    qArea.append(choice2);
+                    break;
+                case "3":
+                    qArea.append(divLeft);
+                    qArea.append(divRight);
+                    break;
+            }
+        });
         return contenedor;
 
     }
