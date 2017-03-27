@@ -5,6 +5,13 @@ class Pregunta{
         this.guid = this.guid(),
         this.respuestas = [];
         this.choices = [];
+        //Pregunta abierta
+        this.textarea = null;
+        //Relacionar columnas
+        this.items = [];
+        this.casillas = [];
+        this.btnLeft = null;
+        this.btnRight = null;
     }
     getJSON() {
         var clon = JSON.parse(JSON.stringify(this));
@@ -14,6 +21,10 @@ class Pregunta{
     }
 
 
+    /**
+     * Método que define cómo será la vista que se agrega al cuadro de encuesta.
+     * @returns {*|jQuery|HTMLElement}
+     */
     template() {
         var p = this,
             contenedor = $("<div class='box contenedorpregunta col-md-10 col-md-offset-1' />"),
@@ -32,10 +43,9 @@ class Pregunta{
            // choice2 = $("<div class='fullSize left box'><input type='radio' value='2'> <label class='text'>Opcion 2</label></div>"),
             divLeft = $("<div class='leftPosition leftBox boxTop'/>"),
             divRight = $("<div class='rightPosition rightBox boxTop'/>"),
-            item1 = $("<div class='boxItem'> Item 1 </div>"),
-            item2 = $("<div class='boxItem'> Item 2 </div>"),
             buttonAdd = $("<button class='btn btn-primary'>Agregar</button>"),
-            casilla1 = $("<div class='text marco'>Casilla 1</div>");
+            btnLeft = $("<button class='boxItem'> Agregar Item </button>"),
+            btnRight= $("<button class='text marco'> Agregar casilla </button>");
 
         contenedor.attr('id', p.guid);
         subContenedor.append(select);
@@ -43,8 +53,6 @@ class Pregunta{
             .append(option2)
             .append(option3);
 
-        divLeft.append(item1).append(item2);
-        divRight.append(casilla1);
 
         contenedor.append(titulo)
             .append(subContenedor)
@@ -62,17 +70,23 @@ class Pregunta{
 
         //Por defecto que se muestre un textarea
         qArea.append(textarea);
+        p.textarea = textarea;
+        p.eventosPreguntaAbierta();
+
         p.contenedor = contenedor;
 
 
         //Evento que permite la selección de diferentes tipos de preguntas.
         select.change(() => {
-            console.log( select.val());
+            p.respuestas = [];
             qArea.empty();
             this.tipo = select.val();
             switch(select.val()){
                 case "1":
+                    limpiarElementos();
                     qArea.append(textarea);
+                    p.textarea = textarea;
+                    p.eventosPreguntaAbierta();
                     break;
                 case "2":
                     //qArea.append(choice1);
@@ -81,6 +95,16 @@ class Pregunta{
 
                     break;
                 case "3":
+                    var item1 = new Item("Item 1"),
+                        item2 = new Item("Item 2"),
+                        casilla1 = new Casilla("Casilla 1");
+
+                    p.items.push(item1);
+                    p.items.push(item2);
+                    p.casillas.push(casilla1);
+
+                    divLeft.append(item1.template()).append(item2.template()).append(btnLeft);
+                    divRight.append(casilla1.template()).append(btnLeft);
                     qArea.append(divLeft);
                     qArea.append(divRight);
                     qArea.append(Area);
@@ -97,13 +121,52 @@ class Pregunta{
 
     }
 
-    guid () {
-        function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000)
-                .toString(16)
-                .substring(1);
-        }
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-            s4() + '-' + s4() + s4() + s4();
+    /**
+     * Eventos utilizados en pregunta abierta
+     */
+    eventosPreguntaAbierta() {
+        var p = this;
+        p.textarea.change(() => {
+            p.respuestas = [p.limpiarAcentosYMayus(p.textarea.val())];
+        })
     }
+
+    /**
+     * Eventos relacionar columnas
+     */
+    eventosRelacionarColumnas() {
+        var p = this;
+    }
+
+    /**
+     * En esta función deben ponerse todos los elementos que se van a limpiar (Radio buttons, botones e inputs)
+     */
+    limpiarElementos() {
+        p.textarea = null;
+    }
+
+
+    /**
+     * Método para limpiar acentos y mayúsculas en la respuesta principal.
+     * @param texto
+     * @returns {string}
+     */
+    limpiarAcentosYMayus(texto) {
+        var nTexto = texto.toLowerCase();
+        nTexto.replace("á", "a")
+            .replace("Á" , "A")
+            .replace("é" , "e")
+            .replace("É" , "E")
+            .replace("í" , "i")
+            .replace("Í" , "I")
+            .replace("ó" , "o")
+            .replace("Ó" , "O")
+            .replace("ú" , "u")
+            .replace("Ú" , "U")
+            .replace("ü" , "u")
+            .replace("Ü" , "U");
+
+        return nTexto.trim();
+    }
+
 }
