@@ -26,15 +26,16 @@ class Pregunta{
             option3 = $("<option value='3'>Relacionar columnas</option>"),
             remove = $("<button class='btn btn-danger rightPosition'>&times;</button>"),
             Area = $("<div class='clear'/>"),
-            qArea = $("<div/>"),
+            qArea = $("<div class='boxTop'/>"),
             textarea = $("<input type='text' placeholder='Introduzca la respuesta correcta'>"),
             choice1 = $("<input type='radio' value='1'> Opcion 1"),
+                      
             choice2 = $("<input type='radio' value='2'> Opcion 2"),
-            divLeft = $("<div/>"),
-            divRight = $("<div/>"),
-            item1 = $("<div> Item 1 </div>"),
-            item2 = $("<div> Item 2 </div>"),
-            casilla1 = $("<div>Casilla 1</div>");
+            divLeft = $("<div class='leftPosition leftBox'/>"),
+            divRight = $("<div class='rightPosition rightBox'/>"),
+            item1 = $("<div class='boxItem'> Item 1 </div>"),
+            item2 = $("<div class='boxItem'> Item 2 </div>"),
+            casilla1 = $("<div class='text marco'>Casilla 1</div>");
 
         contenedor.css('width', '100%');
         subContenedor.append(select);
