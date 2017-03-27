@@ -4,6 +4,7 @@ class Pregunta{
         this.tipo = tipo,
         this.guid = this.guid(),
         this.respuestas = [];
+        this.choices = [];
     }
     getJSON() {
         var clon = JSON.parse(JSON.stringify(this));
@@ -24,15 +25,16 @@ class Pregunta{
             option3 = $("<option value='3'>Relacionar columnas</option>"),
             remove = $("<button class='btn btn-danger rightPosition'>&times;</button>"),
             Area = $("<div class='clear'/>"),
-            qArea = $("<div class='boxTop'/>"),
-
-            textarea = $("<input type='text' class='textArea space leftPosition' placeholder='Introduzca la respuesta correcta'>"),
-            choice1 = $("<div class='fullSize left box'><input type='radio'  value='1'> <label class='text'>Opcion 1</label></div>"),
-            choice2 = $("<div class='fullSize left box'><input type='radio' value='2'> <label class='text'>Opcion 2</label></div>"),
+            qArea = $("<div id='contenedor' class='boxTop'/>"),
+            addElement = $("<div class='boxTop'/>"),
+            textarea = $("<input type='text' class='textArea space leftPosition boxTop' placeholder='Introduzca la respuesta correcta'>"),
+           // choice1 = $("<div class='fullSize left box'><input type='radio'  value='1'> <label class='text'>Opcion 1</label></div>"),
+           // choice2 = $("<div class='fullSize left box'><input type='radio' value='2'> <label class='text'>Opcion 2</label></div>"),
             divLeft = $("<div class='leftPosition leftBox boxTop'/>"),
             divRight = $("<div class='rightPosition rightBox boxTop'/>"),
             item1 = $("<div class='boxItem'> Item 1 </div>"),
             item2 = $("<div class='boxItem'> Item 2 </div>"),
+            buttonAdd = $("<button class='btn btn-primary'>Agregar</button>"),
             casilla1 = $("<div class='text marco'>Casilla 1</div>");
 
         contenedor.attr('id', p.guid);
@@ -48,8 +50,15 @@ class Pregunta{
             .append(subContenedor)
             .append(remove)
             .append(Area)
-            .append(qArea)
+            .append(qArea);
 
+        addElement.append(buttonAdd);
+
+        buttonAdd.click(() =>{
+            var longitud = this.choices.length;
+            this.choices.push(new Choice(longitud+1));
+            qArea.append(this.choices[this.choices.length-1].tpl());
+        });
 
         //Por defecto que se muestre un textarea
         qArea.append(textarea);
@@ -66,8 +75,10 @@ class Pregunta{
                     qArea.append(textarea);
                     break;
                 case "2":
-                    qArea.append(choice1);
-                    qArea.append(choice2);
+                    //qArea.append(choice1);
+                   // qArea.append(choice2);
+                    contenedor.append(addElement);
+
                     break;
                 case "3":
                     qArea.append(divLeft);

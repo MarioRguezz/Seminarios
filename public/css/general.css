@@ -65,6 +65,10 @@
     color: #FFF;
 }
 
+.large{
+    width: 50%;
+}
+
 .boxItem{
     background-color: white;
     color: rebeccapurple;
