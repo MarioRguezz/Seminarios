@@ -55,7 +55,10 @@ body.backgroundPrincipal
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+	background-attachment: fixed;
 }
+
+
 /*
 body.backgroundPrincipal2 {
     background:url(../img/backgrounds/FONDO2.png)no-repeat center center fixed;
