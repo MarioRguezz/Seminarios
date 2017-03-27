@@ -17,6 +17,8 @@
     <script src="../js/efectos.js"></script>
     <script src="../js/examen/model/examen.js"></script>
     <script src="../js/examen/model/pregunta.js"></script>
+    <script src="../js/examen/model/item.js"></script>
+    <script src="../js/examen/model/casilla.js"></script>
     <script src="../js/examen/app.js"> </script>
 
     <script src="../dist/sweetalert.min.js"></script>
