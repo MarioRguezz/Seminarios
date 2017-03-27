@@ -3,9 +3,6 @@ class Pregunta{
         this.idExamen = idExamen,
         this.tipo = tipo,
         this.guid = this.guid(),
-        this.select = null;
-        this.qArea = null;
-        this.contenedor = null;
         this.respuestas = [];
     }
     getJSON() {
@@ -53,12 +50,13 @@ class Pregunta{
             .append(Area)
             .append(qArea)
 
-        p.qArea = qArea;
-        p.select = select;
-        p.contenedor = contenedor;
+
+        //Por defecto que se muestre un textarea
         qArea.append(textarea);
+        p.contenedor = contenedor;
 
 
+        //Evento que permite la selección de diferentes tipos de preguntas.
         select.change(() => {
             console.log( select.val());
             qArea.empty();
