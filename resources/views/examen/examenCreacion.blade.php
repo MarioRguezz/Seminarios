@@ -39,19 +39,23 @@
     <div class="container-fluid">
         <div class="form-horizontal ">
             <div class="text-center">
-                <label class="control-label" id="VP"><h3 class="whiteClass2 top">CREACIÓN DE EXAMEN</h3></label>
+                <label class="control-label" id="VP"><h3 class="whiteClass2 top">NUEVO EXAMEN</h3></label>
             </div>
         </div>
         <div class=" col-md-12 well back" id="menu">
                 <div class="row">
-                    <div class="col-md-7 col-md-offset-5">
-                    <label class="whiteClass2">Formulario</label>
+                    <div class="col-md-7">
+                    <label class="whiteClass4" style="color: white;">Este es un diseñador de exámenes, para agregar una pregunta haz click en el
+                        botón "Nueva pregunta"</label>
                     </div>
-                    <div class="box">
-                        <button id="nuevaPregunta" class="btn btn-primary">Nueva Pregunta</button>
-                    </div>
+                    <br>
+                    <br>
+                    <br>
                     <div id="contenedorPreguntas">
 
+                    </div>
+                    <div class="box rightPosition" >
+                        <button id="nuevaPregunta" class="btn btn-primary">Nueva Pregunta</button>
                     </div>
                 </div>
         </div>

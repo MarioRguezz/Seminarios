@@ -24,6 +24,12 @@
 .tituloPregunta{
     width: 40%;
     height: 32px;
+
+}
+
+.textArea{
+    width:84%;
+    height: 50px;
 }
 
 .space {
@@ -118,3 +124,4 @@
     padding:20px;
     padding-bottom:40px;
 }
+

@@ -28,9 +28,9 @@ class Pregunta{
             remove = $("<button class='btn btn-danger rightPosition'>&times;</button>"),
             Area = $("<div class='clear'/>"),
             qArea = $("<div class='boxTop'/>"),
-            textarea = $("<input type='text' placeholder='Introduzca la respuesta correcta'>"),
+            textarea = $("<input type='text' class='textArea space leftPosition' placeholder='Introduzca la respuesta correcta'>"),
             choice1 = $("<input type='radio' value='1'> Opcion 1"),
-                      
+
             choice2 = $("<input type='radio' value='2'> Opcion 2"),
             divLeft = $("<div class='leftPosition leftBox'/>"),
             divRight = $("<div class='rightPosition rightBox'/>"),
