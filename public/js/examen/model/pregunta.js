@@ -2,19 +2,16 @@ class Pregunta{
     constructor(idExamen, tipo){
         this.idExamen = idExamen,
         this.tipo = tipo,
-        this.guid = guid(),
-        this.respuestas = [],
+        this.guid = this.guid(),
+        this.respuestas = [];
         this.choices = [];
-
         //Pregunta abierta
         this.textarea = null;
-
         //Relacionar columnas
         this.items = [];
         this.casillas = [];
         this.btnLeft = null;
         this.btnRight = null;
-
     }
     getJSON() {
         var clon = JSON.parse(JSON.stringify(this));
@@ -31,7 +28,7 @@ class Pregunta{
     template() {
         var p = this,
             contenedor = $("<div class='box contenedorpregunta col-md-10 col-md-offset-1' />"),
-            titulo = $(`<input type='text' class='tituloPregunta space leftPosition' placeholder='Nueva pregunta'>`),
+            titulo = $("<input type='text' class='tituloPregunta space leftPosition' placeholder='Nueva pregunta'>"),
             subContenedor  = $("<div class='select space leftPosition'/>"),
             select = $("<select />"),
             option1 = $("<option value='1'>Pregunta abierta</option>"),
@@ -40,10 +37,11 @@ class Pregunta{
             remove = $("<button class='btn btn-danger rightPosition'>&times;</button>"),
             textarea = $("<input type='text' class='textArea space leftPosition' placeholder='Introduzca la respuesta correcta'>"),
             Area = $("<div class='clear'/>"),
-            qArea = $("<div class='boxTop'/>"),
-            choice1 = $("<div class='fullSize left box'><input type='radio'  value='1'> <label class='text'>Opcion 1</label></div>"),
-            choice2 = $("<div class='fullSize left box'><input type='radio' value='2'> <label class='text'>Opcion 2</label></div>");
-
+            qArea = $("<div id='contenedor' class='boxTop'/>"),
+            addElement = $("<div class='boxTop'/>"),
+            textarea = $("<input type='text' class='textArea space leftPosition boxTop' placeholder='Introduzca la respuesta correcta'>"),
+            buttonAdd = $("<button class='btn btn-primary'>Agregar</button>"),
+            nota = $("<label class='text'>La opción que escojas será tu respuesta</label>");
 
         contenedor.attr('id', p.guid);
         subContenedor.append(select);
@@ -56,8 +54,16 @@ class Pregunta{
             .append(subContenedor)
             .append(remove)
             .append(Area)
-            .append(qArea)
+            .append(qArea);
 
+        addElement.append(buttonAdd);
+
+        buttonAdd.click(() =>{
+            var longitud = this.choices.length;
+            this.choices.push(new Choice(longitud+1, this.guid));
+            qArea.append(this.choices[this.choices.length-1].tpl());
+            this.choices[this.choices.length-1]. eventoCambioTexto();
+        });
 
         //Por defecto que se muestre un textarea
         qArea.append(textarea);
@@ -74,14 +80,16 @@ class Pregunta{
             this.tipo = select.val();
             switch(select.val()){
                 case "1":
-                    textarea = $("<input type='text' class='textArea space leftPosition' placeholder='Introduzca la respuesta correcta'>"),
+                    textarea = $("<input type='text' class='textArea space leftPosition boxTop' placeholder='Introduzca la respuesta correcta'>"),
                     qArea.append(textarea);
                     p.textarea = textarea;
                     p.eventosPreguntaAbierta();
                     break;
                 case "2":
-                    qArea.append(choice1);
-                    qArea.append(choice2);
+                    //qArea.append(choice1);
+                   // .append(choice2);
+                    qArea.append(nota);
+                    contenedor.append(addElement);
                     break;
                 case "3":
                     var divLeft = $("<div class='leftPosition leftBox boxTop'/>"),
@@ -182,6 +190,17 @@ class Pregunta{
             .replace("Ü" , "U");
 
         return nTexto.trim();
+    }
+
+
+    guid () {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
     }
 
 }

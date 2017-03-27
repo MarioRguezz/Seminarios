@@ -65,6 +65,10 @@
     color: #FFF;
 }
 
+.large{
+    width: 50%;
+}
+
 .boxItem{
     background-color: white;
     color: rebeccapurple;
@@ -136,3 +140,6 @@
     padding-bottom:40px;
 }
 
+.marginForceRight{
+    margin-right: 2% !important;
+}
