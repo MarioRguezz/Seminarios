@@ -52,6 +52,6 @@ Route::group(['prefix'=>'usuario'], function(){
  */
 
 Route::group(['prefix'=>'examen'], function(){
-    Route::post('creacion', "ExamenController@examenDatos");
+    Route::get('creacion', "ExamenController@examenDatos");
 });
 

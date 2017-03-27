@@ -4,6 +4,7 @@ class Pregunta{
         this.tipo = tipo,
         this.guid = this.guid(),
         this.select = null;
+        this.qArea = null;
         this.respuestas = [];
     }
     getJSON() {
@@ -12,6 +13,7 @@ class Pregunta{
             clon.tipo;
         return JSON.stringify(clon);
     }
+
 
     template() {
         var p = this,
@@ -46,25 +48,9 @@ class Pregunta{
             .append(remove)
             .append(qArea);
 
+        p.qArea = qArea;
+        p.select = select;
 
-
-        select.change(() => {
-            qArea.empty();
-            this.tipo = select.val();
-            switch(select.val()){
-                case 1:
-                    qArea.append(textarea);
-                    break;
-                case 2:
-                    qArea.append(choice1);
-                    qArea.append(choice2);
-                    break;
-                case 3:
-                    qArea.append(divLeft);
-                    qArea.append(divRight);
-                    break;
-            }
-        })
         return contenedor;
 
     }
