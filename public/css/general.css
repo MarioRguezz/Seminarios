@@ -43,6 +43,10 @@
     margin-left: 2%;
 }
 
+.left{
+    margin-left: 2%;
+}
+
 .clear{
     clear: both;
 }
@@ -80,6 +84,10 @@
 
 .rightBox{
     width: 40%;
+}
+
+.fullSize{
+    width: 100%;
 }
 .select {
     position: relative;

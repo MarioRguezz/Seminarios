@@ -28,11 +28,10 @@ class Pregunta{
             Area = $("<div class='clear'/>"),
             qArea = $("<div class='boxTop'/>"),
             textarea = $("<input type='text' placeholder='Introduzca la respuesta correcta'>"),
-            choice1 = $("<input type='radio' value='1'> Opcion 1"),
-                      
-            choice2 = $("<input type='radio' value='2'> Opcion 2"),
-            divLeft = $("<div class='leftPosition leftBox'/>"),
-            divRight = $("<div class='rightPosition rightBox'/>"),
+            choice1 = $("<div class='fullSize left box'><input type='radio'  value='1'> <label class='text'>Opcion 1</label></div>"),
+            choice2 = $("<div class='fullSize left box'><input type='radio' value='2'> <label class='text'>Opcion 2</label></div>"),
+            divLeft = $("<div class='leftPosition leftBox boxTop'/>"),
+            divRight = $("<div class='rightPosition rightBox boxTop'/>"),
             item1 = $("<div class='boxItem'> Item 1 </div>"),
             item2 = $("<div class='boxItem'> Item 2 </div>"),
             casilla1 = $("<div class='text marco'>Casilla 1</div>");
@@ -71,6 +70,7 @@ class Pregunta{
                 case "3":
                     qArea.append(divLeft);
                     qArea.append(divRight);
+                    qArea.append(Area);
                     break;
             }
         });
