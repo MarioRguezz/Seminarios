@@ -4,21 +4,36 @@
 
 
 class Choice {
-    constructor(length) {
+    constructor(length, name) {
         this.guid = this.guid(),
         this.name = "Opcion",
-        this.value = length;
+        this.value = length,
+        this.titulo = null,
+        this.group = name;
     }
 
 
     tpl(){
-        return "<div class='fullSize left box'><input type='radio'  value='"+this.value+"'> <input class='large' value='"+this.name + " "+this.value+"'/></div>";
+        var p = this,
+            contenedor = $("<div class='fullSize left box' />"),
+            radio = $("<input type='radio' name='"+this.group+"' class='marginForceRight' value='"+this.value+"'>"),
+            titulo= $("<input class='large' value='"+this.name + " "+this.value+"'/>"),
+            borrar = $("<button class='btn btn-danger rightPosition'>&times;</button>");
+        contenedor.append(radio);
+        contenedor.append(titulo);
+        contenedor.append(borrar);
+        p.titulo = titulo;
+        return contenedor ;
     }
 
 
-    .change(() => {
-    console.log( select.val());
-});
+    eventoCambioTexto() {
+        var p = this;
+        p.titulo.change(() => {
+            p.name = p.titulo.val();
+            console.log(p.name);
+        });
+    }
 
 
     guid () {
