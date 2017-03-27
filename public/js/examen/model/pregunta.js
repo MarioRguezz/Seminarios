@@ -38,15 +38,12 @@ class Pregunta{
             option2 = $("<option value='2'>Opción múltiple</option>"),
             option3 = $("<option value='3'>Relacionar columnas</option>"),
             remove = $("<button class='btn btn-danger rightPosition'>&times;</button>"),
+            textarea = $("<input type='text' class='textArea space leftPosition' placeholder='Introduzca la respuesta correcta'>"),
             Area = $("<div class='clear'/>"),
             qArea = $("<div class='boxTop'/>"),
-            textarea = $("<input type='text' class='textArea space leftPosition' placeholder='Introduzca la respuesta correcta'>"),
             choice1 = $("<div class='fullSize left box'><input type='radio'  value='1'> <label class='text'>Opcion 1</label></div>"),
-            choice2 = $("<div class='fullSize left box'><input type='radio' value='2'> <label class='text'>Opcion 2</label></div>"),
-            divLeft = $("<div class='leftPosition leftBox boxTop'/>"),
-            divRight = $("<div class='rightPosition rightBox boxTop'/>"),
-            btnLeft = $("<button class='boxItem'> Agregar Item </button>"),
-            btnRight= $("<button class='text marco'> Agregar casilla </button>");
+            choice2 = $("<div class='fullSize left box'><input type='radio' value='2'> <label class='text'>Opcion 2</label></div>");
+
 
         contenedor.attr('id', p.guid);
         subContenedor.append(select);
@@ -77,7 +74,7 @@ class Pregunta{
             this.tipo = select.val();
             switch(select.val()){
                 case "1":
-                    limpiarElementos();
+                    textarea = $("<input type='text' class='textArea space leftPosition' placeholder='Introduzca la respuesta correcta'>"),
                     qArea.append(textarea);
                     p.textarea = textarea;
                     p.eventosPreguntaAbierta();
@@ -87,26 +84,47 @@ class Pregunta{
                     qArea.append(choice2);
                     break;
                 case "3":
-                    var item1 = new Item("Item 1"),
-                        item2 = new Item("Item 2"),
-                        casilla1 = new Casilla("Casilla 1");
+                    var divLeft = $("<div class='leftPosition leftBox boxTop'/>"),
+                        divRight = $("<div class='rightPosition rightBox boxTop'/>"),
+                        btnLeft = $("<button class='boxItem'> Agregar Item </button>"),
+                        btnRight= $("<button class='text marco'> Agregar casilla </button>"),
+                        item1 = new Item("Item1"),
+                        item2 = new Item("Item2"),
+                        casilla1 = new Casilla("Casilla1");
 
                     p.items.push(item1);
                     p.items.push(item2);
                     p.casillas.push(casilla1);
 
+                    p.btnLeft = btnLeft;
+                    p.btnRight = btnRight;
+
+
                     divLeft.append(item1.template()).append(item2.template()).append(btnLeft);
-                    divRight.append(casilla1.template()).append(btnLeft);
+                    divRight.append(casilla1.template()).append(btnRight);
+
+                    item1.remove.click(function() {
+                        var itemX = this;
+                        p.items.forEach((item, index) => {
+                            if(itemX.guid == item.guid){
+                                p.items.slice(index, 1);
+                                return;
+                            }
+                        })
+                        $("#"+itemX.guid).remove();
+                    })
+
                     qArea.append(divLeft);
                     qArea.append(divRight);
                     qArea.append(Area);
+
+                    p.eventosRelacionarColumnas();
                     break;
             }
         });
 
         remove.click(() => {
             var p = this;
-            console.log(p.guid)
             examen.eliminar(p.guid);
         });
         return contenedor;
@@ -128,14 +146,19 @@ class Pregunta{
      */
     eventosRelacionarColumnas() {
         var p = this;
+        p.btnLeft.click(() => {
+            var nItem = new Item("Nuevo Item");
+            p.items.push(nItem);
+            p.btnLeft.before(nItem.template());
+        });
+
+        p.btnRight.click(() => {
+            var nCasilla = new Casilla("Nueva casilla");
+            p.casillas.push(nCasilla);
+            p.btnRight.before(nCasilla.template());
+        });
     }
 
-    /**
-     * En esta función deben ponerse todos los elementos que se van a limpiar (Radio buttons, botones e inputs)
-     */
-    limpiarElementos() {
-        p.textarea = null;
-    }
 
 
     /**
