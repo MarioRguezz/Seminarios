@@ -35,18 +35,13 @@ class Pregunta{
             option2 = $("<option value='2'>Opción múltiple</option>"),
             option3 = $("<option value='3'>Relacionar columnas</option>"),
             remove = $("<button class='btn btn-danger rightPosition'>&times;</button>"),
+            textarea = $("<input type='text' class='textArea space leftPosition' placeholder='Introduzca la respuesta correcta'>"),
             Area = $("<div class='clear'/>"),
             qArea = $("<div id='contenedor' class='boxTop'/>"),
             addElement = $("<div class='boxTop'/>"),
             textarea = $("<input type='text' class='textArea space leftPosition boxTop' placeholder='Introduzca la respuesta correcta'>"),
-           // choice1 = $("<div class='fullSize left box'><input type='radio'  value='1'> <label class='text'>Opcion 1</label></div>"),
-           // choice2 = $("<div class='fullSize left box'><input type='radio' value='2'> <label class='text'>Opcion 2</label></div>"),
-            divLeft = $("<div class='leftPosition leftBox boxTop'/>"),
-            divRight = $("<div class='rightPosition rightBox boxTop'/>"),
             buttonAdd = $("<button class='btn btn-primary'>Agregar</button>"),
-            btnLeft = $("<button class='boxItem'> Agregar Item </button>"),
-            nota = $("<label class='text'>La opción que escojas será tu respuesta</label>"),
-            btnRight= $("<button class='text marco'> Agregar casilla </button>");
+            nota = $("<label class='text'>La opción que escojas será tu respuesta</label>");
 
         contenedor.attr('id', p.guid);
         subContenedor.append(select);
@@ -88,7 +83,7 @@ class Pregunta{
             this.tipo = select.val();
             switch(select.val()){
                 case "1":
-                    limpiarElementos();
+                    textarea = $("<input type='text' class='textArea space leftPosition boxTop' placeholder='Introduzca la respuesta correcta'>"),
                     qArea.append(textarea);
                     p.textarea = textarea;
                     p.eventosPreguntaAbierta();
@@ -98,26 +93,47 @@ class Pregunta{
                     contenedor.append(addElement);
                     break;
                 case "3":
-                    var item1 = new Item("Item 1"),
-                        item2 = new Item("Item 2"),
-                        casilla1 = new Casilla("Casilla 1");
+                    var divLeft = $("<div class='leftPosition leftBox boxTop'/>"),
+                        divRight = $("<div class='rightPosition rightBox boxTop'/>"),
+                        btnLeft = $("<button class='boxItem'> Agregar Item </button>"),
+                        btnRight= $("<button class='text marco'> Agregar casilla </button>"),
+                        item1 = new Item("Item1"),
+                        item2 = new Item("Item2"),
+                        casilla1 = new Casilla("Casilla1");
+
+                    p.respuestas = [
+                        {
+                            casilla: casilla1.guid,
+                            item: item1.guid
+                        }
+                    ]
 
                     p.items.push(item1);
                     p.items.push(item2);
                     p.casillas.push(casilla1);
 
+                    p.btnLeft = btnLeft;
+                    p.btnRight = btnRight;
+
+
                     divLeft.append(item1.template()).append(item2.template()).append(btnLeft);
-                    divRight.append(casilla1.template()).append(btnLeft);
+                    divRight.append(casilla1.template()).append(btnRight);
+
+                    item1.asignarEventos(p);
+                    item2.asignarEventos(p);
+                    casilla1.asignarEventos(p);
+
                     qArea.append(divLeft);
                     qArea.append(divRight);
                     qArea.append(Area);
+
+                    p.eventosRelacionarColumnas();
                     break;
             }
         });
 
         remove.click(() => {
             var p = this;
-            console.log(p.guid)
             examen.eliminar(p.guid);
         });
         return contenedor;
@@ -139,15 +155,37 @@ class Pregunta{
      */
     eventosRelacionarColumnas() {
         var p = this;
+        p.btnLeft.click(() => {
+            var nItem = new Item("Nuevo Item");
+            p.items.push(nItem);
+            p.btnLeft.before(nItem.template());
+            nItem.asignarEventos(p);
+            p.actualizarRespuestaCasillas();
+        });
+
+        p.btnRight.click(() => {
+            var nCasilla = new Casilla("Nueva casilla");
+            p.casillas.push(nCasilla);
+            p.btnRight.before(nCasilla.template());
+            nCasilla.asignarEventos(p);
+            p.actualizarRespuestaCasillas();
+        });
     }
 
-    /**
-     * En esta función deben ponerse todos los elementos que se van a limpiar (Radio buttons, botones e inputs)
-     */
-    limpiarElementos() {
-        p.textarea = null;
-    }
 
+    actualizarRespuestaCasillas() {
+        var p = this;
+        p.respuestas = [];
+        p.casillas.forEach((casilla,index)=> {
+            if(p.items[index]){
+                p.respuestas.push({casilla: casilla.guid, item: p.items[index].guid});
+            }
+            else {
+                p.respuestas.push({casilla: casilla.guid, item: null});
+            }
+
+        });
+    }
 
     /**
      * Método para limpiar acentos y mayúsculas en la respuesta principal.
