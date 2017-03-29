@@ -68,7 +68,9 @@ mysqli_close($conexia);
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
+    <script src="../dist/sweetalert.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="../dist/sweetalert.css">
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/inicio.js"></script>
     <link rel="stylesheet" href="../css/login.css">
@@ -160,11 +162,11 @@ mysqli_close($conexia);
 
             <?PHP
             if($row['status'] == '1'){
-                echo ' <form action="../usuario/registro" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+                echo '  <td>
                <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
                <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
-                <td><center> <button type="submit" class="buttonTransparentBorder buttonAlta"> Alta </button></center></td>
-            </form>';
+               <center> <button  type="submit" class="elementoButton buttonTransparentBorder buttonAlta"> Alta  </button></center></td>
+            ';
 
 
            //
@@ -172,11 +174,11 @@ mysqli_close($conexia);
 
 
             } else if ($row['status'] == '0'){
-                echo ' <form action="../usuario/registro" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+                echo '<td>
                <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
                <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
-                <td><center> <button type="submit" class="buttonTransparentBorder buttonAlta"> Baja </button></center></td>
-            </form>';
+                <center> <button type="submit" class="elementoButton buttonTransparentBorder buttonAlta"> Baja </button></center></td>
+            ';
             }
             ?>
 

@@ -20,6 +20,53 @@ $(document).ready(function () {
         }
 
     });
+
+
+    $('.elementoButton').click(function () {
+        var elem = this;
+        $.ajax({
+            url: '../usuario/status',
+            type: "post",
+            dataType: 'json',
+            data: {
+                Mat_Alumno: $($(this).parent().siblings()[0]).val(),
+                id_Curso: $($(this).parent().siblings()[1]).val()
+            }
+        }).done(function (respuesta) {
+            console.log(respuesta);
+            console.log($(elem).children());
+            if (respuesta == 1) {
+                swal({
+                        title: "Ha dado de alta el usuario",
+                        text: "Clic en el botón para continuar",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonColor: "#00FF00",
+                        confirmButtonText: "Continuar",
+                        cancelButtonText: "No, cancel plx!",
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    });
+                $(elem).html("Alta");
+            } else {
+                swal({
+                    title: "Ha dado de baja el usuario",
+                    text: "Clic en el botón para continuar",
+                    type: "success",
+                    showCancelButton: false,
+                    confirmButtonColor: "#00FF00",
+                    confirmButtonText: "Continuar",
+                    cancelButtonText: "No, cancel plx!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                });
+                $(elem).html("Baja");
+            }
+        });
+
+    });
+
+
 	
 	//swal({   title: "Error!",   text: "Here's my error message!",   type: "error",   confirmButtonText: "Cool" });
 

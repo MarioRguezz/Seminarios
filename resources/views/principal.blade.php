@@ -22,6 +22,13 @@ $rowses = mysqli_fetch_array($resultadoses);
 }
 */
 
+if( !empty( $_REQUEST['Message'] ) ) {
+    $mensaje = sprintf( '%s', $_REQUEST['Message'] );
+    echo "<script type='text/javascript'>alert('$mensaje');</script>";
+}
+
+
+
 ?>
 
         <!doctype html>

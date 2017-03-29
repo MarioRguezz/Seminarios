@@ -49,9 +49,18 @@ if($tipoPer != "Alumno")
 	$TotalSub = mysqli_num_rows($resultado);
 
 
+	/*
+	 *
+	 * agregue un and para que no tuviera pedo con el order
+	 */
+
+    $queryMat = "SELECT Mat_Alumno FROM alumno WHERE email = '$email';";
+    $resulMat = mysqli_query($conexia,$queryMat);
+    $rowMat = mysqli_fetch_array($resulMat);
+    $MatAlumno = $rowMat['Mat_Alumno'];
 	$bandera = 0;
 	$Orden = 0;
-	$Padawan = "SELECT MAX(Orden) as Orden FROM subtema_visto WHERE id_Curso = '$IDCurso'";
+	$Padawan = "SELECT MAX(Orden) as Orden FROM subtema_visto WHERE id_Curso = '$IDCurso' and Mat_Alumno  = '$MatAlumno' ";
 	$ObiWan = mysqli_query($conexia, $Padawan);
 	$Tmp = mysqli_fetch_array($ObiWan);
 	$Orden = $Tmp['Orden'];
@@ -101,11 +110,11 @@ html{
     <div class="col-md-3" >
         <a class="SubtitlewhiteClass NoShadow WithTop"href="../">Menú principal</a>
     </div>
-    <div class="col-md-2 col-md-offset-3">
+    <div class="col-md-2 ">
         <a class="SubtitlewhiteClass NoShadow WithTop" href="MisCursos.php">Mis cursos</a>
     </div>
-    <div class="col-md-2">
-        <a class="SubtitlewhiteClass NoShadow WithTop" >Curso <?PHP echo htmlentities($row['nombre']); ?></a>
+    <div class="col-md-5">
+        <a class="SubtitlewhiteClass NoShadow WithTop " >Curso <?PHP echo htmlentities($row['nombre']); ?></a>
     </div>
     <div class="col-md-2">
         <a class="SubtitlewhiteClass NoShadow WithTop" href="../logout">Cerrar sesión</a>
@@ -140,7 +149,7 @@ html{
     if($Progreso <= 20)
     {
         ?>
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
+        <div class="progress-bar " role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
             <?PHP echo htmlentities($Progreso); ?>%
         </div>
         <?PHP
@@ -148,7 +157,7 @@ html{
     else if($Progreso <= 50)
     {
         ?>
-        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
+        <div class="progress-bar " role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
             <?PHP echo htmlentities($Progreso); ?>%
         </div>
         <?PHP
@@ -157,7 +166,7 @@ html{
     {
         ?>
 
-        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
+        <div class="progress-bar " role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
             <?PHP echo htmlentities($Progreso); ?>%
         </div>
 
@@ -166,7 +175,7 @@ html{
     else
     {
         ?>
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
+        <div class="progress-bar" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
             <?PHP echo htmlentities($Progreso); ?>%
         </div>
         <?PHP
@@ -229,42 +238,42 @@ $sqlsesx = "SELECT Visto FROM subtema_visto WHERE Mat_Alumno = '$MatAlu' AND id_
 $resultadosesx = mysqli_query($conexia, $sqlsesx);
 $rowsesx = mysqli_fetch_array($resultadosesx);
 //print_r($sqlsesx);
+    if($rowsesx['Visto'] == ""){
 
-if($rowsesx['Visto'] == ""){
-
-	$consultaxex = "INSERT INTO subtema_visto (id_Curso, id_Tema,id_Subtema, Mat_Alumno, Visto, Orden) Values('$IDCurso', '$Tema','$IDSubtema', '$MatAlu', '1', '$Orden');";
-	if(mysqli_query($conexia, $consultaxex))
-	{	}
-	else
-	{
-		echo mysqli_error()."<br>";
-	}
+        $consultaxex = "INSERT INTO subtema_visto (id_Curso, id_Tema,id_Subtema, Mat_Alumno, Visto, Orden) Values('$IDCurso', '$Tema','$IDSubtema', '$MatAlu', '1', '$Orden');";
+        if(mysqli_query($conexia, $consultaxex))
+        {	}
+        else
+        {
+            echo mysqli_error()."<br>";
+        }
 //*
-}
-else
-{
-	if ($rowsesx['Visto'] == "0")
-	{
-		$consultaxex = "UPDATE subtema_visto SET Visto = '1' WHERE Mat_Alumno = '$MatAlu' AND id_Subtema = '$IDSubtema' AND id_Curso = '$IDCurso';";
-	}
-	if(mysqli_query($conexia, $consultaxex))
-	{	}
-	else
-	{
-		//echo "ERROR en la consulta UPDATE subtema_Visto   ".mysqli_error()."<br>";
-	}
-}
+    }
+    else
+    {
+        if ($rowsesx['Visto'] == "0")
+        {
+            $consultaxex = "UPDATE subtema_visto SET Visto = '1' WHERE Mat_Alumno = '$MatAlu' AND id_Subtema = '$IDSubtema' AND id_Curso = '$IDCurso';";
+        }
+        if(mysqli_query($conexia, $consultaxex))
+        {	}
+        else
+        {
+            //echo "ERROR en la consulta UPDATE subtema_Visto   ".mysqli_error()."<br>";
+        }
+    }
 
 	/* *****
 	Copia de Visto.php
 	***** */
+
 
 	$sqlx = "SELECT * FROM subtema_visto WHERE id_Curso = '$IDCurso' AND Mat_Alumno = '$MatAlu' AND Visto != '0';";
 	$resulx = mysqli_query($conexia, $sqlx);
 	$TotalVisto = mysqli_num_rows($resulx);
 
 	$Regla3 = ($TotalVisto * 100) / $TotalSub;
-
+    echo $TotalSub . " ".$TotalVisto. " ". " jaja";
 	if($Regla3 < 100)
 	{
 		$Progreso = round($Regla3, 0, PHP_ROUND_HALF_UP);
@@ -273,6 +282,58 @@ else
 	{
 		$Progreso = $Regla3;
 	}
+    if($Progreso <= 20)
+    {
+        ?>
+    <script>
+        var php_var = "<?php echo $Progreso; ?>";
+        $(".progress-bar").html(php_var+"%");
+        $(".progress-bar").addClass("progress-bar-danger");
+        $(".progress-bar").attr("aria-valuenow",php_var);
+        $(".progress-bar").css("width",php_var+"%");
+    </script>
+        <?PHP
+    }
+    else if($Progreso <= 50)
+    {
+        ?>
+    <script>
+        var php_var = "<?php echo $Progreso; ?>";
+        $(".progress-bar").html(php_var+"%");
+        $(".progress-bar").addClass("progress-bar-warning");
+        $(".progress-bar").attr("aria-valuenow",php_var);
+        $(".progress-bar").css("width",php_var+"%");
+
+    </script>
+
+
+        <?PHP
+    }
+    else if($Progreso <= 70)
+    {
+        ?>
+    <script>
+        var php_var = "<?php echo $Progreso; ?>";
+        $(".progress-bar").html(php_var+"%");
+        $(".progress-bar").addClass("progress-bar-info");
+        $(".progress-bar").attr("aria-valuenow",php_var);
+        $(".progress-bar").css("width",php_var+"%");
+    </script>
+        <?PHP
+    }
+    else
+    {
+        ?>
+    <script>
+        var php_var = "<?php echo $Progreso; ?>";
+        $(".progress-bar").html(php_var+"%");
+        $(".progress-bar").addClass("progress-bar-success");
+        $(".progress-bar").attr("aria-valuenow",php_var);
+        $(".progress-bar").css("width",php_var+"%");
+    </script>
+        <?PHP
+    }
+    ?>
 ?>
 
 
@@ -544,7 +605,6 @@ else
 			<br>
 
 			<?PHP
-
 			if($TipoArchivo == "PDF")
 			{
 			?>
@@ -817,6 +877,8 @@ else
 
 else
 {
+
+   // echo "grande grande ";
 ?>
 
 <div class="Vertical col-md-2 top">
@@ -831,7 +893,6 @@ else
 		$resx = mysqli_query($conexia, $qwerty);
 		while($filases = mysqli_fetch_array($resx))
 		{
-
 	?>
 		<li class='has-sub'><a href='#'><?PHP echo htmlentities($filases['Nombre']); ?></a>
       	<ul>
@@ -840,19 +901,17 @@ else
 		$conex = conect();
 		$consulta = "Select * FROM curso_subtema where id_Tema = '$filases[id_Tema]';";
 
-
 		$res = mysqli_query($conexia, $consulta);
 		while($fila = mysqli_fetch_array($res))
 		{
 			//print_r("El valor de la bandera es: ".$bandera."<br>");
-
 			$sqlxox = "SELECT * FROM subtema_visto WHERE Mat_Alumno = '$rowses[Mat_Alumno]' AND id_Subtema = '$fila[id_Subtema]' AND id_Curso = '$IDCurso';";
 			//print_r($sqlxox."<br>");
 			$resultadoxox = mysqli_query($conexia, $sqlxox);
 			$rowseso = mysqli_fetch_array($resultadoxox);
 
 			//print_r("Valor de Orden de rowseso: ".$rowseso['Orden']."<br>");
-
+            //echo "que ".($fila['Orden']);
 			if($rowseso['Orden'] != NULL)
 			{
 				$Ultvisto = $rowseso['Orden'];
@@ -869,7 +928,6 @@ else
 			{
 				$bandera = 1;
 			}
-
 			$consPDF = "SELECT ubica FROM material_doc WHERE id_Subtema = '$fila[id_Subtema]';";
 			$resPDF = mysqli_query($conexia, $consPDF);
 			$rowPDF = mysqli_fetch_array($resPDF);
@@ -939,8 +997,7 @@ else
 			}
 			$bandera = 0;
 		}//Fin del if bandera
-		else
-		{
+		else {
 	?>
     	<form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
         	<button type="submit" class="btn btn-default btn-xs Visto" title="Por favor vea los subtemas anteriores" disabled> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-exclamation-sign"></span> </button>

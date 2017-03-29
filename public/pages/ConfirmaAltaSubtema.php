@@ -167,21 +167,24 @@ if($accion == 'Nu3v@')
 				$carpeta = "../Mat_Doc/";
 
 
-				if($archivo != "")
-				{
-					opendir($carpeta);
-					$destino = $carpeta.$archivo;
-					copy($_FILES['PDF']['tmp_name'],$destino);
+				if($archivo != "") {
+                    opendir($carpeta);
+                    $destino = $carpeta . $archivo;
+                    //copy($_FILES['PDF']['tmp_name'],$destino);
 
-					$consulta = "INSERT INTO material_doc (id_Subtema, ubica) VALUES ('$clave', '$destino');";
+                    if (!copy($_FILES['PDF']['tmp_name'], $destino)) {
+                        $Message = "Ocurrió un error al subir su archivo intente de nuevo ";
+                        header("Location:  ../?Message={$Message}");
+                        exit("Unable to connect to ");
+                    } else {
+                        $consulta = "INSERT INTO material_doc (id_Subtema, ubica) VALUES ('$clave', '$destino');";
 
-					if(mysqli_query($conec, $consulta ))
-					{				}
-					else
-					{
-						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
-					}
-				}
+                        if (mysqli_query($conec, $consulta)) {
+                        } else {
+                            echo "hubo un error al subir el archivo de audiointente de nuevo" . mysqli_error();
+                        }
+                    }
+                }
 
 			}
 			else if($_REQUEST['TMat'] == "Video")
@@ -204,19 +207,24 @@ if($accion == 'Nu3v@')
 				$carpeta = "../Mat_Audio/";
 
 
-				if($archivo != "")
-				{
-					opendir($carpeta);
-					$destino = $carpeta.$archivo;
-					copy($_FILES['Audio']['tmp_name'],$destino);
-					$consulta = "INSERT INTO material_audio (id_Subtema, ubica) VALUES ('$clave', '$destino');";
+				if($archivo != "") {
+                    opendir($carpeta);
+                    $destino = $carpeta . $archivo;
+                    //copy($_FILES['Audio']['tmp_name'],$destino);
 
-					if(mysqli_query($conec,$consulta))
-					{				}
-					else
-					{
-						echo "hubo un error al subir el archivo de audiointente de nuevo".mysqli_error();
-					}
+
+                    if (!copy($_FILES['Audio']['tmp_name'], $destino)) {
+                        $Message = "Ocurrió un error al subir su archivo intente de nuevo ";
+                        header("Location:  ../?Message={$Message}");
+                        exit("Unable to connect to ");
+                    } else{
+                    $consulta = "INSERT INTO material_audio (id_Subtema, ubica) VALUES ('$clave', '$destino');";
+
+                    if (mysqli_query($conec, $consulta)) {
+                    } else {
+                        echo "hubo un error al subir el archivo de audiointente de nuevo" . mysqli_error();
+                    }
+                }
 				}
 			}
 

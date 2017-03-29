@@ -262,8 +262,10 @@ class UserController extends Controller
            $curso->status = 1;
            $curso->save();
        }
-
-       echo  $curso->status ;
+       // return back()->withInput();
+        //return redirect()->route('login');
+        return  $curso->status ;
+       //echo  $curso->status ;
 
        /* session_start();
         if (Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
