@@ -24,17 +24,20 @@ if($tipoPer != "Alumno")
 
 	$conexia = conect();
 
+/*
+if($rowses['Status'] == "BAJA")
+{
+    logout();
+    echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';
+    echo "<script>location.href='login.php'</script>";
+}
+*/
+
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
 	$resultadoses = mysqli_query($conexia,$queryxe);
 	$rowses = mysqli_fetch_array($resultadoses);
 
-	if($rowses['Status'] == "BAJA")
-	{
-		logout();
-		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';
-		echo "<script>location.href='login.php'</script>";
-}
 
 
 
@@ -120,7 +123,6 @@ mysqli_close($conexia);
         <th><center>Cupo</center></th>
         <th><center></center></th>
     </tr>
-
 	<?PHP
 		$color = 0;
 		$conex = conect();
@@ -226,7 +228,7 @@ mysqli_close($conexia);
 
 			else
 			{
-				$Query = "INSERT INTO curso_participante (id_curso, Mat_Alumno) VALUES ('$_POST[IDCurso]', '$_POST[Mat_Alumno]');";
+				$Query = "INSERT INTO curso_participante (id_curso, Mat_Alumno, status) VALUES ('$_POST[IDCurso]', '$_POST[Mat_Alumno]', '0');";
 
 				if(mysqli_query($conec,$Query))
 				{

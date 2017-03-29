@@ -67,7 +67,10 @@ class Pregunta{
             var longitud = this.choices.length;
             this.choices.push(new Choice(longitud+1, this.guid));
             qArea.append(this.choices[this.choices.length-1].tpl());
-            this.choices[this.choices.length-1]. eventoCambioTexto();
+            this.choices[this.choices.length-1].eventoCambioTexto();
+            this.choices[this.choices.length-1].borrado(this.choices);
+            this.choices[this.choices.length-1].respuestaSeleccionado(this.respuestas);
+
         });
 
         //Por defecto que se muestre un textarea
@@ -91,8 +94,6 @@ class Pregunta{
                     p.eventosPreguntaAbierta();
                     break;
                 case "2":
-                    //qArea.append(choice1);
-                   // .append(choice2);
                     qArea.append(nota);
                     contenedor.append(addElement);
                     break;

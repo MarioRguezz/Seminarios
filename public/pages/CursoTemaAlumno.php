@@ -28,13 +28,14 @@ if($tipoPer != "Alumno")
 	$queryxe = "SELECT * FROM persona P JOIN alumno A ON P.email = A.email  WHERE P.email = '$email' ;";
 	$resultadoses = mysqli_query($conexia, $queryxe);
 	$rowses = mysqli_fetch_array($resultadoses);
-
+/*
 	if($rowses['Status'] == "BAJA")
 	{
 		logout();
 		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';
 		echo "<script>location.href='login.php'</script>";
 	}
+*/
 
 	$IDCurso = $_POST['IDCurso'];
 

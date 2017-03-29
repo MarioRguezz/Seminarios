@@ -145,7 +145,7 @@
             <label for="opcion1" class="control-label col-md-3 whiteClass">Tipo de usuario</label>
             <div class="col-md-6">
                 <select class="form-control NoRadius" name="Tuser" id="Tuser">
-                    <option value="0">Seleccione una opcion</option>
+                    <option value="0">Seleccione una opción</option>
                     <option value="Alumno">Alumno</option>
                     <option value="Instructor">Instructor</option>
                 </select>

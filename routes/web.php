@@ -38,6 +38,7 @@ Route::group(['prefix'=>'usuario'], function(){
     Route::get('search', 'UserApiController@search');
     Route::get('registro', 'UserController@registroView');
     Route::post('registro', 'UserController@registrar');
+    Route::post('status', 'UserController@status');
 });
 
 

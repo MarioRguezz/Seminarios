@@ -125,13 +125,14 @@ mysqli_close($conexia);
     <tr class="danger">
     	<th><center>Nombre</center></th>
         <th><center>Correo</center></th>
+        <th><center>Estatus</center></th>
         <th><center>Información</center></th>
     </tr>
 
 	<?PHP
 		$color = 0;
 		$conex = conect();
-		$consulta = "SELECT P.APaterno, P.AMaterno, P.Nombre, P.email FROM alumno A JOIN curso_participante CP ON A.Mat_Alumno = CP.Mat_Alumno JOIN persona P ON A.email = P.email WHERE CP.id_Curso = '$IDCurso'";
+		$consulta = "SELECT P.APaterno, P.AMaterno, P.Nombre, P.email, CP.status, CP.Mat_Alumno FROM alumno A JOIN curso_participante CP ON A.Mat_Alumno = CP.Mat_Alumno JOIN persona P ON A.email = P.email WHERE CP.id_Curso = '$IDCurso'";
 
 		$res = mysqli_query($conex,$consulta);
 		while($row = mysqli_fetch_array($res))
@@ -153,8 +154,37 @@ mysqli_close($conexia);
 			?>
     	<td><center> <?PHP echo htmlentities($row['APaterno']." ". $row['AMaterno']." ".$row['Nombre']); ?> </center></td>
         <td><center> <?PHP echo htmlentities($row['email']); ?> </center></td>
-        <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
-        <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="email">
+            <!--<td><center> <?PHP// echo htmlentities($row['Mat_Alumno']); ?> </center></td> -->
+
+
+
+            <?PHP
+            if($row['status'] == '1'){
+                echo ' <form action="../usuario/registro" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+               <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
+               <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
+                <td><center> <button type="submit" class="buttonTransparentBorder buttonAlta"> Alta </button></center></td>
+            </form>';
+
+
+           //
+
+
+
+            } else if ($row['status'] == '0'){
+                echo ' <form action="../usuario/registro" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+               <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
+               <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
+                <td><center> <button type="submit" class="buttonTransparentBorder buttonAlta"> Baja </button></center></td>
+            </form>';
+            }
+            ?>
+
+
+
+
+            <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+        <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="Mat_Alumno">
         <td><center> <button type="submit" class="buttonTransparentBorder buttonAlta"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
         </form>
 

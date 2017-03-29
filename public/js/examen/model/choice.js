@@ -5,11 +5,15 @@
 
 class Choice {
     constructor(length, name) {
-        this.guid = this.guid(),
+        this.guid =  guid(),
         this.name = "Opcion",
         this.value = length,
         this.titulo = null,
         this.group = name;
+        this.borrar = null;
+        this.contenedor = null;
+        this.radio = null;
+        this.valor = null;
     }
 
 
@@ -23,6 +27,9 @@ class Choice {
         contenedor.append(titulo);
         contenedor.append(borrar);
         p.titulo = titulo;
+        p.borrar = borrar;
+        p.contenedor = contenedor;
+        p.radio = radio;
         return contenedor ;
     }
 
@@ -33,6 +40,24 @@ class Choice {
             p.name = p.titulo.val();
             console.log(p.name);
         });
+    }
+
+    borrado(choiceArray) {
+        var p = this;
+        p.borrar.click(() => {
+           p.contenedor.remove();
+            choiceArray.splice(p.value-1, 1);
+        });
+    }
+
+
+    respuestaSeleccionado(respuestas){
+        var p = this;
+        p.radio.change(() => {
+            console.log(p.radio.val());
+            respuestas[0] = p.radio.val();
+        });
+
     }
 
 

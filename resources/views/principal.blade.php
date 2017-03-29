@@ -14,13 +14,13 @@ $resultadoses = mysqli_query($conexia,$queryxe);
 //	$resultadoses = mysqli_query($queryxe);
 $rowses = mysqli_fetch_array($resultadoses);
 //	$rowses = mysqli_fetch_array($resultadoses);
-if($rowses['Status'] == "BAJA")
+/*if($rowses['Status'] == "BAJA")
 {
     logout();
     echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';
     echo "<script>location.href='login.php'</script>";
 }
-
+*/
 
 ?>
 

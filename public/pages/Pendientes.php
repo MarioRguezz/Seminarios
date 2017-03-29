@@ -104,7 +104,7 @@ if($TipoPer != "Administrador")
 	<?PHP
 		$color = 0;
 		$conex = conect();
-		$consulta = "Select * FROM persona where TUser != 'Administrador' AND Status != 'ALTA'"; //Tienes que seleccionar solo aquellos que no esten dados de 'Baja'
+		$consulta = "Select * FROM persona where TUser != 'Administrador' AND Status != 'ALTA' AND TUser = 'Instructor' "; //Tienes que seleccionar solo aquellos que no esten dados de 'Baja'
 
 		$res = mysqli_query($conex,$consulta);
 		while($row = mysqli_fetch_array($res))
