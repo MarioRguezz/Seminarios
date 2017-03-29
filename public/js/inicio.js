@@ -22,6 +22,17 @@ $(document).ready(function () {
     });
 
 
+    $('.textPublic').change(function(){
+       if( $('.textPublic').is(":checked")){
+           $(".emailsGroup").empty();
+       }else{
+           $(".emailsGroup").append('<label for="nombre" class="control-label col-md-3 whiteClassThin">Los correos deben ir separados por comas</label>' +
+               '<div class="col-md-6"><textarea class="form-control NoRadius" maxlength="20000" id="emails" name="emails" placeholder="correo@hotmail.com, correo2@hotmail.com" required></textarea> </div>');
+
+       }
+    });
+
+
     $('.elementoButton').click(function () {
         var elem = this;
         $.ajax({

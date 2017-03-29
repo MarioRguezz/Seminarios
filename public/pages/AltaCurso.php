@@ -170,6 +170,20 @@ $res= get_Personas();
     </div>
 </div>
 
+    <div class="form-group">
+        <label for="nombre" class="control-label col-md-3 whiteClassThin">Curso público</label>
+        <div class="col-md-6">
+            <input type="checkbox" class="form-control textPublic" name="public" value="publico" checked>
+        </div>
+    </div>
+    <div class="form-group emailsGroup">
+
+
+    </div>
+
+
+
+
 <div class="form-group">
 	<div class="col-md-2 col-md-offset-2">
 		<button class="buttonTransparentBorder buttonAlta" id="btn-registro" type="submit">Crear curso </button>
