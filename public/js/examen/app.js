@@ -6,7 +6,11 @@ $(function(){
         examen.preguntas.push(pregunta);
         $("#contenedorPreguntas").append(pregunta.template());
 
-    })
+    });
+
+    $("#guardar").click(() => {
+
+    });
 });
 
 

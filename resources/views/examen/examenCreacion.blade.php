@@ -59,6 +59,7 @@
                     </div>
                     <div class="box rightPosition" >
                         <button id="nuevaPregunta" class="btn btn-primary">Nueva Pregunta</button>
+                        <button id="guardar" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
         </div>

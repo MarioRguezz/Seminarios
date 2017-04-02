@@ -13,6 +13,7 @@ class Pregunta{
         this.btnLeft = null;
         this.btnRight = null;
     }
+
     getJSON() {
         var clon = JSON.parse(JSON.stringify(this));
         delete clon.idExamen,
