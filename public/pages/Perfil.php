@@ -300,7 +300,7 @@ else
                 <div class="form-group">
                 <label for="municipio" class="control-label col-md-3 whiteClassThin">Municipio</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadius" id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Celular']); ?>" readonly>
+                    <input class="form-control NoRadius" id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Municipio']); ?>" readonly>
                     </div>
                 </div>
 		</form>

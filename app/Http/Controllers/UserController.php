@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Curso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\DeclareDeclare;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -27,7 +30,7 @@ class UserController extends Controller
         $user = Auth::user();
         if(isset($user)){
             $band = 0;
-            if($user->Status == "BAJA"){
+            if($user->Status == "BAJA" && $user->TUser == "Instructor"){
                 $this->logout();
                 return view('login', array('res' => 1));
             }
@@ -128,7 +131,9 @@ class UserController extends Controller
                 }
             }
         }
-        if($_REQUEST['Tuser'] == 'Instructor')
+        //$_REQUEST['Tuser']
+       // dd(url($path.$filename));
+        if($request->input('Tuser') == 'Instructor')
         {
             //echo "entro a instruc";
 
@@ -141,7 +146,20 @@ class UserController extends Controller
         //  echo $Consulta;
         if(mysqli_query($conec,$Consulta))
         {
-            //  echo $Consulta;
+            //Todos los alumnos matriculados porque ya no los dará de alta el administrador
+            if($request->input('Tuser') == 'Alumno') {
+                $maxQuery = "SELECT MAX(Mat_Alumno) AS Matricula FROM alumno";
+            }
+            $resultadoMax = mysqli_query($conec,$maxQuery);
+            $row = mysqli_fetch_array($resultadoMax);
+            $IDes = $row['Matricula'];
+            $IDes = $IDes + 1;
+            if($request->input('Tuser') == 'Alumno') {
+                $queryUpdate = "UPDATE alumno set Mat_Alumno = '$IDes' WHERE email = '$_POST[email]';";
+            }
+            if(mysqli_query($conec,$queryUpdate)){
+            }else {
+            }
         }
         else
         {
@@ -220,4 +238,55 @@ class UserController extends Controller
         return redirect('/');
 
     }
+
+
+
+    /**
+     * Controlador para cambio de status.
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
+    public function status(Request $request){
+       $matAlumno =  $request->input('Mat_Alumno');
+       $idCurso =   $request->input('id_Curso');
+
+       $curso = Curso::where([
+            ['Mat_Alumno', '=', $matAlumno],
+            ['id_Curso', '=', $idCurso]
+        ])->first();
+
+       if($curso->status  == 1 ){
+           $curso->status = 0;
+           $curso->save();
+       }else{
+           $curso->status = 1;
+           $curso->save();
+       }
+       // return back()->withInput();
+        //return redirect()->route('login');
+        return  $curso->status ;
+       //echo  $curso->status ;
+
+       /* session_start();
+        if (Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
+            // Authentication passed...
+            $user = Auth::user();
+            $_SESSION["tipoP"] = $user->TUser;
+            $_SESSION["email"] = $request->input('user');
+
+            return redirect("/");
+        }
+        else{
+            //El 0 indica que se imprime el mensaje de Usuario y/o contraseña incorrecto.
+            return view('login', array('res' => 0));
+        }*/
+
+    }
+
+
+
+
+
+
+
 }

@@ -68,7 +68,9 @@ mysqli_close($conexia);
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Main.css">
     <link href="../css/radiocss.css" rel="stylesheet" />
+    <script src="../dist/sweetalert.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="../dist/sweetalert.css">
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/inicio.js"></script>
     <link rel="stylesheet" href="../css/login.css">
@@ -125,13 +127,14 @@ mysqli_close($conexia);
     <tr class="danger">
     	<th><center>Nombre</center></th>
         <th><center>Correo</center></th>
+        <th><center>Estatus</center></th>
         <th><center>Información</center></th>
     </tr>
 
 	<?PHP
 		$color = 0;
 		$conex = conect();
-		$consulta = "SELECT P.APaterno, P.AMaterno, P.Nombre, P.email FROM alumno A JOIN curso_participante CP ON A.Mat_Alumno = CP.Mat_Alumno JOIN persona P ON A.email = P.email WHERE CP.id_Curso = '$IDCurso'";
+		$consulta = "SELECT P.APaterno, P.AMaterno, P.Nombre, P.email, CP.status, CP.Mat_Alumno FROM alumno A JOIN curso_participante CP ON A.Mat_Alumno = CP.Mat_Alumno JOIN persona P ON A.email = P.email WHERE CP.id_Curso = '$IDCurso'";
 
 		$res = mysqli_query($conex,$consulta);
 		while($row = mysqli_fetch_array($res))
@@ -153,8 +156,37 @@ mysqli_close($conexia);
 			?>
     	<td><center> <?PHP echo htmlentities($row['APaterno']." ". $row['AMaterno']." ".$row['Nombre']); ?> </center></td>
         <td><center> <?PHP echo htmlentities($row['email']); ?> </center></td>
-        <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
-        <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="email">
+            <!--<td><center> <?PHP// echo htmlentities($row['Mat_Alumno']); ?> </center></td> -->
+
+
+
+            <?PHP
+            if($row['status'] == '1'){
+                echo '  <td>
+               <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
+               <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
+               <center> <button  type="submit" class="elementoButton buttonTransparentBorder buttonAlta"> Alta  </button></center></td>
+            ';
+
+
+           //
+
+
+
+            } else if ($row['status'] == '0'){
+                echo '<td>
+               <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
+               <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
+                <center> <button type="submit" class="elementoButton buttonTransparentBorder buttonAlta"> Baja </button></center></td>
+            ';
+            }
+            ?>
+
+
+
+
+            <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+        <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="Mat_Alumno">
         <td><center> <button type="submit" class="buttonTransparentBorder buttonAlta"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
         </form>
 

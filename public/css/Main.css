@@ -330,3 +330,7 @@ th, td {
 .hovercolortwo:hover{
   background-color: #705F9D;
 }
+
+.null{
+	display: none;
+}

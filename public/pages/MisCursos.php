@@ -26,13 +26,14 @@ if($tipoPer != "Alumno")
 	$resultadoses = mysqli_query($conexia,$queryxe);
 	$rowses = mysqli_fetch_array($resultadoses);
 
+	/*
 	if($rowses['Status'] == "BAJA")
 	{
 		logout();
 		echo '<script>alert("Acceso denegado... No esta dado de alta, contacte a un administrador para solucionar su problema")</script> ';
 		echo "<script>location.href='login.php'</script>";
     }
-
+*/
 
 
 $Matricula = 0;
@@ -120,8 +121,7 @@ mysqli_close($conexia);
 	<?PHP
 		$color = 0;
 		$conex = conect();
-		$consulta = "SELECT * FROM curso C JOIN curso_informacion CI ON C.id_Curso = CI.ID_Curso JOIN curso_participante CP ON C.id_Curso = CP.id_Curso JOIN curso_instructor CIN ON C.id_Curso = CIN.id_Curso WHERE CP.Mat_Alumno = '$Matricula';";
-
+		$consulta = "SELECT * FROM curso C JOIN curso_informacion CI ON C.id_Curso = CI.ID_Curso JOIN curso_participante CP ON C.id_Curso = CP.id_Curso JOIN curso_instructor CIN ON C.id_Curso = CIN.id_Curso WHERE CP.Mat_Alumno = '$Matricula' AND  CP.status != '0' ;";
 		$res = mysqli_query($conex, $consulta);
 		while($row = mysqli_fetch_array($res))
 		{
