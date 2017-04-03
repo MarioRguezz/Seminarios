@@ -178,6 +178,10 @@ class ExamenController extends Controller
         return view('examenAlumno', array('preguntas' => $preguntas));
     }
 
+    public function respuesta(Request $request){
+        //funcion que recibe total preguntas y respuestas haciendo match y devolviendo un resultado
+    }
+
 
 
 

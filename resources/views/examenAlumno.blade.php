@@ -14,11 +14,14 @@
     <link rel="stylesheet" href="{{url('css/radio.css')}}">
     <link rel="stylesheet" href="{{url('css/Principal.css')}}'">
     <link rel="stylesheet" href="{{url('css/jquery-ui.css')}}'">
+
     <link href="{{url('css/radiocss.css')}}" rel="stylesheet" />
 
     <script src="{{url('js/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{url('js/inicio.js')}}"></script>
     <script src="{{url('js/jquery-ui.js')}}"></script>
+    <script src="{{url('js/examen/model/respuestas')}}"></script>
+    <script src="{{url('js/examen/model/respuesta')}}"></script>
     <link rel="stylesheet" href="{{url('css/login.css')}}">
     <script src="{{url('js/efectos.js')}}"></script>
     <script>
@@ -46,16 +49,26 @@
 <center>
     <h3 class="cssTitleRegistro">EXAMEN</h3>
 </center>
-
 <div id="preguntas">
+    <form  action="../examen/respuesta" method="POST" id="form">
     @foreach($preguntas as $pregunta)
+
         <?php
             $json = json_decode($pregunta->json);
         ?>
+            <script type="text/javascript">
+                var respuestas = new Respuestas();
+                var newIndex =   respuestas.respuestas.length;
+                respuestas.respuestas.push(new Respuesta());
+                respuestas.respuestas[newIndex].id ="{{$json->guid}}";
+                respuestas.respuestas[newIndex].respuestas = "{{$json->respuestas}}";
+
+                MyJSNumVar = "{{$json->guid}}";
+            </script>
         @if($pregunta->tipo == 1)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
                 <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
-                <input type='text' class='textArea space leftPosition' placeholder='Coloca aquí tu respuesta'>
+                <input type='text' class='textArea space leftPosition respuestaInput' placeholder='Coloca aquí tu respuesta'>
             </div>
         @endif
         @if($pregunta->tipo == 2)
@@ -104,11 +117,12 @@
                         });
                     } );
                 </script>
+                <script src="{{url('js/respuestas.js')}}"></script>
         @endif
 
     @endforeach
-
-
+    </form>
+    <button type="button" id="guardarExamen" class="btn btn-primary">Guardar</button>
 
 </div>
 
