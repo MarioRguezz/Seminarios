@@ -126,7 +126,7 @@ mysqli_close($conexia);
 	<?PHP
 		$color = 0;
 		$conex = conect();
-		$consulta = "SELECT * FROM curso C JOIN curso_informacion CI ON C.id_Curso = CI.ID_Curso JOIN curso_instructor CIN ON C.id_Curso = CIN.id_Curso ";
+		$consulta = "SELECT * FROM curso C JOIN curso_informacion CI ON C.id_Curso = CI.ID_Curso JOIN curso_instructor CIN ON C.id_Curso = CIN.id_Curso and CI.publico = 1 ";
 
 		$res = mysqli_query($conex, $consulta);
 		while($row = mysqli_fetch_array($res))

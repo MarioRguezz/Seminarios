@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Alumno;
 use App\Curso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Stmt\DeclareDeclare;
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Input;
 
 class UserController extends Controller
 {
@@ -262,26 +265,28 @@ class UserController extends Controller
            $curso->status = 1;
            $curso->save();
        }
-       // return back()->withInput();
-        //return redirect()->route('login');
         return  $curso->status ;
-       //echo  $curso->status ;
 
-       /* session_start();
-        if (Auth::attempt(['email' => $request->input('user'), 'password' => $request->input('pass')])) {
-            // Authentication passed...
-            $user = Auth::user();
-            $_SESSION["tipoP"] = $user->TUser;
-            $_SESSION["email"] = $request->input('user');
-
-            return redirect("/");
-        }
-        else{
-            //El 0 indica que se imprime el mensaje de Usuario y/o contraseña incorrecto.
-            return view('login', array('res' => 0));
-        }*/
 
     }
+    public function validar(Request $request){
+        $idCurso =  $request->input('idCurso');
+        $email =   $request->input('email') ;
+        $alumno = Alumno::where([['email', '=', $email]])->first();
+        $curso = new Curso;
+        $curso->Mat_Alumno= $alumno->Mat_Alumno;
+        $curso->id_Curso = $idCurso;
+        $curso->status = '1';
+        $curso->save();
+
+        //INSERT INTO curso_participante (id_curso, Mat_Alumno, status) VALUES ('$_POST[IDCurso]', '$_POST[Mat_Alumno]', '0');"
+
+
+       // return  $emails;
+      return view('usuario.aceptar');
+
+    }
+//validar
 
 
 
