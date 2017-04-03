@@ -513,7 +513,8 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 				if($TotalTemas == $TotalVisto && $rowy['Status'] == "ACTIVO")
 				{
 		?>
-        		<form action="ExamenAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+        		<!--<form action="ExamenAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">-->
+                    <form action="../examen/examen_alumno" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <input type="hidden" value="<?PHP echo htmlentities($rowses['Mat_Alumno']); ?>" name="Mat_Alumno">
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
