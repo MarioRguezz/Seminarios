@@ -60,6 +60,6 @@ Route::post('validar', 'UserController@validar');
 Route::group(['prefix'=>'examen'], function(){
     Route::get('creacion', "ExamenController@examenDatos");
     Route::post('guardar', "ExamenController@guardar");
-    Route::post('examen_alumno', 'UserController@examen');
+    Route::post('examen_alumno', 'ExamenController@examen');
 });
 

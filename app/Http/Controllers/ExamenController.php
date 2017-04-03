@@ -170,8 +170,8 @@ class ExamenController extends Controller
     public function examen(Request $request){
        // $examen = new Examen;
         $idSubtema =   $request->input('id_Subtema') ;
-        $subtema = Subtema::where([['id_Subtema', '=', $idSubtema]])->first();
-        $idExamen = $subtema->examen;
+        $tema = Tema::where([['id_Subtema', '=', $idSubtema]])->first();
+        $idExamen = $tema->examen;
         $pregunta = Pregunta::where([['ID_Examen', '=', $idExamen]])->get();
         return $pregunta->json;
        // return view('examenAlumno', array('preguntas' => $pregunta->json));
