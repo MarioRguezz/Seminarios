@@ -168,12 +168,13 @@ class ExamenController extends Controller
 
 
     public function examen(Request $request){
-        $examen = new Examen;
-        $subtema = new Subtema;
-        $subtema =
-            $examen
-            //uso funcion para pasar de examen
-        return view('examenAlumno');
+       // $examen = new Examen;
+        $idSubtema =   $request->input('id_Subtema') ;
+        $subtema = Subtema::where([['id_Subtema', '=', $idSubtema]])->first();
+        $idExamen = $subtema->examen;
+        $pregunta = Pregunta::where([['ID_Examen', '=', $idExamen]])->get();
+        return $pregunta->json;
+       // return view('examenAlumno', array('preguntas' => $pregunta->json));
     }
 
 
