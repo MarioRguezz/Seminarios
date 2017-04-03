@@ -501,17 +501,15 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 			$TotalTemas = mysqli_num_rows($resux);
 
 
-			$sql2 = "SELECT * FROM subtema_visto WHERE id_Tema = '$filases[id_Tema]'";
+			$sql2 = "SELECT * FROM subtema_visto WHERE id_Tema = '$filases[id_Tema]' and Mat_Alumno = '$rowses[Mat_Alumno]'";
 			$resux2 = mysqli_query($conexia, $sql2);
 			$TotalVisto = mysqli_num_rows($resux2);
-
 			if($rowy['Status'] == "")
 			{
 			}
 			else
 			{
 
-				//if($rowy['Status'] == "ACTIVO")
 				if($TotalTemas == $TotalVisto && $rowy['Status'] == "ACTIVO")
 				{
 		?>
