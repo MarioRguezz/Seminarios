@@ -245,6 +245,22 @@ class Pregunta{
     }
 
 
+    renderAbierta () {
+        var p = this,
+            contenedor = $("<div class='box contenedorpregunta col-md-10 col-md-offset-1' />"),
+            titulo = $("<input type='text' class='tituloPregunta space leftPosition' placeholder='Nueva pregunta'>"),
+            subContenedor  = $("<div class='select space leftPosition'/>"),
+            textarea = $("<input type='text' class='textArea space leftPosition' placeholder='Introduzca la respuesta correcta'>"),
+            Area = $("<div class='clear'/>"),
+            qArea = $("<div id='contenedor' class='boxTop'/>"),
+            addElement = $("<div class='boxTop'/>"),
+            textarea = $("<input type='text' class='textArea space leftPosition boxTop' placeholder='Introduzca la respuesta correcta'>");
+
+        contenedor.append(titulo)
+            .append(textarea)
+
+    }
+
     guid () {
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
