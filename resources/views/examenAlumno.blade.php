@@ -58,12 +58,13 @@
         ?>
             <script type="text/javascript">
                 var respuestas = new Respuestas();
-                var newIndex =   respuestas.respuestas.length;
-                respuestas.respuestas.push(new Respuesta());
-                respuestas.respuestas[newIndex].id ="{{$json->guid}}";
-                respuestas.respuestas[newIndex].respuestas = "{{$json->respuestas}}";
+                 var newIndex =   respuestas.respuestas.length;
+                 respuestas.respuestas.push(new Respuesta());
+                 respuestas.respuestas[newIndex].id ="{{$json->guid}}";
+                 respuestas.respuestas[newIndex].respuestas = "{{$json->respuestas}}";
 
-                MyJSNumVar = "{{$json->guid}}";
+                 MyJSNumVar = "{{$json->guid}}";
+                 **/
             </script>
         @if($pregunta->tipo == 1)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">

@@ -1,5 +1,5 @@
 
-$(document).ready(function () {
+$(function () {
 
     $('.respuestaInput').change(function () { //funcion comparra cajas de texto para contraseñas correctas
       console.log($(this).val());
