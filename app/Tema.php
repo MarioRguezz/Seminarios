@@ -15,4 +15,8 @@ class Tema extends Model
         "Nombre",
         "fecha"
     ];
+
+    public function examen() {
+        return $this->hasOne("App\Examen", "id_Tema", "id_Tema");
+    }
 }
