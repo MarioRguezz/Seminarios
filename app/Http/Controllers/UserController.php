@@ -278,19 +278,10 @@ class UserController extends Controller
         $curso->id_Curso = $idCurso;
         $curso->status = '1';
         $curso->save();
-
         //INSERT INTO curso_participante (id_curso, Mat_Alumno, status) VALUES ('$_POST[IDCurso]', '$_POST[Mat_Alumno]', '0');"
-
-
        // return  $emails;
       return view('usuario.aceptar');
-
     }
-//validar
-
-
-
-
 
 
 

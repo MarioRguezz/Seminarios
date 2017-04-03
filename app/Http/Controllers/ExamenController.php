@@ -163,5 +163,18 @@ class ExamenController extends Controller
     }
 
 
+    public function examen(Request $request){
+        $examen = new Examen;
+        $subtema = new Subtema;
+        $subtema =
+            $examen
+            //uso funcion para pasar de examen
+        return view('examenAlumno');
+    }
+
+
+
+
+
 }
 
