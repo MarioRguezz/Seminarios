@@ -1,7 +1,10 @@
 class Pregunta{
-    constructor(idExamen, tipo){
+    constructor(idExamen){
+        this.id = null,
         this.idExamen = idExamen,
-        this.tipo = tipo,
+        this.tipo = "1",
+        this.titulo = "Nueva pregunta",
+        this.inputTitulo = null,
         this.guid = this.guid(),
         this.respuestas = [];
         this.choices = [];
@@ -14,11 +17,38 @@ class Pregunta{
         this.btnRight = null;
     }
 
-    getJSON() {
+   tJSON() {
         var clon = JSON.parse(JSON.stringify(this));
-        delete clon.idExamen,
-            clon.tipo;
-        return JSON.stringify(clon);
+        delete clon.textarea,
+            clon.btnLeft,
+            clon.btnRight,
+            clon.contenedor,
+            clon.inputTitulo;
+
+       clon.choices.forEach((choice) => {
+           delete choice.titulo,
+               choice.borrar,
+               choice.contenedor,
+               choice.radio;
+       });
+
+       clon.items.forEach((item) => {
+           delete item.input,
+               item.remove;
+       });
+
+       clon.casillas.forEach((casilla) => {
+           delete casilla.input,
+               casilla.remove;
+       })
+
+       clon.items.forEach((item) => {
+           delete item.remove,
+               item.input;
+       })
+
+
+        return clon;
     }
 
 
@@ -76,6 +106,9 @@ class Pregunta{
 
         p.contenedor = contenedor;
 
+        titulo.change(() => {
+            p.titulo = titulo.val();
+        })
 
         //Evento que permite la selección de diferentes tipos de preguntas.
         select.change(() => {

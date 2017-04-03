@@ -39,6 +39,8 @@
 </head>
 
 <body class="backgroundPrincipal">
+<input type="hidden" value="{{url('/')}}" id="_url">
+<input type="hidden" value="{{$IDTema}}" id="_idTema">
     <div class="container-fluid">
         <div class="form-horizontal ">
             <div class="text-center">
@@ -46,6 +48,24 @@
             </div>
         </div>
         <div class=" col-md-12 well back" id="menu">
+<div class="row">
+                    <div class="form-group">
+                        <label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre del examen</label>
+                        <div class="col-md-6">
+                            <input class="form-control NoRadius" id="nombre" name="Nombre" type="text" placeholder="" required="">
+                        </div>
+                    </div>
+</div>
+            <br>
+            <div class="row">
+                    <div class="form-group">
+                        <label for="nombre" class="control-label col-md-3 whiteClassThin">Descripción</label>
+                        <div class="col-md-6">
+                            <textarea class="form-control NoRadius" maxlength="200" rows="5" id="descripcion" name="Descripcion" placeholder="" required=""></textarea>
+                        </div>
+                    </div>
+            </div>
+            <br>
                 <div class="row">
                     <div class="col-md-7">
                     <label class="whiteClass4" style="color: white;">Este es un diseñador de exámenes, para agregar una pregunta haz click en el
@@ -59,7 +79,8 @@
                     </div>
                     <div class="box rightPosition" >
                         <button id="nuevaPregunta" class="btn btn-primary">Nueva Pregunta</button>
-                        <button id="guardar" class="btn btn-primary">Guardar</button>
+                        <button id="btnGuardar" class="btn btn-primary">Guardar</button>
+
                     </div>
                 </div>
         </div>

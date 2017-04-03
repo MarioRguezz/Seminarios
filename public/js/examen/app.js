@@ -1,4 +1,4 @@
-var examen = new Examen();
+var examen = new Examen($("#_idTema").val());
 
 $(function(){
     $("#nuevaPregunta").click(() => {
@@ -8,8 +8,9 @@ $(function(){
 
     });
 
-    $("#guardar").click(() => {
-
+    $("#btnGuardar").click(() => {
+        examen.idTema = $("#_idTema").val();
+        examen.guardar();
     });
 });
 

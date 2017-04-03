@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Examen;
+use App\Pregunta;
+use App\Subtema;
+use App\Tema;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,13 +32,99 @@ class ExamenController extends Controller
         }
     }
 
+    public function guardar(Request $request) {
+        $idTema = $request->input('idTema');
+        $preguntas = $request->input('preguntas');
+        $idSubtema = $request->input('idSubtema');
+        $nombre = $request->input('nombre');
+        $descripcion = $request->input('descripcion');
+        $id = $request->input('id');
+
+        //Obtener subtema
+        $subtema = Subtema::find($idSubtema);
+        $tema = Tema::where('id_Tema', $idTema)->first();
+        $orden = Subtema::where('id_Tema', $idTema)->orderBy('Orden', 'desc')->first()->Orden;
+
+        if(isset($subtema)) {
+            $subtema->Nombre = $nombre;
+            $subtema->Descrip = $descripcion;
+            $subtema->id_Tema = $idTema;
+            $subtema->id_Subtema = $idTema;
+            $subtema->id_Curso = $tema->id_Curso;
+            $subtema->Orden = $orden;
+            $subtema->save();
+        }
+        else {
+            Subtema::create([
+                "Nombre" => $nombre,
+                "Descrip" => $descripcion,
+                "id_Tema" => $idTema,
+                "id_Curso" => $tema->id_Curso,
+                "Orden" => $orden
+            ]);
+        }
+
+        $examen = Examen::find($id);
+
+        if(isset($examen)){
+            $examen->id_Tema = $idTema;
+            $examen->save();
+        }
+        else {
+            $examen = Examen::create([
+                "ID_Examen" => substr($idTema,0, 2).'ex'.rand(1000, 9999),
+                "id_Tema" => $idTema,
+            ]);
+
+        }
+
+        $preguntasIds = [];
+
+        foreach ($preguntas as $pregunta) {
+            $titulo = $pregunta["titulo"];
+            $tipo = $pregunta["tipo"];
+            $idExamen = $examen["Idesx"];
+            $idSubtema = substr($idExamen,0, 2).'st'.rand(1000, 9999);
+
+            unset($pregunta["titulo"]);
+            unset($pregunta["tipo"]);
+            unset($pregunta["Idesx"]);
+
+            $preg = Pregunta::find($pregunta["id"]);
+            if(isset($preg)) {
+                $preg->titulo = $titulo;
+                $preg->tipo = $tipo;
+                $preg->ID_Examen = $idExamen;
+                $preg->ID_Subtema = $idSubtema;
+                $preg->json = json_encode($preg);
+                $preg->save();
+            }
+            else {
+               $preg = Pregunta::create([
+                    "titulo" => $titulo,
+                    "tipo" => $tipo,
+                    "ID_Examen" => $idExamen,
+                    "ID_Subtema" => $idSubtema,
+                    "json" => json_encode($pregunta)
+                ]);
+            }
+
+            $preguntasIds[] = $preg->ID_Pregunta;
+        }
+
+        return response()->json([
+            "id" => $examen->Idesx,
+            "preguntas" => $preguntasIds
+        ]);
+    }
+
 
     public function examenDatos(Request $request){
         include 'php/conexion.php';
         //$accion = $_GET['accion'];
         $tipoPer = $_SESSION["tipoP"];
         $email = $_SESSION["email"];
-        $IDTema = $_POST['IDTema'];
+        $IDTema = $_GET['IDTema'];
         if(isset($_SESSION['tipoP'])) {
         }
         else {

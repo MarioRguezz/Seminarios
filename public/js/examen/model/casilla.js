@@ -37,7 +37,7 @@ class Casilla {
         });
 
         casillaX.input.change(() => {
-            casillaX.nombre = input.val();
+            casillaX.nombre = casillaX.input.val();
         });
     }
 }

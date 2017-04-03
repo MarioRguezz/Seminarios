@@ -16,7 +16,7 @@ class Item {
         item.input = input;
         item.remove = remove;
 
-
+        item.asignarEventos()
 
         contenedor.append(remove).append(input);
         return contenedor;
@@ -38,7 +38,8 @@ class Item {
         });
 
         itemX.input.change(() => {
-            itemX.nombre = input.val();
+            console.log(itemX.input.val())
+            itemX.nombre = itemX.input.val();
         });
     }
 }
