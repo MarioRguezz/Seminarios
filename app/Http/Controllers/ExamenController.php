@@ -169,7 +169,7 @@ class ExamenController extends Controller
 
     public function examen(Request $request){
        // $examen = new Examen;
-        $idTema =   $request->input('id_Tema') ;
+        $idTema =   $request->input('IDTema') ;
         $tema = Tema::where([['id_Tema', '=', $idTema]])->first();
         $examen = $tema->examen;
         $preguntas = $examen->preguntas;
