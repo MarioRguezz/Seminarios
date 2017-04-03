@@ -39,9 +39,11 @@ Route::group(['prefix'=>'usuario'], function(){
     Route::get('registro', 'UserController@registroView');
     Route::post('registro', 'UserController@registrar');
     Route::post('status', 'UserController@status');
+
 });
 
 
+Route::post('validar', 'UserController@validar');
 
 
 

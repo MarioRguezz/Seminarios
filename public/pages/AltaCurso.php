@@ -1,6 +1,7 @@
 <?PHP
 
 include '../php/conexion.php';
+include'../PHPMailer/class.phpmailer.php';
 
 $accion = $_GET['accion'];
 
@@ -173,7 +174,7 @@ $res= get_Personas();
     <div class="form-group">
         <label for="nombre" class="control-label col-md-3 whiteClassThin">Curso público</label>
         <div class="col-md-6">
-            <input type="checkbox" class="form-control textPublic" name="public" value="publico" checked>
+            <input type="checkbox" class="form-control textPublic" name="publico" value="1" checked>
         </div>
     </div>
     <div class="form-group emailsGroup">
@@ -206,10 +207,53 @@ if($accion == 'Nu3v@')
 
 			$conec = conect();
 
-			var_dump($IDCurso);
-			var_dump($_POST[IDinstructor]);
+			//var_dump($IDCurso);
+		//	var_dump($_POST[IDinstructor]);
 
 			$Consulta = "INSERT INTO curso_instructor (id_Curso, Mat_Usuario) VALUES ($IDCurso, '$_POST[IDinstructor]');";
+           if($_POST[publico] == null) {
+               $_POST[publico] = 0;
+               include '../PHPMailer/PHPMailerAutoload.php';
+               $arra = explode(" ", $_POST[emails]);
+            //   var_dump($arra);
+               for($i=0; $i< count($arra); $i++) {
+                   //select Mat_Alumno from alumno where email='nerox@hotmail.com'
+                   // $IDCurso
+                 //  var_dump(count($arra));
+                   $mail = new PHPMailer;
+                   $mail->addAddress($arra[$i]);
+                   $mail->isSMTP();                                      // Set mailer to use SMTP
+                   $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                   $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                   $mail->Username = '08bits.team@gmail.com';                 // SMTP username
+                   $mail->Password = '08bits_Team';                           // SMTP password
+                   $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+                   $mail->Port = 587;
+                   $mail->From = '08bits.team@gmail.com';
+                   $mail->FromName = 'Byond';
+                   // Add a recipient
+                  // $mail->addReplyTo($arra[i], 'Information');
+                   //$mail->addCC('cc@example.com');
+                   // $mail->addBCC('bcc@example.com');
+                   $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+                   $mail->isHTML(true);                                  // Set email format to HTML
+                   $mail->Subject = 'Here is the subject';
+                   $mail->Body = 'Bienvenido al curso de Byond<b> ¡Desde tu navegador presiona el botón para quedar inscrito!</b> '.
+                       '<form action="http://189.211.207.173/Seminarios/public/validar" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">'.
+                        '<input type="text" value=" '.$IDCurso.' " id="idCurso" name="idCurso">'.
+                        '<input type="text" value="'.$arra[$i].'" id="email"name="email">'.
+                      '<center> <button type="submit" class="elementoButton buttonTransparentBorder buttonAlta"> Ingresar Curso </button></center>'.
+                    '</form>';
+                   $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+                   if (!$mail->send()) {
+                     //  echo 'Message could not be sent.';
+                      // echo 'Mailer Error: ' . $mail->ErrorInfo;
+                   } else {
+                      // echo 'Message has been sent';
+                   }
+               }
+               //http://189.211.207.173/Seminarios/public/ http://localhost/Seminarios
+           }
 
 						if(mysqli_query($conec,$Consulta))
 						{
@@ -219,7 +263,9 @@ if($accion == 'Nu3v@')
 							echo "hubo un error al ejecuta query curso_instructor intente de nuevo".mysqli_error();
 						}
 
-			$Consulta = "INSERT INTO curso_informacion (ID_Curso, per_num, Descrip) VALUES ($IDCurso, '$_POST[Cupo]', '$_POST[Descripcion]');";
+
+
+			$Consulta = "INSERT INTO curso_informacion (ID_Curso, per_num, Descrip, publico) VALUES ($IDCurso, '$_POST[Cupo]', '$_POST[Descripcion]', '$_POST[publico]');";
 
 						if(mysqli_query( $conec,$Consulta))
 						{
@@ -229,7 +275,7 @@ if($accion == 'Nu3v@')
 							echo "hubo un error al ejecuta query curso_información intente de nuevo".mysqli_error();
 						}
 
-				$sql = "INSERT INTO curso (id_Curso, nombre, estatus) VALUES ($IDCurso, '$_POST[nombre]', 'ALTA');";
+			$sql = "INSERT INTO curso (id_Curso, nombre, estatus) VALUES ($IDCurso, '$_POST[nombre]', 'ALTA');";
 
 				if(mysqli_query($conec,$sql))
 				{
@@ -268,7 +314,7 @@ if($accion == 'Nu3v@')
 					$accion="VACIO";
 					echo "<script>location.href='MisCursosInstructor.php'</script>";
 					*/
-					echo '<script>
+                    echo '<script>
 
 					swal({
 					title: "Error",
