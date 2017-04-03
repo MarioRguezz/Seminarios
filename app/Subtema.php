@@ -17,5 +17,7 @@ class Subtema extends Model
         "Orden"
     ];
 
-
+    public function examen() {
+        return $this->hasOne("App\Examen", "id_Subtema", "IDes");
+    }
 }

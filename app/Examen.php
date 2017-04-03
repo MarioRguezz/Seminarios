@@ -11,7 +11,8 @@ class Examen extends Model
     protected $fillable = [
         "Idesx",
         "ID_Examen",
-        "id_Tema"
+        "id_Tema",
+        "id_Subtema"
     ];
 
 

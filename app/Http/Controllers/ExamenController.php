@@ -49,16 +49,17 @@ class ExamenController extends Controller
             $subtema->Nombre = $nombre;
             $subtema->Descrip = $descripcion;
             $subtema->id_Tema = $idTema;
-            $subtema->id_Subtema = $idTema;
+            $subtema->id_Subtema = substr($idTema,0, 2).'st'.rand(1000, 9999);
             $subtema->id_Curso = $tema->id_Curso;
             $subtema->Orden = $orden;
             $subtema->save();
         }
         else {
-            Subtema::create([
+            $subtema = Subtema::create([
                 "Nombre" => $nombre,
                 "Descrip" => $descripcion,
                 "id_Tema" => $idTema,
+                "id_Subtema" => substr($idTema,0, 2).'st'.rand(1000, 9999),
                 "id_Curso" => $tema->id_Curso,
                 "Orden" => $orden
             ]);
@@ -68,11 +69,13 @@ class ExamenController extends Controller
 
         if(isset($examen)){
             $examen->id_Tema = $idTema;
+            $examen->id_Subtema = $subtema->IDes;
             $examen->save();
         }
         else {
             $examen = Examen::create([
                 "ID_Examen" => substr($idTema,0, 2).'ex'.rand(1000, 9999),
+                "IDes" => $subtema->IDes,
                 "id_Tema" => $idTema,
             ]);
 
@@ -96,7 +99,7 @@ class ExamenController extends Controller
                 $preg->tipo = $tipo;
                 $preg->ID_Examen = $idExamen;
                 $preg->ID_Subtema = $idSubtema;
-                $preg->json = json_encode($preg);
+                $preg->json = json_encode($pregunta);
                 $preg->save();
             }
             else {
@@ -114,6 +117,7 @@ class ExamenController extends Controller
 
         return response()->json([
             "id" => $examen->Idesx,
+            "idSubtema" => $subtema->IDes,
             "preguntas" => $preguntasIds
         ]);
     }
