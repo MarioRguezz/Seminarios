@@ -86,7 +86,9 @@
 
                 <script>
                     $( function() {
-                        $( ".boxItem" ).draggable({ revert: "valid" });
+                        $( ".boxItem" ).draggable({
+                            revert: true
+                        });
 
                         $( ".marco" ).droppable({
                             classes: {
@@ -103,7 +105,6 @@
                     } );
                 </script>
         @endif
-
 
     @endforeach
 
