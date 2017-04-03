@@ -509,12 +509,11 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 			}
 			else
 			{
-
 				if($TotalTemas == $TotalVisto && $rowy['Status'] == "ACTIVO")
 				{
 		?>
         		<!--<form action="ExamenAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">-->
-                    <form action="../examen/examen_alumno" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+        		<form action="../examen/examen_alumno" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <input type="hidden" value="<?PHP echo htmlentities($rowses['Mat_Alumno']); ?>" name="Mat_Alumno">
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
@@ -526,7 +525,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 				else
 				{
 		?>
-          		<form action="ExamenAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+                    <form action="../examen/examen_alumno" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <center><button class="btn-danger" type="submit" disabled title="No se ha habilitado este examen, contacte a su instructor">Realizar evaluación &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
                 </form>
@@ -1022,7 +1021,7 @@ else
 			$TotalTemas = mysqli_num_rows($resux);
 
 
-			$sql2 = "SELECT * FROM subtema_visto WHERE id_Tema  = '$filases[id_Tema]'";
+            $sql2 = "SELECT * FROM subtema_visto WHERE id_Tema = '$filases[id_Tema]' and Mat_Alumno = '$rowses[Mat_Alumno]'";
 			$resux2 = mysqli_query($conexia, $sql2);
 			$TotalVisto = mysqli_num_rows($resux2);
 
@@ -1038,7 +1037,7 @@ else
 				if($TotalTemas == $TotalVisto && $rowy['Status'] == "ACTIVO")
 				{
 		?>
-        		<form action="ExamenAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+                    <form action="../examen/examen_alumno" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <input type="hidden" value="<?PHP echo htmlentities($rowses['Mat_Alumno']); ?>" name="Mat_Alumno">
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
@@ -1050,7 +1049,7 @@ else
 				else
 				{
 		?>
-          		<form action="ExamenAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+                    <form action="../examen/examen_alumno" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <center><button class="btn-danger" type="submit" disabled title="No se ha habilitado este examen, contacte a su instructor">Realizar evaluación &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
                 </form>
