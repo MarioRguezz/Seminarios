@@ -187,7 +187,7 @@ class ExamenController extends Controller
         for ($i = 0; $i < $cantidadRespuestas; $i++) {
             $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]["id_pregunta"]]])->first();
             $preguntaJson = json_decode($pregunta->json);
-           if ($preguntaJson->respuestas[0] == $respuestas[$i]["respuestas"]) {
+           if ($preguntaJson->respuestas[$i] == $respuestas[$i]["respuestas"]) {
                 $val++;
             }
             if($val == 0){
@@ -195,8 +195,8 @@ class ExamenController extends Controller
             }else {
                 $total = ($cantidadRespuestas * 100) / $val;
             }
-            return $total;
         }
+        return $total;
     }
 
 
