@@ -5,5 +5,6 @@ class Respuesta {
     constructor() {
         this.id = null;
         this.respuestas = null;
+        this.id_pregunta = null;
     }
 }

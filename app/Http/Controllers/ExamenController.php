@@ -178,8 +178,25 @@ class ExamenController extends Controller
         return view('examenAlumno', array('preguntas' => $preguntas));
     }
 
-    public function respuesta(Request $request){
-        //funcion que recibe total preguntas y respuestas haciendo match y devolviendo un resultado
+    public function respuesta(Request $request)
+    {
+        $val = 0;
+        $total = 0;
+        $respuestas = $request->input('Respuestas');
+        $cantidadRespuestas = count($respuestas);
+        for ($i = 0; $i < $cantidadRespuestas; $i++) {
+            $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]["id_pregunta"]]])->first();
+            $preguntaJson = json_decode($pregunta->json);
+           if ($preguntaJson->respuestas[0] == $respuestas[$i]["respuestas"]) {
+                $val++;
+            }
+            if($val == 0){
+                $total = 0;
+            }else {
+                $total = ($cantidadRespuestas * 100) / $val;
+            }
+            return $total;
+        }
     }
 
 

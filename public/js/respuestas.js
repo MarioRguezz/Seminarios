@@ -1,13 +1,14 @@
 
 $(function () {
-
+/*
     $('.respuestaInput').change(function () { //funcion comparra cajas de texto para contraseñas correctas
       console.log($(this).val());
       console.log(($(this).parent().attr('id')));
 
     });
 
-
+*/
+    /*
     $('#guardarExamen').click(function () { //funcion comparra cajas de texto para contraseñas correctas
         console.log("x");
         //variable names
@@ -15,5 +16,9 @@ $(function () {
         //$("#var2").val(value2);
         $("#form").submit();
     });
+*/
+
+
+
 
 });

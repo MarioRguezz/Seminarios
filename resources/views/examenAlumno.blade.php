@@ -20,8 +20,8 @@
     <script src="{{url('js/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{url('js/inicio.js')}}"></script>
     <script src="{{url('js/jquery-ui.js')}}"></script>
-    <script src="{{url('js/examen/model/respuestas')}}"></script>
-    <script src="{{url('js/examen/model/respuesta')}}"></script>
+    <script src="{{url('js/examen/examen.js')}}"></script>
+    <script src="{{url('js/examen/model/respuesta.js')}}"></script>
     <link rel="stylesheet" href="{{url('css/login.css')}}">
     <script src="{{url('js/efectos.js')}}"></script>
     <script>
@@ -50,27 +50,26 @@
     <h3 class="cssTitleRegistro">EXAMEN</h3>
 </center>
 <div id="preguntas">
-    <form  action="../examen/respuesta" method="POST" id="form">
     @foreach($preguntas as $pregunta)
 
         <?php
             $json = json_decode($pregunta->json);
         ?>
-            <script type="text/javascript">
-                var respuestas = new Respuestas();
-                 var newIndex =   respuestas.respuestas.length;
-                 respuestas.respuestas.push(new Respuesta());
-                 respuestas.respuestas[newIndex].id ="{{$json->guid}}";
-                 respuestas.respuestas[newIndex].respuestas = "{{$json->respuestas}}";
 
-                 MyJSNumVar = "{{$json->guid}}";
-                 **/
-            </script>
         @if($pregunta->tipo == 1)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
                 <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
                 <input type='text' class='textArea space leftPosition respuestaInput' placeholder='Coloca aquí tu respuesta'>
             </div>
+                <script type="text/javascript">
+                    var newIndex =   respuestas.length;
+                    respuestas.push(new Respuesta());
+                    respuestas[newIndex].id ="{{$json->guid}}";
+                    respuestas[newIndex].id_pregunta ="{{$json->id}}";
+                    $('#'+respuestas[newIndex].id).children('input').change(function () {
+                        respuestas[newIndex].respuestas  =  $('#'+respuestas[newIndex].id).children('input').val();
+                    });
+                </script>
         @endif
         @if($pregunta->tipo == 2)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
@@ -122,7 +121,6 @@
         @endif
 
     @endforeach
-    </form>
     <button type="button" id="guardarExamen" class="btn btn-primary">Guardar</button>
 
 </div>
