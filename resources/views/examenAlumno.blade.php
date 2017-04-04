@@ -57,20 +57,14 @@
             $json = json_decode($pregunta->json);
         ?>
             <script type="text/javascript">
-                var respuestas = new Respuestas();
-                 var newIndex =   respuestas.respuestas.length;
-                 respuestas.respuestas.push(new Respuesta());
-                 respuestas.respuestas[newIndex].id ="{{$json->guid}}";
-                 respuestas.respuestas[newIndex].respuestas = "{{$json->respuestas}}";
-
-                 MyJSNumVar = "{{$json->guid}}";
-                 **/
             </script>
         @if($pregunta->tipo == 1)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
                 <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
                 <input type='text' class='textArea space leftPosition respuestaInput' placeholder='Coloca aquí tu respuesta'>
             </div>
+
+
         @endif
         @if($pregunta->tipo == 2)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
@@ -86,12 +80,12 @@
         @if($pregunta->tipo == 3)
                 <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
                     <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
-                    <div class='leftPosition leftBox boxTop items' id="items-{{$json->guid}}">
+                    <div class='leftPosition leftBox boxTop items' style="width:40%; height:200px" id="items-{{$json->guid}}">
                         @foreach($json->items as $item)
-                            <div class='boxItem' id='{{$item->guid}}'> {{$item->nombre}} </div>
+                            <div class='boxItem item' id='{{$item->guid}}'> {{$item->nombre}} </div>
                         @endforeach
                     </div>
-                    <div class='rightPosition leftBox boxTop' id="casillas-{{$json->guid}}">
+                    <div class='rightPosition leftBox boxTop' style="width:40%; height:200px" id="casillas-{{$json->guid}}">
                         @foreach($json->casillas as $casilla)
                             <div class='text marco' id='{{$casilla->guid}}'> {{$casilla->nombre}} </div>
                         @endforeach
@@ -100,22 +94,44 @@
 
                 <script>
                     $( function() {
-                        $( ".boxItem" ).draggable({
-                            revert: true
-                        });
+                        $("#casillas-{{$json->guid}} > div").sortable({
+                            connectWith: "#items-{{$json->guid}}",
+                            revert:true,
+                            receive: function(evento, ui) {
+                                //Desde
+                                console.log(evento.toElement.id);
 
-                        $( ".marco" ).droppable({
-                            classes: {
-                                "ui-droppable-active": "ui-state-active",
-                                "ui-droppable-hover": "ui-state-hover"
-                            },
-                            drop: function( event, ui ) {
-                                $( this )
-                                        .addClass( "ui-state-highlight" )
-                                        .find( "p" )
-                                        .html( "Dropped!" );
+                                //Hasta
+                                console.log(evento.target.id);
+                                var checked = false;
+                                respuestas.forEach((respuesta) => {
+                                   if (respuesta.id == "{{$json->guid}}") {
+                                       checked = true;
+                                       respuesta.respuestas = {
+                                           casilla: evento.target.id,
+                                           item: evento.toElement.id
+                                       }
+                                   }
+                                });
+
+                                if(!checked) {
+                                    var resp = new Respuesta();
+                                    resp.id = "{{$json->guid}}";
+                                    resp.respuestas = {
+                                        casilla: evento.target.id,
+                                        item: evento.toElement.id
+                                    }
+                                    respuestas.push(resp);
+                                }
                             }
                         });
+
+                        $("#items-{{$json->guid}}").sortable({
+                            //items: "> li."+cve_pregunta,
+                            scroll: false,
+                            connectWith: "#casillas-{{$json->guid}} > div",
+                            revert:true
+                        })
                     } );
                 </script>
                 <script src="{{url('js/respuestas.js')}}"></script>
