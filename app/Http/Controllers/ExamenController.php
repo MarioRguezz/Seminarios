@@ -216,7 +216,8 @@ class ExamenController extends Controller
                 $total = ($cantidadRespuestas * 100) / $val;
             }
         }
-        return $total;
+      //  return $total;
+        return "a";
     }
 
 /*
