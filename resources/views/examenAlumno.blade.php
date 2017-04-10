@@ -74,9 +74,25 @@
         @if($pregunta->tipo == 2)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
                 <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
+                <script type="text/javascript">
+                    var newIndex2 =   respuestas.length;
+                    respuestas.push(new Respuesta());
+                    respuestas[newIndex2].id ="{{$json->guid}}";
+                    respuestas[newIndex2].id_pregunta ="{{$json->id}}";
+
+                </script>
                 @foreach($json->choices as $choice)
 
-                    <input type='radio' name='{{$json->guid}}' class='marginForceRight' value='{{$choice->guid}}'> {{$choice->name}}
+                    <input type='radio' id='{{$choice->guid}}' name='{{$json->guid}}' class='marginForceRight' value='{{$choice->value}}'> {{$choice->name}}
+                    <script type="text/javascript">
+                        $('#{{$choice->guid}}').change(function () {
+                            for(var x=0; x<respuestas.length; x++){
+                                if($(this).parent().attr('id') == respuestas[x].id ){
+                                    respuestas[x].respuestas = $(this).val();
+                               }
+                            }
+                        });
+                    </script>
                     <br>
                 @endforeach
             </div>
@@ -122,6 +138,7 @@
                                 if(!checked) {
                                     var resp = new Respuesta();
                                     resp.id = "{{$json->guid}}";
+                                    resp.id_pregunta ="{{$json->id}}";
                                     resp.respuestas = {
                                         casilla: evento.target.id,
                                         item: evento.toElement.id

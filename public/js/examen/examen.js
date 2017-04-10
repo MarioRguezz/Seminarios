@@ -8,6 +8,7 @@ $(function(){
     //ASIGNAR BOTON DE GUARDAR
     $('#guardarExamen').click(function () {
         var elem = this;
+        console.log(respuestas);
         $.ajax({
             url: '../examen/respuesta',
             type: "post",
@@ -17,8 +18,7 @@ $(function(){
             }
         }).done(function (respuesta) {
             console.log(respuesta);
-            console.log($(elem).children());
-            if (respuesta == 1) {
+          /*  if (respuesta == 1) {
                 swal({
                     title: "Ha dado de alta el usuario",
                     text: "Clic en el botón para continuar",
@@ -44,7 +44,7 @@ $(function(){
                     closeOnCancel: false
                 });
                 $(elem).html("Baja");
-            }
+            }*/
         });
 
     });

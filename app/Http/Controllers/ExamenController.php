@@ -182,12 +182,65 @@ class ExamenController extends Controller
     {
         $val = 0;
         $total = 0;
+        $isCorrect = false;
         $respuestas = $request->input('Respuestas');
         $cantidadRespuestas = count($respuestas);
         for ($i = 0; $i < $cantidadRespuestas; $i++) {
             $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]["id_pregunta"]]])->first();
             $preguntaJson = json_decode($pregunta->json);
-           if ($preguntaJson->respuestas[$i] == $respuestas[$i]["respuestas"]) {
+            if($pregunta->tipo ==  "1"){
+                if ($preguntaJson->respuestas[$i] == $respuestas[$i]["respuestas"]) {
+                    $val++;
+                }
+            } else if($pregunta->tipo ==  "2")   {
+                  if($preguntaJson->respuestas[$i] == $respuestas[$i]["respuestas"]){
+                      $val++;
+                }
+            } else if ($pregunta->tipo ==  "3"){
+                //
+                for($y=0; $y< count($preguntaJson->respuestas); $y++){
+                    if($preguntaJson->respuestas[$y]->casilla == $respuestas[$i]["respuestas"]->casilla  &&   $preguntaJson->respuestas[$y]->item   == $respuestas[$i]["respuestas"]->item){
+                        $isCorrect = true;
+                    }else{
+                        $isCorrect = false;
+                    }
+                }
+                if($isCorrect){
+                    $val++;
+                    $isCorrect = false;
+                }
+            }
+            if($val == 0){
+                $total = 0;
+            }else {
+                $total = ($cantidadRespuestas * 100) / $val;
+            }
+        }
+        return $total;
+    }
+
+/*
+ * {
+  "Respuestas":  [{"id_pregunta":"32", "respuestas":"respuestas"}]
+}
+
+    public function respuesta(Request $request)
+    {
+        $val = 0;
+        $total = 0;
+        $respuestas = $request->input('Respuestas');
+        $cantidadRespuestas = count($respuestas);
+        for ($i = 0; $i < $cantidadRespuestas; $i++) {
+            $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]["id_pregunta"]]])->first();
+            $preguntaJson = json_decode($pregunta->json);
+            if(){
+
+            }
+
+
+
+
+            if ($preguntaJson->respuestas[$i] == $respuestas[$i]["respuestas"]) {
                 $val++;
             }
             if($val == 0){
@@ -199,7 +252,7 @@ class ExamenController extends Controller
         return $total;
     }
 
-
+*/
 
 
 
