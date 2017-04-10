@@ -4,7 +4,7 @@
 class Respuesta {
     constructor() {
         this.id = null;
-        this.respuestas = null;
+        this.respuestas = [];
         this.id_pregunta = null;
     }
 }

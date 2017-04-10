@@ -8,44 +8,83 @@ $(function(){
     //ASIGNAR BOTON DE GUARDAR
     $('#guardarExamen').click(function () {
         var elem = this;
-        console.log(respuestas);
-        $.ajax({
-            url: '../examen/respuesta',
-            type: "post",
-            dataType: 'json',
-            data: {
-                Respuestas:  respuestas
+        var isAll = false;
+        var count = 0;
+        for(var q=0; q< respuestas.length; q++){
+            if(respuestas[q].respuestas.length == 0) {
+                count = 1;
             }
-        }).done(function (respuesta) {
-            console.log(respuesta);
-          /*  if (respuesta == 1) {
-                swal({
-                    title: "Ha dado de alta el usuario",
-                    text: "Clic en el botón para continuar",
-                    type: "success",
-                    showCancelButton: false,
-                    confirmButtonColor: "#00FF00",
-                    confirmButtonText: "Continuar",
-                    cancelButtonText: "No, cancel plx!",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                });
-                $(elem).html("Alta");
-            } else {
-                swal({
-                    title: "Ha dado de baja el usuario",
-                    text: "Clic en el botón para continuar",
-                    type: "success",
-                    showCancelButton: false,
-                    confirmButtonColor: "#00FF00",
-                    confirmButtonText: "Continuar",
-                    cancelButtonText: "No, cancel plx!",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                });
-                $(elem).html("Baja");
-            }*/
-        });
+        }
+        if(count == 1){
+            isAll = false;
+        }else{
+            isAll = true;
+        }
+        console.log(isAll);
+        if(total > respuestas.length || isAll == false){
+            swal({
+                title: "Necesita contestar todas las preguntas",
+                text: "Clic en el botón para continuar",
+                type: "warning",
+                showCancelButton: false,
+                confirmButtonColor: "#00FF00",
+                confirmButtonText: "Continuar",
+                cancelButtonText: "No, cancel plx!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            });
+        }else {
+            console.log(respuestas);
+            $.ajax({
+                url: '../examen/respuesta',
+                type: "post",
+                dataType: 'json',
+                data: {
+                    Respuestas: respuestas,
+                    Mat_Alumno: $('#Mat_Alumno').val(),
+                    IDTema: $('#IDTema').val()
+                }
+            }).done(function (respuesta) {
+                console.log(respuesta);
+                if (respuesta >= "60") {
+                    swal({
+                            title: "Ha  pasado el examen",
+                            text: "de clic en el boton para continuar",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonColor: "#00FF00",
+                            confirmButtonText: "Continuar",
+                            cancelButtonText: "No, cancel plx!",
+                            closeOnConfirm: false,
+                            closeOnCancel: false
+                        },
+
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                location.href = "../pages/MisCursos.php"
+                            }
+                        });
+                } else {
+                    swal({
+                            title: "Ha  reprobado el examen",
+                            text: "de clic en el boton para continuar",
+                            type: "warning",
+                            showCancelButton: false,
+                            confirmButtonColor: "#F7D358",
+                            confirmButtonText: "Continuar",
+                            cancelButtonText: "No, cancel plx!",
+                            closeOnConfirm: false,
+                            closeOnCancel: false
+                        },
+
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                location.href = "../pages/MisCursos.php"
+                            }
+                        });
+                }
+            });
+        }
 
     });
 });

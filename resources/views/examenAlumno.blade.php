@@ -23,6 +23,8 @@
     <script src="{{url('js/examen/examen.js')}}"></script>
     <script src="{{url('js/examen/model/respuesta.js')}}"></script>
     <link rel="stylesheet" href="{{url('css/login.css')}}">
+    <script src="../dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/sweetalert.css">
     <script src="{{url('js/efectos.js')}}"></script>
     <script>
         $(document).ready(function () {
@@ -50,8 +52,16 @@
     <h3 class="cssTitleRegistro">EXAMEN</h3>
 </center>
 <div id="preguntas">
+    <?php
+    $IDTema = $_POST['IDTema'];
+    $MatAlumno = $_POST['Mat_Alumno'];
+        ?>
+        <input type="hidden" value="<?PHP echo htmlentities($IDTema); ?>" name="IDTema" id="IDTema">
+        <input type="hidden" value="<?PHP echo htmlentities($MatAlumno); ?>" name="Mat_Alumno" id="Mat_Alumno">
     @foreach($preguntas as $pregunta)
-
+        <script type="text/javascript">
+            var total = "{{count($preguntas)}}";
+            </script>
         <?php
             $json = json_decode($pregunta->json);
         ?>
@@ -76,7 +86,7 @@
                 <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
                 <script type="text/javascript">
                     var newIndex2 =   respuestas.length;
-                    respuestas.push(new Respuesta());
+                   respuestas.push(new Respuesta());
                     respuestas[newIndex2].id ="{{$json->guid}}";
                     respuestas[newIndex2].id_pregunta ="{{$json->id}}";
 
@@ -98,7 +108,7 @@
             </div>
         @endif
 
-        @if($pregunta->tipo == 3)
+            @if($pregunta->tipo == 3)
                 <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
                     <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
                     <div class='leftPosition leftBox boxTop items' style="width:40%; height:200px" id="items-{{$json->guid}}">
@@ -124,25 +134,37 @@
 
                                 //Hasta
                                 console.log(evento.target.id);
+                                var cas = evento.target.id;
+                                var item = evento.toElement.id;
+
+
                                 var checked = false;
                                 respuestas.forEach((respuesta) => {
-                                   if (respuesta.id == "{{$json->guid}}") {
-                                       checked = true;
-                                       respuesta.respuestas = {
-                                           casilla: evento.target.id,
-                                           item: evento.toElement.id
-                                       }
-                                   }
+                                    if (respuesta.id == "{{$json->guid}}") {
+                                        checked = true;
+                                        for(var i = 0 ; i < respuesta.respuestas.length ; i++) {
+                                            if(respuesta.respuestas[i].casilla == cas) {
+                                                respuesta.respuestas[i].item = item;
+                                                return;
+                                            }
+
+                                        }
+                                        respuesta.respuestas.push( {
+                                            casilla: cas,
+                                            item: item
+                                        });
+
+                                    }
                                 });
 
                                 if(!checked) {
                                     var resp = new Respuesta();
                                     resp.id = "{{$json->guid}}";
                                     resp.id_pregunta ="{{$json->id}}";
-                                    resp.respuestas = {
+                                    resp.respuestas.push({
                                         casilla: evento.target.id,
                                         item: evento.toElement.id
-                                    }
+                                    });
                                     respuestas.push(resp);
                                 }
                             }
@@ -157,7 +179,7 @@
                     } );
                 </script>
                 <script src="{{url('js/respuestas.js')}}"></script>
-        @endif
+            @endif
 
     @endforeach
     <button type="button" id="guardarExamen" class="btn btn-primary">Guardar</button>
