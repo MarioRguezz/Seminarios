@@ -217,7 +217,7 @@ class ExamenController extends Controller
             }
         }
       //  return $total;
-        return "a";
+        return $total;
     }
 
 /*
