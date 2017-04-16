@@ -2,6 +2,7 @@ class Examen {
     constructor(idTema) {
         this.preguntas = [];
         this.idTema = idTema;
+        this.actividad = false;
     }
 
     eliminar(guid){

@@ -155,9 +155,10 @@ if($tipoPer == "Alumno")
 			if($rowyas['ubica'] == "")
 			{
 			?>
-            <form action="/actividad/creacion" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+            <form action="../actividad/creacion" class="form-horizontal" method="get" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
+                    <input type="hidden" value="actividad" name="type">
                     <!--<center><button class="btn-primary" type="submit">Agregar actividad &nbsp;<span class="glyphicon glyphicon-text-background"></span> </center> </button>-->
 									<th>		<center><button  class="buttonTransparent" type="submit"><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center> </th>
                 </form>
@@ -166,10 +167,11 @@ if($tipoPer == "Alumno")
 			else
 			{
 			?>
-            <form action="/actividad/creacion" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+            <form action="../actividad/creacion" class="form-horizontal" method="get" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
-                  <!--  <center><button class="btn-danger" type="submit" disabled>Agregar actividad &nbsp;<span class="glyphicon glyphicon-text-background"></span> </center> </button> -->
+										<input type="hidden" value="actividad" name="type">
+								  <!--  <center><button class="btn-danger" type="submit" disabled>Agregar actividad &nbsp;<span class="glyphicon glyphicon-text-background"></span> </center> </button> -->
 									<th>	<center><button  class="buttonTransparent" type="submit" disabled><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center>   </th>
 								</form>
             <?PHP
@@ -189,6 +191,7 @@ if($tipoPer == "Alumno")
                <!-- <form action="examen.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">-->
                 <form action="../examen/creacion" class="form-horizontal" method="get" enctype="multipart/form-data" target="_blank">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
+										<input type="hidden" value="examen" name="type">
                   <!--  <center><button class="btn-primary" type="submit">Agregar examen &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>-->
                     <th>	<center><button  class="buttonTransparent" type="submit" ><img height="50" src="../img/Icons/Png/agregarexamen.png"> </button></center>  </th>
                 </form>

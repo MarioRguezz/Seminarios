@@ -41,21 +41,27 @@
 <body class="backgroundPrincipal">
 <input type="hidden" value="{{url('/')}}" id="_url">
 <input type="hidden" value="{{$IDTema}}" id="_idTema">
+<input type="hidden" value="{{$tipo}}" id="tipo">
     <div class="container-fluid">
         <div class="form-horizontal ">
             <div class="text-center">
+              @if($tipo == "examen")
                 <label class="control-label" id="VP"><h3 class="whiteClass2 top">NUEVO EXAMEN</h3></label>
+              @else
+                <label class="control-label" id="VP"><h3 class="whiteClass2 top">NUEVA ACTIVIDAD</h3></label>
+              @endif
             </div>
         </div>
         <div class=" col-md-12 well back" id="menu">
-<div class="row">
+          @if($tipo == "actividad")
+        <div class="row">
                     <div class="form-group">
-                        <label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre del examen</label>
+                        <label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre de la actividad:</label>
                         <div class="col-md-6">
                             <input class="form-control NoRadius" id="nombre" name="Nombre" type="text" placeholder="" required="">
                         </div>
                     </div>
-</div>
+        </div>
             <br>
             <div class="row">
                     <div class="form-group">
@@ -65,10 +71,12 @@
                         </div>
                     </div>
             </div>
+
+            @endif
             <br>
                 <div class="row">
                     <div class="col-md-7">
-                    <label class="whiteClass4" style="color: white;">Este es un diseñador de exámenes, para agregar una pregunta haz click en el
+                    <label class="whiteClass4" style="color: white;">Este es un diseñador de actividades, para agregar una pregunta haz click en el
                         botón "Nueva pregunta"</label>
                     </div>
                     <br>

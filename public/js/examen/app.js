@@ -10,6 +10,7 @@ $(function(){
 
     $("#btnGuardar").click(() => {
         examen.idTema = $("#_idTema").val();
+        examen.actividad = $("#tipo").val() == "actividad"? true : false;
         examen.guardar();
     });
 });

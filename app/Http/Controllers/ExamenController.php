@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Examen;
+use App\ExamenCalificacion;
 use App\Pregunta;
 use App\Subtema;
 use App\Tema;
@@ -38,31 +39,33 @@ class ExamenController extends Controller
         $idSubtema = $request->input('idSubtema');
         $nombre = $request->input('nombre');
         $descripcion = $request->input('descripcion');
+        $actividad = $request->input('actividad');
         $id = $request->input('id');
 
         //Obtener subtema
         $subtema = Subtema::find($idSubtema);
         $tema = Tema::where('id_Tema', $idTema)->first();
         $orden = Subtema::where('id_Tema', $idTema)->orderBy('Orden', 'desc')->first()->Orden;
-
-        if(isset($subtema)) {
-            $subtema->Nombre = $nombre;
-            $subtema->Descrip = $descripcion;
-            $subtema->id_Tema = $idTema;
-            $subtema->id_Subtema = substr($idTema,0, 2).'st'.rand(1000, 9999);
-            $subtema->id_Curso = $tema->id_Curso;
-            $subtema->Orden = $orden;
-            $subtema->save();
-        }
-        else {
-            $subtema = Subtema::create([
-                "Nombre" => $nombre,
-                "Descrip" => $descripcion,
-                "id_Tema" => $idTema,
-                "id_Subtema" => substr($idTema,0, 2).'st'.rand(1000, 9999),
-                "id_Curso" => $tema->id_Curso,
-                "Orden" => $orden
-            ]);
+        if($actividad == "true") {
+          if(isset($subtema)) {
+              $subtema->Nombre = $nombre;
+              $subtema->Descrip = $descripcion;
+              $subtema->id_Tema = $idTema;
+              $subtema->id_Subtema = substr($idTema,0, 2).'st'.rand(1000, 9999);
+              $subtema->id_Curso = $tema->id_Curso;
+              $subtema->Orden = $orden;
+              $subtema->save();
+          }
+          else {
+              $subtema = Subtema::create([
+                  "Nombre" => $nombre,
+                  "Descrip" => $descripcion,
+                  "id_Tema" => $idTema,
+                  "id_Subtema" => substr($idTema,0, 2).'st'.rand(1000, 9999),
+                  "id_Curso" => $tema->id_Curso,
+                  "Orden" => $orden
+              ]);
+          }
         }
 
         $examen = Examen::find($id);
@@ -75,7 +78,7 @@ class ExamenController extends Controller
         else {
             $examen = Examen::create([
                 "ID_Examen" => substr($idTema,0, 2).'ex'.rand(1000, 9999),
-                "IDes" => $subtema->IDes,
+                "IDes" => isset($subtema) ? $subtema->IDes : null,
                 "id_Tema" => $idTema,
             ]);
 
@@ -117,7 +120,7 @@ class ExamenController extends Controller
 
         return response()->json([
             "id" => $examen->Idesx,
-            "idSubtema" => $subtema->IDes,
+            "idSubtema" => isset($subtema) ? $subtema->IDes : null,
             "preguntas" => $preguntasIds
         ]);
     }
@@ -129,6 +132,8 @@ class ExamenController extends Controller
         $tipoPer = $_SESSION["tipoP"];
         $email = $_SESSION["email"];
         $IDTema = $_GET['IDTema'];
+        $tipo = $_GET['type'];
+
         if(isset($_SESSION['tipoP'])) {
         }
         else {
@@ -161,7 +166,7 @@ class ExamenController extends Controller
         $resultasa = mysqli_query($conexia,$queryzexa);
         $row = mysqli_fetch_array($resultasa);
 
-        return view('examen.examenCreacion', array('IDTema' => $IDTema));
+        return view('examen.examenCreacion', array('IDTema' => $IDTema, 'tipo' => $tipo));
 
 
     }
@@ -184,22 +189,24 @@ class ExamenController extends Controller
         $total = 0;
         $isCorrect = false;
         $respuestas = $request->input('Respuestas');
+        $Mat_Alumno = $request->input('Mat_Alumno');
+        $IDTema = $request->input('IDTema');
         $cantidadRespuestas = count($respuestas);
         for ($i = 0; $i < $cantidadRespuestas; $i++) {
             $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]["id_pregunta"]]])->first();
             $preguntaJson = json_decode($pregunta->json);
             if($pregunta->tipo ==  "1"){
-                if ($preguntaJson->respuestas[$i] == $respuestas[$i]["respuestas"]) {
+                if ($preguntaJson->respuestas[0] == $respuestas[$i]["respuestas"]) {
                     $val++;
                 }
             } else if($pregunta->tipo ==  "2")   {
-                  if($preguntaJson->respuestas[$i] == $respuestas[$i]["respuestas"]){
+                  if($preguntaJson->respuestas[0] == $respuestas[$i]["respuestas"]){
                       $val++;
                 }
             } else if ($pregunta->tipo ==  "3"){
                 //
                 for($y=0; $y< count($preguntaJson->respuestas); $y++){
-                    if($preguntaJson->respuestas[$y]->casilla == $respuestas[$i]["respuestas"]->casilla  &&   $preguntaJson->respuestas[$y]->item   == $respuestas[$i]["respuestas"]->item){
+                    if($preguntaJson->respuestas[$y]->casilla == $respuestas[$i]["respuestas"][$y]["casilla"]  &&   $preguntaJson->respuestas[$y]->item   == $respuestas[$i]["respuestas"][$y]["item"]){
                         $isCorrect = true;
                     }else{
                         $isCorrect = false;
@@ -213,49 +220,17 @@ class ExamenController extends Controller
             if($val == 0){
                 $total = 0;
             }else {
-                $total = ($cantidadRespuestas * 100) / $val;
+               // $total = ($cantidadRespuestas * 100) / $val;
+                $total = ($val * 100) / $cantidadRespuestas;
+                $pregunta = ExamenCalificacion::where([['id_Tema', '=', $IDTema], ['Mat_Alumno', '=', $Mat_Alumno]])->first();
+                $pregunta->Calificacion = $total;
+                $pregunta->save();
             }
         }
-      //  return $total;
+
         return $total;
+       // return $val;
     }
-
-/*
- * {
-  "Respuestas":  [{"id_pregunta":"32", "respuestas":"respuestas"}]
-}
-
-    public function respuesta(Request $request)
-    {
-        $val = 0;
-        $total = 0;
-        $respuestas = $request->input('Respuestas');
-        $cantidadRespuestas = count($respuestas);
-        for ($i = 0; $i < $cantidadRespuestas; $i++) {
-            $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]["id_pregunta"]]])->first();
-            $preguntaJson = json_decode($pregunta->json);
-            if(){
-
-            }
-
-
-
-
-            if ($preguntaJson->respuestas[$i] == $respuestas[$i]["respuestas"]) {
-                $val++;
-            }
-            if($val == 0){
-                $total = 0;
-            }else {
-                $total = ($cantidadRespuestas * 100) / $val;
-            }
-        }
-        return $total;
-    }
-
-*/
-
 
 
 }
-
