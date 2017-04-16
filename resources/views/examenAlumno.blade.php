@@ -124,14 +124,26 @@
 
                                 //Hasta
                                 console.log(evento.target.id);
+                                var cas = evento.target.id;
+                                var item = evento.toElement.id;
+
+
                                 var checked = false;
                                 respuestas.forEach((respuesta) => {
                                    if (respuesta.id == "{{$json->guid}}") {
                                        checked = true;
-                                       respuesta.respuestas = {
-                                           casilla: evento.target.id,
-                                           item: evento.toElement.id
+                                       for(var i = 0 ; i < respuesta.respuestas.length ; i++) {
+                                           if(respuesta.respuestas[i].casilla == cas) {
+                                               respuesta.respuestas[i].item = item;
+                                               return;
+                                           }
+
                                        }
+                                       respuesta.respuestas.push( {
+                                           casilla: cas,
+                                           item: item
+                                       });
+
                                    }
                                 });
 
@@ -139,10 +151,10 @@
                                     var resp = new Respuesta();
                                     resp.id = "{{$json->guid}}";
                                     resp.id_pregunta ="{{$json->id}}";
-                                    resp.respuestas = {
+                                    resp.respuestas.push({
                                         casilla: evento.target.id,
                                         item: evento.toElement.id
-                                    }
+                                    });
                                     respuestas.push(resp);
                                 }
                             }

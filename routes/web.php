@@ -46,7 +46,18 @@ Route::group(['prefix'=>'usuario'], function(){
 Route::post('validar', 'UserController@validar');
 
 
+/**
+ * prefijo: actividad
+ * referencia: ExamenController
+ * Funciones de actividad para su creación.
+ */
 
+Route::group(['prefix'=>'actividad'], function(){
+    Route::get('creacion', "ExamenController@examenDatos");
+    Route::post('guardar', "ExamenController@guardar");
+    Route::post('examen_alumno', 'ExamenController@examen');
+    Route::post('respuesta', 'ExamenController@respuesta');
+});
 
 
 
@@ -63,4 +74,3 @@ Route::group(['prefix'=>'examen'], function(){
     Route::post('examen_alumno', 'ExamenController@examen');
     Route::post('respuesta', 'ExamenController@respuesta');
 });
-

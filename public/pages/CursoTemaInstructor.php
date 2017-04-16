@@ -155,7 +155,7 @@ if($tipoPer == "Alumno")
 			if($rowyas['ubica'] == "")
 			{
 			?>
-            <form action="AltaActividad.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+            <form action="/actividad/creacion" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
                     <!--<center><button class="btn-primary" type="submit">Agregar actividad &nbsp;<span class="glyphicon glyphicon-text-background"></span> </center> </button>-->
@@ -166,7 +166,7 @@ if($tipoPer == "Alumno")
 			else
 			{
 			?>
-            <form action="AltaActividad.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+            <form action="/actividad/creacion" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
                   <!--  <center><button class="btn-danger" type="submit" disabled>Agregar actividad &nbsp;<span class="glyphicon glyphicon-text-background"></span> </center> </button> -->
