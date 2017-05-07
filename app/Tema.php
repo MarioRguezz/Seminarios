@@ -17,6 +17,14 @@ class Tema extends Model
     ];
 
     public function examen() {
-        return $this->hasOne("App\Examen", "id_Tema", "id_Tema");
+        return $this->hasOne("App\Examen", "id_Tema", "id_Tema")
+            ->with('preguntas');
+    }
+
+    public function subtemas() {
+        return $this->hasMany('App\Subtema', 'id_Tema', 'id_Tema')
+            ->with('materialaudio')
+            ->with('materialdoc')
+            ->with('materialvideo');
     }
 }

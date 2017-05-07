@@ -20,4 +20,16 @@ class Subtema extends Model
     public function examen() {
         return $this->hasOne("App\Examen", "id_Subtema", "IDes");
     }
+
+    public function materialdoc() {
+        return $this->hasMany("App\MaterialDoc", 'id_Subtema', 'id_Subtema');
+    }
+
+    public function materialaudio() {
+        return $this->hasMany("App\MaterialAudio", 'id_Subtema', 'id_Subtema');
+    }
+
+    public function materialvideo() {
+        return $this->hasMany("App\MaterialVideo", 'id_Subtema', 'id_Subtema');
+    }
 }

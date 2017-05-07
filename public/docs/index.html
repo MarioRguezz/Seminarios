@@ -107,7 +107,10 @@ $.ajax(settings).done(function (response) {
 <p><code>HEAD api/cursos/get</code></p>
 <!-- END_087fd47233e679f8842dc9069769b720 -->
 <!-- START_04e6c32bbecbe84fe4618db91deec4c7 -->
-<h2>api/temas/get</h2>
+<h2>get: Temas</h2>
+<p>params: [api_token, id_Curso].</p>
+<p>Método que devuelve los temas asociados a un curso. Es necesario estar autenticado como usuario (api_token) para
+poder consultar esta información.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -134,6 +137,66 @@ $.ajax(settings).done(function (response) {
 <p><code>GET api/temas/get</code></p>
 <p><code>HEAD api/temas/get</code></p>
 <!-- END_04e6c32bbecbe84fe4618db91deec4c7 -->
+<!-- START_c4c6982d1315d8ae61186dca63a9b932 -->
+<h2>get: Subtemas</h2>
+<p>params: [api_token, IDex].</p>
+<p>Método que devuelve los subtemas a partir del IDex de un tema dado (llave primaria).
+La lista de subtemas solo puede devolverse cuando se provee un api token válido.
+Cada subtema contiene información básica del mismo, así como la información sobre documento, audio o video.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost/Seminarios/public/api/temas/subtemas" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/Seminarios/public/api/temas/subtemas",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/temas/subtemas</code></p>
+<p><code>HEAD api/temas/subtemas</code></p>
+<!-- END_c4c6982d1315d8ae61186dca63a9b932 -->
+<!-- START_63bb600bf5b4ba039f4f0eb7caf27d73 -->
+<h2>api/temas/examen</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost/Seminarios/public/api/temas/examen" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/Seminarios/public/api/temas/examen",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/temas/examen</code></p>
+<p><code>HEAD api/temas/examen</code></p>
+<!-- END_63bb600bf5b4ba039f4f0eb7caf27d73 -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

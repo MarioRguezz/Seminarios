@@ -20,6 +20,8 @@ class Curso extends Model
         ));
     }*/
 
-
+    public function temas() {
+        return $this->hasMany('App\Tema', 'id_Curso');
+    }
 
 }
