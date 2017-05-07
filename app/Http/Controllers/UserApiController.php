@@ -16,6 +16,8 @@ class UserApiController extends Controller
 {
 
   /**
+   * login
+   * Params: [email, password].
    * Método de autenticación de usuario, recibe el email y password
    * que compara contra la base de datos y devuelve la instancia correcta
    * de User o un error.

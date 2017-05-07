@@ -381,7 +381,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 				//print_r("Entré a ultimo visto... <br>");
 			}
 
-			//print_r("El ultmo visto es: ".$Ultvisto."<br>");
+			print_r("Fila orden es: ".$fila['Orden']."<br>");
 
 			if($fila['Orden'] == $rowseso['Orden'])
 			{
@@ -471,6 +471,21 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
             </form>
     <?PHP
 			}
+            else  {
+                ?>
+                <form action="../actividad/contestar" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <input type="hidden" value="<?PHP echo htmlentities($fila['id_Subtema']); ?>" name="IDSubtema" id="IDSubtema">
+                    <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="Tema" id="Tema">
+                    <input type="hidden" value="<?PHP echo htmlentities($rowses['Mat_Alumno']); ?>" name="MatAlu" id="MatAlu">
+                    <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso" id="IDCurso">
+                    <input type="hidden" value="ACTIVIDAD" name="TipoArchivo">
+                    <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
+
+                    <button type="submit" class="btn btn-default btn-xs Visto" title="Completar actividad"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-bell"></span> </button>
+                </form>
+
+                <?PHP
+            }
 			$bandera = 0;
 		}//Fin del if bandera
 		else

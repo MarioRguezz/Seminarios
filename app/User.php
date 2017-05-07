@@ -56,4 +56,7 @@ class User extends Authenticatable
             return parent::save($options);
         }
 
+        public function alumno() {
+            return $this->hasOne('App\Alumno', 'email', 'email');
+        }
 }

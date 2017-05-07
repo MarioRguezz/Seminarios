@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Curso extends Model
 {
 
-    protected $table = 'durango.curso_participante';
-    protected $fillable = [
-        'Ide', 'id_Curso', 'Mat_Alumno','status'];
+    protected $table = 'durango.curso';
+    protected $fillable = [ 'id_Curso', 'nombre', 'estatus'];
 
 
-    protected $primaryKey = 'Ide';
+    protected $primaryKey = 'id_Curso';
 /*
     public function persona(){
         return $this->belongsTo("App\Persona")->select(array(

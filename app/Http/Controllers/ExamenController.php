@@ -46,6 +46,7 @@ class ExamenController extends Controller
         $subtema = Subtema::find($idSubtema);
         $tema = Tema::where('id_Tema', $idTema)->first();
         $orden = Subtema::where('id_Tema', $idTema)->orderBy('Orden', 'desc')->first()->Orden;
+        $subtemaId = null;
         if($actividad == "true") {
           if(isset($subtema)) {
               $subtema->Nombre = $nombre;
@@ -66,20 +67,22 @@ class ExamenController extends Controller
                   "Orden" => $orden
               ]);
           }
+
+          $subtemaId = $subtema->IDes;
         }
 
         $examen = Examen::find($id);
 
         if(isset($examen)){
             $examen->id_Tema = $idTema;
-            $examen->id_Subtema = $subtema->IDes;
+            $examen->id_Subtema = $subtemaId;
             $examen->save();
         }
         else {
             $examen = Examen::create([
                 "ID_Examen" => substr($idTema,0, 2).'ex'.rand(1000, 9999),
-                "IDes" => isset($subtema) ? $subtema->IDes : null,
-                "id_Tema" => $idTema,
+                "id_Subtema" => $subtemaId,
+                "id_Tema" => $idTema
             ]);
 
         }
@@ -171,6 +174,17 @@ class ExamenController extends Controller
 
     }
 
+
+    public function actividad(Request $request){
+        // $examen = new Examen;
+        $idTema =   $request->input('Tema') ;
+        $tema = Tema::where([['id_Tema', '=', $idTema]])->first();
+        $examen = $tema->examen;
+        $preguntas = $examen->preguntas;
+        //$pregunta = Pregunta::where([['ID_Examen', '=', $idExamen]])->get();
+        //return $preguntas;
+        return view('examenAlumno', array('preguntas' => $preguntas));
+    }
 
     public function examen(Request $request){
        // $examen = new Examen;

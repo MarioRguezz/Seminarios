@@ -24,6 +24,15 @@ Route::group(['prefix'=>'usuarios'], function(){
 });
 
 
+Route::group(['prefix' => 'cursos'], function() {
+    Route::get('get', 'CursosApiController@get');
+});
+
+Route::group(['prefix' => 'temas'], function() {
+    Route::get('get', 'TemasApiController@get');
+});
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

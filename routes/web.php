@@ -55,7 +55,7 @@ Route::post('validar', 'UserController@validar');
 Route::group(['prefix'=>'actividad'], function(){
     Route::get('creacion', "ExamenController@examenDatos");
     Route::post('guardar', "ExamenController@guardar");
-    Route::post('examen_alumno', 'ExamenController@examen');
+    Route::post('contestar', 'ExamenController@actividad');
     Route::post('respuesta', 'ExamenController@respuesta');
 });
 
