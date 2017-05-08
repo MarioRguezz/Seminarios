@@ -21,4 +21,9 @@ class Alumno extends Model
         return $this->belongsToMany('App\Curso', 'durango.curso_participante', 'Mat_Alumno', 'id_Curso');
     }
 
+    public function datos()
+    {
+        return $this->hasOne('App\Persona','email','email');
+    }
+
 }

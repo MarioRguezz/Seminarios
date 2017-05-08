@@ -74,3 +74,15 @@ Route::group(['prefix'=>'examen'], function(){
     Route::post('examen_alumno', 'ExamenController@examen');
     Route::post('respuesta', 'ExamenController@respuesta');
 });
+
+
+
+/**
+ * prefijo: dashboard
+ * referencia: DashboardController
+ * Funciones de examen para su creación.
+ */
+
+Route::group(['prefix'=>'dashboard'], function(){
+    Route::get('index', "DashboardController@index");
+});

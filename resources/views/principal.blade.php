@@ -182,9 +182,9 @@ if( !empty( $_REQUEST['Message'] ) ) {
     <center>
         <table  class="littlemargin" width="100%">
             <tr>
-                <!--  <td width="20%">
-                  <center><h3 class="SubtitleMainwhiteClass">Consulta y edita tus cursos</h3></center>
-                  </td>-->
+                 <td width="20%">
+                  <center><h3 class="SubtitleMainwhiteClass">dashboard</h3></center>
+                  </td>
                 <!--  <td width="20%">
                   <center><h3 class="SubtitleMainwhiteClass">Alta de curso</h3></center>
                   </td>-->
@@ -200,11 +200,11 @@ if( !empty( $_REQUEST['Message'] ) ) {
             </tr>
 
             <tr>
-                <!--  <td width="20%">
+                  <td width="20%">
                   <center>
-                  <a href="CursoTemaInstructor.php" target="_self"> <img src="../img/Icons/Png/PrincipalAdmin-02.png" width="180" height="180"   alt="Consulta de curso"/></a>
+                  <a href="{{url('/dashboard/index')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"   alt="Dashboard"/></a>
                   </center>
-                  </td>-->
+                  </td>
 
                 <!--  <td width="20%">
                   <center>

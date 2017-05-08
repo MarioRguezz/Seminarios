@@ -160,7 +160,7 @@ if($tipoPer == "Alumno")
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
                     <input type="hidden" value="actividad" name="type">
                     <!--<center><button class="btn-primary" type="submit">Agregar actividad &nbsp;<span class="glyphicon glyphicon-text-background"></span> </center> </button>-->
-									<th>		<center><button  class="buttonTransparent" type="submit"><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center> </th>
+									<th>		<!--<center><button  class="buttonTransparent" type="submit"><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center>--> </th>
                 </form>
             <?PHP
 			}
@@ -172,7 +172,7 @@ if($tipoPer == "Alumno")
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
 										<input type="hidden" value="actividad" name="type">
 								  <!--  <center><button class="btn-danger" type="submit" disabled>Agregar actividad &nbsp;<span class="glyphicon glyphicon-text-background"></span> </center> </button> -->
-									<th>	<center><button  class="buttonTransparent" type="submit" disabled><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center>   </th>
+									<th>	<!--<center><button  class="buttonTransparent" type="submit" disabled><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center>  --> </th>
 								</form>
             <?PHP
 			}
