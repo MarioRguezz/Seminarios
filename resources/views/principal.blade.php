@@ -78,7 +78,10 @@ if( !empty( $_REQUEST['Message'] ) ) {
     <div class="col-md-4" >
         <a class="SubtitlewhiteClass NoShadow WithTop" href="">Menú principal</a>
     </div>
-    <div class="col-md-offset-6 col-md-2 ">
+    <div class="col-md-2" >
+        <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/csv/SubirCSV')}}">Cargado con email</a>
+    </div>
+    <div class="col-md-offset-4 col-md-2 ">
         <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
     </div>
 </div>
@@ -183,12 +186,15 @@ if( !empty( $_REQUEST['Message'] ) ) {
         <table  class="littlemargin" width="100%">
             <tr>
                  <td width="20%">
-                  <center><h3 class="SubtitleMainwhiteClass">dashboard</h3></center>
+                  <center><h3 class="SubtitleMainwhiteClass">Dashboard Cursos</h3></center>
                   </td>
-                <!--  <td width="20%">
-                  <center><h3 class="SubtitleMainwhiteClass">Alta de curso</h3></center>
-                  </td>-->
-                <td width="100%">
+                 <td width="20%">
+                  <center><h3 class="SubtitleMainwhiteClass">Dashboard Licencias</h3></center>
+                  </td>
+                  <td width="20%">
+                   <center><h3 class="SubtitleMainwhiteClass">Dashboard Administrador</h3></center>
+                   </td>
+                <td width="20%">
                     <center><h3 class="SubtitleMainwhiteClass">Aprobar solicitudes</h3></center>
                 </td>
             </tr>
@@ -202,17 +208,22 @@ if( !empty( $_REQUEST['Message'] ) ) {
             <tr>
                   <td width="20%">
                   <center>
-                  <a href="{{url('/dashboard/index')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"   alt="Dashboard"/></a>
+                  <a href="{{url('/dashboard/index')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"   alt="Dashboard Cursos"/></a>
                   </center>
                   </td>
 
-                <!--  <td width="20%">
+                  <td width="20%">
                   <center>
-                  <a href="AltaCurso.php" target="_self"> <img src="../img/Icons/Png/PrincipalAdmin-03.png" width="180" height="180"  alt="Dar de alta un curso"/></a>
+                  <a href="{{url('/dashboard/dashboard')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"  alt="Dashboard Licencias"/></a>
                   </center>
-                  </td>-->
+                  </td>
+                  <td width="20%">
+                  <center>
+                  <a href="{{url('/dashboard/administrador')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"  alt="Dashboard Licencias"/></a>
+                  </center>
+                  </td>
 
-                <td width="100%">
+                <td width="20%">
                     <center>
                         <a href="{{url('/pages/Pendientes.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Aprobar solicitud"/></a>
                     </center>

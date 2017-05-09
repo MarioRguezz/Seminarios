@@ -298,3 +298,8 @@ th, td {
 .back{
 	background: transparent;
 }
+
+
+.weight {
+	font-weight: bold !important;
+}

@@ -76,9 +76,13 @@
         </form>
     </div>
     <div class="row">
-        <h4 class="whiteClass thinWord NormalSizeWord col-xs-12 col-md-4"> ¿No estas registrado? Clic aqui para registrarse.</h4> <br>
+        <div class="col-md-4">
+        <a class="form-control buttonLogin alignCenter col-md-4" href="">¿Olvido su contraseña?</a>
+        </div>
     </div>
-
+    <div class="row">
+        <h4 class="whiteClass thinWord NormalSizeWord col-xs-12 col-md-4"> ¿No estas registrado? Clic aquí para registrarse.</h4> <br>
+    </div>
     <div class="row">
         <div class="col-md-4">
         <a class="form-control buttonLogin alignCenter col-md-4" href="{{url('/usuario/registro')}}">REGISTRO</a>

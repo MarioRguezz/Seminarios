@@ -35,6 +35,10 @@
         html {
             height: 100%;
         }
+
+       .weight{
+          font-weight: bold !important;
+        }
     </style>
 </head>
 
@@ -47,20 +51,41 @@
     </div>
     <div class=" col-md-12 well back" id="menu">
         <div class="row">
-            <div class="col-md-7">
-
-
-
-              @foreach ($cursos as $curso)
-                  <p>{{ $curso->nombre }}</p>
-                    @foreach ($curso->alumnos as $alumno)
-                      <p>{{ $alumno->datos['Nombre'] }} {{ $alumno->datos['APaterno'] }} {{ $alumno->datos['AMaterno'] }}</p>
-                        <p>{{ $alumno->datos['email'] }}</p>
-                    @endforeach
-
-              @endforeach
-
-
+            <div class="col-md-12">
+              <table class="table">
+   <thead>
+     <tr>
+       <th style="font-weight:bold;" class="weight">Curso </th>
+       <th class="weight">Nombre</th>
+       <th class="weight">Apellido Paterno</th>
+       <th class="weight">Apellido Materno</th>
+       <th class="weight">Email</th>
+       <th class="weight">Progreso</th>
+     </tr>
+   </thead>
+   <tbody>
+     @foreach ($cursos as $curso)
+     <tr>
+       <td>{{ $curso->nombre }} </td>
+       <td> </td>
+       <td> </td>
+       <td> </td>
+       <td> </td>
+       <td> </td>
+     </tr>
+      @foreach ($curso->alumnos as $alumno)
+      <tr>
+        <td></td>
+        <td> {{ $alumno->datos['Nombre'] }}</td>
+        <td> {{ $alumno->datos['APaterno'] }}</td>
+        <td>{{ $alumno->datos['AMaterno'] }} </td>
+        <td>{{ $alumno->datos['email'] }} </td>
+        <td> 100%</td>
+      </tr>
+        @endforeach
+      @endforeach
+   </tbody>
+ </table>
         </div>
     </div>
 </div>

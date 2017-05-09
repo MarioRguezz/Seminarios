@@ -46,45 +46,65 @@ $(function(){
                 }
             }).done(function (respuesta) {
                 console.log(respuesta);
-                if (respuesta >= "60") {
                     swal({
-                            title: "Ha  pasado el examen",
-                            text: "de clic en el boton para continuar",
+                            title: "Ha realizado el examen",
+                            text: "Calificación"+respuesta+" de clic en el boton para continuar",
                             type: "success",
                             showCancelButton: false,
                             confirmButtonColor: "#00FF00",
                             confirmButtonText: "Continuar",
-                            cancelButtonText: "No, cancel plx!",
+                            cancelButtonText: "Cancelar",
                             closeOnConfirm: false,
                             closeOnCancel: false
                         },
-
                         function (isConfirm) {
                             if (isConfirm) {
-                                location.href = "../pages/MisCursos.php"
+                                location.href = "../pages/MisCursos.php" //cambiar por vista de aprobación 
                             }
                         });
-                } else {
-                    swal({
-                            title: "Ha  reprobado el examen",
-                            text: "de clic en el boton para continuar",
-                            type: "warning",
-                            showCancelButton: false,
-                            confirmButtonColor: "#F7D358",
-                            confirmButtonText: "Continuar",
-                            cancelButtonText: "No, cancel plx!",
-                            closeOnConfirm: false,
-                            closeOnCancel: false
-                        },
-
-                        function (isConfirm) {
-                            if (isConfirm) {
-                                location.href = "../pages/MisCursos.php"
-                            }
-                        });
-                }
             });
         }
 
     });
 });
+
+
+/*
+if (respuesta >= "60") {
+    swal({
+            title: "Ha  pasado el examen",
+            text: "de clic en el boton para continuar",
+            type: "success",
+            showCancelButton: false,
+            confirmButtonColor: "#00FF00",
+            confirmButtonText: "Continuar",
+            cancelButtonText: "No, cancel plx!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+
+        function (isConfirm) {
+            if (isConfirm) {
+                location.href = "../pages/MisCursos.php"
+            }
+        });
+} else {
+    swal({
+            title: "Ha  reprobado el examen",
+            text: "de clic en el boton para continuar",
+            type: "warning",
+            showCancelButton: false,
+            confirmButtonColor: "#F7D358",
+            confirmButtonText: "Continuar",
+            cancelButtonText: "No, cancel plx!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+
+        function (isConfirm) {
+            if (isConfirm) {
+                location.href = "../pages/MisCursos.php"
+            }
+        });
+}
+ */

@@ -32,4 +32,8 @@ class Subtema extends Model
     public function materialvideo() {
         return $this->hasMany("App\MaterialVideo", 'id_Subtema', 'id_Subtema');
     }
+
+  /*  public function  subtemavisto() {
+        return $this->belongsToMany('App\Tema','durango.subtema_visto','id_Subtema', 'id_Tema')->withPivot('Visto');
+    }*/
 }

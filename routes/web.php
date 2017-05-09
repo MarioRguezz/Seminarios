@@ -85,4 +85,17 @@ Route::group(['prefix'=>'examen'], function(){
 
 Route::group(['prefix'=>'dashboard'], function(){
     Route::get('index', "DashboardController@index");
+    Route::get('dashboard', "DashboardController@dashboard");
+    Route::get('administrador', "DashboardController@administrador");
+});
+
+
+/**
+ * prefijo: csv
+ * referencia: DashboardController
+ * Funciones de examen para su creación.
+ */
+
+Route::group(['prefix'=>'csv'], function(){
+    Route::get('SubirCSV', "SubirController@subircsv");
 });

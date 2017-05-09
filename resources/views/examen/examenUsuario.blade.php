@@ -50,7 +50,7 @@
     <div class=" col-md-12 well back" id="menu">
         <div class="row">
             <div class="col-md-7">
-                <label class="whiteClass4" style="color: white;">Este es un diseñador de exámenes, para agregar una pregunta haz click en el
+                <label class="whiteClass4" style="color: white;">Este es un diseñador de exámenes, para agregar una pregunta haz clic en el
                     botón "Nueva pregunta"</label>
             </div>
             <br>
