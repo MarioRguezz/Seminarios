@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Dashboard</title>
+    <title>CSV</title>
     <meta charset="utf-8" />
     <script src="../js/jquery.min.js"></script>
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
@@ -46,12 +46,25 @@
 <div class="container-fluid">
     <div class="form-horizontal ">
         <div class="text-center">
-            <label class="control-label" id="VP"><h3 class="whiteClass2 top">DASHBOARD CURSOS</h3></label>
+            <label class="control-label" id="VP"><h3 class="whiteClass2 top">SUBIR CSV</h3></label>
         </div>
     </div>
     <div class=" col-md-12 well back" id="menu">
         <div class="row">
             <div class="col-md-12">
+
+
+
+
+
+
+
+
+
+
+
+
+
               <table class="table">
    <thead>
      <tr>
@@ -80,7 +93,7 @@
         <td> {{ $alumno->datos['APaterno'] }}</td>
         <td>{{ $alumno->datos['AMaterno'] }} </td>
         <td>{{ $alumno->datos['email'] }} </td>
-        <td> {{ $alumno->porcentaje }}% </td>
+        <td> 100%</td>
       </tr>
         @endforeach
       @endforeach

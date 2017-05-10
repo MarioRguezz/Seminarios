@@ -80,7 +80,7 @@
         <td> {{ $alumno->datos['APaterno'] }}</td>
         <td>{{ $alumno->datos['AMaterno'] }} </td>
         <td>{{ $alumno->datos['email'] }} </td>
-        <td> {{ $alumno->porcentaje }}% </td>
+        <td> 100%</td>
       </tr>
         @endforeach
       @endforeach
