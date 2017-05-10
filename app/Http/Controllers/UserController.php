@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\ClienteAdministrador;
+use App\Instructor;
 use App\User;
 use App\Alumno;
 use App\Curso;
@@ -96,17 +98,19 @@ class UserController extends Controller
             'email' => 'required|email|unique:persona',
             'password' => 'required',
             'Tuser' => 'required',
-
+            'codigo_cliente' => 'required'
         ]);
 
+        $adminCliente = ClienteAdministrador::where('codigo', $request->input('codigo_cliente'))->get()->first();
+
+        if(!isset($adminCliente)) {
+            return view('usuario.registrar', ['errors' => collect(['El código de cliente es inválido']), 'request' => $request]);
+        }
+
+
         /**
-         * Código de PHP puro
-         * TODO: Se puede mejorar en una nueva versión utilizando Laravel.
+         * Si se registra un instructor, se valida que se haya subido un currículum y se guarda.
          */
-        include 'php/conexion.php';
-        $conec = conect();
-        $archivo = "";
-        $destino = "";
         if($request->input('Tuser') == 'Instructor')
         {
 
@@ -119,9 +123,8 @@ class UserController extends Controller
 
                 }
             }
-
-
         }
+        //Caso contrario (alumno), se carga una imagen que acompañará el perfil.
         else
         {
             if ($request->hasFile('Archivo1')) {
@@ -134,58 +137,45 @@ class UserController extends Controller
                 }
             }
         }
-        //$_REQUEST['Tuser']
-       // dd(url($path.$filename));
+
+         //Generación de instructores o alumnos.
         if($request->input('Tuser') == 'Instructor')
         {
             //echo "entro a instruc";
+            Instructor::create(array(
+                "email" => $request->input('email'),
+                "curriculum" => url($path.$filename),
+                "id_cliente_administrador" => $adminCliente->id
+            ));       
 
-            $Consulta = "INSERT INTO usuario (email,curriculum) VALUES ('$_POST[email]', '".url($path.$filename)."');";
         }
         else
         {
-            $Consulta = "INSERT INTO alumno (email,fotografia) VALUES ('$_POST[email]', '".url($path.$filename)."');";
-        }
-        //  echo $Consulta;
-        if(mysqli_query($conec,$Consulta))
-        {
-            //Todos los alumnos matriculados porque ya no los dará de alta el administrador
-            if($request->input('Tuser') == 'Alumno') {
-                $maxQuery = "SELECT MAX(Mat_Alumno) AS Matricula FROM alumno";
-            }
-            $resultadoMax = mysqli_query($conec,$maxQuery);
-            $row = mysqli_fetch_array($resultadoMax);
-            $IDes = $row['Matricula'];
-            $IDes = $IDes + 1;
-            if($request->input('Tuser') == 'Alumno') {
-                $queryUpdate = "UPDATE alumno set Mat_Alumno = '$IDes' WHERE email = '$_POST[email]';";
-            }
-            if(mysqli_query($conec,$queryUpdate)){
-            }else {
-            }
-        }
-        else
-        {
-            //	echo "hubo un error al enviar el mensaje intente de nuevo".mysqli_error();
-        }
-        mysqli_close($conec);
-        //Fin de código puro PHP, consideración para mejorar
+            $alumno = Alumno::create(array(
+               "email" => $request->input('email'),
+                "fotografia" => url($path.$filename),
+                "id_cliente_administrador" => $adminCliente->id
+            ));
 
+            $max = Alumno::max('Mat_Alumno');
+            $alumno->Mat_Alumno = $max + 1;
+            $alumno->save();
+        }
 
         //Inserción en base de datos para realizar el registro del usuario.
         User::create(array(
-           'APaterno' => $_POST['apaterno'],
-           'AMaterno' => $_POST['amaterno'],
-           'Nombre' => $_POST['nombre'],
-           'email' => $_POST['email'],
-           'password' => $_POST['password'],
-           'TUser' => $_POST['Tuser'],
-           'Estado' => $_POST['estado'],
-           'Municipio' => $_POST['municipio'],
-           'TelOfi' => $_POST['telofi'],
-           'TelCas' => $_POST['telcasa'],
-           'Celular' => $_POST['celular'],
-           'Sexo' => $_POST['sexo']
+           'APaterno' => $request->input('apaterno'),
+           'AMaterno' => $request->input('amaterno'),
+           'Nombre' => $request->input('nombre'),
+           'email' => $request->input('email'),
+           'password' => $request->input('password'),
+           'TUser' => $request->input('Tuser'),
+           'Estado' => $request->input('estado'),
+           'Municipio' => $request->input('municipio'),
+           'TelOfi' => $request->input('telofi'),
+           'TelCas' => $request->input('telcasa'),
+           'Celular' => $request->input('celular'),
+           'Sexo' => $request->input('sexo')
         ));
 
         return redirect('/');

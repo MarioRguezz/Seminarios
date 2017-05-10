@@ -59,4 +59,6 @@ class User extends Authenticatable
         public function alumno() {
             return $this->hasOne('App\Alumno', 'email', 'email');
         }
+
+
 }
