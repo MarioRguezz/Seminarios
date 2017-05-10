@@ -14,7 +14,7 @@ class Alumno extends Model
     protected $primaryKey = 'Mat_Alumno';
 
     protected $fillable = [
-        'Id', 'Mat_Alumno', 'fotografia','profesion','institucion','adscripcion','email','constancia','estatus'];
+        'Id', 'Mat_Alumno', 'fotografia','profesion','institucion','adscripcion','email','constancia','estatus', 'id_cliente_administrador'];
 
 
     public function cursos() {
@@ -24,6 +24,10 @@ class Alumno extends Model
     public function datos()
     {
         return $this->hasOne('App\Persona','email','email');
+    }
+
+    public function clienteAdministrador() {
+        return $this->belongsTo('App\ClienteAdministrador', 'id_cliente_administrador', 'id');
     }
 
 }
