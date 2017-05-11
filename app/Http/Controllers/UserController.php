@@ -28,9 +28,11 @@ class UserController extends Controller
     }
 
 
-
-
-
+    /**
+     * Método que devuelve la vista principal, o el login en caso correspondiente.
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(Request $request){
         $user = Auth::user();
         if(isset($user)){
@@ -209,8 +211,15 @@ class UserController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function registroView(Request $request){
+    public function registroView(Request $request) {
         return view('usuario.registrar');
+    }
+
+
+    public function administradoresView(Request $request) {
+        $administradores = ClienteAdministrador::paginate(10);
+
+        return view ('usuario.administradores', ['administradores' => $administradores]);
     }
 
 
