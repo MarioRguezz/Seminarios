@@ -60,5 +60,9 @@ class User extends Authenticatable
             return $this->hasOne('App\Alumno', 'email', 'email');
         }
 
+        public function cliente_administrador() {
+            return $this->hasOne('App\ClienteAdministrador', 'IdPersona', 'id_persona');
+        }
+
 
 }

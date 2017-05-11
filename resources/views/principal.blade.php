@@ -185,47 +185,72 @@ if( !empty( $_REQUEST['Message'] ) ) {
     <center>
         <table  class="littlemargin" width="100%">
             <tr>
-                 <td width="20%">
+                 <td >
                   <center><h3 class="SubtitleMainwhiteClass">Dashboard Cursos</h3></center>
                   </td>
-                 <td width="20%">
+                 <td >
                   <center><h3 class="SubtitleMainwhiteClass">Dashboard Licencias</h3></center>
                   </td>
-                  <td width="20%">
+                  <td>
                    <center><h3 class="SubtitleMainwhiteClass">Dashboard Administrador</h3></center>
                    </td>
-                <td width="20%">
-                    <center><h3 class="SubtitleMainwhiteClass">Aprobar solicitudes</h3></center>
-                </td>
-            </tr>
 
 
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-
-            <tr>
-                  <td width="20%">
+                  <td>
                   <center>
                   <a href="{{url('/dashboard/index')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"   alt="Dashboard Cursos"/></a>
                   </center>
                   </td>
 
-                  <td width="20%">
+                  <td>
                   <center>
                   <a href="{{url('/dashboard/dashboard')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"  alt="Dashboard Licencias"/></a>
                   </center>
                   </td>
-                  <td width="20%">
+                  <td>
                   <center>
                   <a href="{{url('/dashboard/administrador')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"  alt="Dashboard Licencias"/></a>
                   </center>
                   </td>
 
-                <td width="20%">
+            </tr>
+
+
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+
+                <td>
+                    <center><h3 class="SubtitleMainwhiteClass">Aprobar solicitudes</h3></center>
+                </td>
+
+                <td>
+                    <center><h3 class="SubtitleMainwhiteClass">Cargado con email</h3></center>
+                </td>
+
+                <td>
+                    <center><h3 class="SubtitleMainwhiteClass">Administradores</h3></center>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
                     <center>
                         <a href="{{url('/pages/Pendientes.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Aprobar solicitud"/></a>
+                    </center>
+                </td>
+                <td>
+                    <center>
+                        <a href="{{url('/csv/SubirCSV')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Cargado con email"></a>
+                    </center>
+                </td>
+
+                <td>
+                    <center>
+                        <a href="{{url('/usuario/administradores')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Administradores"></a>
                     </center>
                 </td>
             </tr>
