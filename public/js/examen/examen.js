@@ -48,7 +48,7 @@ $(function(){
                 console.log(respuesta);
                     swal({
                             title: "Ha realizado el examen",
-                            text: "Calificación"+respuesta+" de clic en el boton para continuar",
+                            text: "Calificación "+respuesta+" de clic en el boton para continuar",
                             type: "success",
                             showCancelButton: false,
                             confirmButtonColor: "#00FF00",
@@ -59,7 +59,7 @@ $(function(){
                         },
                         function (isConfirm) {
                             if (isConfirm) {
-                                location.href = "../pages/MisCursos.php" //cambiar por vista de aprobación 
+                                location.href = "../examen/diploma/"+$('#Mat_Alumno').val()+"/"+$('#IDTema').val()+"" //cambiar por vista de aprobación
                             }
                         });
             });

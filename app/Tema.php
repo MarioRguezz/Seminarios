@@ -27,4 +27,7 @@ class Tema extends Model
             ->with('materialdoc')
             ->with('materialvideo');
     }
+        public function Curso() {
+            return $this->belongsTo('App\Curso', 'id_Curso');
+        }
 }

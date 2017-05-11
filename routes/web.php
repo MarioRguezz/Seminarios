@@ -73,6 +73,7 @@ Route::group(['prefix'=>'examen'], function(){
     Route::post('guardar', "ExamenController@guardar");
     Route::post('examen_alumno', 'ExamenController@examen');
     Route::post('respuesta', 'ExamenController@respuesta');
+    Route::get('diploma/{cve_alumno}/{cve_tema}', 'ExamenController@diploma');
 });
 
 
