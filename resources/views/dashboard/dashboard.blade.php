@@ -41,12 +41,12 @@
         }
     </style>
 </head>
-
 <body class="backgroundPrincipal">
+  <?php $var = 0; ?>
 <div class="container-fluid">
     <div class="form-horizontal ">
         <div class="text-center">
-            <label class="control-label" id="VP"><h3 class="whiteClass2 top">DASHBOARD CURSOS</h3></label>
+            <label class="control-label" id="VP"><h3 class="whiteClass2 top">DASHBOARD LICENCIAS</h3></label>
         </div>
     </div>
     <div class=" col-md-12 well back" id="menu">
@@ -55,34 +55,31 @@
               <table class="table">
    <thead>
      <tr>
-       <th style="font-weight:bold;" class="weight">Curso </th>
+       <th style="font-weight:bold;" class="weight">Tipo de Usuario</th>
        <th class="weight">Nombre</th>
-       <th class="weight">Apellido Paterno</th>
-       <th class="weight">Apellido Materno</th>
+       <th class="weight">Apellidos</th>
        <th class="weight">Email</th>
-       <th class="weight">Progreso</th>
+       <th class="weight">Fecha vigencia</th>
+       <th class="weight">No. de licencias</th>
      </tr>
    </thead>
    <tbody>
-     @foreach ($cursos as $curso)
      <tr>
-       <td>{{ $curso->nombre }} </td>
-       <td> </td>
+       <td>Cliente Administrador </td>
        <td> </td>
        <td> </td>
        <td> </td>
        <td> </td>
      </tr>
-      @foreach ($curso->alumnos as $alumno)
-      <tr>
-        <td></td>
-        <td> {{ $alumno->datos['Nombre'] }}</td>
-        <td> {{ $alumno->datos['APaterno'] }}</td>
-        <td>{{ $alumno->datos['AMaterno'] }} </td>
-        <td>{{ $alumno->datos['email'] }} </td>
-        <td> 100%</td>
-      </tr>
-        @endforeach
+     @foreach ($clientesAdministradores as $clienteAdministrador)
+     <tr>
+       <td> </td>
+       <td>{{ $clienteAdministrador->datos->Nombre }} </td>
+       <td>{{ $clienteAdministrador->datos->APaterno }} {{ $clienteAdministrador->datos->AMaterno }} </td>
+       <td>{{ $clienteAdministrador->datos->email }} </td>
+       <td> Fecha</td>
+       <td> Licencias</td>
+     </tr>
       @endforeach
    </tbody>
  </table>

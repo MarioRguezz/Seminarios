@@ -27,4 +27,9 @@ class Instructor extends Model
     public function clienteAdministrador() {
         return $this->belongsTo('App\ClienteAdministrador', 'id_cliente_administrador', 'id');
     }
+
+    public function datos(){
+        return $this->hasOne('App\Persona','email','email');
+    }
+
 }

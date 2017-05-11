@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Alumno;
 use App\Curso;
+use App\ClienteAdministrador;
 use App\SubtemaVisto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,29 +62,13 @@ class DashboardController extends Controller
 
 
     public function dashboard(Request $request){
-            $cursos = Curso::all()->where('estatus','=','ALTA');
-            $users = Alumno::all();
-            //$repartidor[6]->alumnos[0]->pivot->id_Curso  $repartidor[4]->alumnos[0]->datos
-            foreach($cursos as $curso){
-              foreach($curso->alumnos as $alumno){
-                foreach($alumno->datos as $datos){
-                }
-            }
-          }
-            return view('dashboard.dashboard',['cursos' => $cursos]);
+          $clientesAdministradores = ClienteAdministrador::all();
+            return view('dashboard.dashboard',['clientesAdministradores' => $clientesAdministradores]);
     }
 
     public function administrador(Request $request){
-            $cursos = Curso::all()->where('estatus','=','ALTA');
-            $users = Alumno::all();
-            //$repartidor[6]->alumnos[0]->pivot->id_Curso  $repartidor[4]->alumnos[0]->datos
-            foreach($cursos as $curso){
-              foreach($curso->alumnos as $alumno){
-                foreach($alumno->datos as $datos){
-                }
-            }
-          }
-            return view('dashboard.administrador',['cursos' => $cursos]);
+          $clientesAdministradores = ClienteAdministrador::all();
+            return view('dashboard.administrador',['clientesAdministradores' => $clientesAdministradores]);
     }
 
 

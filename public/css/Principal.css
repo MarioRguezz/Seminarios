@@ -303,3 +303,22 @@ th, td {
 .weight {
 	font-weight: bold !important;
 }
+
+
+.btnsub{
+	float:right;
+	margin-right:5%;
+}
+
+.uploadbtn{
+	margin-top:10px;
+	border-style: solid;
+	border-width: 1px;
+  padding:5px;
+}
+
+.designahref{
+	color:white;
+	float:right;
+	font-size:18px;
+}
