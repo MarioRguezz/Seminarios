@@ -40,6 +40,10 @@ Route::group(['prefix'=>'usuario'], function(){
     Route::post('registro', 'UserController@registrar');
     Route::post('status', 'UserController@status');
     Route::get('administradores', 'UserController@administradoresView');
+    Route::get('editar/{cve_usuario}', 'UserController@editarView');
+    Route::get('editar', 'UserController@editaremptyView');
+    Route::post('editarregistro', 'UserController@editarRegistro');
+    Route::post('nuevoregistro', 'UserController@NuevoRegistro');
 
 });
 

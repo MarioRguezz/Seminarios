@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Stmt\DeclareDeclare;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\RedirectResponse;
 
 use Illuminate\Support\Facades\Input;
 
@@ -54,6 +55,10 @@ class UserController extends Controller
             if($user->TUser == "Administrador")
             {
                 $band = 3;
+            }
+            if($user->TUser == "AdminCliente")
+            {
+                $band = 4;
             }
             return view('principal', ['band' => $band]);
         }else {
@@ -148,7 +153,7 @@ class UserController extends Controller
                 "email" => $request->input('email'),
                 "curriculum" => url($path.$filename),
                 "id_cliente_administrador" => $adminCliente->id
-            ));       
+            ));
 
         }
         else
@@ -218,7 +223,9 @@ class UserController extends Controller
 
     public function administradoresView(Request $request) {
         $administradores = ClienteAdministrador::paginate(10);
-
+        foreach($administradores as $administrador){
+          $administrador->restante =  $administrador->no_licencias - (count($administrador->alumnos)+count($administrador->instructores));
+        }
         return view ('usuario.administradores', ['administradores' => $administradores]);
     }
 
@@ -282,6 +289,94 @@ class UserController extends Controller
       return view('usuario.aceptar');
     }
 
+/*
+Vista editar al cliente administrador con datos
+ */
+    public function editarView(Request $request, $cve_usuario){
+      $administradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario)->first();
+      $usuarios = User::all()->where('IdPersona','=',$cve_usuario)->first();
+      return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
+    }
 
+    /*
+    Vista editar al cliente administrador sin datos
+     */
+    public function editaremptyView(Request $request){
+      return view('usuario.editarEmpty');
+    }
+
+    /*
+    Vista para nuevo CA
+     */
+    public function NuevoRegistro(Request $request){
+       $nombre = $request->input('nombre');
+       $email = $request->input('email');
+       $amaterno = $request->input('amaterno');
+       $apaterno = $request->input('apaterno');
+       $sexo = $request->input('sexo');
+       $telofi = $request->input('telofi');
+       $telcasa = $request->input('telcasa');
+       $celular = $request->input('celular');
+       $estado = $request->input('estado');
+       $municipio = $request->input('municipio');
+       $fecha = $request->input('fecha');
+       $licencia = $request->input('licencia');
+       $password = $request->input('password');
+       $user = User::create([
+           "APaterno" => $apaterno,
+           "AMaterno" => $amaterno,
+           "Nombre" => $nombre,
+           "email" => $email,
+           "TUser" => "AdminCliente",
+           "password" => $password,
+           "Municipio" => $municipio,
+           "TelOfi" => $telofi,
+           "TelCas" => $telcasa,
+           "Celular" => $celular,
+           "Sexo" => $sexo,
+           "Estado" => $estado,
+           "Status" => "ALTA",
+           "Institucion" => ""
+       ]);
+
+
+       $user = ClienteAdministrador::create([
+          "id_persona" => $user->IdPersona,
+           "codigo" => substr($email,0, 6).'ca'.rand(1000, 9999),
+           "fecha_expiracion" => $fecha,
+           "no_licencias" => $licencia
+       ]);
+
+         return redirect('/usuario/administradores');
+    }
+
+
+/*
+Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrador
+ */
+    public function editarRegistro(Request $request){
+       $nombre = $request->input('nombre');
+       $amaterno = $request->input('amaterno');
+       $apaterno = $request->input('apaterno');
+       $limitelicencia = $request->input('celular');
+       $password = $request->input('password');
+       $fecha = $request->input('telcasa');
+       $hidden = $request->input('idPersona');
+       $administradores = ClienteAdministrador::all()->where('id_persona','=',$hidden)->first();
+       $usuarios = User::all()->where('IdPersona','=',$hidden)->first();
+       $usuarios->Nombre =  $nombre;
+       $usuarios->APaterno = $apaterno;
+       $usuarios->AMaterno = $amaterno;
+       if($usuarios->password == null || $usuarios->password == ""){
+       }else{
+       $usuarios->password = $password;
+     }
+       $usuarios->save();
+       $administradores->no_licencias  = $limitelicencia;
+       $administradores->fecha_expiracion  = $fecha;
+       $administradores->save();
+         return redirect('/usuario/administradores');
+    //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
+    }
 
 }

@@ -42,8 +42,16 @@
     </style>
 </head>
 <body class="backgroundPrincipal">
+  <div class="Menu">
+      <div class="col-md-4" >
+          <a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
+      </div>
+      <div class="col-md-offset-4 col-md-4 ">
+          <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
+      </div>
+  </div>
   <?php $var = 0; ?>
-<div class="container-fluid">
+<div  style="margin-top:5%" class="container-fluid">
     <div class="form-horizontal ">
         <div class="text-center">
             <label class="control-label" id="VP"><h3 class="whiteClass2 top">DASHBOARD ADMINISTRADOR</h3></label>

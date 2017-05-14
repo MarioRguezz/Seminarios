@@ -78,10 +78,7 @@ if( !empty( $_REQUEST['Message'] ) ) {
     <div class="col-md-4" >
         <a class="SubtitlewhiteClass NoShadow WithTop" href="">Menú principal</a>
     </div>
-    <div class="col-md-2" >
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/csv/SubirCSV')}}">Cargado con email</a>
-    </div>
-    <div class="col-md-offset-4 col-md-2 ">
+    <div class="col-md-offset-4 col-md-4 ">
         <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
     </div>
 </div>
@@ -131,7 +128,46 @@ if( !empty( $_REQUEST['Message'] ) ) {
             </tr>
         </table>
     </center>
+@if($band == 4)
+<center>
+    <h1 class="whiteClass2">OPCIONES PARA EL CLIENTE ADMINISTRADOR</h1>
+</center>
 
+<br><br>
+
+<center>
+    <table width="80%">
+        <tr>
+            <td width="40%">
+                <center><h3 class="SubtitleMainwhiteClass">Consulta tus alumnos</h3></center>
+            </td>
+            <td width="40%">
+                <center><h3 class="SubtitleMainwhiteClass">Consultar tus estudiantes</h3></center>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td width="40%">
+                <center>
+                    <a href="{{url('/pages/MisCursos.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-01.png')}}" width="180" height="180"  alt="Consulta de curso"/></a>
+                </center>
+            </td>
+
+            <td width="40%">
+                <center>
+                    <a href="{{url('/pages/CursosDisponibles.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Inscribir en un curso"/></a>
+                </center>
+            </td>
+        </tr>
+    </table>
+</center>
+  @endif
     @endif
     @if($band == 1)
 
