@@ -38,11 +38,19 @@
 </head>
 
 <body class="registro">
-
+  <div class="Menu">
+      <div class="col-md-4" >
+          <a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
+      </div>
+      <div class="col-md-offset-4 col-md-4 ">
+          <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
+      </div>
+  </div>
+  <br><br><br>
 <center>
     <h3 class="cssTitleRegistro">LISTA DE ADMINISTRADORES</h3>
 </center>
-<br><br><br>
+
 
 
 <!-- <div class="col-xs-6"> -->

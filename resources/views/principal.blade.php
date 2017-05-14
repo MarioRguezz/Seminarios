@@ -138,11 +138,14 @@ if( !empty( $_REQUEST['Message'] ) ) {
 <center>
     <table width="80%">
         <tr>
-            <td width="40%">
-                <center><h3 class="SubtitleMainwhiteClass">Consulta tus alumnos</h3></center>
+            <td width="30%">
+                <center><h3 class="SubtitleMainwhiteClass">Reporte de usuarios</h3></center>
             </td>
-            <td width="40%">
-                <center><h3 class="SubtitleMainwhiteClass">Consultar tus estudiantes</h3></center>
+            <td width="30%">
+                <center><h3 class="SubtitleMainwhiteClass">Consultar tus instructores</h3></center>
+            </td>
+            <td width="30%">
+                <center><h3 class="SubtitleMainwhiteClass">Consultar tus alumnos</h3></center>
             </td>
         </tr>
 
@@ -153,15 +156,20 @@ if( !empty( $_REQUEST['Message'] ) ) {
         </tr>
 
         <tr>
-            <td width="40%">
+            <td width="30%">
                 <center>
-                    <a href="{{url('/pages/MisCursos.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-01.png')}}" width="180" height="180"  alt="Consulta de curso"/></a>
+                    <a href="{{url('/pages/MisCursos.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-01.png')}}" width="180" height="180"  alt="Reporte de usuarios"/></a>
                 </center>
             </td>
 
-            <td width="40%">
+            <td width="30%">
                 <center>
-                    <a href="{{url('/pages/CursosDisponibles.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Inscribir en un curso"/></a>
+                    <a href="{{url('/pages/CursosDisponibles.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus instructores"/></a>
+                </center>
+            </td>
+            <td width="30%">
+                <center>
+                    <a href="{{url('/pages/CursosDisponibles.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus alumnos"/></a>
                 </center>
             </td>
         </tr>
