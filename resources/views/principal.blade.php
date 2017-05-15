@@ -271,9 +271,6 @@ if( !empty( $_REQUEST['Message'] ) ) {
                     <center><h3 class="SubtitleMainwhiteClass">Aprobar solicitudes</h3></center>
                 </td>
 
-                <td>
-                    <center><h3 class="SubtitleMainwhiteClass">Cargado con email</h3></center>
-                </td>
 
                 <td>
                     <center><h3 class="SubtitleMainwhiteClass">Administradores</h3></center>
@@ -284,11 +281,6 @@ if( !empty( $_REQUEST['Message'] ) ) {
                 <td>
                     <center>
                         <a href="{{url('/pages/Pendientes.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Aprobar solicitud"/></a>
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        <a href="{{url('/csv/SubirCSV')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Cargado con email"></a>
                     </center>
                 </td>
 

@@ -87,7 +87,7 @@
             @endforeach
         </tbody>
     </table>
-
+    {{$administradores->links()}}
 </div>
 
 

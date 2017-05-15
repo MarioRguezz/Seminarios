@@ -13,6 +13,11 @@
 
 use Illuminate\Support\Facades\Auth;
 
+
+
+Auth::routes();
+
+
 Route::get('/', 'UserController@index')->name('login');
 Route::get('/logout', 'UserController@logout')->name('logout');
 Route::get('/login.php', 'UserController@index');
@@ -44,6 +49,7 @@ Route::group(['prefix'=>'usuario'], function(){
     Route::get('editar', 'UserController@editaremptyView');
     Route::post('editarregistro', 'UserController@editarRegistro');
     Route::post('nuevoregistro', 'UserController@NuevoRegistro');
+    Route::post('emails', 'UserController@emails');
 
 });
 
