@@ -13,6 +13,11 @@
 
 use Illuminate\Support\Facades\Auth;
 
+
+
+Auth::routes();
+
+
 Route::get('/', 'UserController@index')->name('login');
 Route::get('/logout', 'UserController@logout')->name('logout');
 Route::get('/login.php', 'UserController@index');
@@ -44,6 +49,7 @@ Route::group(['prefix'=>'usuario'], function(){
     Route::get('editar', 'UserController@editaremptyView');
     Route::post('editarregistro', 'UserController@editarRegistro');
     Route::post('nuevoregistro', 'UserController@NuevoRegistro');
+<<<<<<< HEAD
     Route::get('alumnos/{cve_usuario}', 'UserController@listaalumnoView');
     Route::get('alumnosedicion/{cve_usuario}/{cve_ca}', 'UserController@editarAlumnoView');
     Route::get('alumnonuevo/{cve_ca}/{cve_ca2}', 'UserController@alumnoView');
@@ -54,6 +60,9 @@ Route::group(['prefix'=>'usuario'], function(){
     Route::get('instructornuevo/{cve_ca}/{cve_ca2}', 'UserController@instructorView');
     Route::post('nuevoinstructorregistro', 'UserController@nuevoInstructorRegistro');
     Route::post('editarinstructorregistro', 'UserController@editarInstructorRegistro');
+=======
+    Route::post('emails', 'UserController@emails');
+>>>>>>> 7d7c2fb307257b33d09a6ae41cbcfbc4b798b857
 
 });
 

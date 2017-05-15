@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\ClienteAdministrador;
 use App\Instructor;
+use App\Jobs\SendEmails;
 use App\User;
 use App\Alumno;
+use App\QueuedEmail;
 use App\Curso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use PhpParser\Node\Stmt\DeclareDeclare;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
@@ -219,7 +222,9 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function registroView(Request $request) {
-        return view('usuario.registrar');
+        $email = $request->email;
+        $codigo = $request->codigo_administrador;
+        return view('usuario.registrar', ['email' => $email, 'codigo' => $codigo]);
     }
 
 
@@ -383,6 +388,7 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
 
 
 
+<<<<<<< HEAD
     public function listaalumnoView(Request $request, $cve_usuario){
       $administradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario)->first();
       return view('usuario.alumnos', ['administradores'=> $administradores]);
@@ -597,4 +603,15 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
                return view('usuario.instructores', ['administradores'=> $administradores]);
             }
 
+=======
+    function emails(Request $request) {
+        $emails = $request->emails;
+        $user = Auth::user();
+        $this->dispatch(new SendEmails($emails, $user->cliente_administrador->codigo));
+
+        return response()->json([
+            'success' => true
+        ]);
+    }
+>>>>>>> 7d7c2fb307257b33d09a6ae41cbcfbc4b798b857
 }
