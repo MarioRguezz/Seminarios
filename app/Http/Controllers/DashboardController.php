@@ -71,6 +71,10 @@ class DashboardController extends Controller
             return view('dashboard.administrador',['clientesAdministradores' => $clientesAdministradores]);
     }
 
+    public function clientedashboard(Request $request, $cve_usuario){
+          $clientesAdministradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario);
+            return view('dashboard.clienteadministrador',['clientesAdministradores' => $clientesAdministradores]);
+    }
 
 
 

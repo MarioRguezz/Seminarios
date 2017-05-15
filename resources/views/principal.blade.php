@@ -128,6 +128,7 @@ if( !empty( $_REQUEST['Message'] ) ) {
             </tr>
         </table>
     </center>
+      @endif
 @if($band == 4)
 <center>
     <h1 class="whiteClass2">OPCIONES PARA EL CLIENTE ADMINISTRADOR</h1>
@@ -158,24 +159,23 @@ if( !empty( $_REQUEST['Message'] ) ) {
         <tr>
             <td width="30%">
                 <center>
-                    <a href="{{url('/pages/MisCursos.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-01.png')}}" width="180" height="180"  alt="Reporte de usuarios"/></a>
+                    <a href="{{url('/dashboard/clientedashboard/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-01.png')}}" width="180" height="180"  alt="Reporte de usuarios"/></a>
                 </center>
             </td>
 
             <td width="30%">
                 <center>
-                    <a href="{{url('/pages/CursosDisponibles.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus instructores"/></a>
+                    <a href="{{url('/usuario/instructores/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus instructores"/></a>
                 </center>
             </td>
             <td width="30%">
                 <center>
-                    <a href="{{url('/pages/CursosDisponibles.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus alumnos"/></a>
+                    <a href="{{url('/usuario/alumnos/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus alumnos"/></a>
                 </center>
             </td>
         </tr>
     </table>
 </center>
-  @endif
     @endif
     @if($band == 1)
 

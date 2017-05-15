@@ -32,7 +32,7 @@
         });
     </script>
 
-    <script src="{{url('/js/personaJS.js')}}"></script>
+  <!--  <script src="{{url('/js/personaJS.js')}}"></script>-->
 
 </head>
 
@@ -147,7 +147,7 @@
                 <input class="form-control NoRadius" id="codigo_cliente" name="codigo_cliente" type="text" placeholder="" required>
             </div>
         </div>
-
+<!--
         <div class="form-group">
             <label for="opcion1" class="control-label col-md-3 whiteClass">Tipo de usuario</label>
             <div class="col-md-6">
@@ -158,6 +158,7 @@
                 </select>
             </div>
         </div>
+      -->
 
         <!-- Parte oculta del formulario -->
 
@@ -173,7 +174,7 @@
         </div>
 
 
-
+<!--
         <div class="form-group" id="CV">
             <label for="foto" class="control-label col-md-3 whiteClass" whiteClass>Adjunte CV en PDF no mayor a 10 Mb</label>
             <br>
@@ -183,7 +184,7 @@
             </label>
             <input type="file" class="inputfile" name="Archivo" id="curriculum" class="btn-register">
 
-        </div>
+        </div>-->
 
         <div class="form-group">
             <div class="col-md-2 col-md-offset-4 ">

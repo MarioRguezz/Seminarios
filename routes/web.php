@@ -44,6 +44,16 @@ Route::group(['prefix'=>'usuario'], function(){
     Route::get('editar', 'UserController@editaremptyView');
     Route::post('editarregistro', 'UserController@editarRegistro');
     Route::post('nuevoregistro', 'UserController@NuevoRegistro');
+    Route::get('alumnos/{cve_usuario}', 'UserController@listaalumnoView');
+    Route::get('alumnosedicion/{cve_usuario}/{cve_ca}', 'UserController@editarAlumnoView');
+    Route::get('alumnonuevo/{cve_ca}/{cve_ca2}', 'UserController@alumnoView');
+    Route::post('nuevoalumnoregistro', 'UserController@nuevoAlumnoRegistro');
+    Route::post('editaralumnoregistro', 'UserController@editarAlumnoRegistro');
+    Route::get('instructores/{cve_usuario}', 'UserController@listainstructorView');
+    Route::get('instructoresedicion/{cve_usuario}/{cve_ca}', 'UserController@editarInstructorView');
+    Route::get('instructornuevo/{cve_ca}/{cve_ca2}', 'UserController@instructorView');
+    Route::post('nuevoinstructorregistro', 'UserController@nuevoInstructorRegistro');
+    Route::post('editarinstructorregistro', 'UserController@editarInstructorRegistro');
 
 });
 
@@ -93,6 +103,7 @@ Route::group(['prefix'=>'dashboard'], function(){
     Route::get('index', "DashboardController@index");
     Route::get('dashboard', "DashboardController@dashboard");
     Route::get('administrador', "DashboardController@administrador");
+    Route::get('clientedashboard/{cve_usuario}', "DashboardController@clientedashboard");
 });
 
 
