@@ -388,7 +388,6 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
 
 
 
-<<<<<<< HEAD
     public function listaalumnoView(Request $request, $cve_usuario){
       $administradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario)->first();
       return view('usuario.alumnos', ['administradores'=> $administradores]);
@@ -603,7 +602,6 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
                return view('usuario.instructores', ['administradores'=> $administradores]);
             }
 
-=======
     function emails(Request $request) {
         $emails = $request->emails;
         $user = Auth::user();
@@ -613,5 +611,4 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
             'success' => true
         ]);
     }
->>>>>>> 7d7c2fb307257b33d09a6ae41cbcfbc4b798b857
 }
