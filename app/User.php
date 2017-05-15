@@ -2,13 +2,14 @@
 
 namespace App;
 
+use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements CanResetPassword
 {
-    use SoftDeletes;
+    use SoftDeletes, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -61,7 +62,7 @@ class User extends Authenticatable
         }
 
         public function cliente_administrador() {
-            return $this->hasOne('App\ClienteAdministrador', 'IdPersona', 'id_persona');
+            return $this->hasOne('App\ClienteAdministrador', 'id_persona', 'IdPersona');
         }
 
 

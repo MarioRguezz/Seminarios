@@ -128,9 +128,28 @@ if (!browserSupportFileUpload()) {
 }
 
 $( ".btnsub" ).click(function() {
+    var emails = [];
   for(var x=1; x<data.length; x++){
-    console.log(data[x][0]);
+    emails.push(data[x][0]);
   }
+
+    $.ajax({
+        method: 'POST',
+        url: '{{url('/usuario/emails')}}',
+        data: {
+            emails: emails
+        },
+        success:function(data) {
+            swal("Emails enviados", "Se han enviado los correos electrónicos con éxito", "success");
+            setTimeout(() => {
+                location.href = "../";
+            },3000);
+        },
+
+    error: function(data) {
+        swal("Error", "Hubo un error al cargar la lista de correos", "error");
+        }
+    });
 });
 </script>
 </body>

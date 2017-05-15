@@ -27,7 +27,7 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
     const TEST_STRING_REGEX = '/.+/u';
 
     /**
-     * Slightly more specific for e-mail, the point isn't to properly validate e-mails.
+     * Slightly more specific for e-mail, the point isn't to properly validate e-emails.
      */
     const TEST_EMAIL_REGEX = '/^(.+)@(.+)$/ui';
 
