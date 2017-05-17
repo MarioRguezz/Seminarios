@@ -19,16 +19,16 @@ use Illuminate\Http\Request;
  * referencia: UserApiController
  * Funciones de API para el usuario. Inicio de sesión, etc.
  */
-Route::group(['prefix'=>'usuarios', 'middleware' => 'auth:api'], function(){
+Route::group(['prefix'=>'usuarios'], function(){
     Route::post('login', "UserApiController@login");
 });
 
 
-Route::group(['prefix' => 'cursos', 'middleware' => 'auth:api'], function() {
+Route::group(['prefix' => 'cursos'], function() {
     Route::get('get', 'CursosApiController@get');
 });
 
-Route::group(['prefix' => 'temas', 'middleware' => 'auth:api'], function() {
+Route::group(['prefix' => 'temas'], function() {
     Route::get('get', 'TemasApiController@get');
     Route::get('subtemas', 'TemasApiController@subtemas');
     Route::get('examen', 'TemasApiController@examen');

@@ -18,6 +18,7 @@
     <script src="{{url('/js/inicio.js')}}"></script>
     <link rel="stylesheet" href="{{url('/css/login.css')}}">
     <script src="{{url('/js/efectos.js')}}"></script>
+    <script src="{{url('/js/efectos.js')}}"></script>
 
 
 
@@ -37,11 +38,19 @@
 </head>
 
 <body class="registro">
-
+  <div class="Menu">
+      <div class="col-md-4" >
+          <a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
+      </div>
+      <div class="col-md-offset-4 col-md-4 ">
+          <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
+      </div>
+  </div>
+  <br><br><br>
 <center>
     <h3 class="cssTitleRegistro">LISTA DE ADMINISTRADORES</h3>
 </center>
-<br><br><br>
+
 
 
 <!-- <div class="col-xs-6"> -->
@@ -56,6 +65,9 @@
                 <th>Email</th>
                 <th>Fecha de expiración</th>
                 <th>Número de licencias</th>
+                <th>Licencias restantes</th>
+                <th></th>
+                <th><a class="blanco" href="{{url('/usuario/editar')}}">+</a></th>
             </tr>
         </thead>
 
@@ -64,15 +76,18 @@
             @foreach($administradores as $administrador)
                 <tr>
                 <td></td>
-                <td>{{$administrador->datos->nombre}}</td>
+                <td>{{$administrador->datos->Nombre}}</td>
                 <td>{{$administrador->datos->email}}</td>
                 <td>{{$administrador->fecha_expiracion}}</td>
-                <td>{{$administrador->numero_licencias}}</td>
+                <td>{{$administrador->no_licencias}}</td>
+                <td>{{$administrador->restante }}</td>
+                <td><a href="{{url('/usuario/editar/'.$administrador->id_persona)}}"><span class="glyphicon glyphicon-pencil blanco"></span></a></td>
+
                 </tr>
             @endforeach
         </tbody>
     </table>
-
+    {{$administradores->links()}}
 </div>
 
 

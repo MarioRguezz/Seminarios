@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\ClienteAdministrador;
 use App\Instructor;
+use App\Jobs\SendEmails;
 use App\User;
 use App\Alumno;
+use App\QueuedEmail;
 use App\Curso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use PhpParser\Node\Stmt\DeclareDeclare;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\RedirectResponse;
 
 use Illuminate\Support\Facades\Input;
 
@@ -55,7 +59,11 @@ class UserController extends Controller
             {
                 $band = 3;
             }
-            return view('principal', ['band' => $band]);
+            if($user->TUser == "AdminCliente")
+            {
+                $band = 4;
+            }
+            return view('principal', ['band' => $band, 'idPersona' => $user->IdPersona]);
         }else {
             return view('login', array('res' => 2));
         }
@@ -99,7 +107,7 @@ class UserController extends Controller
             'nombre' => 'required',
             'email' => 'required|email|unique:persona',
             'password' => 'required',
-            'Tuser' => 'required',
+          //  'Tuser' => 'required',
             'codigo_cliente' => 'required'
         ]);
 
@@ -113,7 +121,8 @@ class UserController extends Controller
         /**
          * Si se registra un instructor, se valida que se haya subido un currículum y se guarda.
          */
-        if($request->input('Tuser') == 'Instructor')
+        //$request->input('Tuser')
+        if('' == 'Instructor')
         {
 
             if ($request->hasFile('Archivo')) {
@@ -141,14 +150,15 @@ class UserController extends Controller
         }
 
          //Generación de instructores o alumnos.
-        if($request->input('Tuser') == 'Instructor')
+         //$request->input('Tuser')
+        if('' == 'Instructor')
         {
             //echo "entro a instruc";
             Instructor::create(array(
                 "email" => $request->input('email'),
                 "curriculum" => url($path.$filename),
                 "id_cliente_administrador" => $adminCliente->id
-            ));       
+            ));
 
         }
         else
@@ -171,7 +181,7 @@ class UserController extends Controller
            'Nombre' => $request->input('nombre'),
            'email' => $request->input('email'),
            'password' => $request->input('password'),
-           'TUser' => $request->input('Tuser'),
+           'TUser' => 'Alumno',//$request->input('Tuser'),
            'Estado' => $request->input('estado'),
            'Municipio' => $request->input('municipio'),
            'TelOfi' => $request->input('telofi'),
@@ -212,13 +222,17 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function registroView(Request $request) {
-        return view('usuario.registrar');
+        $email = $request->email;
+        $codigo = $request->codigo_administrador;
+        return view('usuario.registrar', ['email' => $email, 'codigo' => $codigo]);
     }
 
 
     public function administradoresView(Request $request) {
         $administradores = ClienteAdministrador::paginate(10);
-
+        foreach($administradores as $administrador){
+          $administrador->restante =  $administrador->no_licencias - (count($administrador->alumnos)+count($administrador->instructores));
+        }
         return view ('usuario.administradores', ['administradores' => $administradores]);
     }
 
@@ -282,6 +296,319 @@ class UserController extends Controller
       return view('usuario.aceptar');
     }
 
+/*
+Vista editar al cliente administrador con datos
+ */
+    public function editarView(Request $request, $cve_usuario){
+      $administradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario)->first();
+      $usuarios = User::all()->where('IdPersona','=',$cve_usuario)->first();
+      return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
+    }
 
 
+    /*
+    Vista editar al cliente administrador sin datos
+     */
+    public function editaremptyView(Request $request){
+      return view('usuario.editarEmpty');
+    }
+
+    /*
+    Vista para nuevo CA
+     */
+    public function NuevoRegistro(Request $request){
+       $nombre = $request->input('nombre');
+       $email = $request->input('email');
+       $amaterno = $request->input('amaterno');
+       $apaterno = $request->input('apaterno');
+       $sexo = $request->input('sexo');
+       $telofi = $request->input('telofi');
+       $telcasa = $request->input('telcasa');
+       $celular = $request->input('celular');
+       $estado = $request->input('estado');
+       $municipio = $request->input('municipio');
+       $fecha = $request->input('fecha');
+       $licencia = $request->input('licencia');
+       $password = $request->input('password');
+       $user = User::create([
+           "APaterno" => $apaterno,
+           "AMaterno" => $amaterno,
+           "Nombre" => $nombre,
+           "email" => $email,
+           "TUser" => "AdminCliente",
+           "password" => $password,
+           "Municipio" => $municipio,
+           "TelOfi" => $telofi,
+           "TelCas" => $telcasa,
+           "Celular" => $celular,
+           "Sexo" => $sexo,
+           "Estado" => $estado,
+           "Status" => "ALTA",
+           "Institucion" => ""
+       ]);
+
+       $user = ClienteAdministrador::create([
+          "id_persona" => $user->IdPersona,
+           "codigo" => substr($email,0, 6).'ca'.rand(1000, 9999),
+           "fecha_expiracion" => $fecha,
+           "no_licencias" => $licencia
+       ]);
+
+         return redirect('/usuario/administradores');
+    }
+
+
+/*
+Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrador
+ */
+    public function editarRegistro(Request $request){
+       $nombre = $request->input('nombre');
+       $amaterno = $request->input('amaterno');
+       $apaterno = $request->input('apaterno');
+       $limitelicencia = $request->input('celular');
+       $password = $request->input('password');
+       $fecha = $request->input('telcasa');
+       $hidden = $request->input('idPersona');
+       $administradores = ClienteAdministrador::all()->where('id_persona','=',$hidden)->first();
+       $usuarios = User::all()->where('IdPersona','=',$hidden)->first();
+       $usuarios->Nombre =  $nombre;
+       $usuarios->APaterno = $apaterno;
+       $usuarios->AMaterno = $amaterno;
+       if($usuarios->password == null || $usuarios->password == ""){
+       }else{
+       $usuarios->password = $password;
+     }
+       $usuarios->save();
+       $administradores->no_licencias  = $limitelicencia;
+       $administradores->fecha_expiracion  = $fecha;
+       $administradores->save();
+         return redirect('/usuario/administradores');
+    //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
+    }
+
+
+
+    public function listaalumnoView(Request $request, $cve_usuario){
+      $administradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario)->first();
+      return view('usuario.alumnos', ['administradores'=> $administradores]);
+    }
+
+
+    /*
+    Vista editar al alumno con datos
+     */
+        public function editarAlumnoView(Request $request, $cve_usuario, $cve_ca){
+          $alumno = User::all()->where('IdPersona','=',$cve_usuario)->where('TUser','=','Alumno')->first();
+          return view('usuario.editarAlumno', ['alumno'=> $alumno,'cve_ca'=> $cve_ca ]);
+        }
+
+
+        /*
+        Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrador
+         */
+            public function editarAlumnoRegistro(Request $request){
+               $nombre = $request->input('nombre');
+               $amaterno = $request->input('amaterno');
+               $apaterno = $request->input('apaterno');
+               $password = $request->input('password');
+               $estatus = $request->input('estatus');
+               $hidden = $request->input('idPersona');
+               $idCA = $request->input('idCA');
+               $alumno = User::all()->where('IdPersona','=',$hidden)->first();
+               $alumno->Nombre =  $nombre;
+               $alumno->APaterno = $apaterno;
+               $alumno->AMaterno = $amaterno;
+               $alumno->Status = $estatus;
+               if($alumno->password == null || $alumno->password == ""){
+               }else{
+               $alumno->password = $password;
+             }
+               $alumno->save();
+               $administradores = ClienteAdministrador::all()->where('id_persona','=',$idCA)->first();
+               return view('usuario.alumnos', ['administradores'=> $administradores]);
+            //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
+            }
+
+            /*
+            Vista para nuevo alumno
+             */
+            public function nuevoAlumnoRegistro(Request $request){
+               $nombre = $request->input('nombre');
+               $email = $request->input('email');
+               $amaterno = $request->input('amaterno');
+               $apaterno = $request->input('apaterno');
+              $password = $request->input('password');
+               $sexo = $request->input('sexo');
+               $telofi = $request->input('telofi');
+               $telcasa = $request->input('telcasa');
+               $celular = $request->input('celular');
+               $estado = $request->input('estado');
+               $municipio = $request->input('municipio');
+               $idCA = $request->input('idCA');
+               if ($request->hasFile('Archivo1')) {
+                   if($request->file('Archivo1')->isValid()){
+                       $extension = $request->file('Archivo1')->getClientOriginalExtension();
+                       $path = "img/Profile/";
+                       $filename= uniqid("usuario_") . "." . $extension;
+                       $request->file('Archivo1')->move($path ,  $filename);
+                       $valid = url($path.$filename);
+                   }
+
+               }
+     if($request->input('Archivo1') == false){
+       $valid = "";
+     }
+                $max = Alumno::max('Mat_Alumno');
+               $alumno = Alumno::create(array(
+                  "email" => $email,
+                   "fotografia" => $valid,
+                   "id_cliente_administrador" => $idCA,
+                   "Mat_Alumno" =>  ($max + 1)
+               ));
+             $user = User::create([
+                   "APaterno" => $apaterno,
+                   "AMaterno" => $amaterno,
+                   "Nombre" => $nombre,
+                   "email" => $email,
+                   "TUser" => "Alumno",
+                   "password" => $password,
+                   "Municipio" => $municipio,
+                   "TelOfi" => $telofi,
+                   "TelCas" => $telcasa,
+                   "Celular" => $celular,
+                   "Sexo" => $sexo,
+                   "Estado" => $estado,
+                   "Status" => "ALTA",
+                   "Institucion" => ""
+               ]);
+               $alumno->save();
+               $user->save();
+               $administradores = ClienteAdministrador::all()->where('id_persona','=',$request->input('idCA2'))->first();
+               return view('usuario.alumnos', ['administradores'=> $administradores]);
+            }
+
+/*
+Vista crear alumno desde CA
+ */
+public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
+  return view('usuario.registrarca',['cve_ca' => $cve_ca,'cve_ca2' => $cve_ca2]);
+}
+
+
+    public function listainstructorView(Request $request, $cve_usuario){
+      $administradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario)->first();
+      $usuarios = User::all()->where('IdPersona','=',$cve_usuario)->first();
+      return view('usuario.instructores', ['administradores'=> $administradores]);
+    }
+
+    /*
+    Vista editar al instructor con datos
+     */
+        public function editarInstructorView(Request $request, $cve_usuario, $cve_ca){
+          $instructor = User::all()->where('IdPersona','=',$cve_usuario)->where('TUser','=','Instructor')->first();
+          return view('usuario.editarInstructor', ['instructor'=> $instructor,'cve_ca'=> $cve_ca ]);
+        }
+
+
+        /*
+        Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrador
+         */
+            public function editarInstructorRegistro(Request $request){
+               $nombre = $request->input('nombre');
+               $amaterno = $request->input('amaterno');
+               $apaterno = $request->input('apaterno');
+               $password = $request->input('password');
+               $estatus = $request->input('estatus');
+               $hidden = $request->input('idPersona');
+               $idCA = $request->input('idCA');
+               $instructor = User::all()->where('IdPersona','=',$hidden)->first();
+               $instructor->Nombre =  $nombre;
+               $instructor->APaterno = $apaterno;
+               $instructor->AMaterno = $amaterno;
+               $instructor->Status = $estatus;
+               if($instructor->password == null || $instructor->password == ""){
+               }else{
+               $instructor->password = $password;
+             }
+               $instructor->save();
+               $administradores = ClienteAdministrador::all()->where('id_persona','=',$idCA)->first();
+               return view('usuario.instructores', ['administradores'=> $administradores]);
+            //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
+            }
+
+            /*
+            Vista crear alumno desde CA
+             */
+            public function instructorView(Request $request, $cve_ca,  $cve_ca2){
+              return view('usuario.registrarinstructor',['cve_ca' => $cve_ca,'cve_ca2' => $cve_ca2]);
+            }
+
+
+            /*
+            Vista para nuevo alumno
+             */
+            public function nuevoInstructorRegistro(Request $request){
+               $nombre = $request->input('nombre');
+               $email = $request->input('email');
+               $amaterno = $request->input('amaterno');
+               $apaterno = $request->input('apaterno');
+              $password = $request->input('password');
+               $sexo = $request->input('sexo');
+               $telofi = $request->input('telofi');
+               $telcasa = $request->input('telcasa');
+               $celular = $request->input('celular');
+               $estado = $request->input('estado');
+               $municipio = $request->input('municipio');
+               $idCA = $request->input('idCA');
+
+               if ($request->hasFile('Archivo1')) {
+                   if($request->file('Archivo1')->isValid()){
+                       $extension = $request->file('Archivo1')->getClientOriginalExtension();
+                       $path = "CV/";
+                       $filename= uniqid("usuario_") . "." . $extension;
+                       $request->file('Archivo1')->move($path ,  $filename);
+                       $valid = url($path.$filename);
+
+                   }
+               }
+     if($request->input('Archivo1') == false){
+       $valid = "";
+     }
+
+               $instructor = Instructor::create(array(
+                   "email" => $email,
+                   "curriculum" => $valid,
+                   "id_cliente_administrador" => $idCA
+               ));
+             $user = User::create([
+                   "APaterno" => $apaterno,
+                   "AMaterno" => $amaterno,
+                   "Nombre" => $nombre,
+                   "email" => $email,
+                   "TUser" => "Instructor",
+                   "password" => $password,
+                   "Municipio" => $municipio,
+                   "TelOfi" => $telofi,
+                   "TelCas" => $telcasa,
+                   "Celular" => $celular,
+                   "Sexo" => $sexo,
+                   "Estado" => $estado,
+                   "Status" => "ALTA",
+                   "Institucion" => ""
+               ]);
+               $instructor->save();
+               $user->save();
+               $administradores = ClienteAdministrador::all()->where('id_persona','=',$request->input('idCA2'))->first();
+               return view('usuario.instructores', ['administradores'=> $administradores]);
+            }
+
+    function emails(Request $request) {
+        $emails = $request->emails;
+        $user = Auth::user();
+        $this->dispatch(new SendEmails($emails, $user->cliente_administrador->codigo));
+
+        return response()->json([
+            'success' => true
+        ]);
+    }
 }

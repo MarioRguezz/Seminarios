@@ -7,6 +7,7 @@ use App\ExamenCalificacion;
 use App\Pregunta;
 use App\Subtema;
 use App\Tema;
+use App\Alumno;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -244,6 +245,14 @@ class ExamenController extends Controller
 
         return $total;
        // return $val;
+    }
+
+
+    public function diploma(Request $request, $cve_alumno, $cve_tema ){
+      $alumno = Alumno::where([['Mat_Alumno', '=', $cve_alumno]])->first();
+      $tema = Tema::where([['id_Tema', '=', $cve_tema]])->first();
+    //  $alumno->datos->Nombre; APaterno, AMaterno $tema->Curso
+        return view('examen.diploma', ['alumno'=> $alumno, 'tema' => $tema]);
     }
 
 

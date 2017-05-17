@@ -9,9 +9,10 @@ class ClienteAdministrador extends Model
 
     protected $table = "durango.cliente_administrador";
     protected $fillable = [
+        'id_persona',
         'codigo',
         'fecha_expiracion',
-        'numero_licencias'
+        'no_licencias'
     ];
 
 

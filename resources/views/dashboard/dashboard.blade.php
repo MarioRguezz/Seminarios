@@ -42,8 +42,16 @@
     </style>
 </head>
 <body class="backgroundPrincipal">
+  <div class="Menu">
+      <div class="col-md-4" >
+          <a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
+      </div>
+      <div class="col-md-offset-4 col-md-4 ">
+          <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
+      </div>
+  </div>
   <?php $var = 0; ?>
-<div class="container-fluid">
+<div style="margin-top:5%" class="container-fluid">
     <div class="form-horizontal ">
         <div class="text-center">
             <label class="control-label" id="VP"><h3 class="whiteClass2 top">DASHBOARD LICENCIAS</h3></label>
@@ -77,8 +85,8 @@
        <td>{{ $clienteAdministrador->datos->Nombre }} </td>
        <td>{{ $clienteAdministrador->datos->APaterno }} {{ $clienteAdministrador->datos->AMaterno }} </td>
        <td>{{ $clienteAdministrador->datos->email }} </td>
-       <td> Fecha</td>
-       <td> Licencias</td>
+       <td> {{ $clienteAdministrador->fecha_expiracion }}</td>
+       <td> {{ $clienteAdministrador->no_licencias }}</td>
      </tr>
       @endforeach
    </tbody>

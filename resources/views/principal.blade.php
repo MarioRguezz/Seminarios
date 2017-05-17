@@ -78,10 +78,7 @@ if( !empty( $_REQUEST['Message'] ) ) {
     <div class="col-md-4" >
         <a class="SubtitlewhiteClass NoShadow WithTop" href="">Menú principal</a>
     </div>
-    <div class="col-md-2" >
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/csv/SubirCSV')}}">Cargado con email</a>
-    </div>
-    <div class="col-md-offset-4 col-md-2 ">
+    <div class="col-md-offset-4 col-md-4 ">
         <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
     </div>
 </div>
@@ -131,7 +128,54 @@ if( !empty( $_REQUEST['Message'] ) ) {
             </tr>
         </table>
     </center>
+      @endif
+@if($band == 4)
+<center>
+    <h1 class="whiteClass2">OPCIONES PARA EL CLIENTE ADMINISTRADOR</h1>
+</center>
 
+<br><br>
+
+<center>
+    <table width="80%">
+        <tr>
+            <td width="30%">
+                <center><h3 class="SubtitleMainwhiteClass">Reporte de usuarios</h3></center>
+            </td>
+            <td width="30%">
+                <center><h3 class="SubtitleMainwhiteClass">Consultar tus instructores</h3></center>
+            </td>
+            <td width="30%">
+                <center><h3 class="SubtitleMainwhiteClass">Consultar tus alumnos</h3></center>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td width="30%">
+                <center>
+                    <a href="{{url('/dashboard/clientedashboard/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-01.png')}}" width="180" height="180"  alt="Reporte de usuarios"/></a>
+                </center>
+            </td>
+
+            <td width="30%">
+                <center>
+                    <a href="{{url('/usuario/instructores/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus instructores"/></a>
+                </center>
+            </td>
+            <td width="30%">
+                <center>
+                    <a href="{{url('/usuario/alumnos/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus alumnos"/></a>
+                </center>
+            </td>
+        </tr>
+    </table>
+</center>
     @endif
     @if($band == 1)
 
@@ -227,9 +271,6 @@ if( !empty( $_REQUEST['Message'] ) ) {
                     <center><h3 class="SubtitleMainwhiteClass">Aprobar solicitudes</h3></center>
                 </td>
 
-                <td>
-                    <center><h3 class="SubtitleMainwhiteClass">Cargado con email</h3></center>
-                </td>
 
                 <td>
                     <center><h3 class="SubtitleMainwhiteClass">Administradores</h3></center>
@@ -240,11 +281,6 @@ if( !empty( $_REQUEST['Message'] ) ) {
                 <td>
                     <center>
                         <a href="{{url('/pages/Pendientes.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Aprobar solicitud"/></a>
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        <a href="{{url('/csv/SubirCSV')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Cargado con email"></a>
                     </center>
                 </td>
 

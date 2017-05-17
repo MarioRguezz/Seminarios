@@ -13,6 +13,11 @@
 
 use Illuminate\Support\Facades\Auth;
 
+
+
+Auth::routes();
+
+
 Route::get('/', 'UserController@index')->name('login');
 Route::get('/logout', 'UserController@logout')->name('logout');
 Route::get('/login.php', 'UserController@index');
@@ -40,6 +45,21 @@ Route::group(['prefix'=>'usuario'], function(){
     Route::post('registro', 'UserController@registrar');
     Route::post('status', 'UserController@status');
     Route::get('administradores', 'UserController@administradoresView');
+    Route::get('editar/{cve_usuario}', 'UserController@editarView');
+    Route::get('editar', 'UserController@editaremptyView');
+    Route::post('editarregistro', 'UserController@editarRegistro');
+    Route::post('nuevoregistro', 'UserController@NuevoRegistro');
+    Route::get('alumnos/{cve_usuario}', 'UserController@listaalumnoView');
+    Route::get('alumnosedicion/{cve_usuario}/{cve_ca}', 'UserController@editarAlumnoView');
+    Route::get('alumnonuevo/{cve_ca}/{cve_ca2}', 'UserController@alumnoView');
+    Route::post('nuevoalumnoregistro', 'UserController@nuevoAlumnoRegistro');
+    Route::post('editaralumnoregistro', 'UserController@editarAlumnoRegistro');
+    Route::get('instructores/{cve_usuario}', 'UserController@listainstructorView');
+    Route::get('instructoresedicion/{cve_usuario}/{cve_ca}', 'UserController@editarInstructorView');
+    Route::get('instructornuevo/{cve_ca}/{cve_ca2}', 'UserController@instructorView');
+    Route::post('nuevoinstructorregistro', 'UserController@nuevoInstructorRegistro');
+    Route::post('editarinstructorregistro', 'UserController@editarInstructorRegistro');
+    Route::post('emails', 'UserController@emails');
 
 });
 
@@ -74,6 +94,7 @@ Route::group(['prefix'=>'examen'], function(){
     Route::post('guardar', "ExamenController@guardar");
     Route::post('examen_alumno', 'ExamenController@examen');
     Route::post('respuesta', 'ExamenController@respuesta');
+    Route::get('diploma/{cve_alumno}/{cve_tema}', 'ExamenController@diploma');
 });
 
 
@@ -88,6 +109,7 @@ Route::group(['prefix'=>'dashboard'], function(){
     Route::get('index', "DashboardController@index");
     Route::get('dashboard', "DashboardController@dashboard");
     Route::get('administrador', "DashboardController@administrador");
+    Route::get('clientedashboard/{cve_usuario}', "DashboardController@clientedashboard");
 });
 
 

@@ -77,7 +77,7 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-        <a class="form-control buttonLogin alignCenter col-md-4" href="">¿Olvido su contraseña?</a>
+        <a class="form-control buttonLogin alignCenter col-md-4" href="{{url('/password/reset')}}">¿Olvido su contraseña?</a>
         </div>
     </div>
     <div class="row">

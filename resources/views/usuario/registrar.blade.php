@@ -32,7 +32,7 @@
         });
     </script>
 
-    <script src="{{url('/js/personaJS.js')}}"></script>
+  <!--  <script src="{{url('/js/personaJS.js')}}"></script>-->
 
 </head>
 
@@ -84,7 +84,11 @@
         <div class="form-group">
             <label for="email" class="control-label col-md-3 whiteClass">Email</label>
             <div class="col-md-6">
+                @if(isset($email))
+                <input class="form-control NoRadius" id="email" name="email" type="email" placeholder="" value="{{$email}}" disabled required>
+                @else
                 <input class="form-control NoRadius" id="email" name="email" type="email" placeholder="" value="{{isset($request) ? $request['email'] : ""}}" required>
+                @endif
             </div>
         </div>
 
@@ -144,10 +148,14 @@
         <div class="form-group">
             <label for="codigo_cliente" class="control-label col-md-3 whiteClass">Código de registro</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius" id="codigo_cliente" name="codigo_cliente" type="text" placeholder="" required>
+                @if(isset($codigo))
+                    <input class="form-control NoRadius" id="codigo_cliente" name="codigo_cliente" type="text" placeholder="" value="{{$codigo}}" disabled required>
+                @else
+                    <input class="form-control NoRadius" id="codigo_cliente" name="codigo_cliente" type="text" placeholder="" required>
+                @endif
             </div>
         </div>
-
+<!--
         <div class="form-group">
             <label for="opcion1" class="control-label col-md-3 whiteClass">Tipo de usuario</label>
             <div class="col-md-6">
@@ -158,6 +166,7 @@
                 </select>
             </div>
         </div>
+      -->
 
         <!-- Parte oculta del formulario -->
 
@@ -173,7 +182,7 @@
         </div>
 
 
-
+<!--
         <div class="form-group" id="CV">
             <label for="foto" class="control-label col-md-3 whiteClass" whiteClass>Adjunte CV en PDF no mayor a 10 Mb</label>
             <br>
@@ -183,7 +192,7 @@
             </label>
             <input type="file" class="inputfile" name="Archivo" id="curriculum" class="btn-register">
 
-        </div>
+        </div>-->
 
         <div class="form-group">
             <div class="col-md-2 col-md-offset-4 ">
