@@ -19,7 +19,7 @@ class CursosApiController extends Controller
         $cursos = null;
         $errors = [];
         if(isset($user)) {
-            $cursos = $user->cursos;
+            $cursos = $user->alumno->cursos;
         }
         else {
             $errors[] = "Usuario no encontrado";

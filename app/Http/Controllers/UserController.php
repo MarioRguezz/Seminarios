@@ -149,6 +149,22 @@ class UserController extends Controller
             }
         }
 
+        //Inserción en base de datos para realizar el registro del usuario.
+        $user = User::create(array(
+            'APaterno' => $request->input('apaterno'),
+            'AMaterno' => $request->input('amaterno'),
+            'Nombre' => $request->input('nombre'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+            'TUser' => 'Alumno',//$request->input('Tuser'),
+            'Estado' => $request->input('estado'),
+            'Municipio' => $request->input('municipio'),
+            'TelOfi' => $request->input('telofi'),
+            'TelCas' => $request->input('telcasa'),
+            'Celular' => $request->input('celular'),
+            'Sexo' => $request->input('sexo')
+        ));
+
          //Generación de instructores o alumnos.
          //$request->input('Tuser')
         if('' == 'Instructor')
@@ -166,7 +182,8 @@ class UserController extends Controller
             $alumno = Alumno::create(array(
                "email" => $request->input('email'),
                 "fotografia" => url($path.$filename),
-                "id_cliente_administrador" => $adminCliente->id
+                "id_cliente_administrador" => $adminCliente->id,
+                "IdPersona" => $user->IdPersona
             ));
 
             $max = Alumno::max('Mat_Alumno');
@@ -174,21 +191,7 @@ class UserController extends Controller
             $alumno->save();
         }
 
-        //Inserción en base de datos para realizar el registro del usuario.
-        User::create(array(
-           'APaterno' => $request->input('apaterno'),
-           'AMaterno' => $request->input('amaterno'),
-           'Nombre' => $request->input('nombre'),
-           'email' => $request->input('email'),
-           'password' => $request->input('password'),
-           'TUser' => 'Alumno',//$request->input('Tuser'),
-           'Estado' => $request->input('estado'),
-           'Municipio' => $request->input('municipio'),
-           'TelOfi' => $request->input('telofi'),
-           'TelCas' => $request->input('telcasa'),
-           'Celular' => $request->input('celular'),
-           'Sexo' => $request->input('sexo')
-        ));
+
 
         return redirect('/');
 

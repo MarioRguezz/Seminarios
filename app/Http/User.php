@@ -2,13 +2,14 @@
 
 namespace App;
 
+use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements CanResetPassword
 {
-    use SoftDeletes;
+    use SoftDeletes, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -38,8 +39,7 @@ class User extends Authenticatable
         ];
 
 
-        protected $fillable = [
-            'IdPersona', 'APaterno', 'AMaterno','Nombre','email','password','TUser','Estado','Municipio','TelOfi','TelCas',
+        protected $fillable = ['APaterno', 'AMaterno','Nombre','email','password','TUser','Estado','Municipio','TelOfi','TelCas',
             'Celular','Sexo','Status','Institucion'];
 
 
@@ -55,5 +55,15 @@ class User extends Authenticatable
             }
             return parent::save($options);
         }
+
+        public function alumno() {
+            return $this->hasOne('App\Alumno', 'IdPersona', 'IdPersona');
+        }
+
+        public function cliente_administrador() {
+            return $this->hasOne('App\ClienteAdministrador', 'id_persona', 'IdPersona');
+        }
+
+
 
 }
