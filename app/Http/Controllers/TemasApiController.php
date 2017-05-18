@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Curso;
+use App\Subtema;
 use App\Tema;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -78,6 +79,10 @@ class TemasApiController extends Controller
     }
 
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function examen(Request $request) {
         //Nótese que es la llave primaria de la tabla (curso_tema).
         $idTema = $request->input('IDex');
@@ -101,5 +106,13 @@ class TemasApiController extends Controller
             "status" => $status,
             "data" => $examen
         ));
+    }
+
+
+    public function subtemavisto(Request $request) {
+        $Mat_Alumno = $request->Mat_Alumno;
+        $IdSubtema = $request->IdSubtema;
+        $subtema = Subtema::where("id_Subtema")->get()->first();
+
     }
 }

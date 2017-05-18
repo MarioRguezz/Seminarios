@@ -17,6 +17,10 @@ class Subtema extends Model
         "Orden"
     ];
 
+    public function tema() {
+        return $this->belongsTo("App\Tema", "");
+    }
+
     public function examen() {
         return $this->hasOne("App\Examen", "id_Subtema", "IDes");
     }

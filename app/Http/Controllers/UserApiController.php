@@ -30,7 +30,9 @@ class UserApiController extends Controller
 
     $response = [];
     if (Auth::once(['email' => $email, 'password' => $password ])) {
-        $response['data'] = Auth::user();
+        $user = Auth::user();
+        $user->Mat_Alumno = $user->alumno->Mat_Alumno;
+        $response['data'] = $user;
         $response['status'] = 200;
         $response['success'] = true;
     }else{
