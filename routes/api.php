@@ -32,6 +32,7 @@ Route::group(['prefix' => 'temas'], function() {
     Route::get('get', 'TemasApiController@get');
     Route::get('subtemas', 'TemasApiController@subtemas');
     Route::get('examen', 'TemasApiController@examen');
+    Route::post('subtema-visto', 'TemasApiController@subtemavisto');
 });
 
 

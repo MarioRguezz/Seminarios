@@ -17,9 +17,6 @@ class Subtema extends Model
         "Orden"
     ];
 
-    public function tema() {
-        return $this->belongsTo("App\Tema", "");
-    }
 
     public function examen() {
         return $this->hasOne("App\Examen", "id_Subtema", "IDes");
@@ -35,6 +32,10 @@ class Subtema extends Model
 
     public function materialvideo() {
         return $this->hasMany("App\MaterialVideo", 'id_Subtema', 'id_Subtema');
+    }
+
+    public function tema() {
+        return $this->belongsTo('App\Tema', 'id_Tema', 'id_Tema');
     }
 
   /*  public function  subtemavisto() {

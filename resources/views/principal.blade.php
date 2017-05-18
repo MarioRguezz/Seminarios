@@ -148,13 +148,11 @@ if( !empty( $_REQUEST['Message'] ) ) {
             <td width="30%">
                 <center><h3 class="SubtitleMainwhiteClass">Consultar tus alumnos</h3></center>
             </td>
+
+
         </tr>
 
 
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
 
         <tr>
             <td width="30%">
@@ -174,6 +172,22 @@ if( !empty( $_REQUEST['Message'] ) ) {
                 </center>
             </td>
         </tr>
+
+
+        <tr>
+            <td width="30%">
+                <center><h3 class="SubtitleMainwhiteClass">Cargar lista de alumnos</h3></center>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+            <center>
+                <a href="{{url('/csv/SubirCSV')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus alumnos"/></a>
+            </center>
+            </td>
+        </tr>
+
     </table>
 </center>
     @endif

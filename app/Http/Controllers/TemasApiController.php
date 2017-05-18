@@ -112,7 +112,27 @@ class TemasApiController extends Controller
     public function subtemavisto(Request $request) {
         $Mat_Alumno = $request->Mat_Alumno;
         $IdSubtema = $request->IdSubtema;
-        $subtema = Subtema::where("id_Subtema")->get()->first();
+        $subtema = Subtema::where("id_Subtema", $IdSubtema)->get()->first();
+        $tema = $subtema->tema;
+        $curso = $tema->Curso;
+
+        $orden = Subtema::where('id_Tema', "Te3831")->max('orden') + 1;
+
+        SubtemaVisto::create(array(
+            'id_Curso' => $curso->id_Curso,
+            'id_Tema' => $tema->id_Tema,
+            'id_Subtema' => $IdSubtema,
+            'Mat_Amuno' => $Mat_Alumno,
+            'Visto' => 1,
+            'Orden' => $orden
+        ));
+
+        return response()->json(array(
+            'data' => true,
+            'success'=> true,
+            'status' => 200,
+            'errors' => []
+        ));
 
     }
 }
