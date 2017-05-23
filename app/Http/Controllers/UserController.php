@@ -393,7 +393,8 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
 
     public function listaalumnoView(Request $request, $cve_usuario){
       $administradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario)->first();
-      return view('usuario.alumnos', ['administradores'=> $administradores]);
+      $alumnos =  $administradores->alumnos()->paginate(10);
+      return view('usuario.alumnos', ['administradores'=> $administradores, 'alumnos' => $alumnos]);
     }
 
 
@@ -422,13 +423,14 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
                $alumno->APaterno = $apaterno;
                $alumno->AMaterno = $amaterno;
                $alumno->Status = $estatus;
-               if($alumno->password == null || $alumno->password == ""){
+               if($password == null || $password == ""){
                }else{
                $alumno->password = $password;
              }
                $alumno->save();
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$idCA)->first();
-               return view('usuario.alumnos', ['administradores'=> $administradores]);
+               $alumnos =  $administradores->alumnos()->paginate(10);
+               return view('usuario.alumnos', ['administradores'=> $administradores, 'alumnos' => $alumnos]);
             //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
             }
 
@@ -460,15 +462,9 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
                }
      if($request->input('Archivo1') == false){
        $valid = "";
-     }
-                $max = Alumno::max('Mat_Alumno');
-               $alumno = Alumno::create(array(
-                  "email" => $email,
-                   "fotografia" => $valid,
-                   "id_cliente_administrador" => $idCA,
-                   "Mat_Alumno" =>  ($max + 1)
-               ));
-             $user = User::create([
+     }   //dd("asd");
+
+           $user = User::create([
                    "APaterno" => $apaterno,
                    "AMaterno" => $amaterno,
                    "Nombre" => $nombre,
@@ -484,10 +480,19 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
                    "Status" => "ALTA",
                    "Institucion" => ""
                ]);
+               $max = Alumno::max('Mat_Alumno');
+               $alumno = Alumno::create(array(
+                  "email" => $email,
+                   "fotografia" => $valid,
+                   "id_cliente_administrador" => $idCA,
+                   "Mat_Alumno" =>  ($max + 1),
+                   "IdPersona" => $user->IdPersona
+               ));
                $alumno->save();
                $user->save();
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$request->input('idCA2'))->first();
-               return view('usuario.alumnos', ['administradores'=> $administradores]);
+               $alumnos =  $administradores->alumnos()->paginate(10);
+               return view('usuario.alumnos', ['administradores'=> $administradores, 'alumnos' => $alumnos]);
             }
 
 /*
@@ -500,8 +505,9 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
 
     public function listainstructorView(Request $request, $cve_usuario){
       $administradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario)->first();
-      $usuarios = User::all()->where('IdPersona','=',$cve_usuario)->first();
-      return view('usuario.instructores', ['administradores'=> $administradores]);
+    //  $usuarios = User::all()->where('IdPersona','=',$cve_usuario)->first();
+    $instructores =  $administradores->instructores()->paginate(10);
+      return view('usuario.instructores', ['administradores'=> $administradores, 'instructores'=> $instructores]);
     }
 
     /*
@@ -529,13 +535,14 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
                $instructor->APaterno = $apaterno;
                $instructor->AMaterno = $amaterno;
                $instructor->Status = $estatus;
-               if($instructor->password == null || $instructor->password == ""){
+               if($password == null || $password == ""){
                }else{
                $instructor->password = $password;
              }
                $instructor->save();
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$idCA)->first();
-               return view('usuario.instructores', ['administradores'=> $administradores]);
+               $instructores =  $administradores->instructores()->paginate(10);
+               return view('usuario.instructores', ['administradores'=> $administradores,'instructores'=> $instructores ]);
             //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
             }
 
@@ -578,11 +585,16 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
        $valid = "";
      }
 
+               $max = Instructor::max('Mat_Usuario');
                $instructor = Instructor::create(array(
                    "email" => $email,
                    "curriculum" => $valid,
-                   "id_cliente_administrador" => $idCA
+                   "id_cliente_administrador" => $idCA,
+                   "Mat_Usuario" => $max + 1
                ));
+
+
+
              $user = User::create([
                    "APaterno" => $apaterno,
                    "AMaterno" => $amaterno,
@@ -602,7 +614,8 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
                $instructor->save();
                $user->save();
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$request->input('idCA2'))->first();
-               return view('usuario.instructores', ['administradores'=> $administradores]);
+               $instructores =  $administradores->instructores()->paginate(10);
+               return view('usuario.instructores', ['administradores'=> $administradores, 'instructores'=> $instructores]);
             }
 
     function emails(Request $request) {

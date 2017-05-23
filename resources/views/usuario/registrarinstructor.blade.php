@@ -38,7 +38,7 @@
 <body class="registro">
 
 <center>
-    <h3 class="cssTitleRegistro">REGISTRO PARA NUEVOS USUARIOS</h3>
+    <h3 class="cssTitleRegistro">REGISTRO PARA NUEVOS INSTRUCTORES</h3>
 </center>
 <br><br><br>
 
@@ -108,21 +108,21 @@
 
 
         <div class="form-group">
-            <label for="telofi" class="control-label col-md-3 whiteClass">Telefono de oficina</label>
+            <label for="telofi" class="control-label col-md-3 whiteClass">Teléfono de oficina</label>
             <div class="col-md-6">
                 <input class="form-control NoRadius"  maxlength="15" id="telofi" name="telofi" type="tel" pattern="^\d{7,}$" value="{{isset($request) ? $request['telofi'] : ""}}" placeholder="">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="telcasa" class="control-label col-md-3 whiteClass">Telefono de casa</label>
+            <label for="telcasa" class="control-label col-md-3 whiteClass">Teléfono de casa</label>
             <div class="col-md-6">
                 <input class="form-control NoRadius" maxlength="15" id="telcasa" name="telcasa" type="tel" pattern="^\d{7,}$"  value="{{isset($request) ? $request['telcasa'] : ""}}" placeholder="">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="celular" class="control-label col-md-3 whiteClass">Telefono celular</label>
+            <label for="celular" class="control-label col-md-3 whiteClass">Teléfono celular</label>
             <div class="col-md-6">
                 <input class="form-control NoRadius" maxlength="20" id="celular" name="celular" type="tel" pattern="^\d{7,}$"  value="{{isset($request) ? $request['celular'] : ""}}" placeholder="">
             </div>

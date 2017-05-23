@@ -26,6 +26,14 @@ if($tipoPer == "Alumno")
 
 	$conexia = conect();
 
+		$queryCA = "SELECT id_cliente_administrador FROM usuario WHERE email = '$email'";
+		$resultadoQueryCA  = mysqli_query($conexia,$queryCA);
+		$rowCA = mysqli_fetch_array($resultadoQueryCA);
+		$idCliente = $rowCA['id_cliente_administrador'];
+		$queryLicencia = "SELECT no_licencias FROM cliente_administrador  WHERE id = '$idCliente'";
+		$resultadoQueryLicencia = mysqli_query($conexia,$queryLicencia);
+		$rowLic = mysqli_fetch_array($resultadoQueryLicencia);
+		$licencias = $rowLic['no_licencias'];
 
 	$queryxe = "SELECT * FROM persona WHERE email = '$email' ;";
 	$resultadoses = mysqli_query($conexia,$queryxe);
@@ -148,7 +156,7 @@ $res= get_Personas();
                         <span class="input-group-btn data-dwn">
 					<button type="button" class="btn btn-default NoRadius " data-dir="dwn"><span class="">-</span></button>
                         </span>
-                        <input id="Cupo" name="Cupo" type="number" class="form-control NoRadius text-center" value="30" min="1">
+                        <input id="Cupo" name="Cupo" type="number" disabled class="form-control NoRadius text-center" value="30" min="1" max="<?php  echo $licencias; ?>">
                         <span class="input-group-btn data-up">
 					<button type="button" class="btn btn-default NoRadius" data-dir="up"><span class="">+</span></button>
                         </span>

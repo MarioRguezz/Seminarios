@@ -11,10 +11,10 @@ class Alumno extends Model
 
     protected $table = 'durango.alumno';
 
-    protected $primaryKey = 'email';
+    protected $primaryKey = 'Mat_Alumno';
 
     protected $fillable = [
-        'Id', 'Mat_Alumno', 'fotografia','profesion','institucion','adscripcion','email','constancia','estatus', 'id_cliente_administrador'];
+        'Id', 'Mat_Alumno', 'fotografia','profesion','institucion','adscripcion','email','constancia','estatus', 'id_cliente_administrador', 'IdPersona'];
 
 
     public function cursos() {

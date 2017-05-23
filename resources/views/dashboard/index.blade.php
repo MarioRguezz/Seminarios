@@ -39,6 +39,7 @@
        .weight{
           font-weight: bold !important;
         }
+
     </style>
 </head>
 
@@ -94,6 +95,7 @@
       @endforeach
    </tbody>
  </table>
+   {{$cursos->links()}}
         </div>
     </div>
 </div>

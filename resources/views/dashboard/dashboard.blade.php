@@ -91,6 +91,7 @@
       @endforeach
    </tbody>
  </table>
+   {{$clientesAdministradores->links()}}
         </div>
     </div>
 </div>
