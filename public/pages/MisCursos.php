@@ -93,14 +93,7 @@ mysqli_close($conexia);
 	<body class="backgroundPrincipal">
 <!--	INICIO Menu en el Encabezado	-->
 
-<div class="Menu">
-    <div class="col-md-2" >
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
-    </div>
-    <div class="col-md-3 col-md-offset-7">
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="../logout">Cerrar sesión</a>
-    </div>
-</div>
+<?php include('../../resources/views/header.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
 

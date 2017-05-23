@@ -97,22 +97,7 @@ html{
 
 <body class="backgroundPrincipal">
 
-<!--	FIN	Menu en el Encabezado	-->
-<div class="Menu">
-	<div class="col-md-2" >
-		<a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
-	</div>
-    <div class="col-md-2" >
-    <form action="CursoTemaInstructor.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
-            <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
-           <th> <button class="SubtitlewhiteClass NoShadow WithTop buttonTransparent" type="submit">Regresar </button></th>
-        </form>
-    </div>
-
-		<div class="col-md-2 col-md-offset-6">
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="../logout">Cerrar sesión</a>
-    </div>
-</div>
+<?php include('../../resources/views/header.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
 

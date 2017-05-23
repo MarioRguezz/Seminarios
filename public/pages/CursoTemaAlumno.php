@@ -106,20 +106,7 @@ html{
 
 <!--	INICIO Menu en el Encabezado	-->
 
-<div class="Menu">
-    <div class="col-md-3" >
-        <a class="SubtitlewhiteClass NoShadow WithTop"href="../">Menú principal</a>
-    </div>
-    <div class="col-md-2 ">
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="MisCursos.php">Mis cursos</a>
-    </div>
-    <div class="col-md-5">
-        <a class="SubtitlewhiteClass NoShadow WithTop " >Curso <?PHP echo htmlentities($row['nombre']); ?></a>
-    </div>
-    <div class="col-md-2">
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="../logout">Cerrar sesión</a>
-    </div>
-</div>
+<?php include('../../resources/views/header.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
 
