@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\ClienteAdministrador;
 use App\Instructor;
 use App\Jobs\SendEmails;
-use App\User;
-use App\Alumno;
 use App\QueuedEmail;
 use App\Curso;
 use Illuminate\Http\Request;
