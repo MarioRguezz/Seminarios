@@ -38,17 +38,10 @@
 </head>
 
 <body class="registro">
-  <div class="Menu">
-      <div class="col-md-4" >
-          <a class="SubtitlewhiteClass NoShadow WithTop" href="../">Menú principal</a>
-      </div>
-      <div class="col-md-offset-4 col-md-4 ">
-          <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
-      </div>
-  </div>
+  @include('header')
   <br><br><br>
 <center>
-    <h3 class="cssTitleRegistro">LISTA DE ALUMNOS</h3>
+    <h3 class="cssTitleRegistro">LISTA DE INSTRUCTORES</h3>
 </center>
 
 
@@ -70,7 +63,7 @@
 
         <tbody>
 
-            @foreach($administradores->instructores as $administrador)
+            @foreach($instructores as $administrador)
                 <tr>
                 <td>{{$administrador->datos['Nombre']}}</td>
                 <td>{{$administrador->datos['email']}}</td>
@@ -81,7 +74,7 @@
             @endforeach
         </tbody>
     </table>
-
+{{$instructores->links()}}
 </div>
 
 

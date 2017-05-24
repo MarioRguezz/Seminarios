@@ -31,7 +31,7 @@ class DashboardController extends Controller
 
 
     public function index(Request $request){
-            $cursos = Curso::all()->where('estatus','=','ALTA');
+            $cursos = Curso::where('estatus','=','ALTA')->paginate(10);
             foreach($cursos as $curso){
               foreach($curso->temas as $tema){
                 $curso->totalSubtemas = count($tema->subtemas);
@@ -62,17 +62,17 @@ class DashboardController extends Controller
 
 
     public function dashboard(Request $request){
-          $clientesAdministradores = ClienteAdministrador::all();
+          $clientesAdministradores = ClienteAdministrador::paginate(10);
             return view('dashboard.dashboard',['clientesAdministradores' => $clientesAdministradores]);
     }
 
     public function administrador(Request $request){
-          $clientesAdministradores = ClienteAdministrador::all();
+          $clientesAdministradores = ClienteAdministrador::paginate(5);
             return view('dashboard.administrador',['clientesAdministradores' => $clientesAdministradores]);
     }
 
     public function clientedashboard(Request $request, $cve_usuario){
-          $clientesAdministradores = ClienteAdministrador::all()->where('id_persona','=',$cve_usuario);
+        $clientesAdministradores = ClienteAdministrador::where('id_persona','=',$cve_usuario)->paginate(10);
             return view('dashboard.clienteadministrador',['clientesAdministradores' => $clientesAdministradores]);
     }
 

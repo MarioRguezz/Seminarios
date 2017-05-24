@@ -74,14 +74,7 @@ if( !empty( $_REQUEST['Message'] ) ) {
 <!--	FIN	Menu en el Encabezado	-->
 
 
-<div class="Menu">
-    <div class="col-md-4" >
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="">Menú principal</a>
-    </div>
-    <div class="col-md-offset-4 col-md-4 ">
-        <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
-    </div>
-</div>
+@include('header')
 
 <!--	FIN	Menu en el Encabezado	-->
 

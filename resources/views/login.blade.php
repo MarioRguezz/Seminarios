@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Durango</title>
+    <title>Byond</title>
     <script src="js/jquery.min.js"></script>
     <script src="js/passwordval.js"></script>
 

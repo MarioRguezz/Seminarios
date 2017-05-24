@@ -26,14 +26,7 @@
     </style>
 </head>
 <body class="backgroundPrincipal">
-  <div class="Menu">
-      <div class="col-md-4" >
-          <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/')}}">Menú principal</a>
-      </div>
-      <div class="col-md-offset-4 col-md-4 ">
-          <a class="SubtitlewhiteClass NoShadow WithTop" href="{{url('/logout')}}">Cerrar sesión</a>
-      </div>
-  </div>
+  @include('header')
   <?php $var = 0; ?>
 <div  style="margin-top:5%" class="container-fluid">
     <div class="form-horizontal ">
@@ -98,6 +91,7 @@
       @endforeach
    </tbody>
  </table>
+   {{$clientesAdministradores->links()}}
         </div>
     </div>
 </div>

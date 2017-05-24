@@ -29,7 +29,10 @@ class SubirController extends Controller
 
 
     public function subircsv(Request $request){
-            return view('csv.index');
+      $administrador = Auth::user()->cliente_administrador;
+      $administrador->restante =  $administrador->no_licencias - (count($administrador->alumnos)+count($administrador->instructores));
+
+            return view('csv.index', ['administrador' => $administrador]);
     }
 
 

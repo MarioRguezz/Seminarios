@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>CSV</title>
+    <title>CSV </title>
     <meta charset="utf-8" />
     <script src="../js/jquery.min.js"></script>
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
@@ -33,6 +33,8 @@
 </head>
 
 <body class="backgroundPrincipal">
+  @include('header')
+  <br><br><br>
 <div class="container-fluid">
     <div class="form-horizontal ">
         <div class="text-center">
@@ -137,7 +139,8 @@ $( ".btnsub" ).click(function() {
         method: 'POST',
         url: '{{url('/usuario/emails')}}',
         data: {
-            emails: emails
+            emails: emails,
+            restantes: '{{$administrador->restantes}}'
         },
         success:function(data) {
             swal("Emails enviados", "Se han enviado los correos electrónicos con éxito", "success");
