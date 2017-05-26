@@ -30,7 +30,6 @@ Route::post('/verificarCorreo','UserController@verificarCorreo');
 
 
 
-
 /**
  * prefijo: usuario
  * referencia: UserApiController

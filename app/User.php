@@ -60,6 +60,10 @@ class User extends Authenticatable implements CanResetPassword
             return $this->hasOne('App\Alumno', 'IdPersona', 'IdPersona');
         }
 
+        public function instructor() {
+            return $this->hasOne('App\Instructor', 'email', 'email');
+        }
+
         public function cliente_administrador() {
             return $this->hasOne('App\ClienteAdministrador', 'id_persona', 'IdPersona');
         }

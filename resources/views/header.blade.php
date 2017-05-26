@@ -3,7 +3,7 @@
     	<a class="SubtitlewhiteClass NoShadow" href="http://<?php echo $_SERVER['SERVER_NAME'] ?>"> Página principal</a>
     </div>
     <div class=" col-sm-6">
-        <a class="SubtitlewhiteClass NoShadow col-sm-12 text-right" href="http://<?php echo $_SERVER['SERVER_NAME']?>/logout">
+        <a class="SubtitlewhiteClass NoShadow col-sm-12 text-right" href="http://<?php echo $_SERVER['SERVER_NAME']?>/Seminarios/public/logout">
           Cerrar sesión</a>
     </div>
 </div>

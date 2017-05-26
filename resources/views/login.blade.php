@@ -59,6 +59,12 @@
                         <label class="btn-large ">El usuario no ha sido dado de alta por el administrador.</label>
                     </div>
                 @endif
+                @if($res==2)
+                    <div class="alert alert-danger" align="center">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <label class="btn-large ">Su licencia ha caducado, contacte al administrador.</label>
+                    </div>
+                @endif
 
 
                 <input type="text" name="user" id="username" tabindex="1" class="form-control NoRadius" placeholder="Nombre de usuario" value="" required>
