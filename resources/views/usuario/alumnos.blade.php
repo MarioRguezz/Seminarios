@@ -41,7 +41,7 @@
   @include('header')
   <br><br><br>
 <center>
-    <h3 class="cssTitleRegistro">LISTA DE INSTRUCTORES</h3>
+    <h3 class="cssTitleRegistro">LISTA DE ALUMNOS</h3>
 </center>
 
 
