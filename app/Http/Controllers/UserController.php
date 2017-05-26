@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Mail;
 use PhpParser\Node\Stmt\DeclareDeclare;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
+use Carbon\Carbon;
 
 use Illuminate\Support\Facades\Input;
 
@@ -38,13 +39,28 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request){
+        $now = Carbon::now();
         $user = Auth::user();
         if(isset($user)){
             $band = 0;
-            if($user->Status == "BAJA" && $user->TUser == "Instructor"){
+            if($user->TUser == "Instructor" ){
+            $ca =   ClienteAdministrador::where("id", $user->instructor->id_cliente_administrador)->get()->first();
+              if($now >= $ca->fecha_expiracion ){
                 $this->logout();
-                return view('login', array('res' => 1));
+                return view('login', array('res' => 2));
+              }
+          }else if($user->TUser == "Alumno"){
+            $ca =   ClienteAdministrador::where("id", $user->alumno->id_cliente_administrador)->get()->first();
+            if($now >= $ca->fecha_expiracion ){
+              $this->logout();
+              return view('login', array('res' => 2));
             }
+          }
+            if($user->TUser == "AdminCliente" && $now >= $user->cliente_administrador->fecha_expiracion){
+                $this->logout();
+                return view('login', array('res' => 2));
+            }
+
             if($user->TUser == "Instructor")
             {
                 $band = 1;
@@ -377,7 +393,7 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
        $usuarios->Nombre =  $nombre;
        $usuarios->APaterno = $apaterno;
        $usuarios->AMaterno = $amaterno;
-       if($usuarios->password == null || $usuarios->password == ""){
+       if($password == null || $password == ""){
        }else{
        $usuarios->password = $password;
      }
