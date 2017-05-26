@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ClienteAdministrador;
 use App\Instructor;
 use App\Jobs\SendEmails;
+use App\Alumno;
 use App\QueuedEmail;
 use App\Curso;
 use App\User;
@@ -429,7 +430,7 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
                $alumno->save();
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$idCA)->first();
                $alumnos =  $administradores->alumnos()->paginate(10);
-               return view('usuario.alumnos', ['administradores'=> $administradores, 'alumnos' => $alumnos]);
+              return redirect("/usuario/alumnos/".$administradores->id_persona)->with('administradores', $administradores)->with('alumnos', $alumnos);
             //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
             }
 
@@ -489,9 +490,12 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
                ));
                $alumno->save();
                $user->save();
+
+               $this->dispatch(new SendEmails([$email], null, 'emails.bienvenido', 'Bienvenido a Byond'));
+
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$request->input('idCA2'))->first();
                $alumnos =  $administradores->alumnos()->paginate(10);
-               return view('usuario.alumnos', ['administradores'=> $administradores, 'alumnos' => $alumnos]);
+               return redirect("/usuario/alumnos/".$administradores->id_persona)->with('administradores', $administradores)->with('alumnos', $alumnos);
             }
 
 /*
@@ -541,8 +545,8 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
                $instructor->save();
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$idCA)->first();
                $instructores =  $administradores->instructores()->paginate(10);
-               return view('usuario.instructores', ['administradores'=> $administradores,'instructores'=> $instructores ]);
-            //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
+               return redirect("/usuario/instructores/".$administradores->id_persona)->with('administradores', $administradores)->with('alumnos', $alumnos);
+                      //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
             }
 
             /*
@@ -614,13 +618,14 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
                $user->save();
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$request->input('idCA2'))->first();
                $instructores =  $administradores->instructores()->paginate(10);
-               return view('usuario.instructores', ['administradores'=> $administradores, 'instructores'=> $instructores]);
+               $this->dispatch(new SendEmails([$email], null, 'emails.bienvenido', 'Bienvenido a Byond'));
+               return redirect("/usuario/instructores/".$administradores->id_persona)->with('administradores', $administradores)->with('alumnos', $alumnos);
             }
 
     function emails(Request $request) {
         $emails = $request->emails;
         $user = Auth::user();
-        $this->dispatch(new SendEmails($emails, $user->cliente_administrador->codigo));
+        $this->dispatch(new SendEmails($emails, $user->cliente_administrador->codigo, 'emails.invitacion', 'Completa tu registro de Byond'));
 
         return response()->json([
             'success' => true
