@@ -7,6 +7,7 @@ use App\Instructor;
 use App\Jobs\SendEmails;
 use App\QueuedEmail;
 use App\Curso;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
