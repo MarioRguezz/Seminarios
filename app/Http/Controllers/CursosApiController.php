@@ -22,6 +22,29 @@ class CursosApiController extends Controller
         $errors = [];
         if(isset($user)) {
             $cursos = $user->alumno->cursos;
+
+            foreach($cursos as $curso){
+             foreach($curso->temas as $tema){
+               $curso->totalSubtemas = count($tema->subtemas);
+             }
+             foreach($curso->alumnos as $alumno){
+               $subtemasvistos = SubtemaVisto::all()->where('id_Curso','=', $alumno->pivot->id_Curso)->where('Mat_Alumno','=', $alumno->Mat_Alumno)->where('Visto','!=','0');
+               $alumno->subtemasVistos = count($subtemasvistos);
+               if($curso->totalSubtemas == null ){
+                 $curso->totalSubtemas = 0;
+               }else{
+               $alumno->totalSubtemas = $curso->totalSubtemas;
+             }
+             if($alumno->subtemasVistos != 0){
+               $curso->porcentaje =  ($alumno->subtemasVistos*100) / $alumno->totalSubtemas;
+             }else{
+               $curso->porcentaje = 0;
+             }
+              unset($curso->temas);
+              unset($curso->alumnos);
+
+           }
+         }
         }
         else {
             $errors[] = "Usuario no encontrado";
