@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Curso;
 use App\Subtema;
+use App\SubtemaVisto;
 use App\Tema;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,13 +57,25 @@ class TemasApiController extends Controller
     public function subtemas(Request $request) {
         //Nótese que es la llave primaria de la tabla (curso_tema).
         $idTema = $request->input('IDex');
+        $user = Auth::guard('api')->user();
         $tema = Tema::find($idTema);
+        $matAlumno = $user->alumno->Mat_Alumno;
         $errors = [];
         $status = 200;
         $subtemas = null;
         $success = true;
         if(isset($tema)) {
             $subtemas = $tema->subtemas;
+
+            foreach($subtemas as $subtema) {
+              $visto = SubtemaVisto::where('Mat_Alumno', $matAlumno)->where('id_Subtema', $subtema->id_Subtema)->get()->first();
+              if(isset($visto)) {
+                $subtema->visto = true;
+              }
+              else {
+                $subtema->visto = false;
+              }
+            }
         }
         else {
             $status = 404;

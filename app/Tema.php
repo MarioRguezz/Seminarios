@@ -25,7 +25,8 @@ class Tema extends Model
         return $this->hasMany('App\Subtema', 'id_Tema', 'id_Tema')
             ->with('materialaudio')
             ->with('materialdoc')
-            ->with('materialvideo');
+            ->with('materialvideo')
+            ->orderBy('Orden');
     }
         public function Curso() {
             return $this->belongsTo('App\Curso', 'id_Curso');
