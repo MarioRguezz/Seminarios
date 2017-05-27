@@ -22,10 +22,12 @@ class SendEmails implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($emails, $codigo)
+    public function __construct($emails, $codigo, $view, $subject)
     {
         $this->emails = $emails;
         $this->codigo = $codigo;
+        $this->view = $view;
+        $this->subject = $subject;
     }
 
     /**
@@ -39,10 +41,10 @@ class SendEmails implements ShouldQueue
         foreach($this->emails as $email) {
             $usuario = User::where('email', $email)->get()->first();
             if(!isset($usuario)) {
-                Mail::send('emails.invitacion', ['email' => $email, 'codigo' => $this->codigo], function($message) use ($email)
+                Mail::send($this->view, ['email' => $email, 'codigo' => $this->codigo], function($message) use ($email)
                 {
                     $message->from('contacto@byond.com', 'Byond');
-                    $message->to($email, 'Nuevo Usuario')->subject('Completa tu registro de Byond');
+                    $message->to($email, 'Usuario')->subject($this->subject);
                 });
             }
         }
