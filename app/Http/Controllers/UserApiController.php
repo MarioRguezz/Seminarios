@@ -69,4 +69,8 @@ class UserApiController extends Controller
     );
   }
 
+  public function validarFecha() {
+    
+  }
+
 }
