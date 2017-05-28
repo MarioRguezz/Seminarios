@@ -41,6 +41,7 @@ class CursosApiController extends Controller
                }
                else {
                  $curso->porcentaje = 0;
+                
                }
              }else{
                $curso->porcentaje = 0;
