@@ -25,7 +25,7 @@ class CursosApiController extends Controller
 
             foreach($cursos as $curso){
              foreach($curso->temas as $tema){
-               $curso->totalSubtemas = count($tema->subtemas);
+               $curso->totalSubtemas += count($tema->subtemas);
              }
              foreach($curso->alumnos as $alumno){
                $subtemasvistos = SubtemaVisto::all()->where('id_Curso','=', $alumno->pivot->id_Curso)->where('Mat_Alumno','=', $alumno->Mat_Alumno)->where('Visto','!=','0');
