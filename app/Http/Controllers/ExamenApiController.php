@@ -16,7 +16,7 @@ class ExamenApiController extends Controller
       $IDTema = $request->input('IDTema');
       $cantidadRespuestas = count($respuestas);
       for ($i = 0; $i < $cantidadRespuestas; $i++) {
-          $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]["id"]]])->first();
+          $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]["id_pregunta"]]])->first();
           $preguntaJson = json_decode($pregunta->json);
           if($pregunta->tipo ==  "1"){
               if ($preguntaJson->respuestas[0] == $respuestas[$i]["respuestas"]) {
