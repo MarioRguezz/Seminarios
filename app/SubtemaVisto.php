@@ -9,7 +9,7 @@ class SubtemaVisto extends Model
 {
 
     protected $table = 'durango.subtema_visto';
-    protected $fillable = ['id_Curso', 'id_Tema','id_Subtema', 'Mat_Amuno', 'Visto','Orden'];
+    protected $fillable = ['id_Curso', 'id_Tema','id_Subtema', 'Mat_Alumno', 'Visto','Orden'];
     protected $primaryKey = 'Idexo';
 
 }
