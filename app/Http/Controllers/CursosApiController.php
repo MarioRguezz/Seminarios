@@ -36,7 +36,12 @@ class CursosApiController extends Controller
                $alumno->totalSubtemas = $curso->totalSubtemas;
              }
              if($alumno->subtemasVistos != 0){
-               $curso->porcentaje =  ($alumno->subtemasVistos*100) / $alumno->totalSubtemas;
+               if($alumno->totalSubtemas > 0) {
+                 $curso->porcentaje =  ($alumno->subtemasVistos*100) / $alumno->totalSubtemas;
+               }
+               else {
+                 $curso->porcentaje = 0;
+               }
              }else{
                $curso->porcentaje = 0;
              }

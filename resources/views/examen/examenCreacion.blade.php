@@ -43,6 +43,7 @@
 <input type="hidden" value="{{$IDTema}}" id="_idTema">
 <input type="hidden" value="{{$tipo}}" id="tipo">
     <div class="container-fluid">
+      @if(!isset($active))
         <div class="form-horizontal ">
             <div class="text-center">
               @if($tipo == "examen")
@@ -92,6 +93,14 @@
                     </div>
                 </div>
         </div>
+
+      @else
+      <div class="form-horizontal ">
+          <div class="text-center">
+              <label class="control-label" id="VP"><h3 class="whiteClass2 top">Ya hay un examen registrado para este tema</h3></label>
+          </div>
+      </div>
+      @endif
     </div>
 
 

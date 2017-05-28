@@ -170,7 +170,15 @@ class ExamenController extends Controller
         $resultasa = mysqli_query($conexia,$queryzexa);
         $row = mysqli_fetch_array($resultasa);
 
-        return view('examen.examenCreacion', array('IDTema' => $IDTema, 'tipo' => $tipo));
+        $examen = Examen::where('id_Tema', $request->IDTema)->get()->first();
+
+        if(!isset($examen)) {
+          return view('examen.examenCreacion', array('IDTema' => $IDTema, 'tipo' => $tipo));
+        }
+        else {
+          return view('examen.examenCreacion', array('active' => false));
+        }
+
 
 
     }

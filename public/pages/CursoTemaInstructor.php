@@ -38,6 +38,7 @@ if($tipoPer == "Alumno")
 	}
 
 	$IDCurso = $_POST['IDCurso'];
+	echo $IDCurso;
 	//print_r("El ID del curso es: ".$IDCurso);
 
 
