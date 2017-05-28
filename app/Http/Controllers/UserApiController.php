@@ -30,8 +30,29 @@ class UserApiController extends Controller
 
     $response = [];
     if (Auth::once(['email' => $email, 'password' => $password ])) {
+
+        $now = Carbon::now('America/Mexico_City');
         $user = Auth::user();
         $user->Mat_Alumno = $user->alumno->Mat_Alumno;
+
+        if($user->TUser == "Instructor" ){
+        $ca = ClienteAdministrador::where("id", $user->instructor->id_cliente_administrador)->get()->first();
+          if($now >= $ca->fecha_expiracion ){
+            $this->logout();
+            return view('login', array('res' => 2));
+          }
+          }else if($user->TUser == "Alumno"){
+            $ca =   ClienteAdministrador::where("id", $user->alumno->id_cliente_administrador)->get()->first();
+            if($now >= $ca->fecha_expiracion ){
+              $this->logout();
+              return view('login', array('res' => 2));
+            }
+          }
+            if($user->TUser == "AdminCliente" && $now >= $user->cliente_administrador->fecha_expiracion){
+                $this->logout();
+                return view('login', array('res' => 2));
+        }
+
         $response['data'] = $user;
         $response['status'] = 200;
         $response['success'] = true;

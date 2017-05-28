@@ -39,7 +39,7 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request){
-        $now = Carbon::now();
+        $now = Carbon::now('America/Mexico_City');
         $user = Auth::user();
         if(isset($user)){
             $band = 0;

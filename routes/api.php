@@ -32,13 +32,13 @@ Route::group(['prefix' => 'temas'], function() {
     Route::get('get', 'TemasApiController@get');
     Route::get('subtemas', 'TemasApiController@subtemas');
     Route::get('examen', 'TemasApiController@examen');
+    Route::post('contestar-examen', 'ExamenApiController@respuesta');
     Route::post('subtema-visto', 'TemasApiController@subtemavisto');
 });
+
+
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-
