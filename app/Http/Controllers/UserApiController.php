@@ -38,24 +38,26 @@ class UserApiController extends Controller
         if($user->TUser == "Instructor" ){
         $ca = ClienteAdministrador::where("id", $user->instructor->id_cliente_administrador)->get()->first();
           if($now >= $ca->fecha_expiracion ){
-            $this->logout();
-            return view('login', array('res' => 2));
+              $response['errors'][] = "La fecha de expiración ha pasado";
           }
           }else if($user->TUser == "Alumno"){
             $ca =   ClienteAdministrador::where("id", $user->alumno->id_cliente_administrador)->get()->first();
             if($now >= $ca->fecha_expiracion ){
-              $this->logout();
-              return view('login', array('res' => 2));
+              $response['errors'][] = "La fecha de expiración ha pasado";
             }
-          }
-            if($user->TUser == "AdminCliente" && $now >= $user->cliente_administrador->fecha_expiracion){
-                $this->logout();
-                return view('login', array('res' => 2));
+          } else if($user->TUser == "AdminCliente" && $now >= $user->cliente_administrador->fecha_expiracion){
+              $response['errors'][] = "La fecha de expiración ha pasado";
         }
 
-        $response['data'] = $user;
-        $response['status'] = 200;
-        $response['success'] = true;
+        if(count($response['errors']) > 0) {
+          $response['data'] = null;
+          $response['status'] = 500;
+          $response['success'] = false;
+        } else {
+          $response['data'] = $user;
+          $response['status'] = 200;
+          $response['success'] = true;
+        }
     }else{
         $response['errors'][] = "Las credenciales del usuario no son válidas";
         $response['status'] = 500;
