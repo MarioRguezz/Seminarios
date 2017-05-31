@@ -635,7 +635,7 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$request->input('idCA2'))->first();
                $instructores =  $administradores->instructores()->paginate(10);
                $this->dispatch(new SendEmails([$email], null, 'emails.bienvenido', 'Bienvenido a Byond'));
-               return redirect("/usuario/instructores/".$administradores->id_persona)->with('administradores', $administradores)->with('alumnos', $alumnos);
+               return redirect("/usuario/instructores/".$administradores->id_persona)->with('administradores', $administradores)->with('instructores', $instructores);
             }
 
     function emails(Request $request) {
