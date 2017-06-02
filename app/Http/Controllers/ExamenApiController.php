@@ -33,9 +33,8 @@ class ExamenApiController extends Controller
                     $val++;
               }
           } else if ($pregunta->tipo ==  "3"){
-              //
               for($y=0; $y< count($preguntaJson->respuestas); $y++){
-                if($y > count($respuestas[$i]->respuestas)) {
+                if($y <= count($respuestas[$i]->respuestas)) {
                   if($preguntaJson->respuestas[$y]->casilla == $respuestas[$i]->respuestas[$y]->casilla  &&   $preguntaJson->respuestas[$y]->item   == $respuestas[$i]->respuestas[$y]->item){
                       $isCorrect = true;
                   }else{
