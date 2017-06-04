@@ -83,39 +83,36 @@ if( !empty( $_REQUEST['Message'] ) ) {
 
     @if($band == 2)
 
-    <center>
-        <h1 class="whiteClass2">OPCIONES PARA EL ALUMNO</h1>
-    </center>
+    <div class="titleContainer">
+      <div class="titleImg">
+        <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/beyond2.png')}}" height="27" width="27">
+        <span class="purpleTitle">OPCIONES PARA EL ALUMNO</san>
+      </div>
+    </div>
 
     <br><br>
 
     <center>
-        <table width="80%">
+        <table class="littlemargin2" width="40%">
             <tr>
-                <td width="40%">
-                    <center><h3 class="SubtitleMainwhiteClass">Consulta tus cursos</h3></center>
+                <td>
+                    <center><h3 class="SubtitleMainPurpleClass">Consulta tus cursos</h3></center>
                 </td>
-                <td width="40%">
-                    <center><h3 class="SubtitleMainwhiteClass">Cursos disponibles</h3></center>
+                <td>
+                    <center><h3 class="SubtitleMainPurpleClass">Cursos disponibles</h3></center>
                 </td>
             </tr>
 
-
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-
-            <tr>
-                <td width="40%">
+                <td>
                     <center>
-                        <a href="{{url('/pages/MisCursos.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-01.png')}}" width="180" height="180"  alt="Consulta de curso"/></a>
+                        <a href="{{url('/pages/MisCursos.php')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/10.png')}}" width="60" height="60"  alt="Consulta de curso"/></a>
                     </center>
                 </td>
 
-                <td width="40%">
+                <td>
                     <center>
-                        <a href="{{url('/pages/CursosDisponibles.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Inscribir en un curso"/></a>
+                        <a href="{{url('/pages/CursosDisponibles.php')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/11.png')}}" width="60" height="60"  alt="Inscribir en un curso"/></a>
                     </center>
                 </td>
             </tr>
@@ -123,101 +120,87 @@ if( !empty( $_REQUEST['Message'] ) ) {
     </center>
       @endif
 @if($band == 4)
+  <div class="titleContainer">
+    <div class="titleImg">
+      <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/beyond2.png')}}" height="27" width="27">
+      <span class="purpleTitle">OPCIONES PARA EL CLIENTE ADMINISTRADOR</span>
+    </div>
+  </div>
+
 <center>
-    <h1 class="whiteClass2">OPCIONES PARA EL CLIENTE ADMINISTRADOR</h1>
-</center>
-
-<br><br>
-
-<center>
-    <table width="80%">
-        <tr>
-            <td width="30%">
-                <center><h3 class="SubtitleMainwhiteClass">Reporte de usuarios</h3></center>
-            </td>
-            <td width="30%">
-                <center><h3 class="SubtitleMainwhiteClass">Consultar tus instructores</h3></center>
-            </td>
-            <td width="30%">
-                <center><h3 class="SubtitleMainwhiteClass">Consultar tus alumnos</h3></center>
-            </td>
-
-
-        </tr>
-
-
-
-        <tr>
-            <td width="30%">
-                <center>
-                    <a href="{{url('/dashboard/clientedashboard/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-01.png')}}" width="180" height="180"  alt="Reporte de usuarios"/></a>
-                </center>
-            </td>
-
-            <td width="30%">
-                <center>
-                    <a href="{{url('/usuario/instructores/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus instructores"/></a>
-                </center>
-            </td>
-            <td width="30%">
-                <center>
-                    <a href="{{url('/usuario/alumnos/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus alumnos"/></a>
-                </center>
-            </td>
-        </tr>
-
-
-        <tr>
-            <td width="30%">
-                <center><h3 class="SubtitleMainwhiteClass">Cargar lista de alumnos</h3></center>
-            </td>
-        </tr>
+    <table  class="littlemargin" width="65%">
 
         <tr>
             <td>
+                <center><h3 class="SubtitleMainPurpleClass">Reporte de usuarios</h3></center>
+            </td>
+            <td>
+                <center><h3 class="SubtitleMainPurpleClass">Consultar tus instructores</h3></center>
+            </td>
+            <td>
+                <center><h3 class="SubtitleMainPurpleClass">Consultar tus alumnos</h3></center>
+            </td>
+            <td>
+                <center><h3 class="SubtitleMainPurpleClass">Cargar lista de alumnos</h3></center>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <center>
+                    <a href="{{url('/dashboard/clientedashboard/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/5.png')}}" width="60" height="60"  alt="Reporte de usuarios"/></a>
+                </center>
+            </td>
+
+            <td>
+                <center>
+                    <a href="{{url('/usuario/instructores/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/6.png')}}" width="60" height="60"  alt="Consultar tus instructores"/></a>
+                </center>
+            </td>
+            <td>
+                <center>
+                    <a href="{{url('/usuario/alumnos/'.$idPersona)}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/7.png')}}" width="60" height="60"  alt="Consultar tus alumnos"/></a>
+                </center>
+            </td>
+            <td>
             <center>
-                <a href="{{url('/csv/SubirCSV')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAlumno-02.png')}}" width="180" height="180"  alt="Consultar tus alumnos"/></a>
+                <a href="{{url('/csv/SubirCSV')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/8.png')}}" width="60" height="60"  alt="Consultar tus alumnos"/></a>
             </center>
             </td>
         </tr>
-
     </table>
 </center>
     @endif
     @if($band == 1)
 
-    <center>
-        <h1 class="whiteClass2">OPCIONES PARA EL INSTRUCTOR</h1>
-    </center>
+    <div class="titleContainer">
+      <div class="titleImg">
+        <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/beyond2.png')}}" height="27" width="27">
+        <span class="purpleTitle">OPCIONES PARA EL INSTRUCTOR</span>
+      </div>
+    </div>
 
     <br><br>
 
     <center>
-        <table width="100%">
+        <table class="littlemargin2" width="40%">
             <tr>
-                <td width="50%">
-                    <center><h3 class="SubtitleMainwhiteClass">Consulta y edita tus cursos</h3></center>
+                <td>
+                    <center><h3 class="SubtitleMainPurpleClass">Consulta y edita tus cursos</h3></center>
                 </td>
-                <td width="50%">
-                    <center><h3 class="SubtitleMainwhiteClass">Alta de curso</h3></center>
+                <td>
+                    <center><h3 class="SubtitleMainPurpleClass">Alta de curso</h3></center>
                 </td>
             </tr>
-
-
             <tr>
-            </tr>
-
-            <tr>
-
-                <td width="40%">
+                <td>
                     <center>
-                        <a href="{{url('/pages/MisCursosInstructor.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180" alt="Consulta de curso"/></a>
+                        <a href="{{url('/pages/MisCursosInstructor.php')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/9.png')}}" width="60" height="60" alt="Consulta de curso"/></a>
                     </center>
                 </td>
-
-                <td width="40%">
+                <td>
                     <center>
-                        <a href="{{url('/pages/AltaCurso.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-03.png')}}" width="180" height="180"  alt="Dar de alta un curso"/></a>
+                        <a href="{{url('/pages/AltaCurso.php')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/10.png')}}" width="60" height="60"  alt="Dar de alta un curso"/></a>
                     </center>
                 </td>
             </tr>
@@ -228,75 +211,62 @@ if( !empty( $_REQUEST['Message'] ) ) {
 
     @if($band == 3)
 
-    <center>
-        <h1 class="whiteClass2">OPCIONES PARA EL ADMINISTRADOR</h1>
-    </center>
+
+        <div    class="titleContainer">
+            <div class="titleImg">
+              <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/beyond2.png')}}" height="27" width="27">
+              <span class="purpleTitle">OPCIONES PARA EL ADMINISTRADOR</span>
+            </div>
+          </div>
 
 
     <center>
-        <table  class="littlemargin" width="100%">
+        <table  class="littlemargin" width="65%">
             <tr>
-                 <td >
-                  <center><h3 class="SubtitleMainwhiteClass">Dashboard Cursos</h3></center>
+                 <td>
+                  <center><h3 class="SubtitleMainPurpleClass">Dashboard Cursos</h3></center>
                   </td>
                  <td >
-                  <center><h3 class="SubtitleMainwhiteClass">Dashboard Licencias</h3></center>
+                  <center><h3 class="SubtitleMainPurpleClass">Dashboard Licencias</h3></center>
                   </td>
                   <td>
-                   <center><h3 class="SubtitleMainwhiteClass">Dashboard Administrador</h3></center>
+                   <center><h3 class="SubtitleMainPurpleClass">Dashboard Administrador</h3></center>
+                   </td>
+                   <td>
+                       <center><h3 class="SubtitleMainPurpleClass">Aprobar solicitudes</h3></center>
+                   </td>
+                   <td>
+                       <center><h3 class="SubtitleMainPurpleClass">Administradores</h3></center>
                    </td>
 
-
             <tr>
                   <td>
                   <center>
-                  <a href="{{url('/dashboard/index')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"   alt="Dashboard Cursos"/></a>
+                  <a href="{{url('/dashboard/index')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/1.png')}}" width="60" height="60"   alt="Dashboard Cursos"/></a>
                   </center>
                   </td>
 
                   <td>
                   <center>
-                  <a href="{{url('/dashboard/dashboard')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"  alt="Dashboard Licencias"/></a>
+                  <a href="{{url('/dashboard/dashboard')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/2.png')}}" width="60" height="60"  alt="Dashboard Licencias"/></a>
                   </center>
                   </td>
                   <td>
                   <center>
-                  <a href="{{url('/dashboard/administrador')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-02.png')}}" width="180" height="180"  alt="Dashboard Licencias"/></a>
+                  <a href="{{url('/dashboard/administrador')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/3.png')}}" width="60" height="60"  alt="Dashboard Licencias"/></a>
                   </center>
                   </td>
+                  <td>
+                      <center>
+                          <a href="{{url('/pages/Pendientes.php')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/4.png')}}" width="60" height="60"  alt="Aprobar solicitud"/></a>
+                      </center>
+                  </td>
 
-            </tr>
-
-
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-
-            <tr>
-
-                <td>
-                    <center><h3 class="SubtitleMainwhiteClass">Aprobar solicitudes</h3></center>
-                </td>
-
-
-                <td>
-                    <center><h3 class="SubtitleMainwhiteClass">Administradores</h3></center>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <center>
-                        <a href="{{url('/pages/Pendientes.php')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Aprobar solicitud"/></a>
-                    </center>
-                </td>
-
-                <td>
-                    <center>
-                        <a href="{{url('/usuario/administradores')}}" target="_self"> <img src="{{url('/img/Icons/Png/PrincipalAdmin-04.png')}}" width="180" height="180"  alt="Administradores"></a>
-                    </center>
-                </td>
-            </tr>
+                  <td>
+                      <center>
+                          <a href="{{url('/usuario/administradores')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/5.png')}}" width="60" height="60"  alt="Administradores"></a>
+                      </center>
+                  </td>
         </table>
     </center>
 

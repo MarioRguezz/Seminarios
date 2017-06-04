@@ -1,15 +1,15 @@
 $(document).ready(function () {
-	var pdftpl = `<label for="PDF" class="control-label col-md-3 whiteClassThin">Adjunte Archivo en PDF no mayor a 15 Mb</label>
-<label for="pdffile" class="custom-file-upload whiteClassThin"> Archivo PDF</label>
+	var pdftpl = `<label for="PDF" class="control-label col-md-3 whiteClassThin normal verde">Adjunte Archivo en PDF no mayor a 15 Mb</label>
+<label for="pdffile" class="custom-file-upload whiteClassThin normal verde"> Archivo PDF</label>
 	<input type="file" name="PDF" id="pdffile" class="btn btn-warning">`;
 
-    var videotpl = `<label for="nombre" class="control-label col-md-3 whiteClassThin">Adjunte la URL de su video</label>
+    var videotpl = `<label for="nombre" class="control-label col-md-3 whiteClassThin normal verde">Adjunte la URL de su video</label>
 	<div class="col-md-6">
-	<input class="form-control NoRadius" id="videoUrl" name="videoUrl" type="url" placeholder="" required>
+	<input class="form-control NoRadiusColor" id="videoUrl" name="videoUrl" type="url" placeholder="" required>
 	</div>`;
 
-    var audiotpl = `<label for="Audio" class="control-label col-md-3 whiteClassThin">Adjunte Audio no mayor a 20 Mb</label>
-<label for="listenfile" class="custom-file-upload whiteClassThin"> Audio</label>
+    var audiotpl = `<label for="Audio" class="control-label col-md-3 whiteClassThin normal verde">Adjunte Audio no mayor a 20 Mb</label>
+<label for="listenfile" class="custom-file-upload whiteClassThin normal verde"> Audio</label>
 	<input type="file" name="Audio" id="listenfile" class="btn btn-primary">`;
 
    /* var tpl = `<div class="divNombre"><label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre corto para el archivo</label>

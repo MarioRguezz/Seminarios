@@ -106,7 +106,7 @@ html{
 
 <!--	INICIO Menu en el Encabezado	-->
 
-<?php include('../../resources/views/header.blade.php') ?>
+<?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
 
@@ -323,8 +323,21 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
     ?>
 ?>
 
+<div  style="width:100%;" class="row  col-md-12  ">
+<div style="" class="container-fluid">
+    <div    class="">
+        <div class="">
+          <img  class="imageMargin" src="../img/Icons/nuevosiconos/24.png" height="27" width="27">
+          <span class="purpleTitle">Seleccione un subtema del panel izquierdo</span>
+        </div>
+      </div>
+    </div>
 
-	<div class="Vertical col-md-2">
+</div>
+
+
+<div class="row Vertical col-md-2 ">
+
 
 <div id='cssmenu'>
 <ul>
@@ -410,7 +423,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
         <input type="hidden" value="PDF" name="TipoArchivo">
         <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        <button type="submit" class="btn btn-default btn-xs Visto" title="Ver PDF"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-file"></span></button>
+        <button type="submit" class="btn btn-default btn-xs Visto" title="Ver PDF"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/30.png"></span></button>
      </form>
      		<?PHP
 			}
@@ -431,7 +444,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
             <input type="hidden" value="VIDEO" name="TipoArchivo">
             <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        	<button type="submit" class="btn btn-default btn-xs Visto" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-play"></span> </button>
+        	<button type="submit" class="btn btn-default btn-xs Visto" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/32.png"></span> </button>
      		</form>
 
      		<?PHP
@@ -454,7 +467,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
             <input type="hidden" value="AUDIO" name="TipoArchivo">
             <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        	<button type="submit" class="btn btn-default btn-xs Visto" title="Escuchar audio"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-headphones"></span> </button>
+        	<button type="submit" class="btn btn-default btn-xs Visto" title="Escuchar audio"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span> <img src="../img/Icons/nuevosiconos/31.png"></span> </button>
             </form>
     <?PHP
 			}
@@ -479,7 +492,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 		{
 	?>
     	<form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
-        	<button type="submit" class="btn btn-default btn-xs Visto" title="Por favor vea los subtemas anteriores" disabled> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-exclamation-sign"></span> </button>
+        	<button type="submit" class="NoRadiusColorButton Visto" title="Por favor vea los subtemas anteriores" disabled> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-exclamation-sign"></span> </button>
         </form>
 
     <?PHP
@@ -519,7 +532,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <input type="hidden" value="<?PHP echo htmlentities($rowses['Mat_Alumno']); ?>" name="Mat_Alumno">
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
-                    <center><button class="btn-primary" type="submit">Realizar evaluación &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
+                    <center><button class="NoRadiusColorButton" type="submit">Realizar evaluación &nbsp;<span><img src="../img/Icons/nuevosiconos/33.png"></span> </center> </button>
                 </form>
 
         <?PHP
@@ -529,7 +542,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 		?>
                     <form action="../examen/examen_alumno" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
-                    <center><button class="btn-danger" type="submit" disabled title="No se ha habilitado este examen, contacte a su instructor">Realizar evaluación &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
+                    <center><button class="NoRadiusColorButton" type="submit" disabled title="No se ha habilitado este examen, contacte a su instructor">Realizar evaluación &nbsp;<span><img src="../img/Icons/nuevosiconos/33.png"></span> </center> </button>
                 </form>
 
         <?PHP
@@ -823,7 +836,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 									}
 								?>
                                 <center>
-							<h4>Podcast de este subtema</h4>
+							<h4 class="azul">Podcast de este subtema</h4>
 							<br><br><br>
 							<audio controls>
 								<source src="<?PHP echo htmlentities($Aud); ?>" type="audio/mp3" /> Tu navegador no es compatible
@@ -881,7 +894,23 @@ else
    // echo "grande grande ";
 ?>
 
-<div class="Vertical col-md-2 top">
+<div  style="width:100%;" class="row  col-md-12  ">
+<div style="" class="container-fluid">
+    <div    class="">
+        <div class="">
+          <img  class="imageMargin" src="../img/Icons/nuevosiconos/24.png" height="27" width="27">
+          <span class="purpleTitle">Seleccione un subtema del panel izquierdo</span>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+<div class="row Vertical col-md-2 ">
+
+
+
 
 <div id='cssmenu'>
 <ul>
@@ -959,7 +988,7 @@ else
         <input type="hidden" value="PDF" name="TipoArchivo">
         <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        <button type="submit" class="btn btn-default btn-xs Visto" title="Ver PDF"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-file"></span></button>
+        <button type="submit" class="btn btn-default btn-xs Visto" title="Ver PDF"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/30.png"></span></button>
      </form>
      		<?PHP
 			}
@@ -974,7 +1003,7 @@ else
             <input type="hidden" value="VIDEO" name="TipoArchivo">
             <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        	<button type="submit" class="btn btn-default btn-xs Visto" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-play"></span> </button>
+        	<button type="submit" class="btn btn-default btn-xs Visto" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/32.png"></span> </button>
      		</form>
 
      		<?PHP
@@ -991,7 +1020,7 @@ else
             <input type="hidden" value="AUDIO" name="TipoArchivo">
             <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        	<button type="submit" class="btn btn-default btn-xs Visto" title="Escuchar audio"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-headphones"></span> </button>
+        	<button type="submit" class="btn btn-default btn-xs Visto" title="Escuchar audio"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span> <img src="../img/Icons/nuevosiconos/31.png"></span> </button>
             </form>
     <?PHP
 			}
@@ -1000,7 +1029,7 @@ else
 		else {
 	?>
     	<form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
-        	<button type="submit" class="btn btn-default btn-xs Visto" title="Por favor vea los subtemas anteriores" disabled> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-exclamation-sign"></span> </button>
+        	<button type="submit" class="NoRadiusColorButton Visto" title="Por favor vea los subtemas anteriores" disabled> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-exclamation"></span> </button>
         </form>
 
     <?PHP
@@ -1043,7 +1072,7 @@ else
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <input type="hidden" value="<?PHP echo htmlentities($rowses['Mat_Alumno']); ?>" name="Mat_Alumno">
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
-                    <center><button class="btn-primary" type="submit">Realizar evaluación &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
+                    <center><button class="NoRadiusColorButton" type="submit">Realizar evaluación &nbsp;<span> <img src="../img/Icons/nuevosiconos/33.png"></span> </center> </button>
                 </form>
 
         <?PHP
@@ -1053,7 +1082,7 @@ else
 		?>
                     <form action="../examen/examen_alumno" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
-                    <center><button class="btn-danger" type="submit" disabled title="No se ha habilitado este examen, contacte a su instructor">Realizar evaluación &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>
+                    <center><button class="NoRadiusColorButton" type="submit" disabled title="No se ha habilitado este examen, contacte a su instructor">Realizar evaluación &nbsp;<span><img src="../img/Icons/nuevosiconos/33.png"></span> </center> </button>
                 </form>
 
         <?PHP
@@ -1143,16 +1172,6 @@ else
 
 </div> <!-- Fin del class Vertical -->
 
-<div class="contenido col-md-9  top">
-
-<center>
-
-<img src="../img/Icons/Png/PrincipalAdmin-04.png"/><br>
-    <h3 style="color:white">Seleccione un subtema del panel izquierdo</h3>
-
-</center>
-
-</div>
 
 <?PHP
 }

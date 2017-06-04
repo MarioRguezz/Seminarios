@@ -1,4 +1,4 @@
-<?PHP
+  <?PHP
 ?>
         <!doctype html>
 <html>
@@ -36,11 +36,15 @@
 </head>
 
 <body class="registro">
-
-<center>
-    <h3 class="cssTitleRegistro">REGISTRO PARA NUEVOS INSTRUCTORES</h3>
-</center>
-<br><br><br>
+@include('header')
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+<div    class="titleContainer">
+    <div class="titleImg">
+      <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/18.png')}}" height="27" width="27">
+      <span class="purpleTitle">REGISTRO PARA NUEVOS INSTRUCTORES</span>
+    </div>
+  </div>
+</div>
 
 
 <!-- <div class="col-xs-6"> -->
@@ -60,46 +64,46 @@
     <form action="{{url('/usuario/nuevoinstructorregistro')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
 
         <div class="form-group">
-            <label for="nombre" class="control-label col-md-3 whiteClass">Nombre</label>
+            <label for="nombre" class="control-label col-md-3 whiteClass verde normal">Nombre</label>
             <div class="col-md-6">
                 <input  id="idCA" name="idCA" type="hidden" value="{{$cve_ca}}" required>
                 <input  id="idCA2" name="idCA2" type="hidden" value="{{$cve_ca2}}" required>
-                <input class="form-control NoRadius" id="nombre" name="nombre" type="text" placeholder="" value="{{isset($request) ? $request['nombre'] : ""}}" required>
+                <input class="form-control NoRadiusColor" id="nombre" name="nombre" type="text" placeholder="" value="{{isset($request) ? $request['nombre'] : ""}}" required>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="apaterno" class="control-label col-md-3 whiteClass">Apellido Paterno</label>
+            <label for="apaterno" class="control-label col-md-3 whiteClass verde normal">Apellido Paterno</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius" id="apaterno"  name="apaterno" type="text" placeholder="" value="{{isset($request) ? $request['apaterno'] : ""}}" required>
+                <input class="form-control NoRadiusColor" id="apaterno"  name="apaterno" type="text" placeholder="" value="{{isset($request) ? $request['apaterno'] : ""}}" required>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="amaterno" class="control-label col-md-3 whiteClass">Apellido Materno</label>
+            <label for="amaterno" class="control-label col-md-3 whiteClass verde normal">Apellido Materno</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius" id="amaterno" name="amaterno" type="text" placeholder="" value="{{isset($request) ? $request['amaterno'] : ""}}" required>
+                <input class="form-control NoRadiusColor" id="amaterno" name="amaterno" type="text" placeholder="" value="{{isset($request) ? $request['amaterno'] : ""}}" required>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="email" class="control-label col-md-3 whiteClass">Email</label>
+            <label for="email" class="control-label col-md-3 whiteClass verde normal">Email</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius" id="email" name="email" type="email" placeholder="" value="{{isset($request) ? $request['email'] : ""}}" required>
+                <input class="form-control NoRadiusColor" id="email" name="email" type="email" placeholder="" value="{{isset($request) ? $request['email'] : ""}}" required>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="password" class="control-label col-md-3 whiteClass">Contraseña</label>
+            <label for="password" class="control-label col-md-3 whiteClass verde normal">Contraseña</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius" id="password" name="password" type="password" placeholder="" required>
+                <input class="form-control NoRadiusColor" id="password" name="password" type="password" placeholder="" required>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="opcion" class="control-label col-md-3 whiteClass">Sexo</label>
+            <label for="opcion" class="control-label col-md-3 whiteClass verde normal">Sexo</label>
             <div class="col-md-6">
-                <select class="form-control NoRadius" name="sexo" id="sexo">
+                <select class="form-control NoRadiusColor" name="sexo" id="sexo">
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
                 </select>
@@ -108,43 +112,43 @@
 
 
         <div class="form-group">
-            <label for="telofi" class="control-label col-md-3 whiteClass">Teléfono de oficina</label>
+            <label for="telofi" class="control-label col-md-3 whiteClass verde normal">Teléfono de oficina</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius"  maxlength="15" id="telofi" name="telofi" type="tel" pattern="^\d{7,}$" value="{{isset($request) ? $request['telofi'] : ""}}" placeholder="">
+                <input class="form-control NoRadiusColor"  maxlength="15" id="telofi" name="telofi" type="tel" pattern="^\d{7,}$" value="{{isset($request) ? $request['telofi'] : ""}}" placeholder="">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="telcasa" class="control-label col-md-3 whiteClass">Teléfono de casa</label>
+            <label for="telcasa" class="control-label col-md-3 whiteClass verde normal">Teléfono de casa</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius" maxlength="15" id="telcasa" name="telcasa" type="tel" pattern="^\d{7,}$"  value="{{isset($request) ? $request['telcasa'] : ""}}" placeholder="">
+                <input class="form-control NoRadiusColor" maxlength="15" id="telcasa" name="telcasa" type="tel" pattern="^\d{7,}$"  value="{{isset($request) ? $request['telcasa'] : ""}}" placeholder="">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="celular" class="control-label col-md-3 whiteClass">Teléfono celular</label>
+            <label for="celular" class="control-label col-md-3 whiteClass verde normal">Teléfono celular</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius" maxlength="20" id="celular" name="celular" type="tel" pattern="^\d{7,}$"  value="{{isset($request) ? $request['celular'] : ""}}" placeholder="">
+                <input class="form-control NoRadiusColor" maxlength="20" id="celular" name="celular" type="tel" pattern="^\d{7,}$"  value="{{isset($request) ? $request['celular'] : ""}}" placeholder="">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="estado" class="control-label col-md-3 whiteClass">Estado</label>
+            <label for="estado" class="control-label col-md-3 whiteClass verde normal">Estado</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius" id="estado" name="estado" type="text" placeholder="" value="{{isset($request) ? $request['estado'] : ""}}">
+                <input class="form-control NoRadiusColor" id="estado" name="estado" type="text" placeholder="" value="{{isset($request) ? $request['estado'] : ""}}">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="municipio" class="control-label col-md-3 whiteClass">Municipio</label>
+            <label for="municipio" class="control-label col-md-3 whiteClass verde normal">Municipio</label>
             <div class="col-md-6">
-                <input class="form-control NoRadius" id="municipio" name="municipio" type="text" value="{{isset($request) ? $request['municipio'] : ""}}" placeholder="">
+                <input class="form-control NoRadiusColor" id="municipio" name="municipio" type="text" value="{{isset($request) ? $request['municipio'] : ""}}" placeholder="">
             </div>
         </div>
 
 
         <div class="form-group" id="CV">
-            <label for="foto" class="control-label col-md-3 whiteClass" whiteClass>Adjunte CV en PDF no mayor a 10 Mb</label>
+            <label for="foto" class="control-label col-md-3 whiteClass verde normal" >Adjunte CV en PDF no mayor a 10 Mb</label>
             <br>
 
             <label for="curriculum" class="custom-file-upload">
@@ -157,7 +161,7 @@
 
         <div class="form-group">
             <div class="col-md-2 col-md-offset-4 ">
-                <button class="buttonTransparentBorder buttonAlta" id="btn-registro" type="submit">Guardar registro &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
+                <button class="NoRadiusColorButton "  style="width:300px" id="btn-registro" type="submit">Guardar registro &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
                 <!-- <input type="submit" class="btn btn-primary" value="Guardar registro"> -->
             </div>
         </div>

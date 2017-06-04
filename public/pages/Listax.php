@@ -99,26 +99,28 @@ mysqli_close($conexia);
 
 	<body class="backgroundPrincipal">
 <!--	FIN	Menu en el Encabezado	-->
-<?php include('../../resources/views/header.blade.php') ?>
+<?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
-
-<center>
-<h1 class="whiteClass2 top">LISTA DE ALUMNOS INSCRITOS AL CURSO</h1>
-</center>
-
-
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+		<div    class="titleContainer">
+				<div class="titleImg">
+					<img  class="imageMargin" src="../img/Icons/nuevosiconos/21.png" height="27" width="27">
+					<span class="purpleTitle">LISTA DE ALUMNOS INSCRITOS AL CURSO</span>
+				</div>
+			</div>
+		</div>
 <!--
 <div class = container>
 -->
 
-<div class="littlemargin">
-	<table style="width:100%;" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
-    <tr class="danger">
-    	<th><center>Nombre</center></th>
-        <th><center>Correo</center></th>
-        <th><center>Estatus</center></th>
-        <th><center>Información</center></th>
+<div >
+	<table  class="table  designTable"  align="center">
+    <tr>
+    	<th class="weight"><center>Nombre</center></th>
+        <th class="weight"><center>Correo</center></th>
+        <th class="weight"><center>Estatus</center></th>
+        <th class="weight"><center>Información</center></th>
     </tr>
 
 	<?PHP
@@ -139,7 +141,7 @@ mysqli_close($conexia);
 			else
 			{
 			?>
-    <tr class="info">
+    <tr>
             <?PHP
 			$color = 0;
 			}
@@ -155,7 +157,7 @@ mysqli_close($conexia);
                 echo '  <td>
                <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
                <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
-               <center> <button  type="submit" class="elementoButton buttonTransparentBorder buttonAlta"> Alta  </button></center></td>
+               <center> <button  type="submit" style="width:200px;" class="elementoButton NoRadiusColorButton"> Alta  </button></center></td>
             ';
 
 
@@ -167,7 +169,7 @@ mysqli_close($conexia);
                 echo '<td>
                <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
                <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
-                <center> <button type="submit" class="elementoButton buttonTransparentBorder buttonAlta"> Baja </button></center></td>
+                <center> <button type="submit" style="width:200px;" class="elementoButton NoRadiusColorButton"> Baja </button></center></td>
             ';
             }
             ?>
@@ -176,8 +178,8 @@ mysqli_close($conexia);
 
 
             <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
-        <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="Mat_Alumno">
-        <td><center> <button type="submit" class="buttonTransparentBorder buttonAlta"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
+        <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="email">
+        <td><center> <button type="submit"  style="border:none"class="NoRadiusColorButton"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
         </form>
 
     </tr>

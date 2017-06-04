@@ -41,27 +41,31 @@
     @include('header')
   </div>
   <br><br><br>
-<center>
-    <h3 class="cssTitleRegistro">LISTA DE ADMINISTRADORES</h3>
-</center>
-
+  <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+      <div    class="titleContainer">
+          <div class="titleImg">
+            <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/16.png')}}" height="27" width="27">
+            <span class="purpleTitle">LISTA DE ADMINISTRADORES</span>
+          </div>
+        </div>
+      </div>
 
 
 <!-- <div class="col-xs-6"> -->
 
 <div class="container "> <!-- Div principal -->
 
-    <table class="table">
+    <table class="table designTable"  align="center">
         <thead>
             <tr>
                 <th></th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Fecha de expiración</th>
-                <th>Número de licencias</th>
-                <th>Licencias restantes</th>
+                <th class="weight">Nombre</th>
+                <th class="weight">Email</th>
+                <th class="weight">Fecha de expiración</th>
+                <th class="weight">Número de licencias</th>
+                <th class="weight">Licencias restantes</th>
                 <th></th>
-                <th><a class="blanco" href="{{url('/usuario/editar')}}">+</a></th>
+                <th class="weight"><a class="azul" href="{{url('/usuario/editar')}}">+</a></th>
             </tr>
         </thead>
 
@@ -75,13 +79,14 @@
                 <td>{{$administrador->fecha_expiracion}}</td>
                 <td>{{$administrador->no_licencias}}</td>
                 <td>{{$administrador->restante }}</td>
-                <td><a href="{{url('/usuario/editar/'.$administrador->id_persona)}}"><span class="glyphicon glyphicon-pencil blanco"></span></a></td>
-
+                <td><a href="{{url('/usuario/editar/'.$administrador->id_persona)}}"><span class="glyphicon glyphicon-pencil verde"></span></a></td>
+                <td></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-    {{$administradores->links()}}
+  <!--  {{$administradores->links()}}-->
+   {{ $administradores->links('vendor.pagination.custom') }}
 </div>
 
 

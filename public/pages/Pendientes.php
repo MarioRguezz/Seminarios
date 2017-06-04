@@ -73,18 +73,23 @@ if($TipoPer != "Administrador")
 <body class="backgroundPrincipal" >
 
 <!--	FIN	Menu en el Encabezado	-->
-<?php include('../../resources/views/header.blade.php') ?>
+<?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
 
-<center>
-<h1 class="whiteClass2 top">SOLICITUDES PENDIENTES</h1>
-</center>
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+		<div    class="titleContainer">
+				<div class="titleImg">
+					<img  class="imageMargin" src="../img/Icons/nuevosiconos/15.png" height="27" width="27">
+					<span class="purpleTitle">SOLICITUDES PENDIENTES</span>
+				</div>
+			</div>
+		</div>
 
 <!--<div class="container">-->
 <div class="">
-	<table style="width:100%" cellspacing="0" cellpadding="0" class="littlemargin table-responsive tablaDesign">
-    <tr class="danger">
+	<table class="table designTable"  align="center">
+    <tr>
     	<th><b><center>Nombre</center></b></th>
         <th><b><center>Estado</center></b></th>
         <th><b><center>Municipio</center></b></th>
@@ -112,7 +117,7 @@ if($TipoPer != "Administrador")
 			else
 			{
 			?>
-    <tr class="info">
+    <tr>
             <?PHP
 			$color = 0;
 			}
@@ -129,7 +134,7 @@ if($TipoPer != "Administrador")
         <form action="Pendientes.php?accion=4pr0v@r" class="form-horizontal" method="post" enctype="multipart/form-data">
         <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="correo">
         <input type="hidden" value="<?PHP echo htmlentities($row['TUser']); ?>" name="tuser">
-        <td><center> <button class="buttonTransparent buttonAlta" id="btn-autoriza" type="submit">Sí</button> </center></td>
+        <td><center> <button class="buttonTransparent buttonAlta" style="color:#409798; font-size:14px; font-weight:normal;" id="btn-autoriza" type="submit">Sí</button> </center></td>
         </form>
         <!-- <td><center> Aquí el check box </center></td> -->
     </tr>

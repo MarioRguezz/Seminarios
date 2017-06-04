@@ -71,9 +71,9 @@
 
 .boxItem{
     background-color: white;
-    color: rebeccapurple;
+    color: #201953;
     border-style: solid;
-    border-color: rebeccapurple;
+    border-color: #201953;
     border-width: 1px;
     text-align: center;
     padding: 20px;
@@ -84,9 +84,10 @@
 .marco{
     background-color: transparent;
     border-style: solid;
-    border-color: white;
+    border-color: #409798;
     border-width: 1px;
     text-align: center;
+		color: #409798;
     padding: 20px;
     width:100%;
 }

@@ -39,6 +39,7 @@
 </head>
 
 <body class="backgroundPrincipal">
+    @include('header')
 <input type="hidden" value="{{url('/')}}" id="_url">
 <input type="hidden" value="{{$IDTema}}" id="_idTema">
 <input type="hidden" value="{{$tipo}}" id="tipo">
@@ -47,9 +48,9 @@
         <div class="form-horizontal ">
             <div class="text-center">
               @if($tipo == "examen")
-                <label class="control-label" id="VP"><h3 class="whiteClass2 top">NUEVO EXAMEN</h3></label>
+                <label style="margin-top:100px" class="control-label" id="VP"><h3 class="purpleTitle top">NUEVO EXAMEN</h3></label>
               @else
-                <label class="control-label" id="VP"><h3 class="whiteClass2 top">NUEVA ACTIVIDAD</h3></label>
+                <label class="control-label" id="VP"><h3 class="purpleTitle top">NUEVA ACTIVIDAD</h3></label>
               @endif
             </div>
         </div>
@@ -77,7 +78,7 @@
             <br>
                 <div class="row">
                     <div class="col-md-7">
-                    <label class="whiteClass4" style="color: white;">Este es un diseñador de actividades, para agregar una pregunta haz clic en el
+                    <label class="purpleTitle" >Este es un diseñador de actividades, para agregar una pregunta haz clic en el
                         botón "Nueva pregunta"</label>
                     </div>
                     <br>
@@ -87,8 +88,8 @@
 
                     </div>
                     <div class="box rightPosition" >
-                        <button id="nuevaPregunta" class="btn btn-primary">Nueva Pregunta</button>
-                        <button id="btnGuardar" class="btn btn-primary">Guardar</button>
+                        <button id="nuevaPregunta" class="NoRadiusColorButton">Nueva Pregunta</button>
+                        <button id="btnGuardar" class="NoRadiusColorButton">Guardar</button>
 
                     </div>
                 </div>
@@ -97,7 +98,7 @@
       @else
       <div class="form-horizontal ">
           <div class="text-center">
-              <label class="control-label" id="VP"><h3 class="whiteClass2 top">Ya hay un examen registrado para este tema</h3></label>
+              <label  style="margin-top:100px;" class="control-label" id="VP"><h3 class="purpleTitle top">Ya hay un examen registrado para este tema</h3></label>
           </div>
       </div>
       @endif

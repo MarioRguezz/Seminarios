@@ -27,7 +27,7 @@ $(document).ready(function () {
            $(".emailsGroup").empty();
        }else{
            $(".emailsGroup").append('<label for="nombre" class="control-label col-md-3 whiteClassThin">Los correos deben ir separados por un espacio en blanco</label>' +
-               '<div class="col-md-6"><textarea class="form-control NoRadius" maxlength="20000" id="emails" name="emails" placeholder="correo@hotmail.com, correo2@hotmail.com" required></textarea> </div>');
+               '<div class="col-md-6"><textarea class="form-control NoRadiusColor2" maxlength="20000" id="emails" name="emails" placeholder="correo@hotmail.com, correo2@hotmail.com" required></textarea> </div>');
 
        }
     });
@@ -81,7 +81,7 @@ $(document).ready(function () {
 
 
 
-	
+
 	//swal({   title: "Error!",   text: "Here's my error message!",   type: "error",   confirmButtonText: "Cool" });
 
 });

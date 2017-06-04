@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Registro</title>
+    <title>Registro Alumnos</title>
 
     <script src="{{url('/js/jquery.min.js')}}"></script>
     <script src="{{url('/js/passwordval.js')}}"></script>
@@ -39,25 +39,28 @@
 
 <body class="registro">
   @include('header')
-  <br><br><br>
-<center>
-    <h3 class="cssTitleRegistro">LISTA DE ALUMNOS</h3>
-</center>
-
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+    <div    class="titleContainer">
+        <div class="titleImg">
+          <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/19.png')}}" height="27" width="27">
+          <span class="purpleTitle">LISTA DE ALUMNOS</span>
+        </div>
+      </div>
+    </div>
 
 
 <!-- <div class="col-xs-6"> -->
 
 <div class="container "> <!-- Div principal -->
 
-    <table class="table">
+    <table class="table designTable"  align="center">
         <thead>
             <tr>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Estatus</th>
                 <th></th>
-                <th><a class="blanco" href="{{url('/usuario/alumnonuevo/'.$administradores->id.'/'.$administradores->id_persona)}}">+</a></th>
+                <th><a class="azul" href="{{url('/usuario/alumnonuevo/'.$administradores->id.'/'.$administradores->id_persona)}}">+</a></th>
             </tr>
         </thead>
 
@@ -68,13 +71,14 @@
                 <td>{{$administrador->datos['Nombre']}}</td>
                 <td>{{$administrador->datos['email']}}</td>
                 <td>{{$administrador->datos['Status']}}</td>
-                <td><a href="{{url('/usuario/alumnosedicion/'.$administrador->datos['IdPersona'].'/'.$administradores->id_persona)}}"><span class="glyphicon glyphicon-pencil blanco"></span></a></td>
+                <td><a href="{{url('/usuario/alumnosedicion/'.$administrador->datos['IdPersona'].'/'.$administradores->id_persona)}}"><span class="glyphicon glyphicon-pencil verde"></span></a></td>
                 <td> </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-{{$alumnos->links()}}
+<!--{{$alumnos->links()}}-->
+{{ $alumnos->links('vendor.pagination.custom') }}
 </div>
 
 

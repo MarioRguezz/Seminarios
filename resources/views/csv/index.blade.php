@@ -33,35 +33,34 @@
 </head>
 
 <body class="backgroundPrincipal">
-  @include('header')
-  <br><br><br>
-<div class="container-fluid">
-    <div class="form-horizontal ">
-        <div class="text-center">
-            <label class="control-label" id="VP"><h3 class="whiteClass2 top">ALTA DE USUARIOS POR CSV</h3></label>
+    @include('header')
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+    <div    class="titleContainer">
+        <div class="titleImg">
+          <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/20.png')}}" height="27" width="27">
+          <span class="purpleTitle">ALTA DE USUARIOS POR CSV</span>
         </div>
+      </div>
     </div>
-    <div class=" col-md-12 well back" id="menu">
-      <div class="row">
-      <div style="" class="col-md-12">
-          <a  href="" data-toggle="modal" data-target="#myModal" class="glyphicon designahref glyphicon-question-sign questionMark" aria-hidden="true">Ayuda </a>
-       </div>
-     </div>
+    <div  class=" col-md-12 well back middle"  id="menu">
         <div class="row">
-            <div class="col-md-2">
-              <label class="SubtitleMainwhiteClass"> Carga CSV  </label>
+            <div class="col-md-3">
+              <label style="margin-top:5px;" class="SubtitleMainPurpleClass"> Carga CSV  </label>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
           <!--<button  style="margin-top:10px;"class="btn btn-primary"> Subir archivo </button>-->
           <div id="dvImportSegments" class="fileupload ">
-   <label   for="txtFileUpload" class="control-label uploadbtn whiteClassThin">Subir archivo</label>
+   <label   for="txtFileUpload"  style="padding:5px" class="control-label    NoRadiusColorButton">Subir archivo</label>
          <input type="file" name="txtFileUpload" id="txtFileUpload" accept=".csv" />
-</div>
+       </div>
+        </div>
+          <div class="col-md-3">
+        <button class="NoRadiusColorButton">Subir</button>
+        </div>
+        <div class="col-md-3">
+        <a  href="" data-toggle="modal" data-target="#myModal" class="glyphicon designahref glyphicon-question-sign questionMark verde" aria-hidden="true"><span class="azul">Ayuda</span> </a>
         </div>
     </div>
-    <div class="row">
-      <button class="btn btn-primary btnsub">Subir</button>
-      </div>
 </div>
 
 <!-- Modal Instructions -->

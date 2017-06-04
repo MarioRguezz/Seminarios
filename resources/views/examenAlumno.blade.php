@@ -51,6 +51,15 @@
 <center>
     <h3 class="cssTitleRegistro">EXAMEN</h3>
 </center>
+@include('header')
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+<div    class="titleContainer">
+    <div class="titleImg">
+      <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/26.png')}}" height="27" width="27">
+      <span class="purpleTitle">EXAMEN</span>
+    </div>
+  </div>
+</div>
 <div id="preguntas">
     <?php
     $IDTema = $_POST['IDTema'];
@@ -67,8 +76,8 @@
         ?>
         @if($pregunta->tipo == 1)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
-                <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
-                <input type='text' class='textArea space leftPosition respuestaInput' placeholder='Coloca aquí tu respuesta'>
+                <h3 class="whiteClass verde normal">{{$pregunta->titulo}}</h3>
+                <input type='text' class='textArea space leftPosition NoRadiusColor   respuestaInput' placeholder='Coloca aquí tu respuesta'>
             </div>
 
                 <script type="text/javascript">
@@ -83,7 +92,7 @@
         @endif
         @if($pregunta->tipo == 2)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
-                <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
+                <h3 class="whiteClass verde normal">{{$pregunta->titulo}}</h3>
                 <script type="text/javascript">
                     var newIndex2 =   respuestas.length;
                    respuestas.push(new Respuesta());
@@ -93,7 +102,7 @@
                 </script>
                 @foreach($json->choices as $choice)
 
-                    <input type='radio' id='{{$choice->guid}}' name='{{$json->guid}}' class='marginForceRight' value='{{$choice->value}}'> {{$choice->name}}
+                    <input type='radio' id='{{$choice->guid}}' name='{{$json->guid}}' class='marginForceRight' value='{{$choice->value}}'><label class="verde normal"> {{$choice->name}}</label>
                     <script type="text/javascript">
                         $('#{{$choice->guid}}').change(function () {
                             for(var x=0; x<respuestas.length; x++){
@@ -110,10 +119,10 @@
 
             @if($pregunta->tipo == 3)
                 <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
-                    <h3 class="whiteClass">{{$pregunta->titulo}}</h3>
+                    <h3 class="whiteClass verde normal">{{$pregunta->titulo}}</h3>
                     <div class='leftPosition leftBox boxTop items' style="width:40%; height:200px" id="items-{{$json->guid}}">
                         @foreach($json->items as $item)
-                            <div class='boxItem item' id='{{$item->guid}}'> {{$item->nombre}} </div>
+                            <div class='boxItem item normal' id='{{$item->guid}}'> {{$item->nombre}} </div>
                         @endforeach
                     </div>
                     <div class='rightPosition leftBox boxTop' style="width:40%; height:200px" id="casillas-{{$json->guid}}">
@@ -182,7 +191,7 @@
             @endif
 
     @endforeach
-    <button type="button" id="guardarExamen" class="btn btn-primary">Guardar</button>
+    <button type="button" id="guardarExamen" class="NoRadiusColorButton">Guardar</button>
 
 </div>
 

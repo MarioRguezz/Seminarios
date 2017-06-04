@@ -121,36 +121,40 @@ $res= get_Personas();
 
 <body class="backgroundPrincipal" >
 
-<?php include('../../resources/views/header.blade.php') ?>
+<?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
 
 
 
 <div class="container"> <!-- Div principal -->
-
-<center>
-<h1 class="whiteClass2 top">ALTA DE CURSOS</h1>
-</center>
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+		<div    class="titleContainer">
+				<div class="titleImg">
+					<img  class="imageMargin" src="../img/Icons/nuevosiconos/21.png" height="27" width="27">
+					<span class="purpleTitle">ALTA DE CURSOS</span>
+				</div>
+			</div>
+		</div>
 <form action="AltaCurso.php?accion=Nu3v@" class="form-horizontal" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
-<label for="nombre" class="control-label col-md-3 whiteClassThin">Nombre del curso</label>
+<label for="nombre" class="control-label col-md-3 whiteClassThin azul normal">Nombre del curso</label>
     <div class="col-md-6">
-    <input class="form-control NoRadius" id="nombre" name="nombre" type="text" placeholder="" required>
+    <input class="form-control NoRadiusColor2" id="nombre" name="nombre" type="text" placeholder="" required>
     </div>
 </div>
 
 <div class="form-group">
-                    <label class="control-label col-md-3 whiteClassThin">Cupo</label>
-                <div class="col-xs-3">
+                    <label class="control-label col-md-3 whiteClassThin azul normal">Cupo</label>
+                <div class="col-xs-6">
                     <div class="input-group number-spinner">
                         <span class="input-group-btn data-dwn">
-					<button type="button" class="btn btn-default NoRadius " data-dir="dwn"><span class="">-</span></button>
+					<button type="button" class="btn btn-default NoRadiusColor2 " data-dir="dwn"><span class="">-</span></button>
                         </span>
-                        <input id="Cupo" name="Cupo" type="number" disabled class="form-control NoRadius text-center" value="30" min="1" max="<?php  echo $licencias; ?>">
+                        <input id="Cupo" name="Cupo" type="number" disabled class="form-control NoRadiusColor2 text-center" value="30" min="1" max="<?php  echo $licencias; ?>">
                         <span class="input-group-btn data-up">
-					<button type="button" class="btn btn-default NoRadius" data-dir="up"><span class="">+</span></button>
+					<button type="button" class="btn btn-default NoRadiusColor2" data-dir="up"><span class="">+</span></button>
                         </span>
                     </div>
                 </div>
@@ -162,17 +166,17 @@ $res= get_Personas();
     	<input class="form-control NoRadius" id="autocomplete" name="IDinstructor" type="text" placeholder="" required value="<?PHP echo htmlentities($Matricula); ?>" readonly>
     </div>
  </div> -->
-    <input type="hidden" class="form-control NoRadius" id="autocomplete" name="IDinstructor" type="text" placeholder="" required value="<?PHP echo htmlentities($Matricula); ?>" readonly>
+    <input type="hidden" class="form-control NoRadiusColor2" id="autocomplete" name="IDinstructor" type="text" placeholder="" required value="<?PHP echo htmlentities($Matricula); ?>" readonly>
 
  <div class="form-group">
-<label for="nombre" class="control-label col-md-3 whiteClassThin">Descripción</label>
+<label for="nombre" class="control-label col-md-3 whiteClassThin azul normal">Descripción</label>
     <div class="col-md-6">
-    <textarea class="form-control NoRadius" maxlength="200" id="Descrip" name="Descripcion" placeholder="" required></textarea>
+    <textarea class="form-control NoRadiusColor2" maxlength="200" id="Descrip" name="Descripcion" placeholder="" required></textarea>
     </div>
 </div>
 
     <div class="form-group">
-        <label for="nombre" class="control-label col-md-3 whiteClassThin">Curso público</label>
+        <label for="nombre" class="control-label col-md-3 whiteClassThin azul normal">Curso público</label>
         <div class="col-md-6">
             <input type="checkbox" class="form-control textPublic" name="publico" value="1" checked>
         </div>
@@ -186,8 +190,8 @@ $res= get_Personas();
 
 
 <div class="form-group">
-	<div class="col-md-2 col-md-offset-2">
-		<button class="buttonTransparentBorder buttonAlta" id="btn-registro" type="submit">Crear curso </button>
+	<div class="col-md-2 col-md-offset-3">
+		<button class="NoRadiusColorButton " id="btn-registro" type="submit">Crear curso </button>
         <!-- <input type="submit" class="btn btn-primary" value="Guardar registro"> -->
     </div>
 </div>
@@ -345,7 +349,6 @@ if($accion == 'Nu3v@')
 		?>
 
 		<br><br><br><br>
-		<br><br>
 </body>
 
 </html>

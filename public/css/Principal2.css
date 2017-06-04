@@ -15,7 +15,7 @@
   box-sizing: border-box;
 }
 #cssmenu {
-  width: 235px;
+  width: 245px;
   font-family: Raleway, sans-serif;
   color: #ffffff;
 }
@@ -35,7 +35,7 @@
   font-size: 16px;
   text-decoration: none;
   color: #ffffff;
-  background:rgba(0,51,102,1); /*Fondo del menú principal*/
+  background: #409798; /*Fondo del menú principal*/
   -webkit-transition: color .2s ease;
   -o-transition: color .2s ease;
   transition: color .2s ease;
@@ -89,7 +89,7 @@
   font-size: 14px;
   text-decoration: none;
   color: #dddddd;
-  background:rgba(0,51,102,1); /*Fondo del submenu*/
+  background:#409798; /*Fondo del submenu*/
   -webkit-transition: color .2s ease;
   -o-transition: color .2s ease;
   transition: color .2s ease;
@@ -144,6 +144,55 @@
 	width:250px;
 }
 
+.purpleTitle{
+	color: #201953;
+	font-size: 20px;
+	font-weight: 500;
+}
+.NoRadiusColorButton{
+	border:solid 1px white;
+	color:white;
+	border-radius: 0px;
+	height: 40px;
+	font-weight: 200;
+	font-size: 14px;
+	background-color: #409798;
+	font-weight: normal;
+}
+
+.down{
+	padding-top: 10px;
+}
+
+.azul{
+	color: #201953;
+}
+
+.menuOption:hover{
+	color: white !important;
+	text-decoration: none;
+}
+
+.menuOption:active{
+	color: white !important;
+	text-decoration: none;
+}
+
+.menuOption:visited{
+	color: white !important;
+	text-decoration: none;
+}
+
+.imageMargin{
+	margin-bottom: 17px;
+}
+.titleImg{
+	display: inline-block;
+}
+.titleContainer{
+	text-align: center
+}
+/*
 body
 {
     background-image:url(../img/backgrounds/FONDO3.png);
@@ -151,6 +200,10 @@ body
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+*/
+body{
+  background-color: white;
 }
 footer
 {

@@ -85,20 +85,25 @@ mysqli_close($conexia);
 <body class="backgroundPrincipal" >
 
 <!--	FIN	Menu en el Encabezado	-->
-<?php include('../../resources/views/header.blade.php') ?>
+<?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
 
 
-<center>
-<h1 class="whiteClass2 top">ADMINISTRAR MIS CURSOS</h1>
-</center>
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+		<div    class="titleContainer">
+				<div class="titleImg">
+					<img  class="imageMargin" src="../img/Icons/nuevosiconos/21.png" height="27" width="27">
+					<span class="purpleTitle">ADMINISTRAR MIS CURSOS</span>
+				</div>
+			</div>
+		</div>
 
 <div class="form-group">
-	<div class="col-md-3 col-md-offset-9">
+	<div class="col-md-7 col-md-offset-5">
     	<form action="AltaCurso.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
             <input type="hidden" value="<?PHP echo htmlentities($Matricula); ?>" name="Matricula">
-            <th><button class="buttonTransparentBorder buttonAlta" type="submit"><center>Agregar un curso &nbsp;<span class="glyphicon glyphicon-import"></span> </center> </button></th>
+            <button class="NoRadiusColorButton" type="submit"><center>Agregar un curso &nbsp;<span class="glyphicon glyphicon-import"></span> </center> </button>
         </form>
     </div>
 </div>
@@ -106,12 +111,12 @@ mysqli_close($conexia);
 <br><br><br><br>
 
 <div class="container">
-	<table style="width:100%" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
-    <tr class="danger">
-    	<th><center>Nombre del curso</center></th>
-        <th><center>Cupo</center></th>
-        <th><center>Lista de Participantes</center></th>
-        <th><center></center></th>
+	<table class="table  designTable"  align="center">
+    <tr>
+    	<th class="weight"><center>Nombre del curso</center></th>
+        <th class="weight"><center>Cupo</center></th>
+        <th class="weight"><center>Lista de Participantes</center></th>
+        <th class="weight"><center></center></th>
     </tr>
 
 	<?PHP
@@ -132,7 +137,7 @@ mysqli_close($conexia);
 			else
 			{
 			?>
-    <tr class="info">
+    <tr>
             <?PHP
 			$color = 0;
 			}
@@ -154,13 +159,13 @@ mysqli_close($conexia);
 		if($Total>0)
 		{
 		?>
-        <td><center> <button class="buttonTransparentBorder buttonAlta" id="btn-Ir" type="submit">Ver alumnos &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
+        <td><center> <button class="NoRadiusColorButton" id="btn-Ir" type="submit">Ver alumnos &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
         <?PHP
 		}
 		else
 		{
 		?>
-        <td><center> <button class="buttonTransparentBorder buttonAlta" id="btn-Ir" type="submit" disabled>No Disponible &nbsp; <span class="glyphicon glyphicon-remove"></span></button> </center></td>
+        <td><center> <button class="NoRadiusColorButton" id="btn-Ir" type="submit" disabled>No Disponible &nbsp; <span class="glyphicon glyphicon-remove"></span></button> </center></td>
         <?PHP
 		}
 		?>
@@ -169,7 +174,7 @@ mysqli_close($conexia);
         <form action="CursoTemaInstructor.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
         <input type="hidden" value="<?PHP echo htmlentities($row['id_Curso']); ?>" name="IDCurso">
         <input type="hidden" value="<?PHP echo htmlentities($Matricula); ?>" name="Mat_User">
-        <td><center> <button class="buttonTransparentBorder buttonAlta" id="btn-Ir" type="submit">Ir al curso &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
+        <td><center> <button class="NoRadiusColorButton" id="btn-Ir" type="submit">Ir al curso &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
         </form>
         <!-- <td><center> Aquí el check box </center></td> -->
     </tr>

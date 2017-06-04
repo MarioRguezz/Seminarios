@@ -96,25 +96,29 @@ mysqli_close($conexia);
 
 <!--	FIN	Menu en el Encabezado	-->
 
-<?php include('../../resources/views/header.blade.php') ?>
+<?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
-
-
-<center>
-<h1 class="whiteClass2 top">MIS CURSOS</h1>
-</center>
+@include('header')
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+<div    class="titleContainer">
+		<div class="titleImg">
+			<img  class="imageMargin" src="../img/Icons/nuevosiconos/26.png" height="27" width="27">
+			<span class="purpleTitle">MIS CURSOS</span>
+		</div>
+	</div>
+</div>
 
 <br><br>
 <!--<div class="container">-->
     <div class="">
-		<table style="width:100%" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
-    <tr class="danger">
-    	<th><center>Nombre del curso</center></th>
-        <th><center>Instructor</center></th>
-        <th><center>Descripción</center></th>
-        <th><center>Cupo</center></th>
-        <th><center></center></th>
+		<table class="table designTable"  align="center">
+    <tr>
+    	<th class="weight"><center>Nombre del curso</center></th>
+        <th class="weight"><center>Instructor</center></th>
+        <th class="weight"><center>Descripción</center></th>
+        <th class="weight"><center>Cupo</center></th>
+        <th class="weight"><center></center></th>
     </tr>
 	<?PHP
 		$color = 0;
@@ -142,7 +146,7 @@ mysqli_close($conexia);
 			else
 			{
 			?>
-    <tr class="info">
+    <tr>
             <?PHP
 			$color = 0;
 			}
@@ -167,7 +171,7 @@ mysqli_close($conexia);
         <form action="CursosDisponibles.php?accion=nu3v0" class="form-horizontal" method="post" enctype="multipart/form-data">
         <input type="hidden" value="<?PHP echo htmlentities($row['id_Curso']); ?>" name="IDCurso">
         <input type="hidden" value="<?PHP echo htmlentities($Matricula); ?>" name="Mat_Alumno">
-        <td><center> <button class="buttonTransparentBorder buttonAlta" id="btn-Ir" type="submit" title="Clic aquí para inscribirte">Inscripción &nbsp; <span class="glyphicon glyphicon-copy"></span></button> </center></td>
+        <td><center> <button class="NoRadiusColorButton" id="btn-Ir" type="submit" title="Clic aquí para inscribirte">Inscripción &nbsp; <span> <img src="../img/Icons/nuevosiconos/34.png"></span></button> </center></td>
 
         </form>
         <?PHP

@@ -45,16 +45,18 @@
 
 <body class="backgroundPrincipal">
   @include('header')
-<div style="margin-top:5%" class="container-fluid">
-    <div class="form-horizontal ">
-        <div class="text-center">
-            <label class="control-label" id="VP"><h3 class="whiteClass2 top">DASHBOARD CURSOS</h3></label>
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+    <div    class="titleContainer">
+        <div class="titleImg">
+          <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/13.png')}}" height="27" width="27">
+          <span class="purpleTitle">DASHBOARD CURSOS</span>
         </div>
+      </div>
     </div>
-    <div class=" col-md-12 well back" id="menu">
+  <!--<div class=" col-md-12 well back" id="menu">
         <div class="row">
-            <div class="col-md-12">
-              <table class="table">
+            <div class="col-md-12">-->
+              <table class="table designTable"  align="center">
    <thead>
      <tr>
        <th style="font-weight:bold;" class="weight">Curso </th>
@@ -88,10 +90,11 @@
       @endforeach
    </tbody>
  </table>
-   {{$cursos->links()}}
-        </div>
+  <!-- {{$cursos->links()}}-->
+   {{ $cursos->links('vendor.pagination.custom') }}
+      <!--  </div>
     </div>
-</div>
+</div>-->
 </body>
 
 </html>

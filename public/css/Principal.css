@@ -20,13 +20,79 @@
 	border-radius: 20px;
 }
 
+.down{
+	padding-top: 10px;
+}
+
+.menuOption:hover{
+	color: white !important;
+	text-decoration: none;
+}
+
+.menuOption:active{
+	color: white !important;
+	text-decoration: none;
+}
+
+.menuOption:visited{
+	color: white !important;
+	text-decoration: none;
+}
+
+.designTable th{
+color: #201953;
+font-size: 14px;
+border-bottom-style: 1px solid !important;
+border-color:  #201953 !important;
+}
+
+.designTable {
+color: #201953;
+border: 3px solid  #201953 !important;
+width: 80% !important;
+}
+
+.designTable td{
+color: #409798;
+font-size: 14px;
+font-weight: normal;
+border-color: #201953  !important;
+border-bottom-style: 1px solid  !important;
+}
+
+
+.titleContainer{
+	text-align: center
+}
+
+.titleImg{
+	display: inline-block;
+}
+
+.purpleTitle{
+	color: #201953;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.imageMargin{
+	margin-bottom: 17px;
+}
+
+
+.SubtitleMainPurpleClass{
+	color: #201953;
+	font-size: 15px;
+	font-weight: normal;
+}
+
 .horizontal
 {
 	/*background-color:rgba(255,255,255,0.50);*/
 	border-radius: 20px;
 	margin-bottom: 7%;
 }
-
+/*
 body
 {
 	background-image:url(../img/backgrounds/FONDO2invertido.png);
@@ -34,7 +100,7 @@ body
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
+}*/
 
 body.backgroundLogin
 {
@@ -45,7 +111,7 @@ body.backgroundLogin
     background-size: cover;
 }
 
-
+/*
 body.backgroundPrincipal
 {
 	background-image:url(../img/backgrounds/FONDO2.png);
@@ -57,7 +123,12 @@ body.backgroundPrincipal
     background-size: cover;
 	background-attachment: fixed;
 }
+*/
 
+body.backgroundPrincipal
+{
+	background-color: white;
+}
 
 /*
 body.backgroundPrincipal2 {
@@ -290,6 +361,56 @@ th, td {
 	height: 50px;
 }
 
+.middle{
+	width:80%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+	border:solid 1px #201953;
+
+}
+
+.NoRadiusColor2{
+	border:solid 1px #409798;
+	border-radius: 0px;
+	height: 50px;
+	font-size: 18px;
+}
+
+.NoRadiusColor{
+	border:solid 1px #201953;
+	border-radius: 0px;
+	height: 50px;
+	font-size: 18px;
+}
+
+.NoRadiusColorButton{
+	border:solid 1px #409798;
+	color:#409798;
+	border-radius: 0px;
+	height: 40px;
+	font-weight: 200;
+	font-size: 20px;
+	background-color: white;
+	font-weight: normal;
+}
+
+.verde{
+	color: #409798;
+}
+.normal{
+	font-weight: normal !important;
+}
+
+.azul{
+	color: #201953;
+}
+
+
+
+
 .buttonTransparentBorder{
 	background: transparent;
 	height: 50px;
@@ -318,7 +439,14 @@ th, td {
 }
 
 .designahref{
-	color:white;
-	float:right;
 	font-size:18px;
+	text-decoration: none;
+}
+
+.designahref:visited{
+	text-decoration: none;
+}
+
+.designahref:hover{
+	text-decoration: none;
 }

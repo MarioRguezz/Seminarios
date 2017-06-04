@@ -90,24 +90,30 @@ if($tipoPer == "Alumno")
 <body class="backgroundPrincipal">
 <!--	FIN	Menu en el Encabezado	-->
 
-<?php include('../../resources/views/header.blade.php') ?>
+<?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
-	<div class="alignCenter">
-<h1 class="whiteClass2 top">ADMINISTRADOR DE CURSO <?PHP echo htmlentities($row['nombre']); ?></h1>
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+<div    class="titleContainer">
+		<div class="titleImg">
+			<img  class="imageMargin" src="../img/Icons/nuevosiconos/26.png" height="27" width="27">
+			<span class="purpleTitle">ADMINISTRADOR DE CURSO <?PHP echo htmlentities($row['nombre']); ?></span>
+		</div>
+	</div>
 </div>
-<br><br>
+
+
 
 <div class="form-group">
 	<form action="CursoTemaInstructor.php?accion=Nu3v@" class="form-horizontal" method="post" enctype="multipart/form-data">
-    <label for="nombre" class="control-label col-md-3 SubtitlewhiteClass">Nombre del tema</label>
+    <label for="nombre" class="control-label col-md-3 purpleTitle">Nombre del tema</label>
     <div class="col-md-4">
-    	<input class="form-control NoRadius weightAddCurso" id="nombre" name="nombreTema" type="text" placeholder="" required>
+    	<input class="form-control  weightAddCurso NoRadiusColor2" id="nombre" name="nombreTema" type="text" placeholder="" required>
     </div>
 
 	<div class="col-md-3">
             <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
-            <th><button class="buttonAlta alignCenter" type="submit" >Agregar Tema </button></th>
+            <th  class="tablaDesign"><button class="NoRadiusColorButton alignCenter" type="submit" >Agregar Tema </button></th>
     </div>
     </form>
 </div>
@@ -120,17 +126,17 @@ if($tipoPer == "Alumno")
 		while($filases = mysqli_fetch_array($resx))
 		{
 	?>
-<div class="container littlemargin">
-	<table style="width:100%;" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
+<div class="container">
+	<table class="table designTable tablaDesign"  align="center">
     <tr class="">
-    	<th>Tema</th>
-        <th><center><?PHP echo htmlentities($filases['Nombre']); ?> </center></th>
+    	<th class="weight tablaDesign">Tema</th>
+        <th class="weight tablaDesign"><center><?PHP echo htmlentities($filases['Nombre']); ?> </center></th>
         <form action="AltaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
             <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
             <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
           <!--  <th><center><button class="btn-info" type="submit">Agregar subtema &nbsp;<span class="glyphicon glyphicon-blackboard"></span> </center> </button></th> -->
- 					<th>
-						<center><button  class="buttonTransparent" type="submit"><img height="50" src="../img/Icons/Png/agregarsubtema.png"> </button></center></th>
+ 					<th class="tablaDesign">
+						<center><button  style="width:205" class="NoRadiusColorButton" type="submit">Agregar Subtema &nbsp;<img  src="../img/Icons/nuevosiconos/27.png"> </button></center></th>
 				</form>
 
 
@@ -147,7 +153,7 @@ if($tipoPer == "Alumno")
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
                     <input type="hidden" value="actividad" name="type">
                     <!--<center><button class="btn-primary" type="submit">Agregar actividad &nbsp;<span class="glyphicon glyphicon-text-background"></span> </center> </button>-->
-									<th>		<!--<center><button  class="buttonTransparent" type="submit"><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center>--> </th>
+									<th class="tablaDesign">		<!--<center><button  class="buttonTransparent" type="submit"><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center>--> </th>
                 </form>
             <?PHP
 			}
@@ -159,7 +165,7 @@ if($tipoPer == "Alumno")
                     <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
 										<input type="hidden" value="actividad" name="type">
 								  <!--  <center><button class="btn-danger" type="submit" disabled>Agregar actividad &nbsp;<span class="glyphicon glyphicon-text-background"></span> </center> </button> -->
-									<th>	<!--<center><button  class="buttonTransparent" type="submit" disabled><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center>  --> </th>
+									<th class="tablaDesign">	<!--<center><button  class="buttonTransparent" type="submit" disabled><img height="50" src="../img/Icons/Png/agregaractividad.png"> </button></center>  --> </th>
 								</form>
             <?PHP
 			}
@@ -180,7 +186,7 @@ if($tipoPer == "Alumno")
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
 										<input type="hidden" value="examen" name="type">
                   <!--  <center><button class="btn-primary" type="submit">Agregar examen &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>-->
-                    <th>	<center><button  class="buttonTransparent" type="submit" ><img height="50" src="../img/Icons/Png/agregarexamen.png"> </button></center>  </th>
+                    <th class="tablaDesign">	<center><button  class="NoRadiusColorButton" style="width:205px" type="submit" >Agregar examen<img src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
                 </form>
         	<?PHP
 			}
@@ -190,7 +196,7 @@ if($tipoPer == "Alumno")
             <form action="examen.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <!--<center><button class="btn-danger" type="submit" disabled title="El examen ya ha sido creado para este tema">Agregar examen &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>-->
-									  <th>	<center><button  class="buttonTransparent" type="submit" disabled title="El examen ya ha sido creado para este tema"><img height="50" src="../img/Icons/Png/agregarexamen.png"> </button></center>  </th>
+									  <th class="tablaDesign">	<center><button  class="NoRadiusColorButton" style="width:205px" type="submit" disabled title="El examen ya ha sido creado para este tema">Agregar examen<img height="50" src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
 
 						  </form>
             <?PHP
@@ -207,7 +213,7 @@ if($tipoPer == "Alumno")
             <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
             <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
             <!--<center><button class="btn-danger" type="submit" title="No hay examen para este tema" disabled> <span class="glyphicon glyphicon-pencil"></span> </center> </button>-->
-					<th>	<center><button  class="buttonTransparent" type="submit" title="No hay examen para este tema" disabled><img height="50" src="../img/Icons/Png/pencil.png"> </button></center></th>
+					<th class="tablaDesign">	<center><button  class="NoRadiusColorButton verde" type="submit" title="No hay examen para este tema" disabled><img  src="../img/Icons/nuevosiconos/25.png"> </button></center></th>
 			  	</form>
         <?PHP
 		}
@@ -218,7 +224,7 @@ if($tipoPer == "Alumno")
             <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
             <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
           <!--  <center><button class="btn-info" type="submit" title="Editar participantes"> <span class="glyphicon glyphicon-pencil"></span> </center> </button>-->
-				<th>	<center><button  class="buttonTransparent" type="submit" title="Editar participantes"><img height="50" src="../img/Icons/Png/pencil.png"> </button></center></th>
+				<th class="tablaDesign">	<center><button  class="NoRadiusColorButton verde" type="submit" title="Editar participantes"><img  src="../img/Icons/nuevosiconos/25.png"> </button></center></th>
 
 				</form>
         <?PHP
@@ -226,11 +232,11 @@ if($tipoPer == "Alumno")
 		?>
 
     </tr>
-    <tr class="info">
-    	<th>&nbsp;</th>
-        <th>Subtema</th>
-        <th>Descripción</th>
-        <th>&nbsp;</th>
+    <tr >
+    	<th  class="tablaDesign">&nbsp;</th>
+        <th class="weight tablaDesign">Subtema</th>
+        <th class="weight tablaDesign">Descripción</th>
+        <th  class="tablaDesign">&nbsp;</th>
     </tr>
 
 	<?PHP
@@ -251,20 +257,20 @@ if($tipoPer == "Alumno")
 			else
 			{
 			?>
-    <tr class="info">
+    <tr>
             <?PHP
 			$color = 0;
 			}
 			?>
-    	<td><center> &nbsp; </center></td>
-        <td><center> <h5 class="cells"> <?PHP echo htmlentities($fila['Nombre']); ?> </h5></center></td>
-        <td><h5 class="cells"> <?PHP echo htmlentities($fila['Descrip']); ?> </h5></td>
+    	<td class="tablaDesign"><center> &nbsp; </center></td>
+        <td class="tablaDesign"><center> <h5 class="cells"> <?PHP echo htmlentities($fila['Nombre']); ?> </h5></center></td>
+        <td class="tablaDesign"><h5 class="cells"> <?PHP echo htmlentities($fila['Descrip']); ?> </h5></td>
         <form action="EditaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
         <input type="hidden" value="<?PHP echo htmlentities($fila['id_Subtema']); ?>" name="IDSubtema">
         <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
-        <td>
+        <td class="tablaDesign">
 				<!--	<center> <button type="submit" class="btn-warning">editar &nbsp;<span class="glyphicon glyphicon-pencil"></span></center>-->
-				<center><button  class="buttonTransparent" type="submit"><img height="50" src="../img/Icons/Png/editar.png"> </button></center>
+				<center><button  style="background:transparent; border:none;" class=" " type="submit"><img  src="../img/Icons/Png/editar.png"> </button></center>
 					</td>
         </form>
 
@@ -283,7 +289,7 @@ if($tipoPer == "Alumno")
 		{
 	?>
     <center>
-	<h3 class="whiteClass2 top"><b>No se ha registrado ningun tema para este curso</b></h3>
+	<h3 class="purpleTitle top"><b>No se ha registrado ningun tema para este curso</b></h3>
 	</center>
     <?PHP
 		}
