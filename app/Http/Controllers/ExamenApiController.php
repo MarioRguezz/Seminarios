@@ -21,6 +21,7 @@ class ExamenApiController extends Controller
       $IDTema = $request->input('IDTema');
       $tema = Tema::where('id_Tema', $IDTema)->get()->first();
       $cantidadRespuestas = count($respuestas);
+      $totalPreguntas = count($tema->examen->preguntas);
       for ($i = 0; $i < $cantidadRespuestas; $i++) {
           $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]->id_pregunta]])->first();
           $preguntaJson = json_decode($pregunta->json);
@@ -57,7 +58,7 @@ class ExamenApiController extends Controller
                 $total = 0;
             }else {
                // $total = ($cantidadRespuestas * 100) / $val;
-                $total = ($val * 100) / $cantidadRespuestas;
+                $total = ($val * 100) / $totalPreguntas;
                 $pregunta = ExamenCalificacion::where([['id_Tema', '=', $IDTema], ['Mat_Alumno', '=', $Mat_Alumno]])->first();
                 if(!isset($pregunta)) {
                   $pregunta = ExamenCalificacion::create(array(

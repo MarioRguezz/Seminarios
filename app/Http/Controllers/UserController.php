@@ -43,7 +43,7 @@ class UserController extends Controller
         $user = Auth::user();
         if(isset($user)){
             $band = 0;
-            if($user->TUser == "Instructor" ){
+          if($user->TUser == "Instructor" ){
             $ca =   ClienteAdministrador::where("id", $user->instructor->id_cliente_administrador)->get()->first();
               if($now >= $ca->fecha_expiracion ){
                 $this->logout();
@@ -81,7 +81,7 @@ class UserController extends Controller
             }
             return view('principal', ['band' => $band, 'idPersona' => $user->IdPersona]);
         }else {
-            return view('login', array('res' => 2));
+            return view('login', array('res' => 3));
         }
     }
 
