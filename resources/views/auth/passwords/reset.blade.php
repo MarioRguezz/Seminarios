@@ -1,76 +1,116 @@
-@extends('layouts.app')
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Principal</title>
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/passwordval.js"></script>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<link rel="stylesheet" href="../../js/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/Main.css">
+<link href="../../css/radiocss.css" rel="stylesheet" />
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
-                        {{ csrf_field() }}
+<script src="../../js/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../js/inicio.js"></script>
+<link rel="stylesheet" href="../../css/login.css">
+<script src="../../js/efectos.js"></script>
+<script>
+$(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+<script src="../../js/spinner.js"></script>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+<script src="../../js/autcomp.js"></script>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
+<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+<style>
+html{
+    height: 100%;
+}
+</style>
+</head>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+<body class="backgroundPrincipal">
+<input type="hidden" id="_url" value="{{url('/')}}">
+<!--	FIN	Menu en el Encabezado	-->
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+@include('header')
 
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+<!--	FIN	Menu en el Encabezado	-->
 
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+<!--<div class="contenedor2"> -->
+<div class="contenedorMain">
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Reset Password
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+
+
+  <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
+      {{ csrf_field() }}
+
+      <input type="hidden" name="token" value="{{ $token }}">
+
+      <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+          <label for="email" class="col-md-4 control-label">Email</label>
+
+          <div class="col-md-6">
+              <input id="email" type="email" class="form-control NoRadiusColor" name="email" value="{{ $email or old('email') }}" required autofocus>
+
+              @if ($errors->has('email'))
+                  <span class="help-block">
+                      <strong>{{ $errors->first('email') }}</strong>
+                  </span>
+              @endif
+          </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+          <label for="password" class="col-md-4 control-label">Contraseña</label>
+
+          <div class="col-md-6">
+              <input id="password" type="password" class="form-control NoRadiusColor" name="password" required>
+
+              @if ($errors->has('password'))
+                  <span class="help-block">
+                      <strong>{{ $errors->first('password') }}</strong>
+                  </span>
+              @endif
+          </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+          <label for="password-confirm" class="col-md-4 control-label">Confirmar contraseña</label>
+          <div class="col-md-6">
+              <input id="password-confirm" type="password" class="form-control NoRadiusColor" name="password_confirmation" required>
+
+              @if ($errors->has('password_confirmation'))
+                  <span class="help-block">
+                      <strong>{{ $errors->first('password_confirmation') }}</strong>
+                  </span>
+              @endif
+          </div>
+      </div>
+
+      <div class="form-group">
+          <div class="col-md-6 col-md-offset-4">
+              <button type="submit" class="btn btn-primary">
+                  Reestablecer contraseña
+              </button>
+          </div>
+      </div>
+  </form>
+
+
+
+</div> <!-- Fin del div principal -->
+
+<br><br><br><br>
+<br><br>
+</body>
+
+</html>
