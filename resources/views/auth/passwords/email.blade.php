@@ -76,7 +76,7 @@ html{
       </div>
       <div class="form-group row col-md-12" style="margin-top:20px">
           <div class="col-md-6 col-md-offset-4">
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-primary NoRadiusColorButton">
                   Enviar enlace
               </button>
           </div>

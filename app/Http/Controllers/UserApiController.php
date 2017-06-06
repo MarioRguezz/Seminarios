@@ -11,6 +11,7 @@ use App\Http\Controllers\ImageController;
 use Carbon\Carbon;
 use Mail;
 use Validator;
+use App\ClienteAdministrador;
 
 class UserApiController extends Controller
 {
@@ -70,7 +71,7 @@ class UserApiController extends Controller
   }
 
   public function validarFecha() {
-    
+
   }
 
 }
