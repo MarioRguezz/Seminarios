@@ -50,7 +50,7 @@ class UserApiController extends Controller
               $response['errors'][] = "La fecha de expiración ha pasado";
         }
 
-        if(count($response['errors']) > 0) {
+        if(isset($response['errors'])) {
           $response['data'] = null;
           $response['status'] = 500;
           $response['success'] = false;
