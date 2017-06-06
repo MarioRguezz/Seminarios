@@ -268,8 +268,6 @@ if($accion == 'Nu3v@')
 							echo "hubo un error al ejecuta query curso_instructor intente de nuevo".mysqli_error();
 						}
 
-
-
 			$Consulta = "INSERT INTO curso_informacion (ID_Curso, per_num, Descrip, publico) VALUES ($IDCurso, '$_POST[Cupo]', '$_POST[Descripcion]', '$_POST[publico]');";
 
 						if(mysqli_query( $conec,$Consulta))

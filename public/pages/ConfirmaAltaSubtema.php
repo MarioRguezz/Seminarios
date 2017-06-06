@@ -83,7 +83,7 @@ if($tipoPer == "Alumno")
 
 <!--	FIN	Menu en el Encabezado	-->
 
-<?php include('../../resources/views/header.blade.php') ?>
+<?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
 
@@ -235,7 +235,7 @@ if($accion == 'Nu3v@')
                     <center>
                     <form action="CursoTemaInstructor.php" method="post">
                     	<input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
-                        <input type="submit" class="buttonTransparentBorder buttonAlta " value="Continuar">
+                        <input type="submit" class="NoRadiusColorButton  " value="Continuar">
                     </form>
                     </center>
              <?PHP
