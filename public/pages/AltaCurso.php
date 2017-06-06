@@ -152,7 +152,8 @@ $res= get_Personas();
                         <span class="input-group-btn data-dwn">
 					<button type="button" class="btn btn-default NoRadiusColor2 " data-dir="dwn"><span class="">-</span></button>
                         </span>
-                        <input id="Cupo" name="Cupo" type="number" disabled class="form-control NoRadiusColor2 text-center" value="30" min="1" max="<?php  echo $licencias; ?>">
+                        <input id="Cupo" type="number" disabled class="form-control NoRadiusColor2 text-center" value="30" min="1" max="<?php  echo $licencias; ?>">
+                        <input id="Cupo" name="Cupo" type="hidden" class="form-control" value="30">
                         <span class="input-group-btn data-up">
 					<button type="button" class="btn btn-default NoRadiusColor2" data-dir="up"><span class="">+</span></button>
                         </span>
@@ -267,8 +268,6 @@ if($accion == 'Nu3v@')
 							echo "hubo un error al ejecuta query curso_instructor intente de nuevo".mysqli_error();
 						}
 
-
-
 			$Consulta = "INSERT INTO curso_informacion (ID_Curso, per_num, Descrip, publico) VALUES ($IDCurso, '$_POST[Cupo]', '$_POST[Descripcion]', '$_POST[publico]');";
 
 						if(mysqli_query( $conec,$Consulta))
@@ -276,7 +275,7 @@ if($accion == 'Nu3v@')
 						}
 						else
 						{
-							echo "hubo un error al ejecuta query curso_información intente de nuevo".mysqli_error();
+							echo "hubo un error al ejecuta query curso_información intente de nuevo ".$Consulta;
 						}
 
 			$sql = "INSERT INTO curso (id_Curso, nombre, estatus) VALUES ($IDCurso, '$_POST[nombre]', 'ALTA');";
