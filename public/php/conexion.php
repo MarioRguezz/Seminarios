@@ -2,7 +2,7 @@
 error_reporting(0);
 
 session_start();
-function  conect($host = "189.211.207.173:3306", $user = "seminarios", $psw = "123asdZXC", $db = "durango"){
+function  conect($host = "localhost:3306", $user = "seminarios", $psw = "123asdZXC", $db = "durango"){
 //conect($host = "localhost:3306", $user = "seminario", $psw = "seminario12345", $db = "durango"){
 //189.211.207.17
 
