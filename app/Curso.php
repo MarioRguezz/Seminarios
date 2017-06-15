@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Curso extends Model
 {
 
-    protected $table = 'durango.curso';
+    protected $table = 'byondb.curso';
     protected $fillable = [ 'id_Curso', 'nombre', 'estatus'];
 
 
@@ -22,7 +22,7 @@ class Curso extends Model
 
     //muchos a muchos
     public function alumnos(){
-            return $this->belongsToMany('App\Alumno','durango.curso_participante','id_Curso', 'Mat_Alumno')->withPivot('status');
+            return $this->belongsToMany('App\Alumno','byondb.curso_participante','id_Curso', 'Mat_Alumno')->withPivot('status');
 
         }
 

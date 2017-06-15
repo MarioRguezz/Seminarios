@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Persona extends Model
 {
 
-    protected $table = 'durango.persona';
+    protected $table = 'byondb.persona';
     use SoftDeletes;
 
     protected $fillable = [

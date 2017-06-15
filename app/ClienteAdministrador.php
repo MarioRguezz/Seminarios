@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ClienteAdministrador extends Model
 {
 
-    protected $table = "durango.cliente_administrador";
+    protected $table = "byondb.cliente_administrador";
     protected $fillable = [
         'id_persona',
         'codigo',

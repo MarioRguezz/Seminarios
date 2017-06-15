@@ -30,7 +30,7 @@ class User extends Authenticatable implements CanResetPassword
     ];*/
 
 
-        protected $table = 'durango.persona';
+        protected $table = 'byondb.persona';
         protected  $primaryKey = "IdPersona";
 
         protected $hidden = [
