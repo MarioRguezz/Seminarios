@@ -225,7 +225,7 @@ mysqli_close($conexia);
 
 			else
 			{
-				$Query = "INSERT INTO curso_participante (id_curso, Mat_Alumno, status) VALUES ('$_POST[IDCurso]', '$_POST[Mat_Alumno]', '0');";
+				$Query = "INSERT INTO curso_participante (id_curso, Mat_Alumno, status) VALUES ('$_POST[IDCurso]', '$_POST[Mat_Alumno]', '1');";
 
 				if(mysqli_query($conec,$Query))
 				{

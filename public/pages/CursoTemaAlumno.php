@@ -260,7 +260,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 	$TotalVisto = mysqli_num_rows($resulx);
 
 	$Regla3 = ($TotalVisto * 100) / $TotalSub;
-    echo $TotalSub . " ".$TotalVisto. " ". " jaja";
+    //echo $TotalSub . " ".$TotalVisto. " ". " jaja";
 	if($Regla3 < 100)
 	{
 		$Progreso = round($Regla3, 0, PHP_ROUND_HALF_UP);
