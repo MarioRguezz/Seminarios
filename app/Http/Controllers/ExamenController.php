@@ -211,7 +211,7 @@ class ExamenController extends Controller
         $val = 0;
         $total = 0;
         $isCorrect = false;
-        $respuestas = $request->input('Respuestas');
+        $respuestas = $request->input('respuestas');
         $Mat_Alumno = $request->input('Mat_Alumno');
         $IDTema = $request->input('IDTema');
         $cantidadRespuestas = count($respuestas);

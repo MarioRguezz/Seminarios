@@ -53,18 +53,18 @@ button{
 <body  class="backgroundPrincipal">
 <div  class="container-fluid">
   <div  style="margin-top:10%;" class="row">
-        <img style="margin-left:40%;"src="../../../img/Icons/logo.png" alt="Smiley face" height="20%" width="20%">
+        <img style="margin-left:40%;background-color:#409798;"src="../../../img/Icons/logo.png" alt="Smiley face" height="20%" width="20%">
 
 </div>
 <div  style=" text-align: center;" class="row">
 
         <div  class="col-md-12">
-            <label  id="VP"><h3  class="whiteClass3 control-label top">¡Felicidades  {{$alumno->datos->Nombre}} {{$alumno->datos->APaterno}}  {{$alumno->datos->AMaterno}}!</h3></label>
+            <label  id="VP"><h3  class="whiteClass3 control-label top" style="color:#409798">¡Felicidades  {{$alumno->datos->Nombre}} {{$alumno->datos->APaterno}}  {{$alumno->datos->AMaterno}}!</h3></label>
         </div>
       </div>
         <div style=" text-align: center;" class="row">
             <div  class="col-md-12">
-                <label class="whiteClass2" style="color: white;">Ha concluido el curso {{$tema->Nombre}}</label>
+                <label class="whiteClass2" style="color: #409798;">Ha concluido el curso {{$tema->Nombre}}</label>
             </div>
         </div>
         <div style=" margin-left:45%;  margin-top:5%;">

@@ -45,7 +45,7 @@ $(function(){
                     IDTema: $('#IDTema').val()
                 }
             }).done(function (respuesta) {
-                /**
+
                     swal({
                             title: "Ha realizado el examen",
                             text: "Calificación "+respuesta+" de clic en el boton para continuar",
@@ -62,7 +62,7 @@ $(function(){
                                 location.href = "../examen/diploma/"+$('#Mat_Alumno').val()+"/"+$('#IDTema').val()+"" //cambiar por vista de aprobación
                             }
                         });
-                        */
+                        
             });
         }
 

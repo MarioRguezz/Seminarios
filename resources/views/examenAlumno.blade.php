@@ -35,7 +35,7 @@
 
     <script src="{{url('js/spinner.js')}}"></script>
 
-    <script src="{{url('js/autcomp.js')}}|"></script>
+  <!-- <script src="{{url('js/autcomp.js')}}|"></script>-->
 
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/start/jquery-ui.min.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
