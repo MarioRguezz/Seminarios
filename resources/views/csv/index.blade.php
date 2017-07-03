@@ -55,7 +55,7 @@
        </div>
         </div>
           <div class="col-md-3">
-        <button class="NoRadiusColorButton">Subir</button>
+        <button class="NoRadiusColorButton btnsub">Subir</button>
         </div>
         <div class="col-md-3">
         <a  href="" data-toggle="modal" data-target="#myModal" class="glyphicon designahref glyphicon-question-sign questionMark verde" aria-hidden="true"><span class="azul">Ayuda</span> </a>

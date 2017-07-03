@@ -16,6 +16,8 @@ class SendEmails implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     protected  $emails;
     protected $codigo;
+    protected $view;
+    protected $subject;
 
     /**
      * Create a new job instance.
