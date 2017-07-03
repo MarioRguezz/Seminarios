@@ -104,23 +104,30 @@ mysqli_close($conexia);
 
 <!--	FIN	Menu en el Encabezado	-->
 
-<center>
-<h1 class="whiteClass2 top">LISTA DE ALUMNOS INSCRITOS A ESTE TEMA</h1>
-</center>
 
-<br><br>
+<?php include('../../resources/views/header2.blade.php') ?>
+
+<!--	FIN	Menu en el Encabezado	-->
+<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+<div    class="titleContainer">
+		<div class="titleImg">
+			<img  class="imageMargin" src="../img/Icons/nuevosiconos/26.png" height="27" width="27">
+			<span class="purpleTitle">LISTA DE ALUMNOS INSCRITOS A ESTE TEMA</span>
+		</div>
+	</div>
+</div>
 
 <!--
 
 -->
 
 <div class="container">
-	<table style="width:100%" cellspacing="0" cellpadding="0" class=" table-responsive tablaDesign">
-    <tr class="danger">
-    	<th><center>Nombre</center></th>
-        <th><center>Correo</center></th>
-        <th><center>Información</center></th>
-        <th><center>Habilitar examen</center></th>
+		<table class="table designTable tablaDesign" style="width: 90% !important;"  align="center">
+    <tr class="">
+    	<th class="weight tablaDesign"><center>Nombre</center></th>
+        <th class="weight tablaDesign"><center>Correo</center></th>
+        <th class="weight tablaDesign"><center>Información</center></th>
+        <th class="weight tablaDesign" ><center>Habilitar examen</center></th>
     </tr>
 
 	<?PHP
@@ -146,7 +153,7 @@ mysqli_close($conexia);
 			$color = 0;
 			}
 			?>
-    	<td><center> <?PHP echo htmlentities($row['APaterno']." ". $row['AMaterno']." ".$row['Nombre']); ?> </center></td>
+    	<td ><center> <?PHP echo htmlentities($row['APaterno']." ". $row['AMaterno']." ".$row['Nombre']); ?> </center></td>
         <td><center> <?PHP echo htmlentities($row['email']); ?> </center></td>
         <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
         <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="email">

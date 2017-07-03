@@ -177,7 +177,8 @@ if($tipoPer == "Alumno")
 			$resux = mysqli_query($conexia,$sql1);
 			$rowy = mysqli_fetch_array($resux);
 
-			if($rowy['htmlExa'] == "")
+			if($rowy['id_Tema'] == "")
+			//htmlExa
 			{
 			?>
                <!-- <form action="examen.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">-->
@@ -185,7 +186,8 @@ if($tipoPer == "Alumno")
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
 										<input type="hidden" value="examen" name="type">
                   <!--  <center><button class="btn-primary" type="submit">Agregar examen &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>-->
-                    <th class="tablaDesign">	<center><button  class="NoRadiusColorButton" style="width:205px" type="submit" >Agregar examen<img src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
+                    <th class="tablaDesign">
+												<center><button  class="NoRadiusColorButton" style="width:205px" type="submit" >Agregar examen<img height="20" src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
                 </form>
         	<?PHP
 			}
@@ -195,7 +197,7 @@ if($tipoPer == "Alumno")
             <form action="examen.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
                     <!--<center><button class="btn-danger" type="submit" disabled title="El examen ya ha sido creado para este tema">Agregar examen &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>-->
-									  <th class="tablaDesign">	<center><button  class="NoRadiusColorButton" style="width:205px" type="submit" disabled title="El examen ya ha sido creado para este tema">Agregar examen<img height="50" src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
+									  <th class="tablaDesign">	<center><button  class="NoRadiusColorButton" style="width:205px" type="submit" disabled title="El examen ya ha sido creado para este tema">Agregar examen<img height="20" src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
 
 						  </form>
             <?PHP
@@ -205,14 +207,15 @@ if($tipoPer == "Alumno")
 
 
         <?PHP
-		if($rowy['htmlExa'] == "")
+		if($rowy['id_Tema'] == "")
+//htmlExa
 		{
 		?>
         <form action="ListaExamen.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
             <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
             <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
             <!--<center><button class="btn-danger" type="submit" title="No hay examen para este tema" disabled> <span class="glyphicon glyphicon-pencil"></span> </center> </button>-->
-					<th class="tablaDesign">	<center><button  class="NoRadiusColorButton verde" type="submit" title="No hay examen para este tema" disabled><img  src="../img/Icons/nuevosiconos/25.png"> </button></center></th>
+					<th class="tablaDesign">	<center><button  class="NoRadiusColorButton verde" type="submit" title="No hay examen para este tema" disabled><img  src="../img/Icons/nuevosiconos/25.png"></button></center></th>
 			  	</form>
         <?PHP
 		}
