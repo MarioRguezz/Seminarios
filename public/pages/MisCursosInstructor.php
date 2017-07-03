@@ -147,7 +147,6 @@ mysqli_close($conexia);
 			$baia = mysqli_query($conex,$qwerty);
 			$fila = mysqli_fetch_array($baia);
 			$Total = $fila['Total'];
-
 			?>
     	<td><center> <?PHP echo htmlentities($row['nombre']); ?> </center></td>
         <td><center> <?PHP echo htmlentities($Total." / ".$row['per_num']); ?> </center></td>

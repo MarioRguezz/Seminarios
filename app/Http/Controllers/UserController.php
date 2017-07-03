@@ -195,7 +195,7 @@ class UserController extends Controller
         }
         else
         {
-            $alumno = Alumno::create(array(
+          /*  $alumno = Alumno::create(array(
                "email" => $request->input('email'),
                 "fotografia" => url($path.$filename),
                 "id_cliente_administrador" => $adminCliente->id,
@@ -203,11 +203,18 @@ class UserController extends Controller
             ));
 
             $max = Alumno::max('Mat_Alumno');
-            $alumno->Mat_Alumno = $max + 1;
+            $alumno->Mat_Alumno = $max + 1;*/
+            $max = Alumno::max('Mat_Alumno');
+            $alumno = Alumno::create(array(
+               "email" => $request->input('email'),
+                "fotografia" => url($path.$filename),
+                "id_cliente_administrador" => $adminCliente->id,
+                "Mat_Alumno" =>  ($max + 1),
+                "IdPersona" => $user->IdPersona
+            ));
             $alumno->save();
+
         }
-
-
 
         return redirect('/');
 
@@ -480,7 +487,7 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
        $valid = "";
      }   //dd("asd");
 
-           $user = User::create([
+        $user = User::create([
                    "APaterno" => $apaterno,
                    "AMaterno" => $amaterno,
                    "Nombre" => $nombre,
@@ -504,8 +511,8 @@ Recibe los datos a cambiar, guarda y redirige a la lista de cliente administrado
                    "Mat_Alumno" =>  ($max + 1),
                    "IdPersona" => $user->IdPersona
                ));
-               $alumno->save();
-               $user->save();
+              $alumno->save();
+              $user->save();
 
                $this->dispatch(new SendEmails([$email], null, 'emails.bienvenido', 'Bienvenido a Byond'));
 
@@ -561,7 +568,7 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
                $instructor->save();
                $administradores = ClienteAdministrador::all()->where('id_persona','=',$idCA)->first();
                $instructores =  $administradores->instructores()->paginate(10);
-               return redirect("/usuario/instructores/".$administradores->id_persona)->with('administradores', $administradores)->with('alumnos', $alumnos);
+               return redirect("/usuario/instructores/".$administradores->id_persona)->with('administradores', $administradores);//->with('alumnos', $alumnos);
                       //  return view('usuario.editar', ['administrador'=> $administradores, 'usuario'=> $usuarios]);
             }
 

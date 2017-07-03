@@ -38,7 +38,8 @@ if($tipoPer == "Alumno")
 	}
 
 	$IDCurso = $_POST['IDCurso'];
-	echo $IDCurso;
+
+	//var_dump($IDCurso);
 	//print_r("El ID del curso es: ".$IDCurso);
 
 
@@ -102,8 +103,6 @@ if($tipoPer == "Alumno")
 	</div>
 </div>
 
-
-
 <div class="form-group">
 	<form action="CursoTemaInstructor.php?accion=Nu3v@" class="form-horizontal" method="post" enctype="multipart/form-data">
     <label for="nombre" class="control-label col-md-3 purpleTitle">Nombre del tema</label>
@@ -127,7 +126,7 @@ if($tipoPer == "Alumno")
 		{
 	?>
 <div class="container">
-	<table class="table designTable tablaDesign"  align="center">
+	<table class="table designTable tablaDesign" style="width: 90% !important;"  align="center">
     <tr class="">
     	<th class="weight tablaDesign">Tema</th>
         <th class="weight tablaDesign"><center><?PHP echo htmlentities($filases['Nombre']); ?> </center></th>
@@ -306,9 +305,9 @@ if($accion == 'Nu3v@')
 			$clave = substr($_POST['nombreTema'],0, 2).rand(1000, 9999);
 			$fecha = date("Y-m-d");
 			$IdeCurso = $_POST['IDCurso'];
+			var_dump($IdeCurso);
 
 			$conec = conect();
-
 			$sql = "INSERT INTO curso_tema (id_Curso, id_Tema, Nombre, fecha) VALUES ('$IdeCurso', '$clave',  '$_POST[nombreTema]', '$fecha');";
 
 
@@ -330,7 +329,7 @@ if($accion == 'Nu3v@')
                     <div class="form-group">
                     <form action="CursoTemaInstructor.php" method="post">
                     	<input type="hidden" value="<?PHP echo htmlentities($IdeCurso); ?>" name="IDCurso">
-                        <button type="submit" class="buttonTransparentBorder buttonAlta" title="Clic aquí para actualizar datos"> Actualizar lista &nbsp; <span class="glyphicon glyphicon-log-in"></span></button>
+                        <button type="submit" class="buttonTransparentBorder buttonAlta" style="color:#409798;" title="Clic aquí para actualizar datos"> Actualizar lista &nbsp; <span class="glyphicon glyphicon-log-in"></span></button>
                     </form>
                     </div>
                     </center>

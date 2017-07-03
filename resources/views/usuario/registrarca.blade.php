@@ -161,7 +161,7 @@
 
         <div class="form-group">
             <div class="col-md-2 col-md-offset-4 ">
-                <button class="NoRadiusColorColorColorButton " id="btn-registro" type="submit">Guardar registro &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
+                <button class="NoRadiusColorColorColorButton " style="color:#409798 !important; background-color:white; width:300px; font-size:15px; height:40px;" id="btn-registro" type="submit">Guardar registro &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
                 <!-- <input type="submit" class="btn btn-primary" value="Guardar registro"> -->
             </div>
         </div>

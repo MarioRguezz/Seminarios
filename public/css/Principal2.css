@@ -322,3 +322,11 @@ body.backgroundPrincipal
 	border:solid 3px #FFF;
 	border-radius: 0px;
 }
+
+.buttonMenu{
+  background-color:#409798 !important;
+  height: 40px !important;
+  color: white;
+  width: 150px;
+  border-color: white;
+}

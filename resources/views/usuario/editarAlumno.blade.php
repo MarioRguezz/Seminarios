@@ -88,7 +88,7 @@
 
         <div class="form-group">
             <div class="col-md-2 col-md-offset-4 ">
-                <button class=" NoRadiusColorButton" id="registro" type="submit">Guardar registro</button>
+                <button class=" NoRadiusColorButton" id="registro" style="width:300px;" type="submit">Guardar registro</button>
             </div>
         </div>
     </form>

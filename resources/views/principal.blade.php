@@ -232,9 +232,9 @@ if( !empty( $_REQUEST['Message'] ) ) {
                   <td>
                    <center><h3 class="SubtitleMainPurpleClass">Dashboard Administrador</h3></center>
                    </td>
-                   <td>
+                  <!-- <td>
                        <center><h3 class="SubtitleMainPurpleClass">Aprobar solicitudes</h3></center>
-                   </td>
+                   </td>-->
                    <td>
                        <center><h3 class="SubtitleMainPurpleClass">Administradores</h3></center>
                    </td>
@@ -256,11 +256,11 @@ if( !empty( $_REQUEST['Message'] ) ) {
                   <a href="{{url('/dashboard/administrador')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/3.png')}}" width="60" height="60"  alt="Dashboard Licencias"/></a>
                   </center>
                   </td>
-                  <td>
+              <!--    <td>
                       <center>
                           <a href="{{url('/pages/Pendientes.php')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/4.png')}}" width="60" height="60"  alt="Aprobar solicitud"/></a>
                       </center>
-                  </td>
+                  </td>-->
 
                   <td>
                       <center>

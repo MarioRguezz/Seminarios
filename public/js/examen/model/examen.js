@@ -46,7 +46,24 @@ class Examen {
                 examen.idSubtema = response.idSubtema;
                 examen.preguntas.forEach((pregunta, index) => {
                     pregunta.id = response.preguntas[index];
-                })
+                });
+                swal({
+      					title: "Examen creado",
+      					text: "de clic en el boton para continuar",
+      					type: "success",
+      					showCancelButton: false,
+      					confirmButtonColor: "#FF0000",
+      					confirmButtonText: "Continuar",
+      					cancelButtonText: "No, cancel plx!",
+      					closeOnConfirm: false,
+      					closeOnCancel: false },
+
+      					function(isConfirm){
+      					if (isConfirm)
+      					{
+      						location.href="../"
+      					}
+      					});
             }
         })
 

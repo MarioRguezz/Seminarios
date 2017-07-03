@@ -423,7 +423,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
         <input type="hidden" value="PDF" name="TipoArchivo">
         <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        <button type="submit" class="btn btn-default btn-xs Visto" title="Ver PDF"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/30.png"></span></button>
+        <button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Ver PDF"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/30.png"></span></button>
      </form>
      		<?PHP
 			}
@@ -444,7 +444,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
             <input type="hidden" value="VIDEO" name="TipoArchivo">
             <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        	<button type="submit" class="btn btn-default btn-xs Visto" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/32.png"></span> </button>
+        	<button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/32.png"></span> </button>
      		</form>
 
      		<?PHP
@@ -467,7 +467,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
             <input type="hidden" value="AUDIO" name="TipoArchivo">
             <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        	<button type="submit" class="btn btn-default btn-xs Visto" title="Escuchar audio"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span> <img src="../img/Icons/nuevosiconos/31.png"></span> </button>
+        	<button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Escuchar audio"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span> <img src="../img/Icons/nuevosiconos/31.png"></span> </button>
             </form>
     <?PHP
 			}
@@ -481,7 +481,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
                     <input type="hidden" value="ACTIVIDAD" name="TipoArchivo">
                     <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-                    <button type="submit" class="btn btn-default btn-xs Visto" title="Completar actividad"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-bell"></span> </button>
+                    <button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Completar actividad"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-bell"></span> </button>
                 </form>
 
                 <?PHP
@@ -492,7 +492,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 		{
 	?>
     	<form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
-        	<button type="submit" class="NoRadiusColorButton Visto" title="Por favor vea los subtemas anteriores" disabled> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-exclamation-sign"></span> </button>
+        	<button type="submit" class="NoRadiusColorButton Visto buttonMenu" title="Por favor vea los subtemas anteriores" disabled> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-exclamation-sign"></span> </button>
         </form>
 
     <?PHP
@@ -988,7 +988,7 @@ else
         <input type="hidden" value="PDF" name="TipoArchivo">
         <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        <button type="submit" class="btn btn-default btn-xs Visto" title="Ver PDF"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/30.png"></span></button>
+        <button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Ver PDF"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/30.png"></span></button>
      </form>
      		<?PHP
 			}
@@ -1003,7 +1003,7 @@ else
             <input type="hidden" value="VIDEO" name="TipoArchivo">
             <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        	<button type="submit" class="btn btn-default btn-xs Visto" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/32.png"></span> </button>
+        	<button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/Icons/nuevosiconos/32.png"></span> </button>
      		</form>
 
      		<?PHP
@@ -1029,7 +1029,7 @@ else
 		else {
 	?>
     	<form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
-        	<button type="submit" class="NoRadiusColorButton Visto" title="Por favor vea los subtemas anteriores" disabled> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-exclamation"></span> </button>
+        	<button type="submit" class="NoRadiusColorButton Visto buttonMenu" title="Por favor vea los subtemas anteriores" disabled> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span class="glyphicon glyphicon-exclamation"></span> </button>
         </form>
 
     <?PHP

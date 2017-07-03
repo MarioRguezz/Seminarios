@@ -30,7 +30,7 @@
         <div    class="titleContainer">
             <div class="titleImg">
               <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/16.png')}}" height="27" width="27">
-              <span class="purpleTitle">EDITAR USUARIO CLAVE ADMINISTRADOR</span>
+              <span class="purpleTitle">CREAR USUARIO CLAVE ADMINISTRADOR</span>
             </div>
           </div>
         </div>
