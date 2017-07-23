@@ -76,8 +76,56 @@ class DashboardController extends Controller
 
     public function clientedashboard(Request $request, $cve_usuario){
         $clientesAdministradores = ClienteAdministrador::where('id_persona','=',$cve_usuario)->paginate(10);
-            return view('dashboard.clienteadministrador',['clientesAdministradores' => $clientesAdministradores]);
+            return view('dashboard.clienteadministrador',['clientesAdministradores' => $clientesAdministradores,'cve_usuario' => $cve_usuario ]);
     }
+
+
+    public function cursoscadashboard(Request $request){
+      $total= 0;
+        //$cve_usuario = 34;
+       $cursosarray = [] ;
+        $clienteAdministrador = ClienteAdministrador::where('id_persona','=','34')->get()->first();
+        foreach ($clienteAdministrador->instructores as $instructor){
+            $var = DB::select('select id_Curso from curso_instructor where Mat_Usuario = :id', ['id' => $instructor->Mat_Usuario]);
+            if($var != null){
+                 foreach ($var as $id_curso){
+                     $cursovar = DB::select('select * from curso where id_Curso = :id_Curso', ['id_Curso' => $id_curso->id_Curso]);
+                     $cursos = new Curso();
+                     $cursos->id_Curso = $cursovar[0]->id_Curso;
+                     $cursos->nombre = $cursovar[0]->nombre;
+                     $cursos->estatus = $cursovar[0]->estatus;
+                     $cursosarray[] = $cursos;
+                 }
+            }
+        }
+        foreach($cursosarray as $curso){
+          foreach($curso->temas as $tema){
+            $total += count($tema->subtemas);
+          }
+            $curso->totalSubtemas = $total;
+          foreach($curso->alumnos as $alumno){
+            $subtemasvistos = SubtemaVisto::all()->where('id_Curso','=', $alumno->pivot->id_Curso)->where('Mat_Alumno','=', $alumno->Mat_Alumno)->where('Visto','!=','0');
+            $alumno->subtemasVistos = count($subtemasvistos);
+
+            if($curso->totalSubtemas == null ){
+              $curso->totalSubtemas = 0;
+            }else{
+            $alumno->totalSubtemas = $curso->totalSubtemas;
+          }
+          if($alumno->subtemasVistos != 0){
+            $alumno->porcentaje =  ($alumno->subtemasVistos*100) / $alumno->totalSubtemas;
+          }else{
+            $alumno->porcentaje = 0;
+          }
+
+            foreach($alumno->datos as $datos){
+            }
+        }
+      }
+
+        return view('dashboard.cursocliente',['cursos' => $cursosarray]);
+    }
+
 
 
 

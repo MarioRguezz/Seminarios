@@ -120,6 +120,11 @@ if( !empty( $_REQUEST['Message'] ) ) {
     </center>
       @endif
 @if($band == 4)
+<div class="col-md-12">
+  <div class="col-md-2" style="background-color:#000; height:100%;">
+    <h1>hola </h1>
+  </div>
+  <div class="col-md-10">
   <div class="titleContainer">
     <div class="titleImg">
       <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/beyond2.png')}}" height="27" width="27">
@@ -143,7 +148,9 @@ if( !empty( $_REQUEST['Message'] ) ) {
             <td>
                 <center><h3 class="SubtitleMainPurpleClass">Cargar lista de alumnos</h3></center>
             </td>
-
+            <td>
+             <center><h3 class="SubtitleMainPurpleClass">Dashboard Cursos</h3></center>
+            </td>
         </tr>
         <tr>
             <td>
@@ -167,9 +174,17 @@ if( !empty( $_REQUEST['Message'] ) ) {
                 <a href="{{url('/csv/SubirCSV')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/8.png')}}" width="60" height="60"  alt="Consultar tus alumnos"/></a>
             </center>
             </td>
+            <td>
+            <center>
+            <a href="{{url('/dashboard/cursosca')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/1.png')}}" width="60" height="60"   alt="Dashboard Cursos"/></a>
+            </center>
+            </td>
+
         </tr>
     </table>
 </center>
+</div>
+</div>
     @endif
     @if($band == 1)
 

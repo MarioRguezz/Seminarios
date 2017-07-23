@@ -79,6 +79,18 @@ Route::group(['prefix'=>'actividad'], function(){
     Route::post('respuesta', 'ExamenController@respuesta');
 });
 
+/**
+ * prefijo: reportes
+ * referencia: ReportesController
+ * Funciones Web para las funcionalidades de los reportes
+ */
+Route::group(['prefix' => 'reportes'], function(){
+    Route::get('/', 'ReportesController@index');
+    Route::post('generar', 'ReportesController@generaExcel');
+    Route::post('generarLicencias', 'ReportesController@generarLicencias');
+    Route::post('generarAdministrador', 'ReportesController@generarAdministrador');
+    Route::post('generarClienteadministrador', 'ReportesController@generarClienteadministrador');
+});
 
 
 
@@ -109,6 +121,7 @@ Route::group(['prefix'=>'dashboard'], function(){
     Route::get('dashboard', "DashboardController@dashboard");
     Route::get('administrador', "DashboardController@administrador");
     Route::get('clientedashboard/{cve_usuario}', "DashboardController@clientedashboard");
+    Route::get('cursosca', "DashboardController@cursoscadashboard");
 });
 
 
