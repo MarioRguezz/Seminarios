@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-md-12">-->
             <div class="form-group">
-                              <form action="{{url('/reportes/generar')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
+                              <form action="{{url('/reportes/generaCursoCA')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
                                   <button  class=" NoRadiusColorButton buttonDownload" title="Descarga en xls" id="registro" type="submit">Reporte</button>
                                   <div style="clear:both;"> </div>
                               </form>

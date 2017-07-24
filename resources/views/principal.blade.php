@@ -66,6 +66,9 @@ if( !empty( $_REQUEST['Message'] ) ) {
         html{
             height: 100%;
         }
+        body{
+          height:100%;
+        }
     </style>
 </head>
 
@@ -79,7 +82,7 @@ if( !empty( $_REQUEST['Message'] ) ) {
 <!--	FIN	Menu en el Encabezado	-->
 
 <!--<div class="contenedor2"> -->
-<div class="contenedorMain">
+<div class="contenedorMain" style="height:100%;">
 
     @if($band == 2)
 
@@ -120,18 +123,48 @@ if( !empty( $_REQUEST['Message'] ) ) {
     </center>
       @endif
 @if($band == 4)
-<div class="col-md-12">
-  <div class="col-md-2" style="background-color:#000; height:100%;">
-    <h1>hola </h1>
+<div class="row" style="height:100%;" >
+<div class="col-md-12" style="height:100%;">
+  <div class="col-md-3" style="background-color:#2F302E; height:100%; width:17% !important;">
+      <div class="col-md-1" style="height:77%;  margin-top:25px; padding-left:15px !important; padding-right:0px !important; border-left: 1px solid white;">
+      </div>
+        <div class="col-md-10" style="margin-right:1px;">
+          <div class="row" style="margin-bottom:10px; ">
+              <h2 style="color:#FFF; font-size: 1.7em; padding-left:12px;">OPCIONES <br> PARA EL <br>CLIENTE ADMINISTRADOR</h1>
+                </div>
+          <div class="row"  style="margin-bottom:10px;">
+              <div class="col-md-10">
+            <img src="{{url('/img/byondiconos/BEYOND2-04.png')}}" alt="Smiley face" height="100" width="180">
+            </div>
+            <div class="col-md-1" style="height:85px; margin-top:5px; border-right: 2px solid white; border-radius: 1px;"> </div>
+               </div>
+          <div class="row"  style="margin-bottom:10px;">
+              <div class="col-md-10">
+             <img src="{{url('/img/byondiconos/BEYOND2-21.png')}}" alt="Smiley face" height="100" width="180">
+             </div>
+             <div class="col-md-1" style="height:85px; margin-top:5px; border-right: 2px solid white;  border-radius: 1px;"> </div>
+               </div>
+          <div class="row"  style="margin-bottom:10px;">
+              <div class="col-md-10">
+             <img src="{{url('/img/byondiconos/BEYOND2-22.png')}}" alt="Smiley face" height="100" width="180">
+             </div>
+             <div class="col-md-1" style="height:85px; margin-top:5px;  border-right: 2px solid white; border-radius: 1px;"> </div>
+               </div>
+          <div class="row"  style="margin-bottom:10px;">
+              <div class="col-md-10">
+             <img src="{{url('/img/byondiconos/BEYOND2-23.png')}}" alt="Smiley face" height="100" width="180">
+             </div>
+             <div class="col-md-1" style="height:85px; margin-top:5px; border-right: 2px solid white; border-radius: 1px;"> </div>
+               </div>
+          <div class="row"  style="margin-bottom:10px;">
+              <div class="col-md-10">
+             <img src="{{url('/img/byondiconos/BEYOND2-02.png')}}" alt="Smiley face" height="100" width="180">
+             </div>
+             <div class="col-md-1" style="height:85px;  margin-top:5px; border-right: 2px solid white;  border-radius: 1px;"> </div>
+               </div>
+         </div>
   </div>
-  <div class="col-md-10">
-  <div class="titleContainer">
-    <div class="titleImg">
-      <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/beyond2.png')}}" height="27" width="27">
-      <span class="purpleTitle">OPCIONES PARA EL CLIENTE ADMINISTRADOR</span>
-    </div>
-  </div>
-
+  <div class="col-md-9">
 <center>
     <table  class="littlemargin" width="65%">
 
@@ -179,12 +212,12 @@ if( !empty( $_REQUEST['Message'] ) ) {
             <a href="{{url('/dashboard/cursosca')}}" target="_self"> <img src="{{url('/img/Icons/nuevosiconos/1.png')}}" width="60" height="60"   alt="Dashboard Cursos"/></a>
             </center>
             </td>
-
-        </tr>
-    </table>
-</center>
-</div>
-</div>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+  </div>
     @endif
     @if($band == 1)
 
@@ -288,9 +321,6 @@ if( !empty( $_REQUEST['Message'] ) ) {
     @endif
 
 </div> <!-- Fin del div principal -->
-
-<br><br><br><br>
-<br><br>
 </body>
 
 </html>

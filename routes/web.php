@@ -90,6 +90,9 @@ Route::group(['prefix' => 'reportes'], function(){
     Route::post('generarLicencias', 'ReportesController@generarLicencias');
     Route::post('generarAdministrador', 'ReportesController@generarAdministrador');
     Route::post('generarClienteadministrador', 'ReportesController@generarClienteadministrador');
+    Route::post('generaCursoCA', 'ReportesController@generaCursoCA');
+
+
 });
 
 

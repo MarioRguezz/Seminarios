@@ -191,6 +191,103 @@ class ReportesController extends Controller
                          }
 
 
+                         /**
+                          * Función que genera un excel de cursos
+                          * @param Request $request
+                          * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+                          */
+                         public function generaCursoCA(Request $request){
+                           $total= 0;
+                            $cursosarray = [] ;
+                             $clienteAdministrador = ClienteAdministrador::where('id_persona','=',Auth::user()->IdPersona)->get()->first();
+                             foreach ($clienteAdministrador->instructores as $instructor){
+                                 $var = DB::select('select id_Curso from curso_instructor where Mat_Usuario = :id', ['id' => $instructor->Mat_Usuario]);
+                                 if($var != null){
+                                      foreach ($var as $id_curso){
+                                          $cursovar = DB::select('select * from curso where id_Curso = :id_Curso', ['id_Curso' => $id_curso->id_Curso]);
+                                          $cursos = new Curso();
+                                          $cursos->id_Curso = $cursovar[0]->id_Curso;
+                                          $cursos->nombre = $cursovar[0]->nombre;
+                                          $cursos->estatus = $cursovar[0]->estatus;
+                                          $cursosarray[] = $cursos;
+                                      }
+                                 }
+                             }
+                             foreach($cursosarray as $curso){
+                               foreach($curso->temas as $tema){
+                                 $total += count($tema->subtemas);
+                               }
+                                 $curso->totalSubtemas = $total;
+                               foreach($curso->alumnos as $alumno){
+                                 $subtemasvistos = SubtemaVisto::all()->where('id_Curso','=', $alumno->pivot->id_Curso)->where('Mat_Alumno','=', $alumno->Mat_Alumno)->where('Visto','!=','0');
+                                 $alumno->subtemasVistos = count($subtemasvistos);
+
+                                 if($curso->totalSubtemas == null ){
+                                   $curso->totalSubtemas = 0;
+                                 }else{
+                                 $alumno->totalSubtemas = $curso->totalSubtemas;
+                               }
+                               if($alumno->subtemasVistos != 0){
+                                 $alumno->porcentaje =  ($alumno->subtemasVistos*100) / $alumno->totalSubtemas;
+                               }else{
+                                 $alumno->porcentaje = 0;
+                               }
+
+                                 foreach($alumno->datos as $datos){
+                                 }
+                             }
+                           }
+                             $html = '<style>table {border-collapse: collapse;} table, th, td {border: 1px solid black;}</style><table class="table" bordered="1"><tr>';
+                             $html.= '<th>Curso</th> <th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th> <th>Email</th> <th>Progreso</th></tr>';
+                             if(count($cursosarray) != 0) {
+                              foreach ($cursosarray as $curso){
+                               $html .= "<tr>";
+                                  $html .= "<td>" . $curso->nombre . "</td>";
+                                  $html .= "<td></td>";
+                                  $html .= "<td></td>";
+                                  $html .= "<td></td>";
+                                  $html .= "<td></td>";
+                                  $html .= "<td></td>";
+                              $html .= "</tr>";
+                                foreach ($curso->alumnos as $alumno){
+                                 $html .= "<tr>";
+                                    $html .= "<td></td>";
+                                    $html .= "<td>" . $alumno->datos['Nombre']  . "</td>";
+                                    $html .= "<td>" . $alumno->datos['APaterno'] . "</td>";
+                                    $html .= "<td>" . $alumno->datos['AMaterno'] . "</td>";
+                                    $html .= "<td>" . $alumno->datos['email'] . "</td>";
+                                    $html .= "<td>" .  $alumno->porcentaje . "</td>";
+                                 $html .= "</tr>";
+                              }
+                            }
+                                $html .='</table>';
+                              //  header("Content-Type: application/xls");
+                              $utf8_output_with_bom = chr(239) . chr(187) . chr(191) . $html;
+
+                                header( "Content-type: application/vnd.ms-excel; charset=UTF-8" );
+                                header("Content-Disposition: attachment; filename=cursos.xls");
+                                echo $utf8_output_with_bom;
+                              }
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

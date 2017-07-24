@@ -82,9 +82,8 @@ class DashboardController extends Controller
 
     public function cursoscadashboard(Request $request){
       $total= 0;
-        //$cve_usuario = 34;
        $cursosarray = [] ;
-        $clienteAdministrador = ClienteAdministrador::where('id_persona','=','34')->get()->first();
+        $clienteAdministrador = ClienteAdministrador::where('id_persona','=',Auth::user()->IdPersona)->get()->first();
         foreach ($clienteAdministrador->instructores as $instructor){
             $var = DB::select('select id_Curso from curso_instructor where Mat_Usuario = :id', ['id' => $instructor->Mat_Usuario]);
             if($var != null){
