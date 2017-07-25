@@ -72,7 +72,7 @@ if( !empty( $_REQUEST['Message'] ) ) {
     </style>
 </head>
 
-<body class="backgroundPrincipal">
+<body class="backgroundPrincipal" style="height:100%">
 <input type="hidden" id="_url" value="{{url('/')}}">
 <!--	FIN	Menu en el Encabezado	-->
 
@@ -123,44 +123,46 @@ if( !empty( $_REQUEST['Message'] ) ) {
     </center>
       @endif
 @if($band == 4)
-<div class="row" style="height:100%;" >
-<div class="col-md-12" style="height:100%;">
-  <div class="col-md-3" style="background-color:#2F302E; height:100%; width:17% !important;">
-      <div class="col-md-1" style="height:77%;  margin-top:25px; padding-left:15px !important; padding-right:0px !important; border-left: 1px solid white;">
+<div class="row" style="height:auto;" >
+  <div class="col-xs-3" style="background-color:#2F302E; height:100%; width:300px; padding-top:100px; z-index:-1000 !important;">
+      <div style="height:90%; position:absolute;  margin-top:25px; !important; padding-right:0px !important; border-left: 1px solid white;">
       </div>
-        <div class="col-md-10" style="margin-right:1px;">
+        <div class="col-xs-10 col-xs-offset-1">
           <div class="row" style="margin-bottom:10px; ">
-              <h2 style="color:#FFF; font-size: 1.5em; padding-left:12px;">OPCIONES <br> PARA EL <br>CLIENTE ADMINISTRADOR</h1>
-                </div>
+              <h2 style="color:#FFF; font-size: 1.5em;">OPCIONES <br> PARA EL <br>CLIENTE ADMINISTRADOR</h1>
+          </div>
+          <div class="row" style="margin-bottom:10px;">
+  <a href="{{url('/dashboard/clientedashboard/'.$idPersona)}}">
+            <div class="col-xs-10">
+
+                <img src="{{url('/img/byondiconos/BEYOND2-04.png')}}">
+
+            </div>    </a>
+            <div class="col-xs-1" style="height:125px; border-right: 2px solid white; border-radius: 1px;"> </div>
+           </div>
           <div class="row"  style="margin-bottom:10px;">
-              <div class="col-md-9">
-            <img src="{{url('/img/byondiconos/BEYOND2-04.png')}}" style="width:120px;" alt="Smiley face">
-            </div>
-            <div class="col-md-1" style="height:50px; margin-top:5px; border-right: 2px solid white; border-radius: 1px;"> </div>
+              <div class="col-xs-10">
+                <img src="{{url('/img/byondiconos/BEYOND2-21.png')}}"  >
+             </div>
+             <div class="col-xs-1" style="height:125px; border-right: 2px solid white;  border-radius: 1px;"> </div>
+           </div>
+          <div class="row"  style="margin-bottom:10px;">
+             <div class="col-xs-10">
+                <img src="{{url('/img/byondiconos/BEYOND2-22.png')}}">
+             </div>
+             <div class="col-xs-1" style="height:125px; border-right: 2px solid white; border-radius: 1px;"> </div>
                </div>
           <div class="row"  style="margin-bottom:10px;">
-              <div class="col-md-9">
-             <img src="{{url('/img/byondiconos/BEYOND2-21.png')}}" style="width:120px;" alt="Smiley face">
+              <div class="col-xs-10">
+             <img src="{{url('/img/byondiconos/BEYOND2-23.png')}}">
              </div>
-             <div class="col-md-1" style="height:50px; margin-top:5px; border-right: 2px solid white;  border-radius: 1px;"> </div>
+             <div class="col-xs-1" style="height:125px; border-right: 2px solid white; border-radius: 1px;"> </div>
                </div>
           <div class="row"  style="margin-bottom:10px;">
-              <div class="col-md-9">
-             <img src="{{url('/img/byondiconos/BEYOND2-22.png')}}" style="width:120px;" alt="Smiley face">
+              <div class="col-xs-10">
+             <img src="{{url('/img/byondiconos/BEYOND2-02.png')}}">
              </div>
-             <div class="col-md-1" style="height:50px; margin-top:5px;  border-right: 2px solid white; border-radius: 1px;"> </div>
-               </div>
-          <div class="row"  style="margin-bottom:10px;">
-              <div class="col-md-9">
-             <img src="{{url('/img/byondiconos/BEYOND2-23.png')}}" style="width:120px;" alt="Smiley face">
-             </div>
-             <div class="col-md-1" style="height:50px; margin-top:5px; border-right: 2px solid white; border-radius: 1px;"> </div>
-               </div>
-          <div class="row"  style="margin-bottom:10px;">
-              <div class="col-md-9">
-             <img src="{{url('/img/byondiconos/BEYOND2-02.png')}}" style="width:120px;" alt="Smiley face" >
-             </div>
-             <div class="col-md-1" style="height:50px;  margin-top:5px; border-right: 2px solid white;  border-radius: 1px;"> </div>
+             <div class="col-xs-1" style="height:125px; margin-bottom: 25px; border-right: 2px solid white;  border-radius: 1px;"> </div>
                </div>
          </div>
   </div>
