@@ -1,66 +1,42 @@
-<!DOCTYPE html>
-<html lang="es">
+@extends('principal')
 
-<head>
-    <title>CSV </title>
-    <meta charset="utf-8" />
-    <script src="../js/jquery.min.js"></script>
-    <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <script src="../js/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/radio.css">
-    <link rel="stylesheet" href="../css/Principal.css">
+@section('head')
 
     <script src="../js/jquery.csv.js"></script>
     <script src="../dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../dist/sweetalert.css">
 
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="popover"]').popover();
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
-    <style>
-        html {
-            height: 100%;
-        }
+@endsection
 
-       .weight{
-          font-weight: bold !important;
-        }
-    </style>
-</head>
-
+@section('content')
 <body class="backgroundPrincipal">
-    @include('header')
-<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+<div style="margin-top:100px; margin-bottom: 2%;" class="container-fluid">
     <div    class="titleContainer">
         <div class="titleImg">
           <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/20.png')}}" height="27" width="27">
           <span class="purpleTitle">ALTA DE USUARIOS POR CSV</span>
         </div>
       </div>
-    </div>
-    <div  class=" col-md-12 well back middle"  id="menu">
+    <div  class=" col-xs-12 well back middle"  id="menu">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-xs-3">
               <label style="margin-top:5px;" class="SubtitleMainPurpleClass"> Carga CSV  </label>
         </div>
-        <div class="col-md-3">
+        <div class="col-xs-3">
           <!--<button  style="margin-top:10px;"class="btn btn-primary"> Subir archivo </button>-->
           <div id="dvImportSegments" class="fileupload ">
    <label   for="txtFileUpload"  style="padding:5px" class="control-label    NoRadiusColorButton">Subir archivo</label>
          <input type="file" name="txtFileUpload" id="txtFileUpload" accept=".csv" />
        </div>
         </div>
-          <div class="col-md-3">
+          <div class="col-xs-3">
         <button class="NoRadiusColorButton btnsub">Subir</button>
         </div>
-        <div class="col-md-3">
+        <div class="col-xs-3">
         <a  href="" data-toggle="modal" data-target="#myModal" class="glyphicon designahref glyphicon-question-sign questionMark verde" aria-hidden="true"><span class="azul">Ayuda</span> </a>
         </div>
     </div>
+</div>
 </div>
 
 <!-- Modal Instructions -->
@@ -154,5 +130,4 @@ $( ".btnsub" ).click(function() {
     });
 });
 </script>
-</body>
-</html>
+@endsection
