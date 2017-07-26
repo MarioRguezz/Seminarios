@@ -47,8 +47,8 @@
   <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
       <div    class="titleContainer">
           <div class="titleImg">
-            <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/14.png')}}" height="27" width="27">
-            <span class="purpleTitle">DASHBOARD LICENCIAS</span>
+            <img  class="imageMargin" src="{{url('/img/byondiconos/BEYOND2-03.png')}}" height="40" width="40">
+            <span class="pinkTitle">DASHBOARD LICENCIAS</span>
           </div>
         </div>
       </div>
@@ -61,35 +61,59 @@
                                   <div style="clear:both;"> </div>
                               </form>
            </div>
-              <table class="table designTable"  align="center">
+              <table class="tableSize"  align="center">
    <thead>
-     <tr>
-       <th style="font-weight:bold;" class="weight">Tipo de Usuario</th>
+     <tr class="pinkbackground">
+       <th class="weight borderpillbegin">Tipo de Usuario</th>
        <th class="weight">Nombre</th>
        <th class="weight">Apellidos</th>
        <th class="weight">Email</th>
        <th class="weight">Fecha vigencia</th>
-       <th class="weight">No. de licencias</th>
+       <th class="weight borderpillend">No. de licencias</th>
      </tr>
+     <tr class="separateRow">
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+    </tr>
    </thead>
    <tbody>
-     <tr>
-       <td>Cliente Administrador </td>
+     <tr class="graybackground">
+       <td class="borderpillbegin">Cliente Administrador </td>
        <td> </td>
        <td> </td>
        <td> </td>
        <td> </td>
-       <td> </td>
+       <td class="borderpillend"> </td>
      </tr>
+     <tr class="separateRow">
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+    </tr>
      @foreach ($clientesAdministradores as $clienteAdministrador)
-     <tr>
-       <td> </td>
+     <tr class="graybackground">
+       <td class="borderpillbegin"> </td>
        <td>{{ $clienteAdministrador->datos->Nombre }} </td>
        <td>{{ $clienteAdministrador->datos->APaterno }} {{ $clienteAdministrador->datos->AMaterno }} </td>
        <td>{{ $clienteAdministrador->datos->email }} </td>
        <td> {{ $clienteAdministrador->fecha_expiracion }}</td>
-       <td> {{ $clienteAdministrador->no_licencias }}</td>
+       <td class="borderpillend"> {{ $clienteAdministrador->no_licencias }}</td>
      </tr>
+     <tr class="separateRow">
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+    </tr>
       @endforeach
    </tbody>
  </table>

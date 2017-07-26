@@ -32,7 +32,7 @@
     <div    class="titleContainer">
         <div class="titleImg">
           <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/17.png')}}" height="27" width="27">
-          <span class="purpleTitle">DASHBOARD CURSOS</span>
+          <span class="purpleTitle">DASHBOARD CLIENTE ADMINISTRADOR</span>
         </div>
       </div>
     </div>
