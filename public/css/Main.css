@@ -88,7 +88,7 @@ body.backgroundLogin
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
-		background-position:0px -120px;
+		background-position:0px -140px;
 
 }
 
@@ -259,7 +259,7 @@ Nueva parte
 
 .titleLogin{
 	color: white;
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
@@ -368,6 +368,7 @@ border-bottom-style: 1px solid  !important;
 	border-radius: 0px;
 	height: 40px;
 	font-size: 18px;
+	width: 100%;
 }
 
 
@@ -469,8 +470,9 @@ border-bottom-style: 1px solid  !important;
 
 .Subtitlelogin{
 	color: white;
-	font-size: 20px;
+	font-size: 17px;
 	font-weight: 400;
+	text-align: justify;
 }
 
 .NoShadow{
@@ -526,7 +528,7 @@ border-radius: 0px;
 background: transparent;
 color: white;
 font-weight: 400;
-font-size: 20px;
+font-size: 16px;
 height: 60px;
 border: 0px;
 border-radius: 0px;
@@ -546,7 +548,7 @@ border-radius: 0px;
 width: 200px;
 border: 0px;
 padding-bottom: 25px;
-margin-left: 50px;
+margin-left: 20px;
 }
 
 .buttonLoginRegistro:hover{
@@ -557,7 +559,7 @@ margin-left: 50px;
 .containerregister{
 	 border: 2px solid #FFF;
 	 padding-bottom:20px;
-	 margin-top: 60px;
+	 margin-top: 20px;
 	 padding: 10px;
 }
 .logologin{
@@ -574,7 +576,6 @@ border-radius: 0px;
 width: 200px;
 border: 0px;
 padding-bottom: 30px;
-margin-left: 15%;
 }
 
 .buttonLoginComenzar:hover{
@@ -624,7 +625,7 @@ text-decoration: none;
 	text-decoration: none;
 }
 .NormalSizeWord{
-font-size: 19px;
+font-size: 16px;
 }
 .alignCenter{
 	text-align: center;

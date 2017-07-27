@@ -31,20 +31,20 @@
 
 <body class="backgroundLogin">
 
-<div  class="col-md-12" style="background-color:#2F302E; margin-top:24%; height:350px;">
+<div  class="col-md-12" style="background-color:#2F302E; margin-top:15%; height:280px;">
   <div class="row">
     <div class="col-md-1" >
     </div>
-    <div class="col-md-3" style=" height:350px;">
-     <img src="img/Icons/logo.png" class="logologin" width="250px" height="200px" />
+    <div class="col-md-3" style=" height:280px; margin-right:20px;">
+     <img src="img/Icons/logo.png" class="logologin" height="150px" />
    </div>
-    <div class="col-md-2" style=" height:350px;">
+    <div class="col-md-2" style=" height:280px; margin-right:20px;">
       <div class="row">
           <!--Login-->
           <div class="row">
               <h1 class="titleLogin col-xs-12 col-md-12">SEMINARIO</h1><br>
               <h3 class="Subtitlelogin col-xs-12 col-md-12" style="margin-top:-10px; margin-bottom:20px;">Bienvenido, ingrese usuario y password para entrar</h3>
-          </div>
+
           <form id="login-form" action="{{url('/login')}}" method="post" class="col-xs-12 col-md-12 " role="form">
               <div class="form-group">
                   @if($res==0)
@@ -68,17 +68,18 @@
                   @endif
 
 
-                  <input type="text" name="user" id="username" tabindex="1" style="margin-left:-18px;" class="form-control NoRadiusColorlogin" placeholder="Nombre de usuario" value="" required>
+                  <input type="text" name="user" id="username" tabindex="1" class="form-control NoRadiusColorlogin" placeholder="Nombre de usuario" value="" required>
               </div>
               <div class="form-group ">
-                  <input type="password" name="pass" id="password" tabindex="2" style="margin-left:-18px;" class="form-control NoRadiusColorlogin " placeholder="Password" required>
+                  <input type="password" name="pass" id="password" tabindex="2"  class="form-control NoRadiusColorlogin " placeholder="Password" required>
               </div>
       </div>
+        </div>
     </div>
 
 
 
-    <div class="col-md-2" style=" height:350px;">
+    <div class="col-md-2" style=" height:280px;">
       <div class="form-group">
         <div class="row containerregister" >
           <div class="row">
