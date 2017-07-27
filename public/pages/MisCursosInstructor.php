@@ -88,30 +88,26 @@ mysqli_close($conexia);
 <?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
+<?php include('../../resources/views/barra_lateral2.blade.php'); ?>
 
-
-<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
-		<div    class="titleContainer">
+<div  class="container-fluid">
+		<div style="margin-top:100px"   class="titleContainer">
 				<div class="titleImg">
 					<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
 					<span class="greenTitle">ADMINISTRAR MIS CURSOS</span>
 				</div>
-			</div>
-		</div>
 
-<div class="form-group">
-	<div class="col-md-7 col-md-offset-5">
+
+			</div>
+<div class="col-xs-9" >
+	<div style="magin-bottom:30px">
     	<form action="AltaCurso.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
             <input type="hidden" value="<?PHP echo htmlentities($Matricula); ?>" name="Matricula">
             <button class="NoRadiusColorButtonPill" type="submit"><center>Agregar un curso &nbsp;<span class="glyphicon glyphicon-import"></span> </center> </button>
         </form>
     </div>
-</div>
-
-<br><br><br><br>
-
-<div class="container">
-	<table class="tableSize"  align="center">
+<br>
+	<table class="col-xs-12">
     <tr class="pinkbackground">
     	<th class="weight borderpillbegin"><center>Nombre del curso</center></th>
         <th class="weight"><center>Cupo</center></th>
@@ -196,6 +192,9 @@ mysqli_close($conexia);
 
 	</table>
 
+</div>
+<div>
+	
 </div><!-- Fin del div principal -->
 
 

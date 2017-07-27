@@ -94,24 +94,22 @@ mysqli_close($conexia);
 
 	<body class="backgroundPrincipal">
 
-<!--	FIN	Menu en el Encabezado	-->
 
+<!--	FIN	Menu en el Encabezado	-->
 <?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
-@include('header')
-<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
-<div    class="titleContainer">
+<?php include('../../resources/views/barra_lateral2.blade.php'); ?>
+
+<div  class="container-fluid">
+		<div style="margin-top:100px"   class="titleContainer">
 		<div class="titleImg">
 			<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
 			<span class="greenTitle">MIS CURSOS</span>
 		</div>
 	</div>
-</div>
 
-<br><br>
-<!--<div class="container">-->
-    <div class="">
+    <div class="col-xs-9">
 		<table class="tableSize"  align="center">
     <tr class="pinkbackground">
     	<th class="weight borderpillbegin"><center>Nombre del curso</center></th>
@@ -287,6 +285,7 @@ mysqli_close($conexia);
 <br><br><br><br>
 <br><br>
 
+</div>
 </body>
 
 </html>

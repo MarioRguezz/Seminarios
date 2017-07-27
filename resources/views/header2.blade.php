@@ -3,8 +3,18 @@
     <img src="../img/Icons/nuevosiconos/BEYOND2-56.png" width="200" height="45">
   </div>
     <?php 
+
+      include '../../php/conexion.php';
       session_start();
-      var_dump($_SESSION);
+
+  $conexia = conect();
+
+	$queryze = "SELECT Nombre, APaterno, AMaterno FROM persona WHERE email = '" .$_SESSION['email']."';";
+	$resultas = mysqli_query($conexia,$queryze);
+	$row = mysqli_fetch_array($resultas);
+	$nombre = $row['Nombre'];
+	$apPaterno = $row['ApPaterno'];
+	$apMaterno = $row['ApMaterno'];
     ?>
       <div class="col-xs-6 down" >
     <!--  	<a class="menuOption NoShadow " href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/Seminarios/public/">PÁGINA PRINCIPAL</a>-->
@@ -12,7 +22,7 @@
       <div class="col-xs-2">
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" style="border:none !important; color:#009999 !important;"
-          type="button" id="menu1" data-toggle="dropdown"><?php echo "URIEL";?>
+          type="button" id="menu1" data-toggle="dropdown"><?php echo "$nombre $appPaterno $appMaterno";?>
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
