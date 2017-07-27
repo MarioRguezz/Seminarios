@@ -264,6 +264,12 @@ mysqli_close($conexia);
         <td style="border:none !important"><center> <button class="NoRadiusColorButtonCircle" id="btn-Ir" type="submit">Ir al curso &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
         </form>
     </tr>
+		<tr class="separateRow">
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
     <?PHP
 		}
 		desconectarBD();

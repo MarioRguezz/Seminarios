@@ -52,6 +52,7 @@ if($tipoPer == "Alumno")
 	$resultasa = mysqli_query($conexia,$queryzexa);
 	$row = mysqli_fetch_array($resultasa);
 
+
 ?>
 <!doctype html>
 <html>

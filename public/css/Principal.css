@@ -40,12 +40,12 @@
 }
 
 .borderpillbegin{
-	-webkit-border-top-left-radius: 100px;
-  -moz-border-top-left-radius: 100px;
-  border-top-left-radius: 100px;
-  -webkit-border-bottom-left-radius: 100px;
-  -moz-border-bottom-left-radius: 100px;
-  border-bottom-left-radius: 100px;
+	-webkit-border-top-left-radius: 20px;
+  -moz-border-top-left-radius: 20px;
+  border-top-left-radius: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-bottom-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .buttonpill{
@@ -61,13 +61,34 @@
 	width: 200px;
 }
 
+.pilltitle{
+	color:#FFF;
+	border-radius: 14px;
+	height: 30px;
+	font-weight: 200;
+	font-size: 18px;
+	font-weight: normal;
+	padding-top: 5px;
+	width: 100%;
+}
+
+.selectElements{
+	width: 50%;
+	color: #FFF;
+	border-radius: 14px;
+  height: 30px;
+}
+
+
+
+
 .borderpillend{
-	-webkit-border-top-right-radius: 100px;
-  -moz-border-top-right-radius: 100px;
-  border-top-right-radius: 100px;
-  -webkit-border-bottom-right-radius: 100px;
-  -moz-border-bottom-right-radius: 100px;
-  border-bottom-right-radius: 100px;
+	-webkit-border-top-right-radius: 20px;
+  -moz-border-top-right-radius: 20px;
+  border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .greenclearTitle{

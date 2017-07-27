@@ -321,7 +321,6 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
         <?PHP
     }
     ?>
-?>
 
 <div  style="width:100%;" class="row  col-md-12  ">
 <div style="" class="container-fluid">
@@ -404,7 +403,6 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 			$resAud = mysqli_query($conexia, $consAud);
 			$rowAud = mysqli_fetch_array($resAud);
 
-
 		?>
 
         <li> <a href='#'>
@@ -444,7 +442,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
             <input type="hidden" value="VIDEO" name="TipoArchivo">
             <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        	<button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/byondiconos/BEYOND2-48.png"></span> </button>
+        	<button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Ver Video"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span><img src="../img/byondiconos/BEYOND2-48.png"></span></button>
      		</form>
 
      		<?PHP
@@ -467,7 +465,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
             <input type="hidden" value="AUDIO" name="TipoArchivo">
             <input type="hidden" value="<?PHP echo htmlentities($TotalSub);?>" name="TotalSub">
 
-        	<button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Escuchar audio"> <?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span> <img src="../img/byondiconos/BEYOND2-44.png"></span> </button>
+        	<button type="submit" class="btn btn-default btn-xs Visto buttonMenu" title="Escuchar audio"><?PHP echo htmlentities($fila['Nombre']); ?> &nbsp; <span> <img src="../img/byondiconos/BEYOND2-44.png"></span></button>
             </form>
     <?PHP
 			}
