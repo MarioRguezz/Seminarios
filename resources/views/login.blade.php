@@ -31,7 +31,7 @@
 
 <body class="backgroundLogin">
 
-<div  class="col-md-12" style="background-color:#2F302E; margin-top:15%; height:280px;">
+<div  class="col-md-12" style="background-color:#2F302E; margin-top:22%; height:280px;">
   <div class="row">
     <div class="col-md-1" >
     </div>
@@ -43,7 +43,7 @@
           <!--Login-->
           <div class="row">
               <h1 class="titleLogin col-xs-12 col-md-12">SEMINARIO</h1><br>
-              <h3 class="Subtitlelogin col-xs-12 col-md-12" style="margin-top:-10px; margin-bottom:20px;">Bienvenido, ingrese usuario y password para entrar</h3>
+              <h3 class="Subtitlelogin col-xs-12 col-md-12" style="margin-top:-10px; margin-bottom:20px;">Bienvenido,ingrese usuario y password para entrar</h3>
 
           <form id="login-form" action="{{url('/login')}}" method="post" class="col-xs-12 col-md-12 " role="form">
               <div class="form-group">
