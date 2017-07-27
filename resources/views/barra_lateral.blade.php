@@ -2,7 +2,8 @@
 
 @if(Auth::user()->TUser == "Alumno")
 <div class="row" style="height:100%;" >
-<div class="col-xs-3" style="background-color:#2F302E; height:100%; width:300px; padding-top:100px; z-index:10 !important;">
+<div class="col-xs-3" style="background-color:#2F302E; height:120%; position:fixed;   width:300px; padding-top:100px; z-index:10 !important;"></div>
+<div class="col-xs-3" style="height:100%;   width:300px; padding-top:100px; z-index:10 !important;">
   <div style="height:90%; position:absolute;  margin-top:25px; !important; padding-right:0px !important; border-left: 1px solid white;">
   </div>
     <div class="col-xs-10 col-xs-offset-1">
@@ -35,7 +36,8 @@
   @endif
 @if(Auth::user()->TUser == "AdminCliente")
 <div class="row" style="height:auto;" >
-<div class="col-xs-3" style="background-color:#2F302E; height:100%; width:300px; padding-top:100px; z-index:10 !important;">
+<div class="col-xs-3" style="background-color:#2F302E; height:120%; position:fixed;   width:300px; padding-top:100px; z-index:10 !important;"></div>
+<div class="col-xs-3" style="height:100%;   width:300px; padding-top:100px; z-index:10 !important;">
   <div style="height:90%; position:absolute;  margin-top:25px; !important; padding-right:0px !important; border-left: 1px solid white;">
   </div>
     <div class="col-xs-10 col-xs-offset-1">
@@ -88,7 +90,8 @@
 
 @if(Auth::user()->TUser == "Instructor")
 <div class="row" style="height:100%;" >
-<div class="col-xs-3" style="background-color:#2F302E; height:100%; width:300px; padding-top:100px; z-index:10 !important;">
+<div class="col-xs-3" style="background-color:#2F302E; height:120%; position:fixed;   width:300px; padding-top:100px; z-index:10 !important;"></div>
+<div class="col-xs-3" style="height:100%;   width:300px; padding-top:100px; z-index:10 !important;">
   <div style="height:90%; position:absolute;  margin-top:25px; !important; padding-right:0px !important; border-left: 1px solid white;">
   </div>
     <div class="col-xs-10 col-xs-offset-1">
@@ -123,8 +126,9 @@
 
 @if(Auth::user()->TUser == "Administrador")
 <div class="row" style="height:100%;" >
-<div class="col-xs-3" style="background-color:#2F302E; height:100%; width:300px; padding-top:100px; z-index:10 !important;">
-  <div style="height:90%; position:absolute;  margin-top:25px; !important; padding-right:0px !important; border-left: 1px solid white;">
+<div class="col-xs-3" style="background-color:#2F302E; height:120%; position:fixed;   width:300px; padding-top:100px; z-index:10 !important;"></div>
+<div class="col-xs-3" style="height:100%;   width:300px; padding-top:100px; z-index:10 !important;">
+  <div style="height:100%; position:absolute;  margin-top:25px; !important; padding-right:0px !important; border-left: 1px solid white;">
   </div>
     <div class="col-xs-10 col-xs-offset-1">
       <div class="row" style="margin-bottom:10px; ">

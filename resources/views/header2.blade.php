@@ -1,12 +1,28 @@
-<div style="position:absolute; background: rgba(182,41,124,1.0); top: 0px; left:0px; right:0px; padding:20px; margin:0px" class="col-sm-12 row">
-  <div class="col-sm-4" >
-    <img src="../img/Icons/nuevosiconos/beyond.png" width="40" height="40">
+<div style="position:absolute; z-index:200; background: #FFF; top: 0px; left:0px; right:0px; padding:20px; margin:0px;  border-bottom: 4px solid #A1A1A1;" class="col-sm-12 row">
+  <div class="col-xs-4" >
+    <img src="../img/Icons/nuevosiconos/BEYOND2-56.png" width="200" height="45">
   </div>
-    <div class="col-sm-2 down" >
-    	<a class="menuOption NoShadow " href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/Seminarios/public/">PÁGINA PRINCIPAL</a>
+    <?php 
+      session_start();
+      var_dump($_SESSION);
+    ?>
+      <div class="col-xs-6 down" >
+    <!--  	<a class="menuOption NoShadow " href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/Seminarios/public/">PÁGINA PRINCIPAL</a>-->
+      </div>
+      <div class="col-xs-2">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" style="border:none !important; color:#009999 !important;"
+          type="button" id="menu1" data-toggle="dropdown"><?php echo "URIEL";?>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a style="color:#009999 !important"
+              href="http://<?php echo $_SERVER['SERVER_NAME']?>/Seminarios/public/logout">
+              CERRAR SESIÓN</a>
+           </li>
+        </ul>
+
+        </div>
+      </div>
     </div>
-    <div class=" col-sm-4 down">
-        <a class="menuOption NoShadow col-sm-12 " href="http://<?php echo $_SERVER['SERVER_NAME']?>/Seminarios/public/logout">
-          CERRAR SESIÓN</a>
-    </div>
-</div>
