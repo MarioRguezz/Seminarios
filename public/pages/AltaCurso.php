@@ -128,10 +128,10 @@ $res= get_Personas();
 
 
 <div class="container"> <!-- Div principal -->
-<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+<div style="margin-top:10%; margin-bottom: 2%;" class="container-fluid">
 		<div    class="titleContainer">
 				<div class="titleImg">
-					<img  class="imageMargin" src="../img/byondiconos/BEYOND2-26.png" height="40" width="40">
+					<img  class="imageMargin" src="../img/byondiconos/textcajita.png" height="40" width="40">
 					<span class="pinkTitle">ALTA DE CURSOS</span>
 				</div>
 			</div>

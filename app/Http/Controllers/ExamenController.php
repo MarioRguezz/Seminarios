@@ -44,9 +44,9 @@ class ExamenController extends Controller
         $id = $request->input('id');
 
         //Obtener subtema
-        $subtema = Subtema::find($idSubtema);
+        /*$subtema = Subtema::find($idSubtema);
         $tema = Tema::where('id_Tema', $idTema)->first();
-        $orden = Subtema::where('id_Tema', $idTema)->orderBy('Orden', 'desc')->first()->Orden;
+        $orden = Subtema::where('id_Tema', $idTema)->orderBy('Orden', 'desc')->first(); //->Orden;
         $subtemaId = null;
         if($actividad == "true") {
           if(isset($subtema)) {
@@ -70,7 +70,7 @@ class ExamenController extends Controller
           }
 
           $subtemaId = $subtema->IDes;
-        }
+        }*/
 
         $examen = Examen::find($id);
 
@@ -80,11 +80,16 @@ class ExamenController extends Controller
             $examen->save();
         }
         else {
-            $examen = Examen::create([
+          /*  $examen = Examen::create([
                 "ID_Examen" => substr($idTema,0, 2).'ex'.rand(1000, 9999),
                 "id_Subtema" => $subtemaId,
                 "id_Tema" => $idTema
-            ]);
+            ]);*/
+            $examen = Examen::create([
+                  "ID_Examen" => substr($idTema,0, 2).'ex'.rand(1000, 9999),
+                  "id_Subtema" => null,
+                  "id_Tema" => $idTema
+              ]);
 
         }
 

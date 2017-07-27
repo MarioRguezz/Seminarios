@@ -274,7 +274,7 @@ if($tipoPer == "Alumno")
         <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
         <td class="tablaDesign">
 				<!--	<center> <button type="submit" class="btn-warning">editar &nbsp;<span class="glyphicon glyphicon-pencil"></span></center>-->
-				<center><button  style="background:transparent; border:none;" class=" " type="submit"><img  src="../img/Icons/Png/editar.png"> </button></center>
+				<center><button  style="background:transparent; border:none;" class=" " type="submit"><img style="width:100px; " src="../img/Icons/nuevosiconos/editar1.png"> </button></center>
 					</td>
         </form>
 
@@ -310,7 +310,7 @@ if($accion == 'Nu3v@')
 			$clave = substr($_POST['nombreTema'],0, 2).rand(1000, 9999);
 			$fecha = date("Y-m-d");
 			$IdeCurso = $_POST['IDCurso'];
-			var_dump($IdeCurso);
+			//var_dump($IdeCurso);
 
 			$conec = conect();
 			$sql = "INSERT INTO curso_tema (id_Curso, id_Tema, Nombre, fecha) VALUES ('$IdeCurso', '$clave',  '$_POST[nombreTema]', '$fecha');";
