@@ -88,6 +88,8 @@ body.backgroundLogin
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
+		background-position:0px -120px;
+
 }
 
 
@@ -544,7 +546,7 @@ border-radius: 0px;
 width: 200px;
 border: 0px;
 padding-bottom: 25px;
-margin-left: 20%;
+margin-left: 50px;
 }
 
 .buttonLoginRegistro:hover{
