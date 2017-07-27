@@ -41,8 +41,8 @@
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
 <div    class="titleContainer">
     <div class="titleImg">
-      <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/19.png')}}" height="27" width="27">
-      <span class="purpleTitle">REGISTRO PARA NUEVOS USUARIOS</span>
+      <img  class="imageMargin" src="{{url('/img/byondiconos/BEYOND2-26.png')}}" height="40" width="40">
+      <span class="pinkTitle">REGISTRO PARA NUEVOS USUARIOS</span>
     </div>
   </div>
 </div>
@@ -199,7 +199,7 @@
 
         <div class="form-group">
             <div class="col-md-2 col-md-offset-4 ">
-                <button class="NoRadiusColorColorButton " id="btn-registro" type="submit">Guardar registro &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
+                <button class="NoRadiusColorButton " id="btn-registro" style="width:300px;" type="submit">Guardar registro &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
                 <!-- <input type="submit" class="btn btn-primary" value="Guardar registro"> -->
             </div>
         </div>

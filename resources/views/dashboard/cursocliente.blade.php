@@ -48,8 +48,8 @@
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
     <div    class="titleContainer">
         <div class="titleImg">
-          <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/13.png')}}" height="27" width="27">
-          <span class="purpleTitle">DASHBOARD CURSOS</span>
+          <img  class="imageMargin" src="{{url('/img/byondiconos/BEYOND2-15.png')}}" height="40" width="40">
+          <span class="greenTitle">DASHBOARD CURSOS</span>
         </div>
       </div>
     </div>
@@ -62,36 +62,60 @@
                                   <div style="clear:both;"> </div>
                               </form>
            </div>
-              <table class="table designTable"  align="center">
+              <table class="tableSize"  align="center">
    <thead>
-     <tr>
-       <th style="font-weight:bold;" class="weight">Curso </th>
+     <tr class="pinkbackground">
+       <th  class="weight borderpillbegin">Curso </th>
        <th class="weight">Nombre</th>
        <th class="weight">Apellido Paterno</th>
        <th class="weight">Apellido Materno</th>
        <th class="weight">Email</th>
-       <th class="weight">Progreso</th>
+       <th class="weight borderpillend">Progreso</th>
      </tr>
+     <tr class="separateRow">
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+    </tr>
    </thead>
    <tbody>
      @foreach ($cursos as $curso)
-     <tr>
-       <td>{{ $curso->nombre }} </td>
+     <tr class="greenbackground">
+       <td   class="borderpillbegin">{{ $curso->nombre }} </td>
        <td> </td>
        <td> </td>
        <td> </td>
        <td> </td>
-       <td> </td>
+       <td  class="borderpillend"> </td>
      </tr>
+     <tr class="separateRow">
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+    </tr>
       @foreach ($curso->alumnos as $alumno)
-      <tr>
-        <td></td>
+      <tr class="graybackground">
+        <td class="borderpillbegin"></td>
         <td> {{ $alumno->datos['Nombre'] }}</td>
         <td> {{ $alumno->datos['APaterno'] }}</td>
         <td>{{ $alumno->datos['AMaterno'] }} </td>
         <td>{{ $alumno->datos['email'] }} </td>
-        <td> {{ $alumno->porcentaje }}% </td>
+        <td class="borderpillend"> {{ $alumno->porcentaje }}% </td>
       </tr>
+      <tr class="separateRow">
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+     </tr>
         @endforeach
       @endforeach
    </tbody>

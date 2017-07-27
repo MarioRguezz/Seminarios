@@ -47,12 +47,12 @@ html{
 <!--	FIN	Menu en el Encabezado	-->
 
 <!--<div class="contenedor2"> -->
-<div class="contenedorMain">
+<div style="margin-top:150px;" class="contenedorMain">
 
   <div    class="titleContainer">
       <div class="titleImg">
-        <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/beyond2.png')}}" height="27" width="27">
-        <span class="purpleTitle">Recuperar Contraseña  </span>
+        <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/beyond2.png')}}" height="40" width="40">
+        <span style="font-size:30px" class="greenTitle">Recuperar Contraseña  </span>
       </div>
     </div>
 

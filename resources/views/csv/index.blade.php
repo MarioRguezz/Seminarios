@@ -15,29 +15,29 @@
 @section('content')
 <body class="backgroundPrincipal">
 <div style="margin-top:100px; margin-bottom: 2%;" class="container-fluid">
-    <div    class="titleContainer">
+    <div   style="margin-top:10px;" class="titleContainer">
         <div class="titleImg">
-          <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/20.png')}}" height="27" width="27">
-          <span class="purpleTitle">ALTA DE USUARIOS POR CSV</span>
+        <img  class="imageMargin" src="{{url('/img/byondiconos/BEYOND2-25.png')}}" height="40" width="40">
+          <span class="greenclearTitle">ALTA DE USUARIOS POR CSV</span>
         </div>
       </div>
-    <div  class=" col-xs-12 well back middle"  id="menu">
+    <div  class=" col-xs-12 wellalternative back middle"  id="menu">
         <div class="row">
             <div class="col-xs-3">
-              <label style="margin-top:5px;" class="SubtitleMainPurpleClass"> Carga CSV  </label>
+              <label style="margin-top:5px;" class="SubtitleMainPurpleClass"> CARGA CSV  </label>
         </div>
         <div class="col-xs-3">
           <!--<button  style="margin-top:10px;"class="btn btn-primary"> Subir archivo </button>-->
           <div id="dvImportSegments" class="fileupload ">
-   <label   for="txtFileUpload"  style="padding:5px" class="control-label    NoRadiusColorButton">Subir archivo</label>
+   <label   for="txtFileUpload"  class="control-label    NoRadiusColorButtonCircle">SUBIR ARCHIVO</label>
          <input type="file" name="txtFileUpload" id="txtFileUpload" accept=".csv" />
        </div>
         </div>
           <div class="col-xs-3">
-        <button class="NoRadiusColorButton btnsub">Subir</button>
+        <button   class="NoRadiusColorButtonCircletype2 btnsub">Subir</button>
         </div>
-        <div class="col-xs-3">
-        <a  href="" data-toggle="modal" data-target="#myModal" class="glyphicon designahref glyphicon-question-sign questionMark verde" aria-hidden="true"><span class="azul">Ayuda</span> </a>
+        <div style="margin-top:1%;" class="col-xs-3">
+        <a  href="" data-toggle="modal" data-target="#myModal" class="glyphicon designahref glyphicon-question-sign questionMark verde" aria-hidden="true"><span style="color:#292a28;  font-weight: 600;">Ayuda</span> </a>
         </div>
     </div>
 </div>

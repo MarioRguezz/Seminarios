@@ -84,7 +84,7 @@
    </thead>
    <tbody>
      @foreach ($cursos as $curso)
-     <tr class="graybackground">
+     <tr class="greenbackground">
        <td class="borderpillbegin">{{ $curso->nombre }} </td>
        <td> </td>
        <td> </td>

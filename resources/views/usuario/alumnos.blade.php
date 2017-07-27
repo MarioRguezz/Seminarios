@@ -23,8 +23,8 @@
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
     <div    class="titleContainer">
         <div class="titleImg">
-          <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/19.png')}}" height="27" width="27">
-          <span class="purpleTitle">LISTA DE ALUMNOS</span>
+          <img  class="imageMargin" src="{{url('/img/byondiconos/BEYOND2-27.png')}}" height="40" width="40">
+          <span class="yellowTitle">LISTA DE ALUMNOS</span>
         </div>
       </div>
     </div>
@@ -34,27 +34,41 @@
 
 <div class="container "> <!-- Div principal -->
 
-    <table class="table designTable"  align="center">
+    <table class="tableSize"  align="center">
         <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Estatus</th>
-                <th></th>
-                <th><a class="azul" href="{{url('/usuario/alumnonuevo/'.$administradores->id.'/'.$administradores->id_persona)}}">+</a></th>
+            <tr class="pinkbackground">
+                <th class="weight borderpillbegin">Nombre</th>
+                <th class="weight ">Email</th>
+                <th class="weight ">Estatus</th>
+                <th class="weight "></th>
+                <th class="weight borderpillend"><a class="" style="color:#FFF;" href="{{url('/usuario/alumnonuevo/'.$administradores->id.'/'.$administradores->id_persona)}}">+</a></th>
             </tr>
+            <tr class="separateRow">
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+           </tr>
         </thead>
 
         <tbody>
 
             @foreach($alumnos as $administrador)
-                <tr>
-                <td>{{$administrador->datos['Nombre']}}</td>
+                <tr class="graybackground">
+                <td class=" borderpillbegin" >{{$administrador->datos['Nombre']}}</td>
                 <td>{{$administrador->datos['email']}}</td>
                 <td>{{$administrador->datos['Status']}}</td>
-                <td><a href="{{url('/usuario/alumnosedicion/'.$administrador->datos['IdPersona'].'/'.$administradores->id_persona)}}"><span class="glyphicon glyphicon-pencil verde"></span></a></td>
-                <td> </td>
+                <td><a href="{{url('/usuario/alumnosedicion/'.$administrador->datos['IdPersona'].'/'.$administradores->id_persona)}}"><span style="color:#FFF;"  class="glyphicon glyphicon-pencil "></span></a></td>
+                <td class=" borderpillend"> </td>
                 </tr>
+                <tr class="separateRow">
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+               </tr>
             @endforeach
         </tbody>
     </table>

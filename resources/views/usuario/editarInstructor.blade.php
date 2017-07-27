@@ -19,8 +19,8 @@
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
   <div    class="titleContainer">
       <div class="titleImg">
-        <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/18.png')}}" height="27" width="27">
-        <span class="purpleTitle">EDITAR INSTRUCTOR</span>
+          <img  class="imageMargin" src="{{url('/img/byondiconos/BEYOND2-26.png')}}" height="40" width="40">
+        <span class="pinkTitle">EDITAR INSTRUCTOR</span>
       </div>
     </div>
   </div>

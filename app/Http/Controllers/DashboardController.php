@@ -32,7 +32,7 @@ class DashboardController extends Controller
 
     public function index(Request $request){
           $total= 0;
-            $cursos = Curso::where('estatus','=','ALTA')->paginate(10);
+            $cursos = Curso::where('estatus','=','ALTA')->paginate(5);
             foreach($cursos as $curso){
               foreach($curso->temas as $tema){
                 $total += count($tema->subtemas);
