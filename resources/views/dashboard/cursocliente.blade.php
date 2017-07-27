@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
+@extends('principal')
 
-<head>
-    <title>Dashboard</title>
-    <meta charset="utf-8" />
-    <script src="../js/jquery.min.js"></script>
-    <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
-    <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+@section('titulo')
+  Dashboard cursos
+@endsection
+
+@section('head')
+
+
 
 
     <script src="../js/pregunta.js"></script>
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/radio.css">
-    <link rel="stylesheet" href="../css/Principal.css">
-
     <script src="../js/efectos.js"></script>
     <script src="../js/examen/model/examen.js"></script>
     <script src="../js/examen/model/pregunta.js"></script>
@@ -25,26 +21,9 @@
     <script src="../dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../dist/sweetalert.css">
 
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="popover"]').popover();
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
-    <style>
-        html {
-            height: 100%;
-        }
+@endsection
 
-       .weight{
-          font-weight: bold !important;
-        }
-
-    </style>
-</head>
-
-<body class="backgroundPrincipal">
-  @include('header')
+@section('content')
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
     <div    class="titleContainer">
         <div class="titleImg">
@@ -125,6 +104,4 @@
       <!--  </div>
     </div>
 </div>-->
-</body>
-
-</html>
+@endsection
