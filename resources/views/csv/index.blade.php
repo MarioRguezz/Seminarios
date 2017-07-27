@@ -1,5 +1,9 @@
 @extends('principal')
 
+@section('titulo')
+   Alta de usuarios por CSV
+@endsection
+
 @section('head')
 
     <script src="../js/jquery.csv.js"></script>
