@@ -121,21 +121,23 @@ $res= get_Personas();
 
 <body class="backgroundPrincipal" >
 
+<!--	FIN	Menu en el Encabezado	-->
 <?php include('../../resources/views/header2.blade.php') ?>
 
 <!--	FIN	Menu en el Encabezado	-->
+<?php include('../../resources/views/barra_lateral2.blade.php'); ?>
 
 
-
-<div class="container"> <!-- Div principal -->
-<div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
-		<div    class="titleContainer">
+<div class="container-fluid">
+		<div style="margin-top:100px"   class="titleContainer">
 				<div class="titleImg">
 					<img  class="imageMargin" src="../img/byondiconos/BEYOND2-26.png" height="40" width="40">
 					<span class="pinkTitle">ALTA DE CURSOS</span>
 				</div>
 			</div>
-		</div>
+
+
+<div class="col-xs-9" >
 <form action="AltaCurso.php?accion=Nu3v@" class="form-horizontal" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
@@ -200,7 +202,7 @@ $res= get_Personas();
 </form>
 
 </div> <!-- Fin del div principal Alta curso-->
-
+</div>
 
 <?PHP
 
