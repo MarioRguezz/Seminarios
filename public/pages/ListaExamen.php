@@ -111,8 +111,8 @@ mysqli_close($conexia);
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
 <div    class="titleContainer">
 		<div class="titleImg">
-			<img  class="imageMargin" src="../img/Icons/nuevosiconos/26.png" height="27" width="27">
-			<span class="purpleTitle">LISTA DE ALUMNOS INSCRITOS A ESTE TEMA</span>
+			<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
+			<span class="greenTitle">LISTA DE ALUMNOS INSCRITOS A ESTE TEMA</span>
 		</div>
 	</div>
 </div>
@@ -122,13 +122,19 @@ mysqli_close($conexia);
 -->
 
 <div class="container">
-		<table class="table designTable tablaDesign" style="width: 90% !important;"  align="center">
-    <tr class="">
-    	<th class="weight tablaDesign"><center>Nombre</center></th>
-        <th class="weight tablaDesign"><center>Correo</center></th>
-        <th class="weight tablaDesign"><center>Información</center></th>
-        <th class="weight tablaDesign" ><center>Habilitar examen</center></th>
+		<table class="tableSize" style="width: 90% !important;"  align="center">
+    <tr class="pinkbackground">
+    	<th class="weight  borderpillbegin"><center>Nombre</center></th>
+        <th class="weight "><center>Correo</center></th>
+        <th class="weight "><center>Información</center></th>
+        <th class="weight  borderpillend" ><center>Habilitar examen</center></th>
     </tr>
+		<tr class="separateRow">
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+	 </tr>
 
 	<?PHP
 		$color = 0;
@@ -141,26 +147,26 @@ mysqli_close($conexia);
 			if ($color == 0)
 			{
 	?>
-    <tr>
+    <tr class="graybackground">
      		<?PHP
 			$color = 1;
 			}
 			else
 			{
 			?>
-    <tr class="info">
+    <tr class="graybackground">
             <?PHP
 			$color = 0;
 			}
 			?>
-    	<td ><center> <?PHP echo htmlentities($row['APaterno']." ". $row['AMaterno']." ".$row['Nombre']); ?> </center></td>
+    	<td class="borderpillbegin"><center> <?PHP echo htmlentities($row['APaterno']." ". $row['AMaterno']." ".$row['Nombre']); ?> </center></td>
         <td><center> <?PHP echo htmlentities($row['email']); ?> </center></td>
         <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
         <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="email">
-        <td><center> <button type="submit" class="btn btn-info"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
+        <td><center> <button type="submit" style="background-color:transparent; border-radius:12px; border: 1px solid #FFF" class="buttonpillicon"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
         </form>
 
-        <td>
+        <td class="borderpillend">
         <center>
         <?PHP
 		$sql = "SELECT Status FROM habilita_exam WHERE Mat_Alu = '$row[Mat_Alumno]' AND IDTema = '$IDTema';";
@@ -185,6 +191,12 @@ mysqli_close($conexia);
 
         <!-- <td><center> Aquí el check box </center></td> -->
     </tr>
+		<tr class="separateRow">
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+	 </tr>
     <?PHP
 		}
 		desconectarBD();
@@ -193,9 +205,6 @@ mysqli_close($conexia);
 	</table>
 
 </div><!-- Fin del div principal -->
-
-<br><br><br><br>
-<br><br>
 
 </body>
 </html>

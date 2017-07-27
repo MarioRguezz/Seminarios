@@ -90,15 +90,15 @@ if($TipoPer == "Alumno")
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
     <div    class="titleContainer">
         <div class="titleImg">
-          <img  class="imageMargin" src="../img/Icons/nuevosiconos/21.png" height="27" width="27">
-          <span class="purpleTitle">PERFIL DE USUARIO</span>
+					<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
+					<span class="greenTitle">PERFIL DE USUARIO</span>
         </div>
       </div>
     </div>
 
 <?PHP
 
-if($_POST['tipoUs'] == 'Instructor') 
+if($_POST['tipoUs'] == 'Instructor')
 {
 
 ?>
@@ -129,60 +129,60 @@ if($_POST['tipoUs'] == 'Instructor')
             <form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
-                <label for="nombre" class="control-label col-md-3 whiteClassThin verde normal">Nombre</label>
+                <label for="nombre" class="control-label col-md-3 whiteClassThin gris normal">Nombre</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="nombre" name="nombre" type="text" value=" <?PHP echo htmlentities($row['Nombre']." ".$row['APaterno']." ".$row['AMaterno']); ?>" readonly>
+                    <input class="form-control " id="nombre" name="nombre" type="text" value=" <?PHP echo htmlentities($row['Nombre']." ".$row['APaterno']." ".$row['AMaterno']); ?>" readonly>
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                <label for="email" class="control-label col-md-3 whiteClassThin verde normal">Correo electronico</label>
+                <label for="email" class="control-label col-md-3 whiteClassThin gris normal">Correo electronico</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" type="text" id="email" name="email" value="<?PHP echo htmlentities($row['email']); ?>" readonly>
+                    <input class="form-control " type="text" id="email" name="email" value="<?PHP echo htmlentities($row['email']); ?>" readonly>
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                <label for="opcion" class="control-label col-md-3 whiteClassThin verde normal">Sexo</label>
+                <label for="opcion" class="control-label col-md-3 whiteClassThin gris normal">Sexo</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" type="text" id="sex" name="sex" value="<?PHP echo htmlentities($row['Sexo']); ?>" readonly>
+                    <input class="form-control " type="text" id="sex" name="sex" value="<?PHP echo htmlentities($row['Sexo']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="telofi" class="control-label col-md-3 whiteClassThin verde normal">Telefono de oficina</label>
+                <label for="telofi" class="control-label col-md-3 whiteClassThin gris normal">Telefono de oficina</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="telofi" name="telofi" type="text" value="<?PHP echo htmlentities($row['TelOfi']); ?>" readonly>
+                    <input class="form-control " id="telofi" name="telofi" type="text" value="<?PHP echo htmlentities($row['TelOfi']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="telcasa" class="control-label col-md-3 whiteClassThin verde normal">Telefono de casa</label>
+                <label for="telcasa" class="control-label col-md-3 whiteClassThin gris normal">Telefono de casa</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="telcasa" name="telcasa" type="text" value="<?PHP echo htmlentities($row['TelCas']); ?>" readonly>
+                    <input class="form-control " id="telcasa" name="telcasa" type="text" value="<?PHP echo htmlentities($row['TelCas']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="celular" class="control-label col-md-3 whiteClassThin verde normal">Telefono celular</label>
+                <label for="celular" class="control-label col-md-3 whiteClassThin gris normal">Telefono celular</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="celular" name="celular" type="text" value="<?PHP echo htmlentities($row['Celular']); ?>" readonly>
+                    <input class="form-control " id="celular" name="celular" type="text" value="<?PHP echo htmlentities($row['Celular']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="estado" class="control-label col-md-3 whiteClassThin verde normal">Estado</label>
+                <label for="estado" class="control-label col-md-3 whiteClassThin gris normal">Estado</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="estado" name="estado" type="text" value="<?PHP echo htmlentities($row['Estado']); ?>" readonly>
+                    <input class="form-control " id="estado" name="estado" type="text" value="<?PHP echo htmlentities($row['Estado']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="municipio" class="control-label col-md-3 whiteClassThin verde normal">Municipio</label>
+                <label for="municipio" class="control-label col-md-3 whiteClassThin gris normal">Municipio</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Municipio']); ?>" readonly>
+                    <input class="form-control " id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Municipio']); ?>" readonly>
                     </div>
                 </div>
 		</form>
@@ -252,60 +252,60 @@ else
 				?>
 
                 <div class="form-group" >
-                <label for="nombre" class="control-label col-md-3 whiteClassThin verde normal">Nombre</label>
+                <label for="nombre" class="control-label col-md-3 whiteClassThin gris normal">Nombre</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="nombre" name="nombre" type="text" value=" <?PHP echo htmlentities($row['Nombre']." ".$row['APaterno']." ".$row['AMaterno']); ?>" readonly>
+                    <input class="form-control " id="nombre" name="nombre" type="text" value=" <?PHP echo htmlentities($row['Nombre']." ".$row['APaterno']." ".$row['AMaterno']); ?>" readonly>
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                <label for="email" class="control-label col-md-3 whiteClassThin verde normal">Correo electronico</label>
+                <label for="email" class="control-label col-md-3 whiteClassThin gris normal">Correo electronico</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" type="text" id="email" name="email" value="<?PHP echo htmlentities($row['email']); ?>" readonly>
+                    <input class="form-control " type="text" id="email" name="email" value="<?PHP echo htmlentities($row['email']); ?>" readonly>
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                <label for="opcion" class="control-label col-md-3 whiteClassThin verde normal">Sexo</label>
+                <label for="opcion" class="control-label col-md-3 whiteClassThin gris normal">Sexo</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" type="text" id="sex" name="sex" value="<?PHP echo htmlentities($row['Sexo']); ?>" readonly>
+                    <input class="form-control " type="text" id="sex" name="sex" value="<?PHP echo htmlentities($row['Sexo']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="telofi" class="control-label col-md-3 whiteClassThin verde normal">Telefono de oficina</label>
+                <label for="telofi" class="control-label col-md-3 whiteClassThin gris normal">Telefono de oficina</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="telofi" name="telofi" type="text" value="<?PHP echo htmlentities($row['TelOfi']); ?>" readonly>
+                    <input class="form-control " id="telofi" name="telofi" type="text" value="<?PHP echo htmlentities($row['TelOfi']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="telcasa" class="control-label col-md-3 whiteClassThin verde normal">Telefono de casa</label>
+                <label for="telcasa" class="control-label col-md-3 whiteClassThin gris normal">Telefono de casa</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="telcasa" name="telcasa" type="text" value="<?PHP echo htmlentities($row['TelCas']); ?>" readonly>
+                    <input class="form-control " id="telcasa" name="telcasa" type="text" value="<?PHP echo htmlentities($row['TelCas']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="celular" class="control-label col-md-3 whiteClassThin verde normal">Telefono celular</label>
+                <label for="celular" class="control-label col-md-3 whiteClassThin gris normal">Telefono celular</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="celular" name="celular" type="text" value="<?PHP echo htmlentities($row['Celular']); ?>" readonly>
+                    <input class="form-control " id="celular" name="celular" type="text" value="<?PHP echo htmlentities($row['Celular']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="estado" class="control-label col-md-3 whiteClassThin verde normal">Estado</label>
+                <label for="estado" class="control-label col-md-3 whiteClassThin gris normal">Estado</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="estado" name="estado" type="text" value="<?PHP echo htmlentities($row['Estado']); ?>" readonly>
+                    <input class="form-control " id="estado" name="estado" type="text" value="<?PHP echo htmlentities($row['Estado']); ?>" readonly>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="municipio" class="control-label col-md-3 whiteClassThin verde normal">Municipio</label>
+                <label for="municipio" class="control-label col-md-3 whiteClassThin gris normal">Municipio</label>
                     <div class="col-md-6">
-                    <input class="form-control NoRadiusColor" id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Municipio']); ?>" readonly>
+                    <input class="form-control " id="municipio" name="municipio" type="text" value="<?PHP echo htmlentities($row['Municipio']); ?>" readonly>
                     </div>
                 </div>
 		</form>
@@ -314,9 +314,6 @@ else
 <?PHP
 }
 ?>
-
-<br><br><br><br>
-<br><br>
 
 </body>
 </html>

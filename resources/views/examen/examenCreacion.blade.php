@@ -48,7 +48,7 @@
         <div class="form-horizontal ">
             <div class="text-center">
               @if($tipo == "examen")
-                <label style="margin-top:100px" class="control-label" id="VP"><h3 class="purpleTitle top">NUEVO EXAMEN</h3></label>
+                <label style="margin-top:100px" class="control-label" id="VP"><h3 class="pinkTitle top">NUEVO EXAMEN</h3></label>
               @else
                 <label class="control-label" id="VP"><h3 class="purpleTitle top">NUEVA ACTIVIDAD</h3></label>
               @endif
@@ -78,7 +78,7 @@
             <br>
                 <div class="row">
                     <div class="col-md-7">
-                    <label class="purpleTitle" >Este es un diseñador de actividades, para agregar una pregunta haz clic en el
+                    <label class="grayTitle" >Este es un diseñador de actividades, para agregar una pregunta haz clic en el
                         botón "Nueva pregunta"</label>
                     </div>
                     <br>
@@ -88,8 +88,8 @@
 
                     </div>
                     <div class="box rightPosition" >
-                        <button id="nuevaPregunta" class="NoRadiusColorButton">Nueva Pregunta</button>
-                        <button id="btnGuardar" class="NoRadiusColorButton">Guardar</button>
+                        <button id="nuevaPregunta" class="NoRadiusColorButtonCircle">Nueva Pregunta</button>
+                        <button id="btnGuardar" class="NoRadiusColorButtonCircle">Guardar</button>
 
                     </div>
                 </div>

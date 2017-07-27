@@ -105,8 +105,8 @@ mysqli_close($conexia);
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
 		<div    class="titleContainer">
 				<div class="titleImg">
-					<img  class="imageMargin" src="../img/Icons/nuevosiconos/21.png" height="27" width="27">
-					<span class="purpleTitle">LISTA DE ALUMNOS INSCRITOS AL CURSO</span>
+					<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
+					<span class="greenTitle">LISTA DE ALUMNOS INSCRITOS AL CURSO</span>
 				</div>
 			</div>
 		</div>
@@ -115,13 +115,19 @@ mysqli_close($conexia);
 -->
 
 <div >
-	<table  class="table  designTable"  align="center">
-    <tr>
-    	<th class="weight"><center>Nombre</center></th>
+	<table  class="tableSize"  align="center">
+    <tr class="pinkbackground">
+    	<th class="weight borderpillbegin"><center>Nombre</center></th>
         <th class="weight"><center>Correo</center></th>
         <th class="weight"><center>Estatus</center></th>
-        <th class="weight"><center>Información</center></th>
+        <th class="weight borderpillend"><center>Información</center></th>
     </tr>
+		<tr class="separateRow">
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+	 </tr>
 
 	<?PHP
 		$color = 0;
@@ -134,19 +140,19 @@ mysqli_close($conexia);
 			if ($color == 0)
 			{
 	?>
-    <tr>
+    <tr class="graybackground">
      		<?PHP
 			$color = 1;
 			}
 			else
 			{
 			?>
-    <tr>
+    <tr class="graybackground">
             <?PHP
 			$color = 0;
 			}
 			?>
-    	<td><center> <?PHP echo htmlentities($row['APaterno']." ". $row['AMaterno']." ".$row['Nombre']); ?> </center></td>
+    	<td class="borderpillbegin"><center> <?PHP echo htmlentities($row['APaterno']." ". $row['AMaterno']." ".$row['Nombre']); ?> </center></td>
         <td><center> <?PHP echo htmlentities($row['email']); ?> </center></td>
             <!--<td><center> <?PHP// echo htmlentities($row['Mat_Alumno']); ?> </center></td> -->
 
@@ -157,7 +163,7 @@ mysqli_close($conexia);
                 echo '  <td>
                <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
                <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
-               <center> <button  type="submit" style="width:200px;" class="elementoButton NoRadiusColorButton"> Alta  </button></center></td>
+               <center> <button  type="submit" style="width:200px;" class="elementoButton buttonpill"> Alta  </button></center></td>
             ';
 
 
@@ -169,7 +175,7 @@ mysqli_close($conexia);
                 echo '<td>
                <input type="hidden" value=" '.$row['Mat_Alumno'].' " name="Mat_Alumno">
                <input type="hidden" value=" '.$IDCurso.' " name="id_Curso">
-                <center> <button type="submit" style="width:200px;" class="elementoButton NoRadiusColorButton"> Baja </button></center></td>
+                <center> <button type="submit" style="width:200px;" class="elementoButton buttonpill"> Baja </button></center></td>
             ';
             }
             ?>
@@ -179,10 +185,16 @@ mysqli_close($conexia);
 
             <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
         <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="email">
-        <td><center> <button type="submit"  style="border:none"class="NoRadiusColorButton"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
+        <td class="borderpillend"><center> <button type="submit"  class="buttonpillicon"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
         </form>
 
     </tr>
+		<tr class="separateRow">
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+	 </tr>
     <?PHP
 		}
 		desconectarBD();
@@ -191,9 +203,6 @@ mysqli_close($conexia);
 	</table>
 
 </div><!-- Fin del div principal -->
-
-<br><br><br><br>
-<br><br>
 
 </body>
 </html>

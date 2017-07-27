@@ -106,8 +106,8 @@ html{
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
 <div    class="titleContainer">
 		<div class="titleImg">
-			<img  class="imageMargin" src="../img/Icons/nuevosiconos/26.png" height="27" width="27">
-			<span class="purpleTitle">ALTA DE SUBTEMA</span>
+			<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
+			<span class="greenTitle">ALTA DE SUBTEMA</span>
 		</div>
 	</div>
 </div>
@@ -116,23 +116,23 @@ html{
 <form action="ConfirmaAltaSubtema.php?accion=Nu3v@" class="form-horizontal" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
-<label for="nombre" class="control-label col-md-3 whiteClassThin verde normal">Nombre del Subtema</label>
+<label for="nombre" class="control-label col-md-3 whiteClassThin gray normal">Nombre del Subtema</label>
     <div class="col-md-6">
-    <input class="form-control NoRadiusColor" id="nombre" name="Nombre" type="text" placeholder="" required>
+    <input class="form-control " id="nombre" name="Nombre" type="text" placeholder="" required>
     </div>
 </div>
 
  <div class="form-group">
-<label for="nombre" class="control-label col-md-3 whiteClassThin verde normal">Descripción</label>
+<label for="nombre" class="control-label col-md-3 whiteClassThin gray normal">Descripción</label>
     <div class="col-md-6">
-    <textarea class="form-control NoRadiusColor" maxlength="200" rows="5" id="Descrip" name="Descripcion" placeholder="" required></textarea>
+    <textarea class="form-control " maxlength="200" rows="5" id="Descrip" name="Descripcion" placeholder="" required></textarea>
     </div>
 </div>
 
 <div class="form-group">
-	<label for="opcion1" class="control-label col-md-3 whiteClassThin verde normal">Tipo de archivo a subir</label>
+	<label for="opcion1" class="control-label col-md-3 whiteClassThin gray normal">Tipo de archivo a subir</label>
     <div class="col-md-6">
-    <select class="form-control NoRadiusColor" name="TMat" id="TMat">
+    <select class="form-control " name="TMat" id="TMat">
         <option value="0">Seleccione una opción</option>
         <option value="PDF">PDF</option>
         <option value="Video">Video</option>
@@ -158,7 +158,7 @@ html{
         <button class="btn btn-success" id="btn-registro" type="submit">Crear subtema &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
         -->
 
-        <input type="submit" class="NoRadiusColorButton col-md-offset-8" value="Crear subtema">
+        <input type="submit" class="NoRadiusColorButtonPill col-md-offset-8" value="Crear subtema">
     </div>
 </div>
 
