@@ -31,8 +31,8 @@
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
     <div    class="titleContainer">
         <div class="titleImg">
-          <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/17.png')}}" height="27" width="27">
-          <span class="purpleTitle">DASHBOARD CLIENTE ADMINISTRADOR</span>
+            <img  class="imageMargin" src="{{url('/img/byondiconos/BEYOND2-24.png')}}" height="40" width="40">
+          <span class="greenTitle">DASHBOARD CLIENTE ADMINISTRADOR</span>
         </div>
       </div>
     </div>
@@ -46,54 +46,89 @@
                                   <div style="clear:both;"> </div>
                               </form>
            </div>
-              <table class="table designTable"  align="center">
+              <table class="tableSize"  align="center">
    <thead>
-     <tr>
-       <th style="font-weight:bold;" class="weight">Tipo de Usuario</th>
+     <tr class="pinkbackground">
+       <th class="weight borderpillbegin">Tipo de Usuario</th>
        <th class="weight">Nombre</th>
        <th class="weight">Apellido Paterno</th>
        <th class="weight">Apellido Materno</th>
-       <th class="weight">Email</th>
+       <th class="weight borderpillend">Email</th>
      </tr>
+     <tr class="separateRow">
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+    </tr>
    </thead>
    <tbody>
      @foreach ($clientesAdministradores as $clienteAdministrador)
      <?php $var=0; ?>
-     <tr>
-       <td>Instructores</td>
+     <tr class="greenbackground">
+       <td class="borderpillbegin">Instructores</td>
        <td> </td>
        <td> </td>
        <td></td>
-       <td> </td>
+       <td class="borderpillend"> </td>
      </tr>
+     <tr class="separateRow">
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+    </tr>
      @foreach ($clienteAdministrador->instructores as $instructor)
-     <tr>
-       <td></td>
+     <tr class="graybackground">
+       <td class="borderpillbegin"></td>
        <td> {{ $instructor->datos['Nombre'] }}</td>
        <td> {{ $instructor->datos['APaterno'] }}</td>
        <td>{{ $instructor->datos['AMaterno'] }} </td>
-       <td>{{ $instructor->datos['email'] }} </td>
+       <td class="borderpillend">{{ $instructor->datos['email'] }} </td>
      </tr>
+     <tr class="separateRow">
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+       <th></th>
+    </tr>
        @endforeach
 
        @foreach ($clienteAdministrador->alumnos as $alumno)
 
         @if ( $var == 0)
-          <tr>
-             <td>Alumnos</td>
+          <tr class="greenbackground">
+             <td class="borderpillbegin">Alumnos</td>
              <td> </td>
              <td> </td>
              <td></td>
-             <td> </td>
+             <td class="borderpillend"> </td>
            </tr>
+           <tr class="separateRow">
+             <th></th>
+             <th></th>
+             <th></th>
+             <th></th>
+             <th></th>
+          </tr>
        @endif
-               <tr>
-                 <td></td>
+               <tr class="graybackground">
+                 <td class="borderpillbegin"></td>
                  <td> {{ $alumno->datos['Nombre'] }}</td>
                  <td> {{ $alumno->datos['APaterno'] }}</td>
                  <td>{{ $alumno->datos['AMaterno'] }} </td>
-                 <td>{{ $alumno->datos['email'] }} </td>
+                 <td class="borderpillend">{{ $alumno->datos['email'] }} </td>
                </tr>
+               <tr class="separateRow">
+                 <th></th>
+                 <th></th>
+                 <th></th>
+                 <th></th>
+                 <th></th>
+              </tr>
 
                  <?php $var++ ?>
                  @endforeach

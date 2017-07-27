@@ -84,7 +84,7 @@ body{
 
 body.backgroundLogin
 {
-	background-image:url(../img/backgrounds/FONDO.png);
+	background-image:url(../img/backgrounds/building.jpg);
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -99,6 +99,44 @@ body.backgroundLogin
 }
 
 
+
+.purpleTitle{
+	color: #201953;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.greenTitle{
+	color: #009999;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.pinkTitle{
+	color: #C5027F;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.yellowTitle{
+	color: #E69401;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.greenclearTitle{
+	color: #69B42D;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+
+
+.wellalternative{
+	min-height: 20px;
+	padding:19px;
+	margin-bottom: 20px;
+}
 
 .borderpillbegin{
 	-webkit-border-top-left-radius: 100px;
@@ -217,6 +255,11 @@ Nueva parte
 	font-size: 40px;
 }
 
+.titleLogin{
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+}
 
 
 .titleContainer{
@@ -317,6 +360,16 @@ border-bottom-style: 1px solid  !important;
 	font-size: 18px;
 }
 
+
+.NoRadiusColorlogin{
+	border:solid 1px #201953;
+	border-radius: 0px;
+	height: 40px;
+	font-size: 18px;
+}
+
+
+
 .NoRadiusColor2{
 	border:solid 1px #409798;
 	border-radius: 0px;
@@ -336,6 +389,36 @@ border-bottom-style: 1px solid  !important;
 	font-weight: normal;
 }
 
+
+.NoRadiusColorButtonCircle{
+	border:solid 2px #3f8f8e;
+	color:#3f8f8e;
+	height: 50px;
+	font-weight: 200;
+	font-size: 20px;
+	background-color: white;
+	font-weight: normal;
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:10px;
+	 border-radius:40px;
+}
+
+
+.NoRadiusColorButtonCircletype2{
+	border:solid 2px #3f8f8e;
+	color:#3f8f8e;
+	height: 50px;
+	font-weight: 200;
+	font-size: 20px;
+	background-color: white;
+	font-weight: normal;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+	 border-radius:40px;
+}
 
 
 .menuOption{
@@ -380,6 +463,12 @@ border-bottom-style: 1px solid  !important;
 	color: white;
 	font-size: 30px;
 	font-weight: 300;
+}
+
+.Subtitlelogin{
+	color: white;
+	font-size: 20px;
+	font-weight: 400;
 }
 
 .NoShadow{
@@ -429,6 +518,68 @@ height: 60px;
 border:solid 3px #FFF;
 border-radius: 0px;
 }
+
+
+.buttonForget{
+background: transparent;
+color: white;
+font-weight: 400;
+font-size: 20px;
+height: 60px;
+border: 0px;
+border-radius: 0px;
+}
+
+.buttonForget:hover{
+	color: white;
+}
+
+.buttonLoginRegistro{
+background: #009999;
+color: white;
+font-weight: 400;
+font-size: 15px;
+height: 30px;
+border-radius: 0px;
+width: 200px;
+border: 0px;
+padding-bottom: 25px;
+margin-left: 20%;
+}
+
+.buttonLoginRegistro:hover{
+	color: white;
+	text-decoration: none;
+}
+
+.containerregister{
+	 border: 2px solid #FFF;
+	 padding-bottom:20px;
+	 margin-top: 60px;
+	 padding: 10px;
+}
+.logologin{
+	margin-left:20%;
+	margin-top:20%;
+}
+.buttonLoginComenzar{
+background: #C5027F;
+color: white;
+font-weight: 400;
+font-size: 15px;
+height: 30px;
+border-radius: 0px;
+width: 200px;
+border: 0px;
+padding-bottom: 30px;
+margin-left: 15%;
+}
+
+.buttonLoginComenzar:hover{
+	color: white;
+}
+
+
 
 .buttonAlta{
 	background: transparent;
@@ -521,13 +672,6 @@ margin-top: 5%;
 
 .tablaDesign{
 		 border: none !important;
-}
-
-th, td {
-    padding: 15px;
-		color: white;
-		font-size: 25px;
-		font-weight: 200;
 }
 
 .cells{

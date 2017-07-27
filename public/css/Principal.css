@@ -57,6 +57,14 @@
   border-bottom-right-radius: 100px;
 }
 
+.greenclearTitle{
+	color: #69B42D;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+
+
 .pinkbackground{
 	background-color:#C5027F;
 }
@@ -64,6 +72,7 @@
 .graybackground{
 	background-color:#616160;
 }
+
 
 .greenbackground{
 	background-color:#009999;
