@@ -1,32 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <title>Dashboard</title>
-    <meta charset="utf-8" />
-    <script src="../../js/jquery.min.js"></script>
-    <link rel="stylesheet" href="../../js/bootstrap/css/bootstrap.min.css">
-    <script src="../../js/bootstrap/js/bootstrap.min.js"></script>
+@extends('principal')
 
 
-    <script src="../js/pregunta.js"></script>
-    <link rel="stylesheet" href="../../css/general.css">
-    <link rel="stylesheet" href="../../css/radio.css">
-    <link rel="stylesheet" href="../../css/Principal.css">
-
-
-    <style>
-        html {
-            height: 100%;
-        }
-
-       .weight{
-          font-weight: bold !important;
-        }
-    </style>
-</head>
-<body class="backgroundPrincipal">
-  @include('header')
+@section('content')
   <?php $var = 0; ?>
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
     <div    class="titleContainer">
@@ -140,6 +115,4 @@
         </div>
     </div>
 </div>-->
-</body>
-
-</html>
+@endsection

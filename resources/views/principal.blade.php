@@ -35,7 +35,9 @@ if( !empty( $_REQUEST['Message'] ) ) {
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Principal</title>
+    <title>
+    @yield('titulo')
+    </title>
 
     <script src="{{url('js/jquery.min.js')}}"></script>
     <script src="{{url('js/passwordval.js')}}"></script>
