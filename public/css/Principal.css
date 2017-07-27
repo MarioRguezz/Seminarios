@@ -48,6 +48,19 @@
   border-bottom-left-radius: 100px;
 }
 
+.buttonpill{
+	border:solid 1px #FFF;
+	color:#FFF;
+	border-radius: 0px;
+	height: 40px;
+	font-weight: 200;
+	font-size: 18px;
+	background-color: transparent;
+	border-radius: 100px;
+	font-weight: normal;
+	width: 200px;
+}
+
 .borderpillend{
 	-webkit-border-top-right-radius: 100px;
   -moz-border-top-right-radius: 100px;
@@ -161,12 +174,16 @@ border-bottom-style: 1px solid  !important;
 	font-weight: 500;
 }
 
+
 .grayTitle{
 	color: #2F302E;
 	font-size: 20px;
 	font-weight: 500;
 }
 
+.gray{
+	color: #2F302E;
+}
 
 
 
@@ -488,6 +505,14 @@ text-decoration: none;
 	border:solid 1px #201953;
 	border-radius: 0px;
 	height: 50px;
+	font-size: 18px;
+}
+
+.examenInput{
+	border:solid 0px #A1A1A1;
+	border-radius: 14px;
+	height: 50px;
+	background-color: #E3E3E3;
 	font-size: 18px;
 }
 

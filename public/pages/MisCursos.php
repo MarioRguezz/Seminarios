@@ -99,22 +99,27 @@ mysqli_close($conexia);
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
     <div    class="titleContainer">
         <div class="titleImg">
-          <img  class="imageMargin" src="../img/Icons/nuevosiconos/21.png" height="27" width="27">
-          <span class="purpleTitle">MIS CURSOS</span>
+					<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
+					<span class="greenTitle">MIS CURSOS</span>
         </div>
       </div>
     </div>
 
 <br><br>
 <div class="container">
-	<table class="table designTable"   style="border:none !important" align="center">
-    <tr>
-    	<th class="weight" style="border:none !important"><center>Nombre del curso</center></th>
-        <th class="weight" style="border:none !important"><center>Instructor</center></th>
+	<table style="width:100%;"   style="border:none !important" align="center">
+    <tr class="pinkbackground">
+    	<th class="weight borderpillbegin" style="border:none !important"><center>Nombre del curso</center></th>
+        <th class="weight " style="border:none !important"><center>Instructor</center></th>
         <th class="weight" style="border:none !important"><center>Progreso</center></th>
-        <th class="weight" style="border:none !important"><center></center></th>
+        <th class="weight borderpillend" style="border:none !important"><center></center></th>
     </tr>
-
+		<tr class="separateRow">
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
 	<?PHP
 		$color = 0;
 		$conex = conect();
@@ -160,7 +165,7 @@ mysqli_close($conexia);
 			$color = 0;
 			}
 			?>
-    	<td style="border:none !important"><center> <?PHP echo htmlentities($row['nombre']); ?> </center></td>
+    	<td style="border:none !important" class="borderpillbegin graybackground"><center> <?PHP echo htmlentities($row['nombre']); ?> </center></td>
         <?PHP
 
 			$Total = 0;
@@ -174,7 +179,7 @@ mysqli_close($conexia);
 			$rowses = mysqli_fetch_array($resultado);
 			$Nombre_Ins = $rowses['APaterno']." ".$rowses['AMaterno']." ".$rowses['Nombre'];
 		?>
-        <td style="border:none !important"><center> <?PHP echo htmlentities($Nombre_Ins); ?> </center></td>
+        <td style="border:none !important" class="borderpillend graybackground"><center> <?PHP echo htmlentities($Nombre_Ins); ?> </center></td>
 
         <td style="border:none !important">
         <!-- <center> <?PHP //echo htmlentities($Total." / ".$row['per_num']); ?> </center>-->
@@ -219,7 +224,7 @@ mysqli_close($conexia);
 				else
 				{
 				 ?>
-                <div class="progress-bar progress-bar-success " role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?PHP echo htmlentities($Progreso); ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?PHP echo htmlentities($Progreso); ?>%">
                     <?PHP echo htmlentities($Progreso); ?>%
                  </div>
                 <?PHP
@@ -254,7 +259,7 @@ mysqli_close($conexia);
 		?>
         <input type="hidden" value="<?PHP echo htmlentities($row['id_Curso']); ?>" name="IDCurso">
         <input type="hidden" value="<?PHP echo htmlentities($Mat); ?>" name="Mat_Alumno">
-        <td style="border:none !important"><center> <button class="NoRadiusColorButton" id="btn-Ir" type="submit">Ir al curso &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
+        <td style="border:none !important"><center> <button class="NoRadiusColorButtonCircle" id="btn-Ir" type="submit">Ir al curso &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
         </form>
     </tr>
     <?PHP
@@ -265,9 +270,6 @@ mysqli_close($conexia);
 	</table>
 
 </div><!-- Fin del div principal -->
-
-<br><br><br><br>
-<br><br>
 
 </body>
 </html>

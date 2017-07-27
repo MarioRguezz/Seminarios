@@ -12,8 +12,8 @@
 
     <link rel="stylesheet" href="{{url('css/general.css')}}">
     <link rel="stylesheet" href="{{url('css/radio.css')}}">
-    <link rel="stylesheet" href="{{url('css/Principal.css')}}'">
-    <link rel="stylesheet" href="{{url('css/jquery-ui.css')}}'">
+    <link rel="stylesheet" href="{{url('css/Principal.css')}}">
+    <link rel="stylesheet" href="{{url('css/jquery-ui.css')}}">
 
     <link href="{{url('css/radiocss.css')}}" rel="stylesheet" />
 
@@ -55,8 +55,9 @@
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
 <div    class="titleContainer">
     <div class="titleImg">
-      <img  class="imageMargin" src="{{url('/img/Icons/nuevosiconos/26.png')}}" height="27" width="27">
-      <span class="purpleTitle">EXAMEN</span>
+      <img  class="imageMargin" src="{{url('/img/byondiconos/BEYOND2-33.png')}}" height="40" width="40">
+      <span class="greenTitle">EXAMEN</span>
+
     </div>
   </div>
 </div>
@@ -77,7 +78,7 @@
         @if($pregunta->tipo == 1)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
                 <h3 class="whiteClass verde normal">{{$pregunta->titulo}}</h3>
-                <input type='text' class='textArea space leftPosition NoRadiusColor   respuestaInput' placeholder='Coloca aquí tu respuesta'>
+                <input type='text' class='textArea space leftPosition examenInput   respuestaInput' placeholder='Coloca aquí tu respuesta'>
             </div>
 
                 <script type="text/javascript">
@@ -191,7 +192,7 @@
             @endif
 
     @endforeach
-    <button type="button" id="guardarExamen" class="NoRadiusColorButton">Guardar</button>
+    <button type="button" id="guardarExamen" class="NoRadiusColorButtonPill" style="width:100px;">Guardar</button>
 
 </div>
 

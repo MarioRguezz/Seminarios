@@ -103,8 +103,8 @@ mysqli_close($conexia);
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
 <div    class="titleContainer">
 		<div class="titleImg">
-			<img  class="imageMargin" src="../img/Icons/nuevosiconos/26.png" height="27" width="27">
-			<span class="purpleTitle">MIS CURSOS</span>
+			<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
+			<span class="greenTitle">MIS CURSOS</span>
 		</div>
 	</div>
 </div>
@@ -112,14 +112,21 @@ mysqli_close($conexia);
 <br><br>
 <!--<div class="container">-->
     <div class="">
-		<table class="table designTable"  align="center">
-    <tr>
-    	<th class="weight"><center>Nombre del curso</center></th>
+		<table class="tableSize"  align="center">
+    <tr class="pinkbackground">
+    	<th class="weight borderpillbegin"><center>Nombre del curso</center></th>
         <th class="weight"><center>Instructor</center></th>
         <th class="weight"><center>Descripción</center></th>
         <th class="weight"><center>Cupo</center></th>
-        <th class="weight"><center></center></th>
+        <th class="weight borderpillend"><center></center></th>
     </tr>
+		<tr class="separateRow">
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+	 </tr>
 	<?PHP
 		$color = 0;
 		$conex = conect();
@@ -139,19 +146,19 @@ mysqli_close($conexia);
 			if ($color == 0)
 			{
 	?>
-    <tr>
+    <tr class="graybackground">
      		<?PHP
 			$color = 1;
 			}
 			else
 			{
 			?>
-    <tr>
+    <tr class="graybackground">
             <?PHP
 			$color = 0;
 			}
 			?>
-    	<td><center> <?PHP echo htmlentities($row['nombre']); ?> </center></td>
+    	<td class="borderpillbegin"><center> <?PHP echo htmlentities($row['nombre']); ?> </center></td>
         <?PHP
 			$querys = "SELECT P.APaterno, P.AMaterno, P.Nombre FROM Persona P JOIN usuario U ON P.email = U.email WHERE u.Mat_Usuario = '$row[Mat_Usuario]'";
 			$Nombre_Ins = "";
@@ -171,7 +178,7 @@ mysqli_close($conexia);
         <form action="CursosDisponibles.php?accion=nu3v0" class="form-horizontal" method="post" enctype="multipart/form-data">
         <input type="hidden" value="<?PHP echo htmlentities($row['id_Curso']); ?>" name="IDCurso">
         <input type="hidden" value="<?PHP echo htmlentities($Matricula); ?>" name="Mat_Alumno">
-        <td><center> <button class="NoRadiusColorButton" id="btn-Ir" type="submit" title="Clic aquí para inscribirte">Inscripción &nbsp; <span> <img src="../img/Icons/nuevosiconos/34.png"></span></button> </center></td>
+        <td class="borderpillend"><center> <button class="buttonpill" id="btn-Ir" type="submit" title="Clic aquí para inscribirte">Inscripción &nbsp; <span> <img style="color:#FFF !important;" src="../img/byondiconos/BEYOND2-55.png"></span></button> </center></td>
 
         </form>
         <?PHP
@@ -179,12 +186,19 @@ mysqli_close($conexia);
 			else
 			{
 		?>
-        	<td><center> <button class="btn btn-danger" id="btn-Ir" type="submit" title="Cupo completo" disabled>No hay cupo &nbsp; <span class="glyphicon glyphicon-remove"></span></button></td>
+        	<td class="borderpillend"><center> <button class="btn btn-danger" id="btn-Ir" type="submit" title="Cupo completo" disabled>No hay cupo &nbsp; <span class="glyphicon glyphicon-remove"></span></button></td>
         <?PHP
 			}
 		?>
         <!-- <td><center> Aquí el check box </center></td> -->
     </tr>
+		<tr class="separateRow">
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+	 </tr>
     <?PHP
 		}
 		//desconectarBD();
