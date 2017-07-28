@@ -108,8 +108,8 @@ if($tipoPer == "Alumno")
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
     <div    class="titleContainer">
         <div class="titleImg">
-          <img  class="imageMargin" src="../img/Icons/nuevosiconos/16.png" height="27" width="27">
-          <span class="purpleTitle">EDICIÓN DE SUBTEMA</span>
+					<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
+					<span class="greenTitle">EDICIÓN DE SUBTEMA</span>
         </div>
       </div>
     </div>
@@ -129,16 +129,16 @@ if($tipoPer == "Alumno")
 <form action="EditaSubtema.php?accion=Edita" class="form-horizontal" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
-<label for="nombre" class="control-label col-md-3 whiteClassThin normal verde">Nombre del Subtema</label>
+<label for="nombre" class="control-label col-md-3 ClassThin normal gray">Nombre del Subtema</label>
     <div class="col-md-6">
-    <input class="form-control NoRadiusColor" id="nombre" name="Nombre" type="text" placeholder="Nombre del subtema" value="<?PHP echo htmlentities($row['Nombre']); ?>" required>
+    <input class="form-control NoRadiusGray" id="nombre" name="Nombre" type="text" placeholder="Nombre del subtema" value="<?PHP echo htmlentities($row['Nombre']); ?>" required>
     </div>
 </div>
 
  <div class="form-group">
-<label for="nombre" class="control-label col-md-3 whiteClassThin normal verde">Descripción</label>
+<label for="nombre" class="control-label col-md-3 ClassThin normal gray">Descripción</label>
     <div class="col-md-6">
-    <input type="text" class="form-control NoRadiusColor" maxlength="200" rows="5" id="Descrip" name="Descripcion" placeholder="Introduzca una breve descripción del subtema" value="<?PHP echo htmlentities($row['Descrip']); ?>" required>
+    <input type="text" class="form-control NoRadiusGray" maxlength="200" rows="5" id="Descrip" name="Descripcion" placeholder="Introduzca una breve descripción del subtema" value="<?PHP echo htmlentities($row['Descrip']); ?>" required>
     </div>
 </div>
 
@@ -154,7 +154,7 @@ if($tipoPer == "Alumno")
         <button class="btn btn-success" id="btn-registro" type="submit">Crear subtema &nbsp; <span class="glyphicon glyphicon-ok"></span></button>
         -->
 
-        <input type="submit" class="NoRadiusColorButton  col-md-offset-7" value="Editar subtema">
+        <input type="submit" class="NoRadiusColorButtonCircle  col-md-offset-7" value="Editar subtema">
 
     </div>
 </div>

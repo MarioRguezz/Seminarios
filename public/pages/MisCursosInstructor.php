@@ -153,7 +153,7 @@ mysqli_close($conexia);
     	<td class=" borderpillbegin"><center> <?PHP echo htmlentities($row['nombre']); ?> </center></td>
         <td><center> <?PHP echo htmlentities($Total." / ".$row['per_num']); ?> </center></td>
 
-        <form action="Listax.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+        <form action="Listax.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
         <input type="hidden" value="<?PHP echo htmlentities($row['id_Curso']); ?>" name="IDCurso">
         <input type="hidden" value="<?PHP echo htmlentities($Matricula); ?>" name="Mat_User">
         <?PHP
@@ -172,7 +172,8 @@ mysqli_close($conexia);
 		?>
         </form> <!-- Fin del form a las listas -->
 
-        <form action="CursoTemaInstructor.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+      <!--  <form action="CursoTemaInstructor.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">-->
+			<form action="CursoTemaInstructor.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
         <input type="hidden" value="<?PHP echo htmlentities($row['id_Curso']); ?>" name="IDCurso">
         <input type="hidden" value="<?PHP echo htmlentities($Matricula); ?>" name="Mat_User">
         <td  class=" borderpillend" ><center> <button class="buttonpill" id="btn-Ir" type="submit">Ir al curso &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
@@ -194,7 +195,7 @@ mysqli_close($conexia);
 
 </div>
 <div>
-	
+
 </div><!-- Fin del div principal -->
 
 

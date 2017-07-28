@@ -242,14 +242,14 @@ mysqli_close($conexia);
 			{
 				$Mat = $row['Mat_Usuario'];
 		?>
-        <form action="CursoTemaAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <form action="CursoTemaAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
         <?PHP
 			}
 			else if($tipoPer == "Alumno")
 			{
 				$Mat = $row['Mat_Alumno'];
 		?>
-        	<form action="CursoTemaAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data">
+        	<form action="CursoTemaAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
             <?PHP
 			}
 			else

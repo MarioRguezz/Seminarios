@@ -38,7 +38,7 @@
                 <th class="weight">Número de licencias</th>
                 <th class="weight">Licencias restantes</th>
                 <th></th>
-                <th class="weight borderpillend"><a style="color:white;" href="{{url('/usuario/editar')}}">+</a></th>
+                <th class="weight borderpillend"><a style="color:white;" target="_blank" href="{{url('/usuario/editar')}}">+</a></th>
             </tr>
             <tr class="separateRow">
               <th></th>
@@ -62,7 +62,7 @@
                 <td>{{$administrador->fecha_expiracion}}</td>
                 <td>{{$administrador->no_licencias}}</td>
                 <td>{{$administrador->restante }}</td>
-                <td><a href="{{url('/usuario/editar/'.$administrador->id_persona)}}"><span  style="color:white;" class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a target="_blank" href="{{url('/usuario/editar/'.$administrador->id_persona)}}"><span  style="color:white;" class="glyphicon glyphicon-pencil"></span></a></td>
                 <td class="borderpillend"></td>
                 </tr>
                 <tr class="separateRow">

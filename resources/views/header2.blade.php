@@ -1,6 +1,6 @@
 <div style="position:absolute; z-index:200; background: #FFF; top: 0px; left:0px; right:0px; padding:20px; margin:0px;  border-bottom: 4px solid #A1A1A1;" class="col-sm-12 row">
   <div class="col-xs-4" >
-    <img src="../img/Icons/nuevosiconos/BEYOND2-56.png" width="200" height="45">
+    <img src="../img/byondiconos/BEYOND2-56.png" width="200" height="45">
   </div>
     <?php
 

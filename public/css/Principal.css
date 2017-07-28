@@ -339,6 +339,11 @@ Nueva parte
 		font-size: 18px;
 }
 
+ .ClassThin{
+		font-weight: 300;
+		font-size: 18px;
+}
+
 .whiteClass2{
 	color: white;
 	font-size: 40px;
@@ -528,6 +533,17 @@ text-decoration: none;
 	height: 50px;
 	font-size: 18px;
 }
+
+.NoRadiusGray{
+	border:solid 0px #FFF;
+	background-color: #E1E1E1;
+	border-radius: 12px;
+	height: 50px;
+	font-size: 18px;
+}
+
+
+
 
 .examenInput{
 	border:solid 0px #A1A1A1;
