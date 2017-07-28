@@ -99,9 +99,8 @@
       @endforeach
    </tbody>
  </table>
-  <!-- {{$cursos->links()}}-->
-   {{ $cursos->links('vendor.pagination.custom') }}
       <!--  </div>
     </div>
 </div>-->
+{{ $cursos->links('vendor.pagination.custom') }}
 @endsection

@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Stmt\DeclareDeclare;
 use Illuminate\Support\Facades\DB;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Input;use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class DashboardController extends Controller
 {
@@ -122,9 +123,21 @@ class DashboardController extends Controller
         }
       }
 
-        return view('dashboard.cursocliente',['cursos' => $cursosarray]);
+        return view('dashboard.cursocliente',['cursos' => $this->paginate($cursosarray,5)]);
     }
 
+
+public function paginate($items,$perPage)
+{
+    $pageStart = \Request::get('page', 1);
+    // Start displaying items from this number;
+    $offSet = ($pageStart * $perPage) - $perPage; 
+
+    // Get only the items you need using array_slice
+    $itemsForCurrentPage = array_slice($items, $offSet, $perPage, true);
+
+    return new LengthAwarePaginator($itemsForCurrentPage, count($items), $perPage,Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
+}
 
 
 
