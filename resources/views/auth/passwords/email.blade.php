@@ -61,7 +61,7 @@ html{
 
 
 
-      <div class="row control-label col-md-12 whiteClass verde normal form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+      <div class="row control-label col-md-12  ClassThin gray normal form-group{{ $errors->has('email') ? ' has-error' : '' }}">
           <label for="email" class="col-md-4 control-label">Email</label>
 
           <div class="col-md-6">

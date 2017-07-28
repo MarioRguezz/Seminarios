@@ -1,14 +1,9 @@
 @extends('principal')
-
 @section('titulo')
-  Dashboard cursos
+  Dashboard Cursos
 @endsection
 
 @section('head')
-
-
-
-
     <script src="../js/pregunta.js"></script>
     <script src="../js/efectos.js"></script>
     <script src="../js/examen/model/examen.js"></script>

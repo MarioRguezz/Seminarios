@@ -52,6 +52,7 @@ if($tipoPer == "Alumno")
 	$resultasa = mysqli_query($conexia,$queryzexa);
 	$row = mysqli_fetch_array($resultasa);
 
+
 ?>
 <!doctype html>
 <html>
@@ -130,7 +131,8 @@ if($tipoPer == "Alumno")
     <tr>
     	<th class="weight gray ">Tema</th>
         <th class="weight gray tablaDesign"><center><?PHP echo htmlentities($filases['Nombre']); ?> </center></th>
-        <form action="AltaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+        <!--<form action="AltaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">-->
+				<form action="AltaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
             <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
             <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
           <!--  <th><center><button class="btn-info" type="submit">Agregar subtema &nbsp;<span class="glyphicon glyphicon-blackboard"></span> </center> </button></th> -->
@@ -269,12 +271,13 @@ if($tipoPer == "Alumno")
     	<td class="tablaDesign"><center> &nbsp; </center></td>
         <td class="tablaDesign"><center> <h5 class="cells gray"> <?PHP echo htmlentities($fila['Nombre']); ?> </h5></center></td>
         <td class="tablaDesign"><h5 class="cells gray"> <?PHP echo htmlentities($fila['Descrip']); ?> </h5></td>
-        <form action="EditaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">
+      <!--  <form action="EditaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">-->
+			<form action="EditaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
         <input type="hidden" value="<?PHP echo htmlentities($fila['id_Subtema']); ?>" name="IDSubtema">
         <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
         <td class="tablaDesign">
 				<!--	<center> <button type="submit" class="btn-warning">editar &nbsp;<span class="glyphicon glyphicon-pencil"></span></center>-->
-				<center><button  style="background:transparent; border:none;" class=" " type="submit"><img  src="../img/Icons/Png/editar.png"> </button></center>
+				<center><button  style="background:transparent; border:none;" class=" " type="submit"><img style="width:100px; " src="../img/Icons/nuevosiconos/editar1.png"> </button></center>
 					</td>
         </form>
 
@@ -310,7 +313,7 @@ if($accion == 'Nu3v@')
 			$clave = substr($_POST['nombreTema'],0, 2).rand(1000, 9999);
 			$fecha = date("Y-m-d");
 			$IdeCurso = $_POST['IDCurso'];
-			var_dump($IdeCurso);
+			//var_dump($IdeCurso);
 
 			$conec = conect();
 			$sql = "INSERT INTO curso_tema (id_Curso, id_Tema, Nombre, fecha) VALUES ('$IdeCurso', '$clave',  '$_POST[nombreTema]', '$fecha');";

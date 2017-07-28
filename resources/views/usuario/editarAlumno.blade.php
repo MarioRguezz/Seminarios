@@ -38,37 +38,37 @@
 
     <form action="{{url('/usuario/editaralumnoregistro')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="nombre" class="control-label col-md-3 whiteClass verde normal">Nombre</label>
+            <label for="nombre" class="control-label col-md-3 ClassThin gray normal">Nombre</label>
             <div class="col-md-6">
               <input  id="idPersona" name="idPersona" type="hidden" value="{{$alumno->IdPersona}}" required>
               <input  id="idCA" name="idCA" type="hidden" value="{{$cve_ca}}" required>
-                <input class="form-control NoRadiusColor" id="nombre" name="nombre" type="text" placeholder="" value="{{$alumno->Nombre}}" required>
+                <input class="form-control NoRadiusGray" id="nombre" name="nombre" type="text" placeholder="" value="{{$alumno->Nombre}}" required>
             </div>
         </div>
         <div class="form-group">
-            <label for="apaterno" class="control-label col-md-3 whiteClass verde normal">Apellido Paterno</label>
+            <label for="apaterno" class="control-label col-md-3 ClassThin gray normal">Apellido Paterno</label>
             <div class="col-md-6">
-                <input class="form-control NoRadiusColor" id="apaterno"  name="apaterno" type="text" placeholder="" value="{{$alumno->APaterno}}" required>
+                <input class="form-control NoRadiusGray" id="apaterno"  name="apaterno" type="text" placeholder="" value="{{$alumno->APaterno}}" required>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="amaterno" class="control-label col-md-3 whiteClass verde normal">Apellido Materno</label>
+            <label for="amaterno" class="control-label col-md-3 ClassThin gray normal">Apellido Materno</label>
             <div class="col-md-6">
-                <input class="form-control NoRadiusColor" id="amaterno" name="amaterno" type="text" placeholder="" value="{{$alumno->AMaterno}}" required>
+                <input class="form-control NoRadiusGray" id="amaterno" name="amaterno" type="text" placeholder="" value="{{$alumno->AMaterno}}" required>
             </div>
         </div>
         <div class="form-group">
-            <label for="password" class="control-label col-md-3 whiteClass verde normal">Contraseña</label>
+            <label for="password" class="control-label col-md-3 ClassThin gray normal">Contraseña</label>
             <div class="col-md-6">
-                <input class="form-control NoRadiusColor" id="password" name="password" type="password" placeholder="">
+                <input class="form-control NoRadiusGray" id="password" name="password" type="password" placeholder="">
             </div>
         </div>
         @if ($alumno->Status === "ALTA")
         <div class="form-group">
-            <label for="opcion" class="control-label col-md-3 whiteClass verde normal">Estatus</label>
+            <label for="opcion" class="control-label col-md-3 ClassThin gray normal">Estatus</label>
             <div class="col-md-6">
-                <select class="form-control NoRadiusColor" name="estatus" id="estatus">
+                <select class="form-control NoRadiusGray" name="estatus" id="estatus">
                     <option selected value="ALTA">ALTA</option>
                     <option value="BAJA">BAJA</option>
                 </select>
@@ -76,9 +76,9 @@
         </div>
         @else
         <div class="form-group">
-            <label for="opcion" class="control-label col-md-3 whiteClass verde normal">Sexo</label>
+            <label for="opcion" class="control-label col-md-3 ClassThin gray normal">Sexo</label>
             <div class="col-md-6">
-                <select class="form-control NoRadiusColor" name="estatus" id="estatus">
+                <select class="form-control NoRadiusGray" name="estatus" id="estatus">
                     <option value="ALTA">ALTA</option>
                     <option selected value="BAJA">BAJA</option>
                 </select>
@@ -88,7 +88,7 @@
 
         <div class="form-group">
             <div class="col-md-2 col-md-offset-4 ">
-                <button class=" NoRadiusColorButton" id="registro" style="width:300px;" type="submit">Guardar registro</button>
+                <button class="NoRadiusColorButton" id="registro" style="width:300px;" type="submit">Guardar registro</button>
             </div>
         </div>
     </form>

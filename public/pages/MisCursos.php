@@ -242,14 +242,14 @@ mysqli_close($conexia);
 			{
 				$Mat = $row['Mat_Usuario'];
 		?>
-        <form action="CursoTemaAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <form action="CursoTemaAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
         <?PHP
 			}
 			else if($tipoPer == "Alumno")
 			{
 				$Mat = $row['Mat_Alumno'];
 		?>
-        	<form action="CursoTemaAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data">
+        	<form action="CursoTemaAlumno.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
             <?PHP
 			}
 			else
@@ -264,6 +264,12 @@ mysqli_close($conexia);
         <td style="border:none !important"><center> <button class="NoRadiusColorButtonCircle" id="btn-Ir" type="submit">Ir al curso &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
         </form>
     </tr>
+		<tr class="separateRow">
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
     <?PHP
 		}
 		desconectarBD();

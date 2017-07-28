@@ -335,10 +335,17 @@ body.backgroundPrincipal
   background-color:#2F302E !important;
   height: 30px !important;
   color: white;
-  width: 150px;
   border-radius: 14px;
   border-color: white;
+  overflow: hidden;
+  max-width: 220px;
 }
+
+.buttonMenu:hover{
+  text-decoration: none;
+  color: white;
+}
+
 
 .buttonMenu2{
   background-color:#2F302E !important;

@@ -77,8 +77,8 @@
         ?>
         @if($pregunta->tipo == 1)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
-                <h3 class="whiteClass verde normal">{{$pregunta->titulo}}</h3>
-                <input type='text' class='textArea space leftPosition examenInput   respuestaInput' placeholder='Coloca aquí tu respuesta'>
+                <h3 class="whiteClass gray normal">{{$pregunta->titulo}}</h3>
+                <input type='text' class='textAreaExam space leftPosition examenInput   respuestaInput' placeholder='Coloca aquí tu respuesta'>
             </div>
 
                 <script type="text/javascript">
@@ -93,7 +93,7 @@
         @endif
         @if($pregunta->tipo == 2)
             <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
-                <h3 class="whiteClass verde normal">{{$pregunta->titulo}}</h3>
+                <h3 class="whiteClass  pilltitle  pinkbackground  normal">&nbsp;&nbsp; {{$pregunta->titulo}}</h3>
                 <script type="text/javascript">
                     var newIndex2 =   respuestas.length;
                    respuestas.push(new Respuesta());
@@ -102,8 +102,8 @@
 
                 </script>
                 @foreach($json->choices as $choice)
+                    <input class="graybackground"  type='radio' id='{{$choice->guid}}' name='{{$json->guid}}' class='marginForceRight' value='{{$choice->value}}'><label class=" selectElements graybackground normal">&nbsp;&nbsp; {{$choice->name}}</label>
 
-                    <input type='radio' id='{{$choice->guid}}' name='{{$json->guid}}' class='marginForceRight' value='{{$choice->value}}'><label class="verde normal"> {{$choice->name}}</label>
                     <script type="text/javascript">
                         $('#{{$choice->guid}}').change(function () {
                             for(var x=0; x<respuestas.length; x++){
@@ -120,7 +120,7 @@
 
             @if($pregunta->tipo == 3)
                 <div class='box contenedorpregunta col-md-10 col-md-offset-1' data-type="{{$pregunta->tipo}}" id="{{$json->guid}}">
-                    <h3 class="whiteClass verde normal">{{$pregunta->titulo}}</h3>
+                    <h3 class="pilltitle   pinkbackground normal">&nbsp;&nbsp;{{$pregunta->titulo}}</h3>
                     <div class='leftPosition leftBox boxTop items' style="width:40%; height:200px" id="items-{{$json->guid}}">
                         @foreach($json->items as $item)
                             <div class='boxItem item normal' id='{{$item->guid}}'> {{$item->nombre}} </div>

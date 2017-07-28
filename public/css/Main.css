@@ -149,21 +149,21 @@ body.backgroundLogin
 }
 
 .borderpillbegin{
-	-webkit-border-top-left-radius: 100px;
-  -moz-border-top-left-radius: 100px;
-  border-top-left-radius: 100px;
-  -webkit-border-bottom-left-radius: 100px;
-  -moz-border-bottom-left-radius: 100px;
-  border-bottom-left-radius: 100px;
+	-webkit-border-top-left-radius: 20px;
+  -moz-border-top-left-radius: 20px;
+  border-top-left-radius: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-bottom-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .borderpillend{
-	-webkit-border-top-right-radius: 100px;
-  -moz-border-top-right-radius: 100px;
-  border-top-right-radius: 100px;
-  -webkit-border-bottom-right-radius: 100px;
-  -moz-border-bottom-right-radius: 100px;
-  border-bottom-right-radius: 100px;
+	-webkit-border-top-right-radius: 20px;
+  -moz-border-top-right-radius: 20px;
+  border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .pinkbackground{
@@ -252,6 +252,14 @@ Nueva parte
 	font-weight: bold !important;
 }
 
+
+.ClassThin{
+	 font-weight: 300;
+	 color: white;
+	 font-size: 18px;
+}
+
+
 .whiteClass{
 	color: white;
 	font-size: 18px;
@@ -274,6 +282,13 @@ Nueva parte
 	font-weight: bold;
 }
 
+.NoRadiusGray{
+	border:solid 0px #FFF;
+	background-color: #E1E1E1;
+	border-radius: 12px;
+	height: 50px;
+	font-size: 18px;
+}
 
 .titleContainer{
 	text-align: center
@@ -405,7 +420,7 @@ border-bottom-style: 1px solid  !important;
 .NoRadiusColorButton{
 	border:solid 1px #409798;
 	color:#409798;
-	border-radius: 0px;
+	border-radius: 14px;
 	height: 50px;
 	font-weight: 200;
 	font-size: 20px;

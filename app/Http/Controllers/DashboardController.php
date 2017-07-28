@@ -98,6 +98,7 @@ class DashboardController extends Controller
                  }
             }
         }
+
         foreach($cursosarray as $curso){
           foreach($curso->temas as $tema){
             $total += count($tema->subtemas);
