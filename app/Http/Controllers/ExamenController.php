@@ -11,6 +11,7 @@ use App\Alumno;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ExamenController extends Controller
 {
@@ -42,6 +43,18 @@ class ExamenController extends Controller
         $descripcion = $request->input('descripcion');
         $actividad = $request->input('actividad');
         $id = $request->input('id');
+        $IDCurso = DB::table('curso_tema')->where('id_Tema', '=', $idTema)->get()->first()->id_Curso;
+
+
+    //   $consulta = "SELECT P.APaterno, P.AMaterno, P.Nombre, P.email, CP.Mat_Alumno JOIN curso_participante CP ON A.Mat_Alumno = CP.Mat_Alumno JOIN Persona P ON A.email = P.email WHERE CP.id_Curso = '$IDCurso'";
+       $users = DB::table('alumno')
+                   ->join('curso_participante', 'alumno.Mat_Alumno', '=', 'curso_participante.Mat_Alumno')
+                   ->join('persona', 'alumno.email', '=', 'persona.email')
+                   ->where('curso_participante.id_Curso','=',$IDCurso)
+                   ->select('persona.*', 'curso_participante.Mat_Alumno')
+                   ->get();
+dd($users);
+
 
         //Obtener subtema
         /*$subtema = Subtema::find($idSubtema);
@@ -126,6 +139,26 @@ class ExamenController extends Controller
 
             $preguntasIds[] = $preg->ID_Pregunta;
         }
+
+$users = DB::table('users')->select('name', 'email as user_email')->get();
+    /*    DB::table('habilita_exam')->insert(
+    ['IDTema' => $idTema, 'Mat_Alu' => , 'Status' => 'ACTIVO']);
+*/
+      /*  $sql = "SELECT Status FROM habilita_exam WHERE Mat_Alu = '$Alumno' AND IDTema = '$Tema';";
+        $resultadoses = mysqli_query($conex,$sql);
+        $rowses = mysqli_fetch_array($resultadoses);
+
+
+        if($rowses['Status'] == ""){
+
+        	$consulta = "INSERT INTO habilita_exam (IDTema, Mat_Alu, Status) Values('$Tema', '$Alumno', 'ACTIVO');";
+        	if(mysqli_query( $conex,$consulta))
+        	{	}
+        	else
+        	{*/
+
+
+
 
         return response()->json([
             "id" => $examen->Idesx,
