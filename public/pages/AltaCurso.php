@@ -129,6 +129,7 @@ $res= get_Personas();
 
 
 <div class="container-fluid">
+<button class="NoRadiusColorButtonPill" onclick="window.history.back();"><center> &nbsp; ⬅ &nbsp; </center> </button>
 		<div style="margin-top:100px"   class="titleContainer">
 				<div class="titleImg">
 					<img  class="imageMargin" src="../img/byondiconos/textcajita.png" height="40" width="40">

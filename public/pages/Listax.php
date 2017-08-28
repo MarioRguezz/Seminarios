@@ -103,6 +103,7 @@ mysqli_close($conexia);
 
 <!--	FIN	Menu en el Encabezado	-->
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+<button class="NoRadiusColorButtonPill" onclick="window.history.back();"><center> &nbsp; ⬅ &nbsp; </center> </button>
 		<div    class="titleContainer">
 				<div class="titleImg">
 					<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
@@ -183,7 +184,7 @@ mysqli_close($conexia);
 
 
 
-            <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+            <form action="Perfil.php" class="form-horizontal" method="post" enctype="multipart/form-data" >
         <input type="hidden" value="<?PHP echo htmlentities($row['email']); ?>" name="email">
         <td class="borderpillend"><center> <button type="submit"  class="buttonpillicon"> <span class="glyphicon glyphicon-info-sign"></span> </button></center></td>
         </form>

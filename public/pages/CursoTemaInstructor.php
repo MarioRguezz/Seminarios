@@ -117,6 +117,8 @@ if($tipoPer == "Alumno")
 
 <!--	FIN	Menu en el Encabezado	-->
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+
+<button class="NoRadiusColorButtonPill" onclick="window.history.back();"><center> &nbsp; ⬅ &nbsp; </center> </button>
 <div    class="titleContainer">
 		<div class="titleImg">
 				<img  class="imageMargin" src="../img/byondiconos/BEYOND2-33.png" height="40" width="40">
@@ -124,7 +126,6 @@ if($tipoPer == "Alumno")
 		</div>
 	</div>
 </div>
-
 <div class="form-group">
 	<form action="CursoTemaInstructor.php" class="form-horizontal" method="get" enctype="multipart/form-data">
     <label for="nombre" class="control-label col-md-3 grayTitle">Nombre del tema</label>

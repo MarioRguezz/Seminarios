@@ -22,7 +22,7 @@ class Curso extends Model
 
     //muchos a muchos
     public function alumnos(){
-            return $this->belongsToMany('App\Alumno','byondb2.curso_participante','id_Curso', 'Mat_Alumno')->withPivot('status');
+            return $this->belongsToMany('App\Alumno','curso_participante','id_Curso', 'Mat_Alumno')->withPivot('status');
 
         }
 

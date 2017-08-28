@@ -18,7 +18,7 @@ class Alumno extends Model
 
 
     public function cursos() {
-        return $this->belongsToMany('App\Curso', 'byondb2.curso_participante', 'Mat_Alumno', 'id_Curso');
+        return $this->belongsToMany('App\Curso', 'curso_participante', 'Mat_Alumno', 'id_Curso');
     }
 
     public function datos()

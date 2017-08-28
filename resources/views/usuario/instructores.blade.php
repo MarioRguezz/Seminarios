@@ -38,7 +38,7 @@
                 <th class="weight">Email</th>
                 <th class="weight">Estatus</th>
                 <th class="weight"></th>
-                <th class="borderpillend"><a  target="_blank"  class="" style="color:white;" href="{{url('/usuario/instructornuevo/'.$administradores->id.'/'.$administradores->id_persona)}}">+</a></th>
+                <th class="borderpillend"><a class="" style="color:white;" href="{{url('/usuario/instructornuevo/'.$administradores->id.'/'.$administradores->id_persona)}}">+</a></th>
             </tr>
             <tr class="separateRow">
               <th></th>
@@ -55,7 +55,7 @@
                 <td class="borderpillbegin">{{$administrador->datos['Nombre']}}</td>
                 <td>{{$administrador->datos['email']}}</td>
                 <td>{{$administrador->datos['Status']}}</td>
-                <td><a  target="_blank" href="{{url('/usuario/instructoresedicion/'.$administrador->datos['IdPersona'].'/'.$administradores->id_persona)}}"><span style="color:white;"class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a href="{{url('/usuario/instructoresedicion/'.$administrador->datos['IdPersona'].'/'.$administradores->id_persona)}}"><span style="color:white;"class="glyphicon glyphicon-pencil"></span></a></td>
                 <td class="borderpillend"> </td>
                 </tr>
                 <tr class="separateRow">

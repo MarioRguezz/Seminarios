@@ -37,7 +37,7 @@ if($tipoPer != "Alumno")
 	}
 */
 
-	$IDCurso = $_POST['IDCurso'];
+	$IDCurso = $_GET['IDCurso'];
 
 	$qwerty = "SELECT * FROM curso_tema CT JOIN curso C ON CT.id_curso = C.id_Curso WHERE C.id_Curso = '$IDCurso';";
 	$resultas = mysqli_query($conexia, $qwerty);
@@ -82,6 +82,7 @@ if($tipoPer != "Alumno")
 	<!--<link rel="stylesheet" href="../css/styles.css">-->
     <link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Principal2.css">
+    <link rel="stylesheet" href="../../public/css/Main.css">
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
    <script src="../js/mediaelement-and-player.min.js"></script>
@@ -326,6 +327,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 
 <div  style="width:100%;" class="row  col-md-12  ">
 <div style="" class="container-fluid">
+<button class="NoRadiusColorButtonPill" onclick="window.history.back();"><center> &nbsp; ⬅ &nbsp; </center> </button>
     <div    class="">
         <div class="" style="margin-bottom:20px;">
           <!--<img  class="imageMargin" src="../img/Icons/nuevosiconos/24.png" height="27" width="27">-->
@@ -921,6 +923,8 @@ else
 
 <div  style="width:100%;" class="row  col-md-12  ">
 <div style="" class="container-fluid">
+
+<button class="NoRadiusColorButtonPill" onclick="window.history.back();"><center> &nbsp; ⬅ &nbsp; </center> </button>
     <div    class="">
         <div class="" style="margin-bottom:20px;">
         <!--  <img  class="imageMargin" src="../img/Icons/nuevosiconos/24.png" height="27" width="27">-->

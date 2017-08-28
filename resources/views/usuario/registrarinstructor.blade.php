@@ -38,6 +38,8 @@
 <body class="registro">
 @include('header')
 <div style="margin-top:8%; margin-bottom: 2%;" class="container-fluid">
+
+<button class="NoRadiusColorButtonPill" onclick="window.history.back();"><center> &nbsp; ⬅ &nbsp; </center> </button>
 <div    class="titleContainer">
     <div class="titleImg">
         <img  class="imageMargin" src="{{url('/img/byondiconos/BEYOND2-26.png')}}" height="40" width="40">
