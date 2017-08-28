@@ -53,8 +53,6 @@ class ExamenController extends Controller
                    ->where('curso_participante.id_Curso','=',$IDCurso)
                    ->select('persona.*', 'curso_participante.Mat_Alumno')
                    ->get();
-dd($users);
-
 
         //Obtener subtema
         /*$subtema = Subtema::find($idSubtema);
@@ -140,7 +138,12 @@ dd($users);
             $preguntasIds[] = $preg->ID_Pregunta;
         }
 
-$users = DB::table('users')->select('name', 'email as user_email')->get();
+        foreach ($users as $user) {
+          DB::table('habilita_exam')->insert(
+         ['IDTema' => $idTema, 'Mat_Alu' =>  $user->Mat_Alumno , 'Status' => 'ACTIVO']);
+        }
+
+//$users = DB::table('users')->select('name', 'email as user_email')->get();
     /*    DB::table('habilita_exam')->insert(
     ['IDTema' => $idTema, 'Mat_Alu' => , 'Status' => 'ACTIVO']);
 */

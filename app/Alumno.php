@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Alumno extends Model
 {
 
-    protected $table = 'byondb.alumno';
+    protected $table = 'alumno';
 
     protected $primaryKey = 'Mat_Alumno';
 
@@ -18,7 +18,7 @@ class Alumno extends Model
 
 
     public function cursos() {
-        return $this->belongsToMany('App\Curso', 'byondb.curso_participante', 'Mat_Alumno', 'id_Curso');
+        return $this->belongsToMany('App\Curso', 'byondb2.curso_participante', 'Mat_Alumno', 'id_Curso');
     }
 
     public function datos()

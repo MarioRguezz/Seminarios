@@ -3,10 +3,26 @@ $(document).ready(function () {
 <label for="pdffile" class="custom-file-upload whiteClassThin normal verde"> Archivo PDF</label>
 	<input type="file" name="PDF" id="pdffile" class="btn btn-warning">`;
 
-    var videotpl = `<label for="nombre" class="control-label col-md-3 whiteClassThin normal verde">Adjunte la URL de su video</label>
+    var videotpl = `
+ <div class="row" style="margin-bottom:20px;">
+		<label for="nombre" class="control-label col-md-3 whiteClassThin normal verde">Adjunte la URL de su video</label>
 	<div class="col-md-6">
-	<input class="form-control NoRadiusColor" id="videoUrl" name="videoUrl" type="url" placeholder="" required>
+	<input class="form-control " id="videoUrl" name="videoUrl" type="url" placeholder="" required>
+	</div>
+	</div>
+ <div class="row">
+	 <label for="nombre" class="control-label col-md-3 whiteClassThin verde normal">Tipo de video</label>
+	<div class="col-md-6">
+	<select class="form-control " name="tipoVideo" id="tipoVideo" required name="TMat" id="TMat">
+			<option value="1">Youtube</option>
+			<option value="2">Vimeo</option>
+	</select>
+	</div>
 	</div>`;
+
+
+
+
 
     var audiotpl = `<label for="Audio" class="control-label col-md-3 whiteClassThin normal verde">Adjunte Audio no mayor a 20 Mb</label>
 <label for="listenfile" class="custom-file-upload whiteClassThin normal verde"> Audio</label>

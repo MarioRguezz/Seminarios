@@ -85,6 +85,8 @@ if($tipoPer != "Alumno")
 
     <script src="../js/bootstrap/js/bootstrap.min.js"></script>
    <script src="../js/mediaelement-and-player.min.js"></script>
+	 <script src="../js/shortcut.js"></script>
+   <script src="../js/Block.js"></script>
     <link href="../css/mediaelementplayer.css" rel="stylesheet">
    <!-- <script src="https://cdn.jsdelivr.net/mediaelement/latest/mediaelement-and-player.min.js"></script>
     <link href="https://cdn.jsdelivr.net/mediaelement/latest/mediaelementplayer.css" rel="stylesheet">-->
@@ -428,11 +430,11 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 			else if($rowVid['ubica'] != "")
 			{
 
-                $videoSelect = "SELECT ubica FROM material_video WHERE id_Subtema = '$IDSubtema';";
+                $videoSelect = "SELECT ubica, tipo FROM material_video WHERE id_Subtema = '$IDSubtema';";
                 $respuestVideo = mysqli_query($conexia, $videoSelect);
                 $videoArra = mysqli_fetch_array($respuestVideo);
                 $video = $videoArra['ubica'];
-
+								$tipoVideo = $videoArra['tipo'];
                 ?>
             <form action="CursoTemaAlumno.php?accion=C0R50" class="form-horizontal" method="post" enctype="multipart/form-data">
         	<input type="hidden" value="<?PHP echo htmlentities($fila['id_Subtema']); ?>" name="IDSubtema" id="IDSubtema">
@@ -517,6 +519,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 			$sql2 = "SELECT * FROM subtema_visto WHERE id_Tema = '$filases[id_Tema]' and Mat_Alumno = '$rowses[Mat_Alumno]'";
 			$resux2 = mysqli_query($conexia, $sql2);
 			$TotalVisto = mysqli_num_rows($resux2);
+
 			if($rowy['Status'] == "")
 			{
 			}
@@ -581,7 +584,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
     </li>
 	<?PHP
 		} //Fin del while para los temas
-		desconectarBD();
+		//desconectarBD();  lo comenté porque no dejaba cargar la parte de la actividad (derecha)
 	?>
 
     </ul>
@@ -701,7 +704,6 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 			<div class="row" id="Video">
 
             	<?PHP
-
 					if($video != "")
 					{
 						if($NumVid > 1)
@@ -758,8 +760,33 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 
 					<div clas="embed-responsive embed-responsive-16by9">
 						<center>
+
+
+							<?php	if($tipoVideo == "2"){
+								$oembed_endpoint = 'http://vimeo.com/api/oembed';
+								$video_url = ($_GET['url']) ? $_GET['url'] : $video;
+								$json_url = $oembed_endpoint . '.json?url=' . rawurlencode($video_url) . '&width=640';
+								$xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($video_url) . '&width=640';
+								function curl_get($url) {
+								    $curl = curl_init($url);
+								    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+								    curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+								    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+								    $return = curl_exec($curl);
+								    curl_close($curl);
+								    return $return;
+								}
+								$oembed = simplexml_load_string(curl_get($xml_url));
+								  echo html_entity_decode($oembed->html);
+							} else{
+								echo  '<iframe class="mejs__player" width="640" height="360" src="'.$video.'" frameborder="0" allowfullscreen></iframe>';
+							}
+
+								?>
+
+
                            <!-- <iframe class="mejs__player" width="640" height="360" src="<?PHP echo htmlentities($rowVid['ubica']); ?>" frameborder="0" allowfullscreen></iframe>-->
-                            <iframe class="mejs__player" width="640" height="360" src="<?PHP echo $video; ?>" frameborder="0" allowfullscreen></iframe>
+                          <!--  <iframe class="mejs__player" width="640" height="360" src="<?PHP echo $video; ?>" frameborder="0" allowfullscreen></iframe> -->
 
 
                         </center>

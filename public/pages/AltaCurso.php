@@ -215,7 +215,7 @@ if($accion == 'Nu3v@')
 			$conec = conect();
 
 			//var_dump($IDCurso);
-		//	var_dump($_POST[IDinstructor]);
+		//	var_dump($_GET[IDinstructor]);
 
 			$Consulta = "INSERT INTO curso_instructor (id_Curso, Mat_Usuario) VALUES ($IDCurso, '$_POST[IDinstructor]');";
            if($_POST[publico] == null) {

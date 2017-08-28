@@ -183,7 +183,8 @@ if($accion == 'Nu3v@')
 			else if($_REQUEST['TMat'] == "Video")
 			{
 				$ruta = $_POST['videoUrl'];
-				$consulta = "INSERT INTO material_video (id_Subtema, ubica) VALUES ('$clave', '$ruta');";
+				$tipo = $_POST['tipoVideo'];
+				$consulta = "INSERT INTO material_video (id_Subtema, ubica,tipo) VALUES ('$clave', '$ruta','$tipo');";
 
 								if(mysqli_query($conec,$consulta))
 								{}
@@ -233,7 +234,7 @@ if($accion == 'Nu3v@')
                         <label class="btn-large ">Información actualizada con éxito clic en el botón para continuar</label>
                     </div>
                     <center>
-                    <form action="CursoTemaInstructor.php" method="post">
+                    <form action="CursoTemaInstructor.php" method="get">
                     	<input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
                         <input type="submit" class="NoRadiusColorButton  " value="Continuar">
                     </form>

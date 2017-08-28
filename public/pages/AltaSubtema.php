@@ -4,8 +4,8 @@ include '../php/conexion.php';
 
 $accion = $_GET['accion'];
 
-$IDTema = $_POST['IDTema'];
-$IDCurso = $_POST['IDCurso'];
+$IDTema = $_GET['IDTema'];
+$IDCurso = $_GET['IDCurso'];
 
 $tipoPer = $_SESSION["tipoP"];
 $email = $_SESSION["email"];

@@ -1,6 +1,8 @@
 <div style="position:absolute; z-index:200; background: #FFF; top: 0px; left:0px; right:0px; padding:20px; margin:0px;  border-bottom: 4px solid #A1A1A1;" class="col-sm-12 row">
   <div class="col-xs-4" >
-    <img src="{{url('/img/byondiconos/BEYOND2-56.png')}}"  height="45">
+    <a href="{{url('/')}}">
+      <img src="{{url('/img/byondiconos/BEYOND2-56.png')}}"  height="45">
+    </a>
   </div>
     @if(Auth::user() != null)
       <div class="col-xs-6 down" >

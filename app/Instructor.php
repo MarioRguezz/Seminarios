@@ -8,7 +8,7 @@ class Instructor extends Model
 {
 
 
-    protected $table = "byondb.usuario";
+    protected $table = "usuario";
     protected $primaryKey = "Id";
     protected $fillable = [
         "Mat_Usuario",

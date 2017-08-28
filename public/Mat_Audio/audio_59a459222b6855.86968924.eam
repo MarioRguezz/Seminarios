@@ -1,0 +1,500 @@
+git add .
+git commit -am "Agregando middleware"
+git push origin master
+git push heroku master
+git add .
+git commit -am "Agregando middleware"
+git push heroku master
+git add .
+git commit -am "Agregando middleware"
+git push heroku master
+heroku run php artisan migrate --app iacip
+heroku run php artisan migrate --app iacip
+heroku run php artisan migrate --app iacip
+git add .
+git commit -am "Correcciones"
+git push heroku master
+heroku run php artisan migrate --app iacip
+heroku run php artisan migrate --app iacip
+heroku run php artisan config:cache --app iacip
+heroku run php artisan migrate --app iacip
+heroku run composer update
+heroku run php artisan migrate --app iacip
+git status
+php -v
+git add .
+git commit -am "Versinnn de PHP"
+git push origin master
+git push heroku master
+git add .
+git commit -am "Versinnn de PHP"
+git push heroku master
+heroku
+wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+heroku
+mysqldump iacip > iacip.sql
+mysqldump -u root -p iacip > iacip.sql
+gedit iacip.sql 
+composer update
+mysql -u root -p
+php artisan migrate
+php artisan migrate
+php artisan migrate
+mysql -u root -p
+php artisan migrate
+php artisan make:middleware AuthApi
+php artisan vendor:publish
+php artisan make:notification MyResetPassword
+mysql -u root -p
+php artisan migrate
+php artisan krlove:generate:model TipoUsuario --table-name=tipo_usuario
+php artisan krlove:generate:model Direccion --table-name=direccion
+php artisan krlove:generate:model Telefono --table-name=telefono
+php artisan krlove:generate:model TipoDocumento --table-name=tipo_documento
+php artisan krlove:generate:model Documento --table-name=documento
+php artisan krlove:generate:model StatusPrestamo --table-name=status_prestamo
+php artisan krlove:generate:model UtilizaPrestamo --table-name=utiliza_prestamo
+php artisan krlove:generate:model Prestamo --table-name=prestamo
+php artisan krlove:generate:model Pago --table-name=pago
+php artisan make:migration drop_column_telefono_users
+php artisan migrate
+php artisan make UserController
+php artisan make:controller UserController
+php artisan config:cache
+git add .
+php artisan api:generate --routePrefix="api/*"
+git add .
+git commit -am "Cambio de documentacinnn"}
+git push origin master
+git push heroku master
+cd /var/www/html/
+composer create-project --prefer-dist=laravel/laravel credicer
+composer create-project --prefer-dist laravel/laravel credicer
+cd credicer/
+ls
+php artisan make:auth
+php artisan make:migration create_all_tables
+composer require krlove/eloquent-model-generator --dev
+chmod 777 -R .
+mysql -u root -p
+php artisan tinker
+mysql -u root -p
+mysql -u root -p
+php artisan tinker
+php artisan tinker
+php artisan tinker
+php artisan tinker
+php artisan tinker
+php artisan make:controller DocumentoController
+php artisan make:migration add_columns_users
+node .
+lb model
+node .
+node .
+npm start
+npm start
+php artisan make:seeder TipoUsuarioSeeder
+php artisan make:seeder TipoDocumentoSeeder
+php artisan db:seed
+php artisan db:seed --class=TipoDocumentoSeeder
+php artisan db:seed --class=TipoDocumentoSeeder
+php artisan db:seed --class=TipoDocumentoSeeder
+php artisan db:seed --class=TipoDocumentoSeeder
+php artisan db:seed --class=TipoDocumentoSeeder
+php artisan make:controller PrestamoController
+php artisan make:seeder TipoPrestamoSeeder
+php artisan make:seeder StatusPrestamoSeeder
+php artisan db:seed --class=StatusPrestamoSeeder
+npm install mysql
+npm install mysql --save
+npm install mysql-model --save
+npm start
+npm start
+npm start
+npm start
+npm install underscore --save
+npm start
+npm install backbone --save
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+git add .
+git commit -am "Servicio para testear uno de los casos de prueba"
+npm start
+npm start
+npm start
+npm start
+git add .
+git commit -am "Cambio de web"
+git push origin master
+git pull origin master
+npm start
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+cd Descargas/
+cd ..
+cd Escritorio/
+ls
+mv document.pdf 25d4156b-7944-4832-a553-7a5bda717d5d.pdf
+ls
+npm start
+npm start
+npm start
+sudo 
+sudo apt moo
+apt moo
+clear
+apt moo
+clear
+ls -l 
+ls -l --sort=size
+clera
+cls
+clear
+ls -l --sort=size
+ls -l --sort=s
+ls -l --sort=s
+ls -l -s=size
+ls -l -s=s
+ls -l --s=s
+ls -l --s
+ls -l --sort
+clear
+php -v
+php -r "print phpinfo();"
+clear
+php -r "print phpinfo();"
+apt moo
+sudo ifconfig
+cd hdi-testing-activo
+chmod 777 -R .
+cd Android/
+git clone https://github.com/iChema/TestingActivo.git
+sudo ifconfig
+mysql -u root -p
+git add .
+git commit -am "Cambios de vista de casos de prueba"
+git push origin master
+git pull origin master
+git push origin master
+git push origin master
+git pull origin master
+git pull origin master
+git add .
+git commit -am "Correcciones"
+git pull origin master
+sudo ifconfig
+git add .
+git commit -am "Cambios"
+git push origin master
+git add .
+git commit -am "Cagadero"
+git push origin master
+git pull origin master
+git commit -am "Cagadero X2"
+git pull origin master
+git pull origin master
+git commit -am "Cagadero X2"
+git pull origin master
+git push origin master
+git pull origin master
+git add .
+git commit -am "Cambios"
+git pull origin master
+git pull origin master
+git add .
+git commit -am "Cambios"
+git pull origin master
+git push origin master
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+sudo ifconfig
+cd hdi-testing-activo
+npm start
+npm start
+npm start
+npm start
+mysql -u root -p
+sudo apt-get install teamviewer
+sudo ifconfig
+sudo ifconfig
+sudo ifconfig
+sudo ifconfig
+cd hdi-testing-activo
+npm start
+npm start
+npm start
+npm start
+npm start
+npm start
+mysql -u root -p
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+cd /var/www/html/mercadoscopio2016/
+git add .
+git commit -am "Corrección "
+git pull origin master
+git push origin master
+cd
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+ssh root@10.0.7.40
+mysql -u root -p
+cp .env.example .env
+composer install
+composer install
+sudo apt-get install php7.1-mbstring
+composer install
+composer install
+php artisan migrate
+composer install
+php artisan migrate
+php artisan migrate
+php artisan generate:key
+php artisan key:generate
+php artisan migrate
+php artisan migrate
+sudo service apache2 restart
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan seed
+php artisan db:seed
+chmod 777 storage/
+chmod 777 storage/ -R
+php artisan config:cache
+php artisan cache:clear
+composer install
+composer dump-autoload;
+chmod 777 -R .
+sudo chmod 777 -R .
+composer install
+composer install
+sudo chmod 777 -R .
+composer install
+composer install
+git add .
+git commit -am "Implementacion de carga de archivos"
+git push origin master
+cd /var/www/html/
+git clone https://ur13l@bitbucket.org/lotoSourceTree/masterswup.git
+sudo apt-get install php7.1
+sudo apt-get remove php7.0
+apt-get install apt-transport-https lsb-release ca-certificates
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+apt-get update
+sudo apt-get install apt-transport-https lsb-release ca-certificates
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+cd
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+sudo echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+sudo apt-get update
+apt-get install php7.1
+sudo apt-get install php7.1
+sudo echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+su
+su
+su
+mysql -u root -p
+sudo apt-get install php7.0-mysql
+sudo apt-get install php7.1-mysql
+mysql -u root -p
+git add .
+git commit -am "Correccinnn de file"
+git push origin master
+deb http://ppa.launchpad.net/alessandro-strada/ppa/ubuntu/ vivid main
+sudo deb http://ppa.launchpad.net/alessandro-strada/ppa/ubuntu/ vivid main
+sudo
+su
+git status
+mysql -u root -p
+git add .
+git commit -am "Cambio de vista Files"
+git push origin master
+mysql -u root -p
+mysql -h 10.123.0.85 -P 3307 -u credicer -p
+php artisan config:cache
+php artisan config:clear
+php artisan cache:clear
+composer dump-autoload
+cd Encuesta/
+php artisan make:migration alter_length_fields_proyecto
+php artisan make migration add_column_rfc_users
+php artisan make:migration add_column_rfc_users
+php artisan migrate
+php artisan config:cache
+php artisan migrate
+ssh root@10.0.7.40
+cd "/var/www/html/mercadoscopio2016/Encuesta/database/migrations"
+cd ..
+cd ..
+php artisan migrate
+php artisan migrate
+cd ..
+git add .
+git commit -am "Migraciones y otras cosas"
+git push origin master
+git pull origin master
+git push origin master
+cd Encuesta/
+php artisan config:cache
+php artisan migrate
+php artisan config:cache
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+pgsql -U mercadoscopio -h mercadoscopio
+pgsql -U mercadoscopio -h 10.0.7.40 mercadoscopio
+psql -U mercadoscopio -h 10.0.7.40 mercadoscopio
+psql
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan config:cache
+php artisan migrate
+php artisan migrate
+php artisan migrate
+cd ..
+git pull origin master
+cd Encuesta/
+composer update
+chmod 777 . -R
+cd ..
+git add .
+git commit -am "Correccinnn de Sesnnn"
+git push origin master
+git add .
+git commit -am "Correccinnn de proyecto"
+git push origin master
+git pull origin master
+git commit -am "Correccinnn de proyecto"
+git push origin master
+git commit -am "Correccinnn de proyecto"
+git push origin master
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+mysql -u root -p
+php artisan tinker;
+php artisan make:migration add_nullable_fecha_pago_prestamo;
+php artisan migrate
+composer require barryvdh/laravel-dompdf
+sudo apt-get install php7.1-gd
+composer require barryvdh/laravel-dompdf
+php artisan config:cache
+cd public/storage/
+mkdir pdf
+sudo mkdir pdf
+cd ..
+chmod 777 . -R
+sudo chmod 777 . -R
+php artisan make:migration add_nullable_fecha_pago_pago;
+cd ..
+php artisan make:migration add_nullable_fecha_pago_pago;
+php artisan migrate
+php artisan make:controller PagosController
+php artisan make:controller AdminController
+mysql -u root -p
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+git pull origin master
+git add .
+git commit -am "Cambios de dashboard"
+git push origin master
+git pull origin master
+git push origin master
+git pull origin master
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+php artisan make:migration add_columns_misc_users_telefono_direccion
+php artisan migrate
+php artisan migrate
+php artisan migrate
+php artisan tinker
+git pull origin master
+git add .
+git commit -am "Correccinnn"
+git pull origin master
+git add .
+git commit -am "Nombre"
+git push origin master
+git pull origin master
+git pull origin master
+git add .
+git commit -am "Correccinnn fecha"
+git push origin master
+git add .
+git commit -am "Correccinnn fecha"
+git push origin master
+sudo nano /etc/php/7.1/apache2/php.ini 
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+ssh ubuntu@red2.codegto.gob.mx
+ssh root@10.0.7.40
+php artisan tinker;
+php artisan api:generate --routePrefix="api/*"
+php artisan api:generate --routePrefix="api/*"
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+ssh root@10.0.7.40
+php artisan config:clear
+cd Encuesta/
+php artisan config:clear
+php artisan cache:clear
+composer dump-autoload
+git pull origin master
+ssh ubuntu@red2.codegto.gob.mx
+ssh ubuntu@red2.codegto.gob.mx
+ssh -i "MERCADOSCOPIOAMAZON.pem" ec2-user@ec2-13-59-13-54.us-east-2.compute.amazonaws.com
+git ad .
+git add .
+git commit -am "Cambio"
+git push origin master
+git push heroku master
+php artisan api:generate --routePrefix="api/*"
+git add .
+git commit -am "Cambio"
+git push heroku master
+heroku run php artisan tinker
+git add .
+git commit -am "Correccion"
+git push origin master
+git pull origin master
+git push origin master
+php artisan config:clear
+php artisan cache:clear
+composer dump-autoload
+ssh -i "iacip_key.ppk" root@iacipapp.com
+ssh -i "iacip_key.ppk" root@iacipapp.com
+ssh -i "iacip_key.ppk" root@64.140.169.66
+mysqldump -u root -p iacip > iacip.sql
+gedit iacip
+gedit iacip.sql 
+ssh uriel@iacipapp.com
+git pull origin master

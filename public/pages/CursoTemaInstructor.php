@@ -80,12 +80,28 @@ if($tipoPer == "Alumno")
         $(document).ready(function () {
             $('[data-toggle="popover"]').popover();
             $('[data-toggle="tooltip"]').tooltip();
+
+
+			$("#form-eliminar").submit(function() {
+
+				swal({
+					title: "Eliminar examen",
+					text: "¿Estás seguro que deseas eliminar este examen del tema?",
+					type: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#DD6B55",
+					confirmButtonText: "Sí, eliminar",
+					closeOnConfirm: true
+					},
+					function(){
+						$("#form-eliminar").off('submit').submit();
+						swal("Deleted!", "Your imaginary file has been deleted.", "success");
+				});
+				return false;
+			});
         });
 
 
-		$("#form-eliminar").submit(function() {
-			return false;
-		});
     </script>
 
     <script src="../js/spinner.js"></script>
@@ -110,8 +126,9 @@ if($tipoPer == "Alumno")
 </div>
 
 <div class="form-group">
-	<form action="CursoTemaInstructor.php?accion=Nu3v@" class="form-horizontal" method="post" enctype="multipart/form-data">
+	<form action="CursoTemaInstructor.php" class="form-horizontal" method="get" enctype="multipart/form-data">
     <label for="nombre" class="control-label col-md-3 grayTitle">Nombre del tema</label>
+	<input type="hidden" value="Nu3v@" name="accion">
     <div class="col-md-4">
     	<input class="form-control  weightAddCurso NoRadiusColor2" id="nombre" name="nombreTema" type="text" placeholder="" required>
     </div>
@@ -137,7 +154,7 @@ if($tipoPer == "Alumno")
     	<th class="weight gray ">Tema</th>
         <th class="weight gray tablaDesign"><center><?PHP echo htmlentities($filases['Nombre']); ?> </center></th>
         <!--<form action="AltaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">-->
-				<form action="AltaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+				<form action="AltaSubtema.php" class="form-horizontal" method="get" enctype="multipart/form-data">
             <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
             <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
           <!--  <th><center><button class="btn-info" type="submit">Agregar subtema &nbsp;<span class="glyphicon glyphicon-blackboard"></span> </center> </button></th> -->
@@ -239,7 +256,7 @@ if($tipoPer == "Alumno")
 		else
 		{
 		?>
-        <form action="ListaExamen.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+        <form action="ListaExamen.php" class="form-horizontal" method="get" enctype="multipart/form-data">
             <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
             <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
           <!--  <center><button class="btn-info" type="submit" title="Editar participantes"> <span class="glyphicon glyphicon-pencil"></span> </center> </button>-->
@@ -287,7 +304,7 @@ if($tipoPer == "Alumno")
         <td class="tablaDesign"><center> <h5 class="cells gray"> <?PHP echo htmlentities($fila['Nombre']); ?> </h5></center></td>
         <td class="tablaDesign"><h5 class="cells gray"> <?PHP echo htmlentities($fila['Descrip']); ?> </h5></td>
       <!--  <form action="EditaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_self">-->
-			<form action="EditaSubtema.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
+			<form action="EditaSubtema.php" class="form-horizontal" method="get" enctype="multipart/form-data">
         <input type="hidden" value="<?PHP echo htmlentities($fila['id_Subtema']); ?>" name="IDSubtema">
         <input type="hidden" value="<?PHP echo htmlentities($IDCurso); ?>" name="IDCurso">
         <td class="tablaDesign">
@@ -350,7 +367,7 @@ if($accion == 'Nu3v@')
                     <br><br>
                     <center>
                     <div class="form-group">
-                    <form action="CursoTemaInstructor.php" method="post">
+                    <form action="CursoTemaInstructor.php" method="get">
                     	<input type="hidden" value="<?PHP echo htmlentities($IdeCurso); ?>" name="IDCurso">
                         <button type="submit" class="buttonTransparentBorder buttonAlta" style="color:#409798;" title="Clic aquí para actualizar datos"> Actualizar lista &nbsp; <span class="glyphicon glyphicon-log-in"></span></button>
                     </form>

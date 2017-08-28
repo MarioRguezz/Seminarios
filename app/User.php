@@ -30,7 +30,7 @@ class User extends Authenticatable implements CanResetPassword
     ];*/
 
 
-        protected $table = 'byondb.persona';
+        protected $table = 'persona';
         protected  $primaryKey = "IdPersona";
 
         protected $hidden = [

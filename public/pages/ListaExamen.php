@@ -6,8 +6,8 @@ $accion = $_GET['accion'];
 $tipoPer = $_SESSION["tipoP"];
 $email = $_SESSION["email"];
 
-$IDCurso = $_POST['IDCurso'];
-$IDTema = $_POST['IDTema'];
+$IDCurso = $_GET['IDCurso'];
+$IDTema = $_GET['IDTema'];
 
 
 if(isset($_SESSION['tipoP']))
