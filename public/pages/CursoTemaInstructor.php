@@ -37,7 +37,7 @@ if($tipoPer == "Alumno")
 		echo "<script>location.href='login.php'</script>";
 	}
 
-	$IDCurso = $_POST['IDCurso'];
+	$IDCurso = $_GET['IDCurso'];
 
 	//var_dump($IDCurso);
 	//print_r("El ID del curso es: ".$IDCurso);
@@ -81,6 +81,11 @@ if($tipoPer == "Alumno")
             $('[data-toggle="popover"]').popover();
             $('[data-toggle="tooltip"]').tooltip();
         });
+
+
+		$("#form-eliminar").submit(function() {
+			return false;
+		});
     </script>
 
     <script src="../js/spinner.js"></script>
@@ -191,17 +196,27 @@ if($tipoPer == "Alumno")
                     <th class="tablaDesign">
 												<center><button  class="NoRadiusColorButtonPill" style="width:205px" type="submit" >Agregar examen<img height="20" src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
                 </form>
+
         	<?PHP
 			}
 			else
 			{
 			?>
+			<!--
             <form action="examen.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
                     <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
-                    <!--<center><button class="btn-danger" type="submit" disabled title="El examen ya ha sido creado para este tema">Agregar examen &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>-->
-									  <th class="tablaDesign">	<center><button  class="NoRadiusColorButtonPill" style="width:205px" type="submit" disabled title="El examen ya ha sido creado para este tema">Agregar examen<img height="20" src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
+            						  <th class="tablaDesign">	<center><button  class="NoRadiusColorButtonPill" style="width:205px" type="submit" disabled title="El examen ya ha sido creado para este tema">Agregar examen<img height="20" src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
 
-						  </form>
+			</form>
+			-->
+			<form action="../examen/eliminar" id="form-eliminar" class="form-horizontal" method="post" enctype="multipart/form-data" >
+                    <input type="hidden" value="<?PHP echo htmlentities($filases['id_Tema']); ?>" name="IDTema">
+                    <input type="hidden" value="<?php echo $IDCurso ?>" name="IDCurso">
+										<input type="hidden" value="examen" name="type">
+                  <!--  <center><button class="btn-primary" type="submit">Agregar examen &nbsp;<span class="glyphicon glyphicon-list-alt"></span> </center> </button>-->
+                    <th class="tablaDesign">
+												<center><button  class="NoRadiusColorButtonPill" style="width:205px" type="submit" >Eliminar examen<img height="20" src="../img/Icons/nuevosiconos/26.png"> </button></center>  </th>
+                </form>
             <?PHP
 			}
 			?>
@@ -310,13 +325,13 @@ if($tipoPer == "Alumno")
 
 if($accion == 'Nu3v@')
 		{
-			$clave = substr($_POST['nombreTema'],0, 2).rand(1000, 9999);
+			$clave = substr($_GET['nombreTema'],0, 2).rand(1000, 9999);
 			$fecha = date("Y-m-d");
-			$IdeCurso = $_POST['IDCurso'];
+			$IdeCurso = $_GET['IDCurso'];
 			//var_dump($IdeCurso);
 
 			$conec = conect();
-			$sql = "INSERT INTO curso_tema (id_Curso, id_Tema, Nombre, fecha) VALUES ('$IdeCurso', '$clave',  '$_POST[nombreTema]', '$fecha');";
+			$sql = "INSERT INTO curso_tema (id_Curso, id_Tema, Nombre, fecha) VALUES ('$IdeCurso', '$clave',  '$_GET[nombreTema]', '$fecha');";
 
 
 				if(mysqli_query($conec,$sql))

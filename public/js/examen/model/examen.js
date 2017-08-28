@@ -42,6 +42,7 @@ class Examen {
             method: "POST",
             type: 'json',
             success: function(response) {
+                console.log(response);
                 examen.id = response.id;
                 examen.idSubtema = response.idSubtema;
                 examen.preguntas.forEach((pregunta, index) => {

@@ -168,6 +168,20 @@ $users = DB::table('users')->select('name', 'email as user_email')->get();
     }
 
 
+
+    public function eliminar(Request $request) {
+        
+        $IDTema = $_POST['IDTema'];
+        $IDCurso = $_POST['IDCurso'];
+
+        $examen = Examen::where('id_Tema', $IDTema)->first();
+        Pregunta::where('ID_Examen', $examen->Idesx)->delete();
+        $examen->delete();
+
+        return redirect()->back();
+    }
+
+
     public function examenDatos(Request $request){
         include 'php/conexion.php';
         //$accion = $_GET['accion'];

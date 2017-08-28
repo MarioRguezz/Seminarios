@@ -214,6 +214,11 @@ class UserController extends Controller
             ));
             $alumno->save();
 
+            Mail::send('emails.bienvenido', ['email' => $request->input('email')], function($message) use ($email)
+                {
+                    $message->from('contacto@byond.com', 'Byond');
+                    $message->to($request->input('email'), 'Usuario')->subject("Nuevo registro en Byond");
+            });
         }
 
         return redirect('/');
