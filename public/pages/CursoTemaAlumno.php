@@ -47,6 +47,7 @@ if($tipoPer != "Alumno")
 	$query = "SELECT * FROM curso_subtema CS JOIN curso_tema CT ON CS.id_Tema = CT.id_Tema WHERE CT.id_Curso = '$IDCurso';";
 	$resultado = mysqli_query($conexia, $query);
 	$TotalSub = mysqli_num_rows($resultado);
+	
 
 
 	/*
@@ -958,7 +959,7 @@ else
 		$color = 0;
 		$conex = conect();
 		$consulta = "Select * FROM curso_subtema where id_Tema = '$filases[id_Tema]';";
-
+		
 		$res = mysqli_query($conexia, $consulta);
 		while($fila = mysqli_fetch_array($res))
 		{
