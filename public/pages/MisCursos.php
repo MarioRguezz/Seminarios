@@ -114,9 +114,11 @@ mysqli_close($conexia);
     	<th class="weight borderpillbegin" style="border:none !important"><center>Nombre del curso</center></th>
         <th class="weight " style="border:none !important"><center>Instructor</center></th>
         <th class="weight" style="border:none !important"><center>Progreso</center></th>
+        <th class="weight" style="border:none !important"><center>Calificación</center></th>
         <th class="weight borderpillend" style="border:none !important"><center></center></th>
     </tr>
 		<tr class="separateRow">
+			<th></th>
 			<th></th>
 			<th></th>
 			<th></th>
@@ -181,9 +183,9 @@ mysqli_close($conexia);
 			$rowses = mysqli_fetch_array($resultado);
 			$Nombre_Ins = $rowses['APaterno']." ".$rowses['AMaterno']." ".$rowses['Nombre'];
 		?>
-        <td style="border:none !important" class="borderpillend graybackground"><center> <?PHP echo htmlentities($Nombre_Ins); ?> </center></td>
+        <td style="border:none !important" class="graybackground"><center> <?PHP echo htmlentities($Nombre_Ins); ?> </center></td>
 
-        <td style="border:none !important">
+        <td class="graybackground" style="border:none !important">
         <!-- <center> <?PHP //echo htmlentities($Total." / ".$row['per_num']); ?> </center>-->
 
         <div class="progress">
@@ -235,8 +237,8 @@ mysqli_close($conexia);
 
         </div>
 
-        </td>
-
+        </td> 
+<td class="borderpillend graybackground" style="border:none !important">
         <?PHP
 			if($tipoPer == "Instructor")
 			{
@@ -261,10 +263,12 @@ mysqli_close($conexia);
 		?>
         <input type="hidden" value="<?PHP echo htmlentities($row['id_Curso']); ?>" name="IDCurso">
         <input type="hidden" value="<?PHP echo htmlentities($Mat); ?>" name="Mat_Alumno">
-        <td style="border:none !important"><center> <button class="NoRadiusColorButtonCircle" id="btn-Ir" type="submit">Ir al curso &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center></td>
+        <center> <button class="NoRadiusColorButtonCircle" id="btn-Ir" type="submit">Ir al curso &nbsp; <span class="glyphicon glyphicon-log-in"></span></button> </center>
         </form>
+		</td>
     </tr>
 		<tr class="separateRow">
+			<th></th>
 			<th></th>
 			<th></th>
 			<th></th>
