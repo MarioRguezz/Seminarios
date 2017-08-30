@@ -30,4 +30,22 @@ class Alumno extends Model
         return $this->belongsTo('App\ClienteAdministrador', 'id_cliente_administrador', 'id');
     }
 
+    public function calificacionCurso($idCurso) {
+            $curso = Curso::find($idCurso);
+            $temas = $curso->temas;
+            $matAlumno = 
+            $cf = 0;
+            $count = 0;
+            foreach($temas as $tema) {
+                $calif = ExamenCalificacion::where('id_Tema', $tema->id_Tema)->where('Mat_Alumno', $this->Mat_Alumno)->first();
+                if($calif) {
+                    $count ++;
+                    $cf += $calif->Calificacion;
+                }
+            }
+            $cf = $cf / ($count == 0 ? 1 :$count);
+            return $cf;
+            
+        }
+
 }

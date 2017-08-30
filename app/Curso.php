@@ -13,7 +13,7 @@ class Curso extends Model
 
 
     protected $primaryKey = 'id_Curso';
-/*
+    /*
     public function persona(){
         return $this->belongsTo("App\Persona")->select(array(
             'IdPersona','Nombre', 'email'
@@ -30,5 +30,7 @@ class Curso extends Model
     public function temas() {
         return $this->hasMany('App\Tema', 'id_Curso');
     }
+
+    
 
 }
