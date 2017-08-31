@@ -30,10 +30,34 @@ class Alumno extends Model
         return $this->belongsTo('App\ClienteAdministrador', 'id_cliente_administrador', 'id');
     }
 
+
+    public function subtemasVistos() {
+        return $this->hasMany('App\SubtemaVisto', 'Mat_Alumno', 'Mat_Alumno');
+    }
+
+    public function avanceCurso($idCurso) {
+         $curso = Curso::find($idCurso);
+            $temas = $curso->temas;
+            $totalSub = 0;
+            $totalVisto = 0;
+            foreach ($temas as $tema) {
+                foreach($tema->subtemas as $subtema) {
+                    $totalSub++;
+                    foreach($this->subtemasVistos as $visto) {
+                        if($visto->id_Subtema == $subtema->id_Subtema) {
+                            $totalVisto++;
+                        }
+                    } 
+                }
+            }
+            $cf = ($totalVisto * 100) / ($totalSub == 0 ? 1 :$totalSub);
+            return $cf;
+            
+    }
+
     public function calificacionCurso($idCurso) {
             $curso = Curso::find($idCurso);
             $temas = $curso->temas;
-            $matAlumno = 
             $cf = 0;
             $count = 0;
             foreach($temas as $tema) {

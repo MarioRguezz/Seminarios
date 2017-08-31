@@ -659,4 +659,6 @@ public function alumnoView(Request $request, $cve_ca,  $cve_ca2){
             'success' => true
         ]);
     }
+
+
 }

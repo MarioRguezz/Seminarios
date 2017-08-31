@@ -1,5 +1,9 @@
 <?PHP
 include '../php/conexion.php';
+require dirname(__DIR__) . '/../vendor/autoload.php';
+$app = require dirname(__DIR__) . '/../bootstrap/app.php';
+$app->boot();
+use \App\User;
 
 $accion = $_GET['accion'];
 
@@ -238,6 +242,14 @@ mysqli_close($conexia);
         </div>
 
         </td> 
+		<td class=" graybackground" style="border:none !important">
+			<center><?php
+
+				$user = User::find(84);
+				echo 123; 
+			
+			?></center>
+		</td>
 <td class="borderpillend graybackground" style="border:none !important">
         <?PHP
 			if($tipoPer == "Instructor")
