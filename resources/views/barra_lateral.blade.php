@@ -11,7 +11,7 @@
           <h2 style="color:#FFF; font-size: 1.5em;">OPCIONES <br> PARA EL <br>ALUMNO</h1>
       </div>
       <div class="row" style="margin-bottom:10px;">
-        <a href="{{url('/pages/MisCursos.php')}}">
+        <a href="{{url('/alumno')}}">
         <div class="col-xs-10">
             <img src="{{url('/img/byondiconos/BEYOND2-42.png')}}">
         </div>
