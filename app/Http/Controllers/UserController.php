@@ -115,6 +115,8 @@ class UserController extends Controller
      */
     public function registrar(Request $request){
 
+        $path = null;
+        $filename = null;
         /**
          * Validaciones realizadas al inicio para saber qué campos son obligatorios.
          */
@@ -207,17 +209,20 @@ class UserController extends Controller
             $max = Alumno::max('Mat_Alumno');
             $alumno = Alumno::create(array(
                "email" => $request->input('email'),
-                "fotografia" => url($path.$filename),
                 "id_cliente_administrador" => $adminCliente->id,
                 "Mat_Alumno" =>  ($max + 1),
                 "IdPersona" => $user->IdPersona
             ));
+            if($path && $filename) {
+                $alumno->fotografia = url($path.$filename);
+            }
             $alumno->save();
+            $email = $alumno->email;
 
             Mail::send('emails.bienvenido', ['email' => $request->input('email')], function($message) use ($email)
                 {
                     $message->from('contacto@byond.com', 'Byond');
-                    $message->to($request->input('email'), 'Usuario')->subject("Nuevo registro en Byond");
+                    $message->to($email, 'Usuario')->subject("Nuevo registro en Byond");
             });
         }
 
