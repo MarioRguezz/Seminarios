@@ -138,3 +138,14 @@ Route::group(['prefix'=>'dashboard'], function(){
 Route::group(['prefix'=>'csv'], function(){
     Route::get('SubirCSV', "SubirController@subircsv");
 });
+
+
+/**
+ * prefijo: alumno
+ * referencia: UserController
+ * Funciones de actividad para su creación.
+ */
+
+Route::group(['prefix'=>'alumno'], function(){
+    Route::get('/', "AlumnoController@misCursos");
+});

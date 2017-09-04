@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\ExamenCalificacion;
+use App\Curso;
 
 class User extends Authenticatable implements CanResetPassword
 {
@@ -68,6 +70,9 @@ class User extends Authenticatable implements CanResetPassword
             return $this->hasOne('App\ClienteAdministrador', 'id_persona', 'IdPersona');
         }
 
+
+
+        
 
 
 }

@@ -9,7 +9,7 @@ class Instructor extends Model
 
 
     protected $table = "usuario";
-    protected $primaryKey = "Id";
+    protected $primaryKey = "Mat_Usuario";
     protected $fillable = [
         "Mat_Usuario",
         "email",

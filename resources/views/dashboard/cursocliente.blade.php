@@ -44,9 +44,11 @@
        <th class="weight">Apellido Paterno</th>
        <th class="weight">Apellido Materno</th>
        <th class="weight">Email</th>
-       <th class="weight borderpillend">Progreso</th>
+       <th>Progreso</th>
+       <th class="weight borderpillend">Calificación</th>
      </tr>
      <tr class="separateRow">
+       <th></th>
        <th></th>
        <th></th>
        <th></th>
@@ -63,9 +65,11 @@
        <td> </td>
        <td> </td>
        <td> </td>
+       <td> </td>
        <td  class="borderpillend"> </td>
      </tr>
      <tr class="separateRow">
+       <th></th>
        <th></th>
        <th></th>
        <th></th>
@@ -80,9 +84,11 @@
         <td> {{ $alumno->datos['APaterno'] }}</td>
         <td>{{ $alumno->datos['AMaterno'] }} </td>
         <td>{{ $alumno->datos['email'] }} </td>
-        <td class="borderpillend"> {{ $alumno->porcentaje }}% </td>
+        <td> {{ $alumno->porcentaje }}% </td>
+        <td class="borderpillend"> {{ $alumno->calificacionCurso($curso->id_Curso) }}% </td>
       </tr>
       <tr class="separateRow">
+        <th></th>
         <th></th>
         <th></th>
         <th></th>

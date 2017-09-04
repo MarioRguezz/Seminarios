@@ -310,7 +310,6 @@ class ExamenController extends Controller
        // return $val;
     }
 
-
     public function diploma(Request $request, $cve_alumno, $cve_tema ){
       $alumno = Alumno::where([['Mat_Alumno', '=', $cve_alumno]])->first();
       $tema = Tema::where([['id_Tema', '=', $cve_tema]])->first();

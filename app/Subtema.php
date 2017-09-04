@@ -38,6 +38,7 @@ class Subtema extends Model
         return $this->belongsTo('App\Tema', 'id_Tema', 'id_Tema');
     }
 
+
   /*  public function  subtemavisto() {
         return $this->belongsToMany('App\Tema','byondb.subtema_visto','id_Subtema', 'id_Tema')->withPivot('Visto');
     }*/
