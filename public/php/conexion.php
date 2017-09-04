@@ -2,7 +2,7 @@
 error_reporting(0);
 
 session_start();
-function  conect($host = "localhost:3306", $user = "root", $psw = "1234", $db = "byond"){
+function  conect($host = "localhost:3306", $user = "root", $psw = "", $db = "byondb2"){
 //conect($host = "localhost:3306", $user = "seminario", $psw = "seminario12345", $db = "durango"){
 //189.211.207.17
 
