@@ -20,7 +20,7 @@ $idPersona = $_SESSION['IdPersona']; ?>
           <h2 style="color:#FFF; font-size: 1.5em;">OPCIONES <br> PARA EL <br>ALUMNO</h1>
       </div>
       <div class="row" style="margin-bottom:10px;">
-        <a href="MisCursos.php">
+        <a href="../alumno">
         <div class="col-xs-10">
             <img src="../../public/img/byondiconos/BEYOND2-42.png">
         </div>
