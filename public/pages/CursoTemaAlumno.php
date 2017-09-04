@@ -38,7 +38,7 @@ if($tipoPer != "Alumno")
 */
 
 	$IDCurso = $_GET['IDCurso'];
-
+	var_dump($IDCurso);
 	$qwerty = "SELECT * FROM curso_tema CT JOIN curso C ON CT.id_curso = C.id_Curso WHERE C.id_Curso = '$IDCurso';";
 	$resultas = mysqli_query($conexia, $qwerty);
 	$NumRow = mysqli_num_rows($resultas);
@@ -47,7 +47,7 @@ if($tipoPer != "Alumno")
 	$query = "SELECT * FROM curso_subtema CS JOIN curso_tema CT ON CS.id_Tema = CT.id_Tema WHERE CT.id_Curso = '$IDCurso';";
 	$resultado = mysqli_query($conexia, $query);
 	$TotalSub = mysqli_num_rows($resultado);
-	
+
 
 
 	/*
@@ -345,7 +345,9 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 
 <div id='cssmenu'>
 <ul>
+
 	<?PHP
+
 	if($NumRow > 0)
 	{
 		$Ultvisto = 0;
@@ -374,7 +376,6 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 			//print_r($sqlxox."<br>");
 			$resultadoxox = mysqli_query($conexia, $sqlxox);
 			$rowseso = mysqli_fetch_array($resultadoxox);
-
 
 
 			//print_r("Valor de Orden de rowseso: ".$rowseso['Orden']."<br>");
@@ -602,6 +603,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 		} //FIn del if para comprobar si existe al menos un Tema dado de alta en el curso
 		else
 		{
+
 	?>
     <center>
 	<h3 class="whiteClass2 "><b>No se ha registrado ningun tema para este curso</b></h3>
@@ -621,7 +623,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
     <div class="Contenido container col-md-8 col-md-offset-1">
 			<br>
 
-			<?PHP
+			<?php
 			if($TipoArchivo == "PDF")
 			{
 			?>
@@ -704,11 +706,14 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 			?>
 
 
+
 			<div class="row" id="Video">
 
             	<?PHP
+
 					if($video != "")
 					{
+
 						if($NumVid > 1)
 						{
 						$queryx1 = "SELECT * FROM material_video WHERE id_Subtema = '$IDSubtema';";
@@ -759,6 +764,7 @@ $rowsesx = mysqli_fetch_array($resultadosesx);
 						}
 						else
 						{
+
 					?>
 
 					<div clas="embed-responsive embed-responsive-16by9">
@@ -959,7 +965,7 @@ else
 		$color = 0;
 		$conex = conect();
 		$consulta = "Select * FROM curso_subtema where id_Tema = '$filases[id_Tema]';";
-		
+
 		$res = mysqli_query($conexia, $consulta);
 		while($fila = mysqli_fetch_array($res))
 		{
