@@ -56,3 +56,5 @@ Homestead.json
 Homestead.yaml
 .env
 /public/php/conexion.php
+/public/pages/AltaCurso.php
+
