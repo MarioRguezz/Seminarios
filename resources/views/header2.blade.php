@@ -30,7 +30,7 @@
         <ul class="dropdown-menu">
           <li>
             <a style="color:#009999 !important"
-              href="http://<?php echo $_SERVER['SERVER_NAME']?>/Seminarios/public/logout">
+              href="http://<?php echo $_SERVER['SERVER_NAME']?>/logout">
               CERRAR SESIÓN</a>
            </li>
         </ul>

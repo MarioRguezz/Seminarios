@@ -231,13 +231,13 @@ if($accion == 'Nu3v@')
                    $mail = new PHPMailer;
                    $mail->addAddress($arra[$i]);
                    $mail->isSMTP();                                      // Set mailer to use SMTP
-                   $mail->Host = 'smtp.sendgrid.net';  // Specify main and backup SMTP servers
+                   $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                   $mail->Username = 'mmadrazo00';                 // SMTP username
-                   $mail->Password = 'maomad00';                           // SMTP password
+                   $mail->Username = '08bits.team@gmail.com';                 // SMTP username
+                   $mail->Password = '08bits_Team';                           // SMTP password
                    $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
                    $mail->Port = 587;
-                   $mail->From = 'contacto@byond.dev';
+                   $mail->From = '08bits.team@gmail.com';
                    $mail->FromName = 'Byond';
                    // Add a recipient
                   // $mail->addReplyTo($arra[i], 'Information');
@@ -245,9 +245,9 @@ if($accion == 'Nu3v@')
                    // $mail->addBCC('bcc@example.com');
                    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
                    $mail->isHTML(true);                                  // Set email format to HTML
-                   $mail->Subject = 'Bienvenido al curso';
+                   $mail->Subject = 'Here is the subject';
                    $mail->Body = 'Bienvenido al curso de Byond<b> ¡Desde tu navegador presiona el botón para quedar inscrito!</b> '.
-                       '<form action="http://byond.mx/validar" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">'.
+                       '<form action="http://189.211.207.173/Seminarios/public/validar" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">'.
                         '<input type="text" value=" '.$IDCurso.' " id="idCurso" name="idCurso">'.
                         '<input type="text" value="'.$arra[$i].'" id="email"name="email">'.
                       '<center> <button type="submit" class="elementoButton buttonTransparentBorder buttonAlta"> Ingresar Curso </button></center>'.

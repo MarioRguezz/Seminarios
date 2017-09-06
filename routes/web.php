@@ -149,3 +149,14 @@ Route::group(['prefix'=>'csv'], function(){
 Route::group(['prefix'=>'alumno'], function(){
     Route::get('/', "AlumnoController@misCursos");
 });
+
+
+/**
+ * prefijo: cursos
+ * referencia: CursoController
+ * Funciones de cursos.
+ */
+
+Route::group(['prefix'=>'cursos'], function(){
+    Route::get('/', "CursoController@alta");
+});
