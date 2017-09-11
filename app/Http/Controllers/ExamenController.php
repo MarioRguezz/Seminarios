@@ -270,6 +270,10 @@ class ExamenController extends Controller
         $Mat_Alumno = $request->input('Mat_Alumno');
         $IDTema = $request->input('IDTema');
         $cantidadRespuestas = count($respuestas);
+        $tema = Tema::where('id_Tema', $request->input('IDTema'))->first();
+        $examen = $tema->examen;
+        $preguntas = $examen->preguntas;
+        $cantidadPreguntas = count($preguntas);
         for ($i = 0; $i < $cantidadRespuestas; $i++) {
             $pregunta = Pregunta::where([['ID_Pregunta', '=', $respuestas[$i]["id_pregunta"]]])->first();
             $preguntaJson = json_decode($pregunta->json);
@@ -299,7 +303,7 @@ class ExamenController extends Controller
                 $total = 0;
             }else {
                // $total = ($cantidadRespuestas * 100) / $val;
-                $total = ($val * 100) / $cantidadRespuestas;
+                $total = ($val * 100) / $cantidadPreguntas;
                 $pregunta = ExamenCalificacion::where([['id_Tema', '=', $IDTema], ['Mat_Alumno', '=', $Mat_Alumno]])->first();
                 $pregunta->Calificacion = $total;
                 $pregunta->save();
