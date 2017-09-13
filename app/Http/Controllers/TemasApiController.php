@@ -67,6 +67,7 @@ class TemasApiController extends Controller
         if(isset($tema)) {
             $subtemas = $tema->subtemas;
 
+
             foreach($subtemas as $subtema) {
               $visto = SubtemaVisto::where('Mat_Alumno', $matAlumno)->where('id_Subtema', $subtema->id_Subtema)->get()->first();
               if(isset($visto)) {
